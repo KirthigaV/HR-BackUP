@@ -1,0 +1,16 @@
+*.manifest.yml
+*.zip
+*.tar.gz
+*.d.ts
+.vscode
+.babelrc
+.editorconfig
+.eslintrc
+.gitignore
+.instanbul.yml
+npm-debug.log
+/node_modules/
+/coverage/
+/e2e/
+/src/
+/environments/

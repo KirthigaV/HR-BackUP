@@ -1,0 +1,8 @@
+#Build Directory 
+build/classes 
+build/ant
+build/resources
+build/test
+
+#Application Compiled Classes
+/classes/

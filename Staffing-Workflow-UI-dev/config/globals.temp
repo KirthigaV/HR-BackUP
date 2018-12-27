@@ -1,0 +1,4 @@
+'use strict';
+
+export var AppVersion=$version;
+export var CONFIG=$config;

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+	<title>HR Systems</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" href="assets/css/jquery-ui.css" />
+	<link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+	<link rel="stylesheet" href="assets/css/jquery-ui.structure.css" />
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css" />	
+	<link rel="stylesheet" href="assets/css/prettify.css" />
+	<link rel="stylesheet" href="assets/css/navbar-fixed-top.css" />
+	<link rel="stylesheet" href="assets/css/prettify.css" />
+	<link rel="stylesheet" href="assets/css/jq/ui.jqgrid.css" /> 
+	<link rel="stylesheet" href="assets/css/rsaCommon.css" />	
+	<link rel="stylesheet" href="assets/css/orangeTheme.css" />
+	
+	<script src="assets/js/vendor/jquery-1.10.1.min.js"></script>
+	<script src="assets/js/vendor/jquery-ui.js"></script>
+	<script src="assets/js/vendor/jquery-ui.min.js"></script>
+	<script src="assets/js/vendor/jquery.cookie.js"></script>
+	<script src="assets/js/jquery.blockUI.js"></script>
+	<script src="assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	<script src="assets/js/vendor/bootstrap.min.js"></script>
+	<script src="assets/js/vendor/jquery.validate.min.js"></script>
+	<script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+	<script src="assets/js/vendor/jquery.jqGrid.js"></script>
+	
+	<script type="text/javascript" src="app/common/js/constants.js"></script>
+	
+	<!--  security files. -->
+	<script type="text/javascript" src="app/common/js/Utility.js"></script>
+	<script type="text/javascript" src="app/common/js/Model.js"></script>
+	<script type="text/javascript" src="app/common/js/rsaServices.js"></script>
+	
+	<script type="text/javascript" src="app/RSAEmailAdmin/js/emailAdministrationTool.js"></script>
+
+
+<script type="text/javascript">
+
+$(function() {
+	//Tells the web app to fit the entire browser viewport
+	$(window).resize(function() {
+		fit();
+	});
+	setLandingPage();
+	 document.addEventListener('mousedown', mousedown, false);
+	 document.addEventListener('mouseup', mouseup, false);
+});
+var selectionTextSelectors = ".textSelectionTrue";
+// While selecting disallow selection of other text.
+function mousedown (event) {
+    var current = findParentTextBox(event.target);
+    var list = document.querySelectorAll(selectionTextSelectors);
+    for (var i = 0, textbox; textbox = list[i]; i++) {
+        if (textbox != current) {
+            textbox.style.webkitUserSelect = 'none';
+        }
+    }
+    if(current === null){
+    	if (window.getSelection) {
+    		  if (window.getSelection().empty) {  // Chrome
+    		    window.getSelection().empty();
+    		  } else if (window.getSelection().removeAllRanges) {  // Firefox
+    		    window.getSelection().removeAllRanges();
+    		  }
+    		} else if (document.selection) {  // IE?
+    		  document.selection.empty();
+    		}
+    }
+}
+
+// Once finished selecting allow all text to be selected again.
+function mouseup (event) {
+    var list = document.querySelectorAll(selectionTextSelectors);
+    for (var i = 0, textbox; textbox = list[i]; i++) {
+        textbox.style.webkitUserSelect = 'text';
+    }
+}
+
+function findParentTextBox (node) {
+    while (node != null) {
+        if ($(node).is($(this.selectionTextSelectors)))
+            return node;
+        node = node.parent;
+    }
+    return null;
+}
+function setLandingPage() {
+	$.get('app/RSAEmailAdmin/view/EmailAdministrationTool.html', setContent);
+}
+function setContent(data) {
+	$("#divLandingView").html(data);
+}
+function fit() {
+	var w = window, d = document, e = d.documentElement, g = d
+			.getElementsByTagName('body')[0], y = w.innerHeight
+			|| e.clientHeight || g.clientHeight;
+	var height = y - $("#header").height() - $("#messageBar").height()
+			- $("#release").height() - $("#copyright").height() - 60;
+	$("#appBody").css("min-height", height);
+}
+	
+	</script>
+	
+	<style>
+		p.indexGrid {
+			padding: 50px;
+			font-size: 2.0em;
+			font-weight: 900;
+			background: #eee;
+		}
+		
+		p.indexGrid a {
+			font-weight: 300;
+			width: 100%;
+			height: 100%;
+		}
+		
+		p.indexGrid a:hover {
+			text-decoration: none;
+		}
+	</style>
+  </head>
+
+  <body class="emailAdminBody reqdetBody">
+<div ></div>
+    <!-- Fixed navbar -->
+   
+
+	<div id="appBody" class="container emailadminappbody reqdetappbody">
+ <nav id="emailadminnav" class="navbar navbar-default navbar-fixed-top navbar-inverse header-class" style="position:relative;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        <!--    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>-->
+          <div class="navbar-brand">
+	            <img src="assets/images/com-hd-logo.png" height="58" width="58">
+	            <span class="brand brand-orange-theme">Email Administration Tool</span>
+	            <br/>
+	            <span class="headerShortDesc first">Release v7.2</span>
+	            <span class="headerShortDesc">Developed by The Home Depot</span>
+	        </div>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <!-- <ul class="nav navbar-nav">
+            <li class=""><a href="index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menu <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="typography.html">Typography</a></li>
+                <li><a href="colors.html">Colors</a></li>
+                <li><a href="grid.html">Grid</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="forms.html">Forms</a></li>
+                <li><a href="tables.html">Tables</li>
+                <li><a href="buttons.html">Buttons</a></li>
+                <li><a href="lists.html">Lists</a></li>
+                <li><a href="navigation.html">Navigation</a></li>
+                <li><a href="widgets.html">Widgets</a></li>
+                <li><a href="tabs.html">Tabs</a></li>
+              </ul>
+            </li>
+          </ul>-->
+          
+          <ul class="navbar-right">
+          <li class="text-right">
+            <button type="button" class="btn btn-default navHeaderButtons reqnavHeaderButtons navCloseBtn" value="Close">Close</button>
+        </li>
+        
+          <li id="loggedInUserName" class="text-right"></li>
+           <!--   <li><a href="#myModal" data-toggle="modal"><i class="fa fa-cog fa-2x"></i></a></li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>	      
+	    <section class="container-fluid">
+		    <div class="row text-center">
+		    	<div id="emailmessageBar" class="alert alert-info reqmessageBar" >				
+				        			
+				       EMAIL ADMINISTRATION TOOL
+				    </div>
+		    </div>
+		</section>
+    </nav>
+		<!-- Here you can render your Template -->
+		<div id="divLandingView" style="width: 100%;"></div>
+
+		<!-- template  ends -->
+	</div>
+	<!-- /container -->
+
+
+	<!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close"></i></button>
+                    <h4 class="modal-title">Settings</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Do you want to save changes you made to document before closing?</p>
+                    <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+</body></html>

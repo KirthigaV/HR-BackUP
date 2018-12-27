@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>EditHiringEventPopUp Qunit</title>
+
+<!--Load Qunit CSS  --> 
+<link rel="stylesheet" href="../css/qunit-1.17.1.css">
+
+<!--Load Common libraries -->
+<script src="../../assets/js/vendor/jquery-1.10.1.min.js"></script>
+<script src="../../assets/js/vendor/bootstrap.min.js"></script>
+<script src="../../assets/js/vendor/jquery.jqGrid.js"></script>  
+<script src="../../assets/js/vendor/fullcalendar.js"></script>  
+ <script src="../../assets/js/SlickGrid/lib/jquery.event.drag-2.2.js"></script>  
+<script src="../../assets/js/SlickGrid/lib/jquery.event.drop-2.2.js"></script> 
+<script src="../../assets/js/SlickGrid/lib/jquery-ui-1.8.16.custom.min.js"></script>  
+<script src="../../assets/js/SlickGrid/lib/jquery.jsonp-1.1.0.min.js"></script> 
+<script src="../../assets/js/SlickGrid/lib/jquery.simulate.js"></script>  
+<script src="../../assets/js/SlickGrid/slick.core.js"></script>  
+<script src="../../assets/js/SlickGrid/slick.grid.js"></script>  
+<script src="../../assets/js/SlickGrid/slick.groupitemmetadataprovider.js"></script>  
+<script src="../../assets/js/SlickGrid/slick.remotemodel.js"></script> 
+<script src="../../assets/js/SlickGrid/slick.editors.js"></script> 
+<script src="../../assets/js/SlickGrid/slick.dataview.js"></script>  
+
+<!--Load Project Specific scripts  -->
+<script type="text/javascript" src="../../app/common/js/constants.js"data-cover></script>
+<script type="text/javascript" src="../../app/common/js/Model.js"data-cover></script>
+<script type="text/javascript" src="../../app/common/js/Utility.js"
+	data-cover></script>
+<script type="text/javascript" src="../../app/common/js/rsaServices.js"data-cover></script>
+<script type="text/javascript" src="../../app/RSAInterviewAvailability/js/editHiringEventPopUp.js"
+	data-cover></script>
+
+
+<Script>
+	function setLanguage(lang) {
+		jQuery.i18n.properties({
+			name : "Messages",
+			path : "app/common/js/bundle/",
+			mode : "both",
+			language : lang,
+			callback : function() {
+				StaticText.loadStaticText();
+			}
+		});
+	}
+</Script>
+</head>
+<body>
+
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+	<div id="editTestFixture" class=hidden>
+	div class="modal fade centeredBackdrop" id="editHiringEventPopUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+				<button type="button" class="close" onclick="editHiringEvent.closePopup()"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				 <div class="modal-title" id="createhiringmodalLabel">Edit
+          Hiring Event</div>
+			</div>
+      <div class="modal-body">
+      <div class="contentHolder">
+        <div class="jumbotron shadow-box col-md-12 greyBox" >
+          <div class="col-md-4 rowTitle">Event Location</div>
+          <div class="col-md-12 whiteContent shadow-box whitBox eventLocDtls" style="padding:1%">
+
+            <div class="form-group">
+              <label class="col-md-5 control-label">Event Name:<sub>  *</sub></label>
+              <div class="col-md-5 noPadding">
+                <input type="text" class="" id="editEventName" onchange="editHiringEvent.setDirtyPage()">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-5 control-label">Event Dates:<sub>  *</sub></label>
+              <div class="col-md-7 eventDatesDiv">
+                <div class="col-md-3 noPadding nopaddingright">
+                <div class='input-group date' id='hiringFromDate'>
+                    <input type='text' class="" id="editeventDt" onchange="editHiringEvent.setEndDate()" placeholder="" readonly="readonly" > <span
+                      class="input-group-addon btn-default datePickDt" onclick="editHiringEvent.focusFromDate()" >
+                    
+                </div>
+                </div>
+                <div class="col-md-1 control-label eventDateTo">to</div>
+                <div class="col-md-3 noPadding nopaddingright">
+                  <div class='input-group date' id='hiringToDate'>
+                    <input type='text' class="" id="editeventDtEnd" placeholder="" readonly="readonly" onchange=""> <span
+                      class="input-group-addon btn-default datePickDtEnd" onclick="editHiringEvent.focusToDate()" >
+                   
+                </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-5 control-label">Is this a off-site event?<sub>  *</sub></label>
+             <div class="col-md-4 noPadding nopaddingright">
+              <div class="col-md-3 noPadding"><div class="radio">
+                <label class="control-label"><input type="radio" value="YES" name="offsiteEvent"
+                id="editOffSiteEventYes" onclick="editHiringEvent.onSite_OffSiteShow()" onchange="editHiringEvent.setDirtyPage()">Yes</label>
+              </div>
+            </div>
+            <div class="col-md-6 noPadding"><div class="radio">
+           <label class="control-label"><input type="radio" value="NO" checked="checked" name="offsiteEvent"
+           id="editOffSiteEventNo" onclick="editHiringEvent.onSite_OffSiteShow()" onchange="editHiringEvent.setDirtyPage()">No</label>
+          </div>
+         </div>
+          </div>
+            </div>
+            <div class="row " id="editOffSiteEntryNo">
+               <div class="form-group">
+              <label class="col-md-5 control-label">Store #:<sub>  *</sub></label>
+              <div class="col-md-2 noPadding">
+                <input type="text" class="" id="editEventStrNum" onkeyup="editHiringEvent.getStoreInfo(event)" data-pattern="^(0|[1-9][0-9]*)$" maxlength="4">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label labelpadding">Address:</label>
+              <div class="col-md-5 noPadding">
+                <div class="" id="editEventAddress"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label labelpadding">City:</label>
+              <div class="col-md-5 noPadding">
+                <div class="" id="editEventCity"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label labelpadding">State:</label>
+              <div class="col-md-5 noPadding">
+               <div class="" id="editEventState" ></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label labelpadding">Postal Code:</label>
+              <div class="col-md-5 noPadding">
+                  <div  class="" id="editEventZip"></div>
+              </div>
+            </div>
+            </div>
+            <div class="row" id="editOffSiteEntryYes">
+              <div class="form-group">
+              <label class="col-md-5 control-label">Venue Name:<sub>  *</sub></label>
+              <div class="col-md-5 noPadding">
+                <input type="text" class="" id="editVenueName">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">Address:<sub>  *</sub></label>
+              <div class="col-md-5 noPadding">
+                <input type="text" class="" id="editVenueAddress">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">City:<sub>  *</sub></label>
+              <div class="col-md-5 noPadding">
+                <input type="text" class="" id="editVenueCity"> 
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">State:<sub>  *</sub></label>
+              <div class="col-md-5 noPadding">
+               <select class=""  id="editVenueStateCbo" ><option>Select</option></select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">Postal Code:<sub>  *</sub></label>
+              <div class="col-md-5 noPadding">
+                  <input type="text" class="" id="editVenueZip">
+              </div>
+            </div>
+           
+            </div>
+             <div class="form-group managerdiv">
+              <label class="col-md-5 control-label">Enter Manager LDAP:<sub>  *</sub></label>
+              <div class="col-md-3 noPadding">
+                  <input type="text" class="" id="editEventMgrLdap">
+              </div>
+              <div class="col-md-3">
+                  <button class="btn btn-default btn-primary" id="editrefreshMgrData" onclick="javascript:editHiringEvent.refreshManagerData();return false;">Refresh</button>
+              </div>
+            </div>
+           <div class="managerDetaildiv">
+           <div class="form-group">
+              <label class="col-md-5 control-label labelpadding">Event Manager Name:</label>
+              <div class="col-md-5 noPadding " id="editMgrName"></div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label labelpadding">Event Manager's Title:</label>
+              <div class="col-md-5 noPadding " id="editMgrTitle"></div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label labelpadding">Event Manager's Phone:</label>
+              <div class="col-md-5 noPadding " id="editMgrPhn"></div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label labelpadding">Event Managers Email:</label>
+              <div class="col-md-5 noPadding " id="editMgrMail"></div>
+            </div>
+            </div>
+            
+
+          </div>
+
+        </div>
+       <div class="jumbotron shadow-box col-md-12 greyBoxPartStr" >
+         <div class="col-md-4 rowTitle">Participating Stores</div>
+          <div class="col-md-12 whiteContent shadow-box whitBox partStrDtls" style="padding:1%">
+            <div class="form-group partStores">
+              <label class="col-md-3 control-label">Participating Store:<sub>  *</sub></label>
+              <div class="col-md-3 noPadding">
+                  <input type="text" class=""  id="editEnterStrNum" onkeyup="editHiringEvent.addStoreToHiringEvent(event)" data-pattern="^(0|[1-9][0-9]*)$" maxlength="4">
+              </div>
+            </div>
+            <div class="col-md-12">
+            <div class="gridContainer" id="createEventGrid">
+              <div id="storesEditgrid" class ="custom-grid"></div> 
+            </div>
+            </div>
+<label id="editPopUpText">Stores with Active Requisitions attached to this Hiring Event Cannot be Deleted."</label>
+          </div>
+       </div>
+
+        </div>
+      
+      <div class="form-group">
+      <div class="col-md-2 col-md-offset-4">
+        <button type="button" class="btn  btn-primary submitEditBtn darkOrangeBtn " id="create" onclick="editHiringEvent.updateHiringEvent()">Submit</button>
+        </div>
+         <div class="col-md-2">
+        <button type="button" class="btn  btn-default cancelEditBtn" id="cancel" onclick="editHiringEvent.closePopup()">Cancel</button>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+ <div class="modal fade warningpopClass centeredBackdrop" id="editwarningpopup" tabindex="-1"
+	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header text-left">
+
+				<img src="../assets/images/warning.png"> <label
+					id="WarningModalLabel"></label>
+			</div>
+			<div class="modal-body ">
+				<div class="warningModalBody text-center">
+					<div class="cols-xs-12 cols-xs-offset-1 text-center ">
+						<label class="cautionMsg"></label> <label id="oldRenameCalName"></label>
+					</div>
+					<div class="cols-xs-12 cols-xs-offset-1 text-center sureMsg">
+					</div>
+				</div>
+				<br>
+				<div class="text-center">
+
+					<button type="button" onClick="editHiringEvent.yesClicked()">
+						<img src="../assets/images/ok.png"> Yes
+					</button>
+
+					<button type="button" data-dismiss="modal">
+						<img src="../assets/images/cross.png">No
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade centeredBackdrop" id="editAlertPopupModal" tabindex="-1"
+  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+      <div class="modal-title" id="headerAlertModalLabel">Edit
+          Hiring Event</div>
+      </div>
+      <div class="modal-body">
+        <div class="myModalBody text-center alertModalBody"></div>
+   <div class="text-center">
+    <button type="button" class="alertmodalbtn"  onclick="editHiringEvent.Okclicked()">OK</button></div>
+      </div>
+      </div>
+    </div>
+  </div>
+	</div>
+
+	<script src="../js/qunit-1.17.1.js"></script>
+	<script src="../../test/app/RSAInterviewAvailability/js/editHiringEventPopUpTest.js"data-cover></script>
+	<script src="../js/blanket.min.js"></script>
+</body>
+</html>

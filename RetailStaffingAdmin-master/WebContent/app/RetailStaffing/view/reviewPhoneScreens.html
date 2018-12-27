@@ -1,0 +1,152 @@
+<script type="text/javascript" src="app/RetailStaffing/js/reviewPhoneScreens.js"></script>
+   <script>
+	var reviewPhoneScreensDetails = new reviewPhoneScreensDetails();
+	$(document).ready(function() {
+		reviewPhoneScreensDetails.initialize();
+	});
+</script>
+<div class="reviewPhoneScreensDetails" id="reviewPhoneScreensDetails">
+<div class="scrollDiv">
+<div class="row jumbotron secondContentRow shadow-box">
+<div class="col-xs-12 paddingLeftRight">
+<label class="candidateGridTitle">REQUISITION DETAILS</label>
+<div class="row shadow-box bgWhite basicDetailsTodisplay">
+<div class="row">
+<div class="col-xs-2">
+<div class="col-xs-7 text-right"><label>Requisition # :</label></div>
+<div class="col-xs-5 text-left"><span id="requisitionValue"></span></div>
+</div>
+<div class="col-xs-3">
+<div class="col-xs-7 text-right"><label>QueWeb Request Number :</label></div>
+<div class="col-xs-5 text-left"><span id="queWebReqNumberValue"></span></div>
+</div>
+<div class="col-xs-3">
+<div class="col-xs-6 text-right"><label>Requisition Status :</label></div>
+<div class="col-xs-6 text-left"><select id="requisitionStatusValue"></select></div>
+</div>
+<div class="col-xs-3">
+<div class="col-xs-4 text-right"><label>Referrals :</label></div>
+<div class="col-xs-8 text-left"><span id="referralsValue"></span></div>
+</div></div>
+<div class="row">
+<div class="col-xs-2">
+<div class="col-xs-7 text-right"><label>Store Number :</label></div>
+<div class="col-xs-5 text-left"><span id="strNumValue"></span></div>
+</div>
+<div class="col-xs-3">
+<div class="col-xs-7 text-right"><label>FT :</label></div>
+<div class="col-xs-5 text-left"><span id="ftValue"></span></div>
+</div>
+<div class="col-xs-3">
+<div class="col-xs-6 text-right"><label>Department :</label></div>
+<div class="col-xs-6 text-left"><span id="departmentValue"></span></div>
+</div></div>
+<div class="row">
+<div class="col-xs-2">
+<div class="col-xs-7 text-right"><label>Openings :</label></div>
+<div class="col-xs-5 text-left"><span id="openingsValue"></span></div>
+</div>
+<div class="col-xs-3">
+<div class="col-xs-7 text-right"><label>PT :</label></div>
+<div class="col-xs-5 text-left"><span id="ptValue"></span></div>
+</div>
+<div class="col-xs-3">
+<div class="col-xs-6 text-right"><label>Job Code :</label></div>
+<div class="col-xs-6 text-left"><span id="jobCodeValue"></span></div>
+</div></div>
+<div class="row">
+<div class="col-xs-2">
+<div class="col-xs-7 text-right"><label># Interviews :</label></div>
+<div class="col-xs-5 text-left"><span id="interviewsValue"></span></div>
+</div>
+<div class="col-xs-3">
+<div class="col-xs-7 text-right"><label>Screen Type :</label></div>
+<div class="col-xs-5 text-left"><span id="scrTypeValue"></span></div>
+</div>
+<div class="col-xs-6">
+<div class="col-xs-3 text-right"><label>Job Title :</label></div>
+<div class="col-xs-6 text-left"><span id="jobTitleValue"></span></div>
+</div></div>
+<div class="row">
+<div class="col-xs-2">
+<div class="col-xs-7 text-right"><label>Date Needed :</label></div>
+<div class="col-xs-5 text-left"><span id="dateNeededValue"></span></div>
+</div>
+<div class="col-xs-3">
+<div class="col-xs-7 text-right"><label>Seasonal/Temporary :</label></div>
+<div class="col-xs-5 text-left"><span id="seasonalTempValue"></span></div>
+</div>
+<div class="col-xs-3">
+<div class="col-xs-6 text-right"><label>TAC To Manage :</label></div>
+<div class="col-xs-6 text-left"><span id="rscToManageValue"></span></div>
+</div>
+<div class="col-xs-3">
+<div class="col-xs-4 text-right"><label>TAC To Schedule :</label></div>
+<div class="col-xs-8 text-left"><span id="rscToScheduleValue"></span></div>
+</div></div>
+
+
+</div></div>
+</div>
+
+<div class="row jumbotron secondContentRow shadow-box">
+<div class="col-xs-12">
+<label class="candidateGridTitle" >PHONE SCREENS</label>
+<div class="row shadow-box bgWhite">
+<div class='col-xs-12' id="phoneScreensContent"></div>
+</div></div>
+</div>
+<div class="row jumbotron secondContentRow shadow-box">
+<div class="col-xs-12">
+<label class="candidateGridTitle1">INACTIVE/HIRED PHONE SCREENS</label>
+<div class="row shadow-box bgWhite">
+<div class='col-xs-12' id="inActphoneScreensContent"></div>
+</div></div>
+</div>
+
+</div>
+<div class="row">
+<div class='col-xs-12 text-center'>
+<button class="btn btn-green" id="save">Save</button>
+<button class="btn btn-green" id="submit">Submit</button>
+<button class="btn btn-green" onclick ="reviewPhoneScreensDetails.displaySavePop()">Cancel</button>
+</div>
+</div>
+</div>
+
+<!-- Save Warning pop up  -->
+
+<div class="modal fade warningpopClass" id="saveWarningpopup" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog" style="width: 100%;height:100%;margin:0px;position: absolute;">
+		<div class="modal-content" style="width: 415px;margin:auto;">
+			<div class="modal-header text-left" >
+
+				<img src="assets/images/warning.png">
+				<label id="WarningModalLabel" style="font-weight:300">Warning</label>
+			</div>
+			<div class="modal-body ">
+				<div class="warningModalBody text-center">
+				<div class="cols-xs-12 cols-xs-offset-1 text-center "> 
+				<label class="cautionMsg"></label>
+				<label id="oldRenameCalName"></label>  </div>
+          <div class="cols-xs-12 cols-xs-offset-1 text-center sureMsg"> Unsaved data in Review Phone Screens.Click OK to Continue,
+          </br>
+          CANCEL to stay on current page
+          </div>
+				</div>
+				<br>
+				<div class="text-center">
+
+					<button type="button" class="transparentButton bold" id="saveWarningOkbutton" onclick ="reviewPhoneScreensDetails.navigateToHomeScreen()">
+					<img src="assets/images/ok.png">
+					OK</button>
+
+					<button type="button" class="transparentButton bold" id="saveWarningCancelbutton" data-dismiss="modal">
+					<img src="assets/images/cross.png">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--Save Warning pop up  -->

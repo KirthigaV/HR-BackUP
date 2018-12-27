@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+	<title>HR Systems</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" href="assets/css/jquery-ui.css" />
+	<link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+	<link rel="stylesheet" href="assets/css/jquery-ui.structure.css" />
+	<link rel="stylesheet" href="assets/css/jquery-ui-1.7.3.custom.css" />
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css" />	
+	<link rel="stylesheet" href="assets/css/prettify.css" />
+	<link rel="stylesheet" href="assets/css/navbar-fixed-top.css" />
+	<link rel="stylesheet" href="assets/css/prettify.css" />
+	<link rel="stylesheet" href="assets/css/jq/ui.jqgrid.css" /> 
+	<link rel="stylesheet" href="assets/css/orangeTheme.css" />
+	<link href="assets/js/SlickGrid/slick.grid.css" rel="stylesheet" />
+	<link href="assets/js/SlickGrid/controls/slick.columnpicker.css" rel="stylesheet" />
+	<link href="assets/js/SlickGrid/controls/slick.pager.css" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/css/slick-default-theme.css" />
+	<link rel="stylesheet" href="assets/css/slickGridManual.css" />
+	<link rel="stylesheet" href="assets/css/jquery.selectBoxIt.css" />
+	<link rel="stylesheet" href="assets/css/retailStaffing.css" />
+	<link rel="stylesheet" href="assets/css/rsaCommon.css" />
+
+	
+	<script src="assets/js/vendor/jquery-1.10.1.min.js"></script>
+	<script src="assets/js/vendor/jquery-ui.js"></script>
+	<script src="assets/js/vendor/jquery-ui.min.js"></script>
+	<script src="assets/js/vendor/jquery.cookie.js"></script>
+	<script src="assets/js/jquery.blockUI.js"></script>
+	<script src="assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	<script src="assets/js/vendor/bootstrap.min.js"></script>
+	<script src="assets/js/vendor/jquery.validate.min.js"></script>
+	<script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+	<script src="assets/js/vendor/jquery.jqGrid.js"></script>
+	<script src="assets/js/jquery.event.drag-2.2.js"></script>
+	<script src="assets/js/jquery.event.drop-2.2.js"></script>
+	<script src="assets/js/vendor/underscore-min.js"></script>
+	<script src="assets/js/slick.core.js"></script>
+	<script src="assets/js/slick.grid.js"></script>
+	<script src="assets/js/vendor/jquery.selectBoxIt.js"></script>
+	<script src="assets/js/jquery.validate.min.js"></script>
+	<script src="assets/js/jquery-validate.bootstrap-tooltip.js"></script>
+	
+	
+	<script type="text/javascript" src="app/common/js/constants.js"></script>
+	
+	<!--  security files. -->
+	<script type="text/javascript" src="app/common/js/Utility.js"></script>
+	<script type="text/javascript" src="app/common/js/Model.js"></script>
+	<script type="text/javascript" src="app/common/js/rsaServices.js"></script>
+	<script type="text/javascript" src="app/common/js/reusableComponents.js"></script>
+	<script type="text/javascript" src="app/common/js/DateUtils.js"></script>
+	
+	<script type="text/javascript" src="app/common/js/rsaPopup.js"></script>
+	
+
+	
+<script type="text/javascript">
+
+$(function() {
+		//Tells the web app to fit the entire browser viewport
+		$(window).resize(function() {
+			fit();
+		});
+		setLandingPage();
+
+		
+	     document.addEventListener('mousedown', mousedown, false);
+	    document.addEventListener('mouseup', mouseup, false); 
+
+	    
+	});
+	var selectionTextSelectors = ".reqDetForm .value-align,.reqStrDetForm .value-align,.qualifiedPoolform .candCountField .candCount,.applProfContainer .value-text:not(.bold),#createHiringEventPopUp #mgrName,#createHiringEventPopUp #mgrTitle,#createHiringEventPopUp #mgrPhn,#createHiringEventPopUp #mgrMail,#reviewPhoneScreensDetails span,#requestorName, #requestorId,.textSelectionTrue,.textSelectionTrue *,.candidateDetails .secondContentRow .bgWhite span";
+	// While selecting disallow selection of other text.
+    function mousedown (event) {
+        var current = findParentTextBox(event.target);
+        var list = document.querySelectorAll(selectionTextSelectors);
+        for (var i = 0, textbox; textbox = list[i]; i++) {
+            if (textbox != current) {
+                textbox.style.webkitUserSelect = 'none';
+            }
+        }
+        if(current === null){
+        	if (window.getSelection) {
+        		  if (window.getSelection().empty) {  // Chrome
+        		    window.getSelection().empty();
+        		  } else if (window.getSelection().removeAllRanges) {  // Firefox
+        		    window.getSelection().removeAllRanges();
+        		  }
+        		} else if (document.selection) {  // IE?
+        		  document.selection.empty();
+        		}
+        }
+    }
+
+    // Once finished selecting allow all text to be selected again.
+    function mouseup (event) {
+        var list = document.querySelectorAll(selectionTextSelectors);
+        for (var i = 0, textbox; textbox = list[i]; i++) {
+            textbox.style.webkitUserSelect = 'text';
+        }
+    }
+
+    function findParentTextBox (node) {
+        while (node != null) {
+            if ($(node).is($(this.selectionTextSelectors)))
+                return node;
+            node = node.parent;
+        }
+        return null;
+    }
+	function setLandingPage() {
+		$.get('app/RetailStaffing/view/retailStaffing.html', setContent);
+	}
+	window.alert = (function() {
+	   var nativeAlert = window.alert;
+	    return function(message) {
+	       //window.alert = nativeAlert;
+	        message.indexOf("DataTables warning") === 0 ?
+	            console.warn(message) :
+	            nativeAlert(message);
+	    }
+	})();
+	function setContent(data) {
+		$("#divLandingView").html(data);
+	}
+	
+	function setContentInPopUp(contentUrl, heading) {
+		$("#modelContent").empty();
+		$.get(contentUrl, function(data) {
+			$("#modelContent").html(data);
+			$("#alertButton").trigger('click');
+			$('.modal-title').text(heading);
+		});
+	}
+	function callAlert(msg) {
+		$("#modelContent").empty();
+		$("#modelContent").html(msg);
+		$("#alertButton").trigger('click');
+		//alert("ok");
+		//$('#myModal').model('show');
+	}
+	function fit() {
+		var w = window, d = document, e = d.documentElement, g = d
+				.getElementsByTagName('body')[0], y = w.innerHeight
+				|| e.clientHeight || g.clientHeight;
+		var height = y - $("#header").height() - $("#messageBar").height()
+				- $("#release").height() - $("#copyright").height() - 60;
+		//$("#appBody").css("min-height", height);
+
+	}
+	
+	</script>
+	
+	<style>
+		p.indexGrid {
+			padding: 50px;
+			font-size: 2.0em;
+			font-weight: 900;
+			background: #eee;
+		}
+		
+		p.indexGrid a {
+			font-weight: 300;
+			width: 100%;
+			height: 100%;
+		}
+		
+		p.indexGrid a:hover {
+			text-decoration: none;
+		}
+	</style>
+  </head>
+
+  <body class="reqdetBody">
+<div ></div>
+    <!-- Fixed navbar -->
+   
+
+	<div id="appBody" class="container reqdetappbody">
+ <nav id="reqdetnav" class="navbar navbar-default navbar-fixed-top navbar-inverse header-class" style="position:relative;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        <!--    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>-->
+          <div class="navbar-brand">
+	            <img src="assets/images/com-hd-logo.png" height="58" width="58">
+	            <span class="brand brand-orange-theme" id="brand">Retail Staffing Administration</span>
+	            <br/>
+	            <span class="headerShortDesc first">Release v94.0</span>
+	            <span class="headerShortDesc">Developed by The Home Depot</span>
+	        </div>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <!-- <ul class="nav navbar-nav">
+            <li class=""><a href="index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menu <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="typography.html">Typography</a></li>
+                <li><a href="colors.html">Colors</a></li>
+                <li><a href="grid.html">Grid</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="forms.html">Forms</a></li>
+                <li><a href="tables.html">Tables</li>
+                <li><a href="buttons.html">Buttons</a></li>
+                <li><a href="lists.html">Lists</a></li>
+                <li><a href="navigation.html">Navigation</a></li>
+                <li><a href="widgets.html">Widgets</a></li>
+                <li><a href="tabs.html">Tabs</a></li>
+              </ul>
+            </li>
+          </ul>-->
+          
+          <ul class="navbar-right">
+            <li class="text-right">
+            <button type="button" id="goPrevious" class="btn btn-default reqnavHeaderButtons primary-green-btn">Back to Qualified Pool</button>
+            <button type="button" id="goHome" class="btn btn-default reqnavHeaderButtons primary-green-btn">Home</button> 
+            <button type="button" class="btn btn-default navHeaderButtons reqnavHeaderButtons firstNavButton">Help</button> 
+            <button type="button" class="btn btn-default navHeaderButtons reqnavHeaderButtons navCloseBtn" value="Close">Close</button>
+        </li>
+
+          <li id="userProfile"></li>
+
+          </ul> 
+        </div><!--/.nav-collapse -->
+      </div>	      
+	    <section class="container-fluid">
+		    <div class="row text-center">
+		    	<div id="messageBar" class="alert alert-info reqmessageBar" >				
+				        			
+				       
+				    </div>
+		    </div>
+		</section>
+    </nav>
+		<!-- Here you can render your Template -->
+		<div id="divLandingView" style="width: 100%;"></div>
+
+		<!-- template  ends -->
+	</div>
+	<!-- /container -->
+
+
+	<!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close"></i></button>
+                    <h4 class="modal-title">Settings</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Do you want to save changes you made to document before closing?</p>
+                    <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="modal fade genericPopupClass" id="genericPopup" tabindex="-1" role="dialog" aria-labelledby="genericModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-center">
+			<div class="modal-content">
+				<div class="modal-header text-left row" >
+					<div class="col-xs-1"><div id="icon" class=""></div></div>
+					<div id="modalLabel" class="col-xs-10"></div>
+					<div class="col-xs-1">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</div>
+					
+				</div>
+				<div class="modal-body ">
+					<div class="modalBody text-center">
+						<div class="row"> 
+							<div class="col-xs-12 txtMessageOne message"></div>
+						</div>
+						<div class="row"> 
+							<div class="col-xs-12 txtMessageTwo message"></div>
+						</div>
+						<div class="row"> 
+							<div class="col-xs-12 txtMessageThree message"></div>
+						</div>
+						<div class="row"> 
+							<div class="col-xs-12 txtMessageFour message"></div>
+						</div>
+					</div>
+					<br>
+					<div class="text-center">
+
+						<button type="button" id="okbutton" data-dismiss="modal">
+						<img src="assets/images/ok.png">
+						OK</button> &nbsp; &nbsp;
+
+						<button type="button" id="cancelbutton" data-dismiss="modal">
+						<img src="assets/images/cross.png">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  	  <div id="phnScrDetpopup" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close"></i></button>
+                    <span class="modal-title bold">Phone Screen Responses</span>
+                </div>
+                <div class="modal-body">
+                	<div class="bold nopad">Minimum Qualification Questions</div>
+                    <div class=" nopad header-div">
+                    	<div class="col-xs-2 nopad first-col">
+                    		<div class="header-label">Phone Screen Date:<span class="phnScrDate"></span></div>
+                    		
+                    	</div>
+                    	<div class="col-xs-4 nopad second-col">
+                    		<div class="header-label">Phone Screen Time:<span class="phnScrTime"></span></div>
+                    		
+                    	</div>
+                    	<div class="col-xs-6 nopad third-col">
+                    		<div class="header-label phnscrlbl">Phone Screener:<span class="phnScrner"></span></div>
+                    		
+                    	</div>
+                    </div>
+                    <div class="col-xs-12 nopad content-div">
+                    	<div class="col-xs-2 nopad first-col">
+                    		<div class="bold posspecific">Position Specific</div>
+                    		<div class="selectrow"> <span class="bold">Q01:</span> <div class="selectCont"> <select class="minReq0" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow"> <span class="bold">Q02:</span> <div class="selectCont"> <select class="minReq1" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow"> <span class="bold">Q03:</span> <div class="selectCont"> <select class="minReq2" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow"> <span class="bold">Q04:</span> <div class="selectCont"> <select class="minReq3" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow"> <span class="bold">Q05:</span> <div class="selectCont"> <select class="minReq4" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow"> <span class="bold">Q06:</span> <div class="selectCont"> <select class="minReq5" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow"> <span class="bold">Q07:</span> <div class="selectCont"> <select class="minReq6" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow"> <span class="bold">Q08:</span> <div class="selectCont"> <select class="minReq7" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow"> <span class="bold">Q09:</span> <div class="selectCont"> <select class="minReq8" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow"> <span class="bold">Q10:</span> <div class="selectCont"> <select class="minReq9" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+                    	</div>
+                    	<div class="col-xs-4 nopad second-col">
+                    		<div class="text-right bold reqspecific">Requisition Specific</div>
+                    		<div class="selectrow row-right"> <span class="select-label">Position/Location:</span> <div class="selectCont"> <select class="minReq10" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow row-right"> <span class="select-label">Employment Category (FT/PT/Seasonal):</span> <div class="selectCont"> <select class="minReq11" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow row-right"> <span class="select-label">Pay Rate:</span> <div class="selectCont"> <select class="minReq12" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow row-right"> <span class="select-label">Weekday Schedule:</span> <div class="selectCont"> <select class="minReq13" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow row-right"> <span class="select-label">Saturday Schedule:</span> <div class="selectCont"> <select class="minReq14" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow row-right"> <span class="select-label">Sunday Schedule:</span> <div class="selectCont"> <select class="minReq15" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow row-right"> <span class="select-label">Early AM (4am-6am) Schedule:</span> <div class="selectCont"> <select class="minReq16" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow row-right"> <span class="select-label">Morning (6am-noon) Schedule:</span> <div class="selectCont"> <select class="minReq17" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow row-right"> <span class="select-label">Afternoon (noon-5pm) Schedule:</span> <div class="selectCont"> <select class="minReq18" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow row-right"> <span class="select-label">Night (5pm-8pm) Schedule:</span> <div class="selectCont"> <select class="minReq19" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow row-right"> <span class="select-label">Late Night (8pm-midnight) Schedule:</span> <div class="selectCont"> <select class="minReq20" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow row-right"> <span class="select-label">Overnight (midnight-5am) Schedule:</span> <div class="selectCont"> <select class="minReq21" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow row-right"> <span class="select-label">Need Schedule Accommodation:</span> <div class="selectCont"> <select class="minReq22" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow row-right"> <span class="select-label">Driver's License:</span> <div class="selectCont"> <select class="minReq23" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+							<div class="selectrow row-right"> <span class="select-label">Reliable Transportation:</span> <div class="selectCont"> <select class="minReq24" disabled><option value="N/A">N/A</option><option value="Yes">Yes</option><option value="No">No</option></select></div></div>
+                    	</div>
+                    	<div class="col-xs-6 nopad third-col">
+                    		<div class="bold">Contact History</div>
+                    		<div class="textarearow"> <textarea id="contacthistTextarea" readonly="readonly"></textarea></div>
+                    		<br>
+                    		<br>
+                    		<br>
+                    		<br>
+                    		<br>
+                    		<div class="bold">Phone Screen Detailed Response</div>
+                    		<div class="textarearow"> <textarea id="phnDtlResp" readonly="readonly"></textarea></div>
+                    		<br>
+                    		<br>
+                    		<div class="selectrow"> <span class="bold">Phone Screen Disposition:</span> <div class="selectCont"> <select class="phnScrDisp" disabled></select></div></div>
+                    	</div>
+                    	</div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+	<div class="modal fade alertmodal"  id="alertModalId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-center">
+	    <div class="modal-content alertmodalContent" style="background: rgb(145,165,175)">
+	      <div class="modal-header">
+	        
+	        <h5 class="modal-title" id="alertModalLabel"></h5>
+	      </div>
+	   <div class="modal-body ">
+	   <div class="myModalBody text-center alertModalBody"></div>
+	   <br>
+	   <div class="text-center">
+	    <button type="button" class="alertmodalbtn" data-dismiss="modal">OK</button></div>
+	      </div> 
+	    </div>
+	  </div>
+	</div>
+	<div class="modal fade alertmodal"  id="noassocalertModalId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-center">
+	    <div class="modal-content alertmodalContent" style="background: rgb(145,165,175)">
+	      <div class="modal-header">
+	        
+	        <h5 class="modal-title" id="alertModalLabel"></h5>
+	      </div>
+	   <div class="modal-body ">
+	   <div class="myModalBody text-center alertModalBody"></div>
+	   <br>
+	   <div class="text-center">
+	    <button type="button" class="alertmodalbtn" data-dismiss="modal">OK</button></div>
+	      </div> 
+	    </div>
+	  </div>
+	</div>
+</body></html>

@@ -1,0 +1,310 @@
+.plupload_button {
+    cursor: pointer;
+}
+.plupload_wrapper {
+    -moz-font-feature-settings: normal;
+    -moz-font-language-override: normal;
+    -x-system-font: none;
+    font-family: Verdana,sans-serif;
+    font-size: 11px;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: normal;
+    width: 100%;
+}
+.plupload .plupload_container input {
+    width: 98%;
+}
+.plupload .plupload_filelist_footer {
+    border-bottom-width: 0;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: 0;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: 0;
+    border-top-width: 1px;
+}
+.plupload .plupload_filelist_header {
+    border-bottom-width: 1px;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: 0;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: 0;
+    border-top-width: 0;
+}
+div.plupload .plupload_file {
+    border-bottom-width: 1px;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: 0;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: 0;
+    border-top-width: 0;
+}
+div.plupload div.plupload_header {
+    border-bottom-width: 1px;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: 0;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: 0;
+    border-top-width: 0;
+    position: relative;
+}
+.plupload_file .ui-icon {
+    cursor: pointer;
+}
+.plupload_header_content {
+    background-image: url("../images/iconUpload.png");
+    background-position: 8px center;
+    background-repeat: no-repeat;
+    min-height: 56px;
+    padding-left: 60px;
+    position: relative;
+}
+.plupload_header_content_bw {
+    background-image: url("../images/iconUpload.png");
+}
+.plupload_header_title {
+    -moz-font-feature-settings: normal;
+    -moz-font-language-override: normal;
+    -x-system-font: none;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: normal;
+    padding-bottom: 3px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 6px;
+}
+.plupload_header_text {
+    -moz-font-feature-settings: normal;
+    -moz-font-language-override: normal;
+    -x-system-font: none;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: normal;
+}
+.plupload_filelist, .plupload_filelist_content {
+    -moz-user-select: none;
+    border-collapse: collapse;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    width: 100%;
+}
+.plupload_cell {
+    padding-bottom: 8px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 8px;
+}
+.plupload_file {
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: -moz-use-text-color;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-left-style-value: none;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: medium;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: -moz-use-text-color;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: none;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: medium;
+}
+.plupload .ui-sortable-helper, .plupload .ui-sortable .plupload_file {
+    cursor: move;
+}
+.plupload_scroll {
+    max-height: 180px;
+    min-height: 168px;
+    overflow-y: auto;
+}
+.plupload_file_size, .plupload_file_status {
+    text-align: right;
+}
+.plupload_file_size, .plupload_file_status {
+    width: 52px;
+}
+.plupload_file_action {
+    width: 16px;
+}
+.plupload_file_name {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-left: 10px;
+}
+.plupload_file_rename {
+    width: 95%;
+}
+.plupload_progress {
+    width: 60px;
+}
+.plupload_progress_container {
+    padding-bottom: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+}
+.plupload_right {
+    float: right;
+}
+.plupload_left {
+    float: left;
+}
+.plupload_clear, .plupload_clearer {
+    clear: both;
+}
+.plupload_clearer, .plupload_progress_bar {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+}
+.plupload_clearer {
+    height: 0;
+}
+.plupload_hidden {
+    display: none;
+}
+.plupload_droptext {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-size: auto auto;
+    border-bottom-color: -moz-use-text-color;
+    border-bottom-style: none;
+    border-bottom-width: 0;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: -moz-use-text-color;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-left-style-value: none;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: 0;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: -moz-use-text-color;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: none;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: 0;
+    border-top-color: -moz-use-text-color;
+    border-top-style: none;
+    border-top-width: 0;
+    line-height: 165px;
+    text-align: center;
+    vertical-align: middle;
+}
+.plupload_buttons, .plupload_upload_status {
+    float: left;
+}
+.plupload_message {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.plupload_message p {
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0.7em;
+    padding-left: 0.7em;
+    padding-right: 0.7em;
+    padding-top: 0.7em;
+}
+.plupload_message strong {
+    font-weight: bold;
+}
+plupload_message i {
+    font-style: italic;
+}
+.plupload_message p span.ui-icon {
+    float: left;
+    margin-right: 0.3em;
+}
+.plupload_header_content .ui-state-error, .plupload_header_content .ui-state-highlight {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-bottom-color: -moz-use-text-color;
+    border-bottom-style: none;
+    border-bottom-width: medium;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: -moz-use-text-color;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-left-style-value: none;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: medium;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: -moz-use-text-color;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: none;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: medium;
+    border-top-color: -moz-use-text-color;
+    border-top-style: none;
+    border-top-width: medium;
+}
+.plupload_message_close {
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.plupload .ui-sortable-placeholder {
+    height: 35px;
+}

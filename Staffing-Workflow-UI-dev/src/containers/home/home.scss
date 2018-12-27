@@ -1,0 +1,353 @@
+.home {
+  @extend .flex-column;
+  background-color: $black12;
+  height: 100%;
+  color: $blackA11;
+  overflow: hidden;
+
+  .home-layout {
+    height: 100%;
+
+    .home-content {
+      background-color: $black12;
+      width: 100%;
+      padding: 0px 100px 0px 100px;
+      overflow: auto;
+      box-sizing: border-box;
+      margin-top: 70px; //margin-top: 173px;
+
+    .home-start {
+      margin-top: 119px;
+      .progress-linear {
+        width: 460px;
+      }
+    }
+      .home-message {
+        min-height: 70px;
+        margin-top: 20px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        .home-title {
+          color: $orange;
+          font-weight: 700;
+          font-size: 30px;
+          line-height: 30px;
+          text-align: center;
+        }
+
+        @media screen and (max-width: 435px) {
+          min-height: 170px;
+        }
+      }
+
+      .home-links {
+        min-height: 80px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @media screen and (max-width: 435px) {
+          min-height: 200px;
+
+          .button {
+            margin-left: 0;
+            margin-right: 0;
+          }
+        }
+      }
+
+      .home-features {
+        width: 100%;
+        min-height: 450px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+
+        > .flex-column {
+          justify-content: center;
+          align-items: center;
+        }
+
+        .feature-header {
+          color: $blue;
+          font-weight: 600;
+          font-size: 20px;
+          margin-top: 5px;
+        }
+
+        label {
+          text-align: center;
+        }
+
+        i {
+          font-size: 65px;
+          color: $black17;
+
+          &.icon_homedepot {
+            color: $orange;
+            background-color: $white;
+          }
+        }
+
+        img {
+          height: 65px;
+        }
+
+        @media screen and (max-width: 435px) {
+          min-height: 1400px;
+
+          .feature-column {
+            div {
+              margin-bottom: 60px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.card-center {
+  h3 {
+    margin-top: 2px;
+  }
+  text-align: center;
+  min-height: 300px;
+  box-sizing: content-box;
+  width: 420px;
+}
+.card-text h5 {
+  color: #999999;
+  text-transform: none;
+}
+.parent-div .child-div .card-center .card-toolbar-display {
+  display: block;
+  .card-title-span h3{
+    color: #666666;
+  }
+}
+.parent-div {
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+}
+.child-div {
+  width: 484px;
+  //height: 400px;
+  margin: 16px;
+  font-size: medium;
+  text-align: left;
+  vertical-align: top;
+  padding: 1%;
+  display:flex;
+  flex-direction:column;
+}
+#icon-person-add {
+  font-size: 40px;
+  margin-top: 15%;
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+}
+#icon-calendar {
+  font-size: 40px;
+  margin-top: 15%;
+}
+
+.header a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.store-switcher-span {
+  display: block;
+  width: 215px;
+  background-color: rgba(43,49,52,0.95);
+  margin-top: 11px;
+}
+
+.header {
+  overflow: visible !important;
+}
+
+.header-dropdown{
+  width:215px !important;
+  text-align: center;
+  display: inline-table!important;
+}
+
+#logoutLink:hover {
+  cursor: pointer;
+}
+.hide-store-switcher-span {
+  display: none;
+}
+.header-action {
+  display: inline-flex;
+  flex-direction: column;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 2px;
+  width: 90px;
+  height: 70px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 0;
+  font-size: 14px;
+  margin-right: -4px;
+  width: 215px;
+  margin-left: auto;
+}
+@media only screen and (min-width: 300px) and (max-width: 740px) {
+  .header .header-action {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #2b3134;
+    display: flex;
+    justify-content: space-around; } }
+.header .header-action {
+  height: 70px;
+  flex-shrink: 0;
+  margin-top: -12px;
+  }
+.header .header-action:hover {
+  background-color: #191d1f;
+  color: #ffffff;
+  text-decoration: none;
+  box-shadow: inset 0 -3px #f96302; }
+
+.p-div{
+  text-align: center;
+}
+.c-div{
+  display: inline-table;
+  font-size: medium;
+  text-align: left;
+  vertical-align: middle;
+  margin-top: 5%;
+  margin-right: 6px;
+  i{
+    font-size: 26px;
+  }
+}
+.user-name{
+  float: left;
+}
+
+.store-number-label {
+  height: 19px;
+  width: 80px;
+  color: #FFFFFF;
+  font-family: "Open Sans";
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.user-label {
+  height: 19px;
+  width: 61px;
+  color: #FFFFFF;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 19px;
+}
+
+.icon-div {
+  margin-left: -31px;
+  margin-right: 8px;
+  padding-right: 9px;
+}
+.store-label {
+  text-align: left;
+  margin-left: 6%;
+  padding-top: 3%;
+}
+
+.store-input {
+  margin-right: 0px;
+  padding-left: 6px;
+  height: 36px;
+  width: 100px;
+  border: 1px solid #CCCCCC;
+  border-radius: 1px;
+  background-color: #FFFFFF;
+  font-size: 18px;
+}
+
+.store-submit {
+  margin-left:0px;
+  padding-left: 0px;
+  height: 36px!important;
+  width: 76px!important;
+  border-radius: 0 2px 2px 0;
+  background-color: #F96302;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.12), 0 1px 2px 0 rgba(0,0,0,0.24);
+  padding-top: 2px !important;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+
+.release-div {
+  width: 484px;
+  font-size: medium;
+  vertical-align: top;
+  padding: 6%;
+  .release-label {
+    text-align: center;
+    color: rgb(102, 102, 102);
+  }
+}
+
+.common-div{
+  text-align: center;
+  p {
+    color: #999999;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+.release-list h5 {
+  color: #999999;
+  text-transform: none;
+  margin: 4px 0;
+}
+
+.breadcrumb {
+  z-index: 1000 !important;
+}
+
+.breadcrumb-nav .breadcrumb:not(:last-child):after {
+  color: #555555;
+  z-index: 1000 !important;
+}
+
+.breadcrumb-nav .breadcrumb.active, .breadcrumb-nav .breadcrumb:active {
+  color: #555555;
+  font-weight: 600;
+  font-size: 14px;
+  z-index: 1000 !important;
+}
+.bcLink {
+  a:link, a:visited {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    z-index: 1000 !important;
+  }
+}

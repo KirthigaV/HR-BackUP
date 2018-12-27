@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "validator_1_1_3.dtd">
+
+<form-validation>
+   <global>
+      <constant>
+        <constant-name>corpId</constant-name>
+        <constant-value>^(\d{6})$</constant-value>
+      </constant>         	      
+      <constant>
+        <constant-name>email</constant-name>
+        <constant-value>^[A-Za-z0-9._%-]*@[A-Za-z0-9._%-]*\.[A-Za-z]{2,4}$</constant-value>
+      </constant>       
+      <constant>
+        <constant-name>phone</constant-name>
+        <constant-value>^\(?(\d{3})\)?[-| ]?(\d{3})[-| ]?(\d{4})$</constant-value>
+      </constant>         	   
+      <constant>
+        <constant-name>zip</constant-name>
+        <constant-value>^\d{5}\d*$</constant-value>
+      </constant>
+	<constant>
+       <constant-name>account</constant-name>
+       <constant-value>^\(?(\d{4})\)?[-| ]?(\d{6})[-| ]?(\d{5})$</constant-value>
+       
+	</constant>
+	<constant> 
+        <constant-name>bca</constant-name>
+        <constant-value>^\(?(\d{6})\)?[-| ]?(\d{4})[-| ]?(\d{1})$</constant-value> 
+	</constant>
+
+   </global>
+<formset>
+
+<form name="/hourposts_init">
+                <field property="storeIdValue" depends="required,minlength,maxlength,mask">
+					<arg0 key="selStoreId"/>
+					<msg name="required" key="errors.storeIdValue.required"/>
+					<msg name="minlength" key="errors.storeIdValue.len"/>
+					<msg name="maxlength" key="errors.storeIdValue.len"/>					
+					<msg name="mask" key="errors.storeIdValue.mask"/>
+					<var>
+						<var-name>mask</var-name> 
+	                    <var-value>^[0-9]*$</var-value> 
+	                </var>          	     
+	     	     	<arg1
+	         	     	name="minlength"
+	         	     	key="${var:minlength}"
+	         	     	resource="false"/>
+	     	     	<arg2
+	         	     	name="maxlength"
+	         	     	key="${var:maxlength}"
+	         	     	resource="false"/>
+	     	       	<var>
+	                   <var-name>minlength</var-name>
+	                   <var-value>4</var-value>
+	             	</var>
+	             	<var>
+	                   <var-name>maxlength</var-name>
+	                   <var-value>4</var-value>
+	             	</var>
+	        </field>
+</form>
+
+</formset>   
+</form-validation>

@@ -1,0 +1,590 @@
+
+<script type="text/javascript" src="app/RSARetailStaffingRequest/js/retailStaffingRequest.js"></script>
+<script type="text/javascript" src="app/RSARetailStaffingRequest/js/createHiringEventPopUp.js"></script>
+<script type="text/javascript" src="app/common/js/errorHandling.js"></script>
+<script type="text/javascript">
+var retailStaffingRequest = new retailStaffingRequest();
+$(document).ready(function() {
+    retailStaffingRequest.initialize();
+    
+  });
+</script>
+
+<div class="row retailStaffingReq">
+  <div class="retailStaffing">
+    <div class="whiteContent firstWhiteContent">
+      <label id="headerLabel"class="col-xs-12 textSelectionTrue">Please complete the form below to submit a request for creating a new job opening. Once you have filled in all fields, click submit. If you have questions or need help, please call 1-866-myTHDHR. (1-866-698-4347)</label>
+
+      <form class="form-horizontal">
+
+      <div class="col-xs-12 jumbotron shadow-box requestInfoHolder ">
+
+        
+        <label class="form-title reqstrTitle">Requestor Information</label>
+        <!-- <div class="col-xs-12 whiteContent requestInfoHolder"> -->
+        <div class="row shadow-box whiteContent firstReqRow">
+
+        <div class="form-group">
+          <label class="text-right col-xs-1">Name:<sub>  *</sub></label>
+          <div class="text-left col-xs-2" id="requestorName"></div>
+          <label class="text-right col-xs-3" for="phoneNumber"  >Phone#:<sub>  *</sub></label>
+          <div class="col-xs-2">
+            <input type="text" id="requestorPhnNum" class="text-right" data-pattern="^[0-9-()]+$" maxlength="14" onclick="retailStaffingRequest.setScreenDirty()">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="text-right col-xs-1 " for="titleText">Title:<sub>  *</sub></label>
+          <div class="col-xs-2">
+          <input type="text" id="titleText" class="form-control"  maxlength="60" onclick="retailStaffingRequest.setScreenDirty()">
+          </div>
+          <label class="text-right col-xs-3 ">Submitted By User ID:<sub>  *</sub></label>
+          <div class="text-left col-xs-2 " id="requestorId"></div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-xs-12">
+            <label class="text-right col-xs-3 requestorLbl">Is the Requestor also the hiring manager?<sub>  *</sub></label>
+            <div class="col-xs-2 noPaddingDiv">
+              <div class="col-xs-4">
+                <div class="radio">
+                  <label><input type="radio" name="isHiringManager" value="YES" checked="checked" onclick="retailStaffingRequest.hideHiringManger(event)">Yes</label>
+                </div>
+              </div>
+            <div class="col-xs-4">
+              <div class="radio">
+                <label><input type="radio" name="isHiringManager" value="NO" onclick="retailStaffingRequest.showHiringManger(event)">No</label>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 jumbotron shadow-box hiringMangerInfoHolder ">
+          <label class="col-xs-12 ">Hiring Manager Information</label>
+
+          <div class="col-xs-12 whiteContent shadow-box hiringMangerInfoHolder">
+           <div class="form-group">
+                <label for="managerName" class="col-xs-1 text-right">Name:<sub>  *</sub></label>
+                <div class="col-xs-2"> <input type="text" class="form-control" id="hireMgrName" maxlength="60" onclick="retailStaffingRequest.setScreenDirty()"></div>
+                <label class="text-right col-xs-3 " for="managerPhoneNum" >Phone#:<sub>  *</sub></label>
+                 <div class="col-xs-2">
+                    <input type="text" id="managerPhoneNum" class="form-control text-right" id="hireMgrPhnNum" onclick="retailStaffingRequest.setScreenDirty()" data-pattern="^[0-9-()]+$" maxlength="14">
+                  </div>               
+            </div>
+            <div class="form-group">
+                <label for="managerTitle" class="col-xs-1 text-right">Title:<sub>  *</sub></label>
+                <div class="col-xs-2"> <input type="text" class="form-control" id="hireMgrTtl" maxlength="60" onclick="retailStaffingRequest.setScreenDirty()"></div>
+                <label class="text-right col-xs-3 " for="managerUserId">UserId:<sub>  *</sub></label>
+                 <div class="col-xs-2">
+                    <input type="text" id="managerUserId" class="form-control" id="hireMgrId" maxlength="60" onclick="retailStaffingRequest.setScreenDirty()">
+                  </div>
+               
+              </div>
+
+            </div>
+        </div>
+
+        </div>
+      </div>
+<hr></hr>
+
+
+
+
+<div class="col-xs-12 jumbotron shadow-box requestInfoHolder  ">
+<label class="form-title reqstrTitle">Requisition Details</label>
+
+<div class="row shadow-box whiteContent firstReqRow">
+ <div class="col-xs-12 form-group">
+      <label for="storeNum" class="col-xs-3 text-right">Store#(MET-Home Store #,not District Code):<sub>  *</sub></label>
+      <div class="col-xs-1"> <input type="text" class="form-control" id="strNum" 
+      onkeyup="retailStaffingRequest.getDepartmentList(event)" data-pattern="^(0|[1-9][0-9]*)$" maxlength="4" onclick="retailStaffingRequest.setScreenDirty()"></div>
+      <label class="text-right col-xs-offset-1 col-xs-5 " for="nofP">Number of Positions:<sub>  *</sub></label>
+       <div class="col-xs-1">
+       <input type="text" id="nofP" class="form-control" id="numPosn" data-pattern="^(0|[1-9][0-9]*)$" maxlength="3" onclick="retailStaffingRequest.setScreenDirty()">
+        </div>
+     
+    </div>
+ <div class="col-xs-12 form-group">
+      <label for="dpmt" class="col-xs-3 text-right">Department#:<sub>  *</sub></label>
+      <div class="col-xs-3" > <select  id="deptNum" class="form-control boldOption" onchange="retailStaffingRequest.GetJobTtlList(event)" disabled="disabled"
+      ><option value="-1">Enter 4 Digit Store #...</option></select></div>
+      <label class="text-right col-xs-offset-1 col-xs-3 " for="noOfI">Requested # of Interviews for this job:</label>
+       <div class="col-xs-1">
+       <input type="text" id="numIntrViews" class="form-control" data-pattern="^(0|[1-9][0-9]*)$" maxlength="3" onclick="retailStaffingRequest.setScreenDirty()" onchange="retailStaffingRequest.setReqstdBool(event)">
+        </div>
+     
+    </div>
+    
+    <div class="col-xs-12 form-group">
+      <label for="jobTitle" class="col-xs-3 text-right">Job Title:<sub>  *</sub></label>
+      <div class="col-xs-3"> <select class="form-control boldOption" id="jobTtl" onchange="retailStaffingRequest.setAutoAttach(event)" disabled="disabled"><option value="-1">Select Department #...</option></select></div>
+      <label class="text-right col-xs-offset-1 col-xs-3" >Job Status:<sub>  *</sub></label>
+       <div class="col-xs-2">
+   <div class="col-xs-3"><div class="checkbox">
+  <label><input type="checkbox" value="" name="jobStat" id="ptPosn" onclick="retailStaffingRequest.setScreenDirty()">PT</label>
+  </div>
+  </div>
+  
+ <div class="col-xs-3 col-xs-offset-1"><div class="checkbox">
+  <label><input type="checkbox" value="" name="jobStat" id="ftPosn" onclick="retailStaffingRequest.setScreenDirty()">FT</label>
+  </div>
+  </div>
+</div>
+</div>
+
+
+  <div class="form-group col-xs-12">
+      <label for="dateNeeded" class="col-xs-3 text-right">Date Needed:<sub>  *</sub></label>
+      <div class="col-xs-2" ><div class="input-group date" id="fillDtDiv"
+                    data-link-formate="MM dd yyyy" data-date-format="yyyy-mm-dd">
+                    <input type="text" id="fillDt" class="form-control" id="dateOfNotice" name="dateOfNotice"
+                      placeholder="" readonly="readonly" onchange="" onclick="retailStaffingRequest.setScreenDirty()"> 
+                  </div> </div>
+      <label class="text-right col-xs-offset-1 col-xs-4" for="managerUserId">Is this a Seasonal/Temporary job?<sub>  *</sub></label>
+       <div class="col-xs-2">
+   <div class="col-xs-3"><div class="radio">
+  <label><input type="radio" value="YES" id="seaTempYes" name="seaTemp" onclick="retailStaffingRequest.setScreenDirty()">Yes</label>
+  </div>
+  </div>
+  
+ <div class="col-xs-3 col-xs-offset-1"><div class="radio">
+  <label><input type="radio" value="NO" id="seaTempNo" checked="true" name="seaTemp" onclick="retailStaffingRequest.setScreenDirty()">No</label>
+  </div>
+  </div>
+</div>
+</div>
+
+<div class="form-group">
+      <label  class="col-xs-3 text-right">Language Skills Ability:</label>
+      <div class="col-xs-4"><div class="checkboxGrid " id="langSklsDesc" onclick="retailStaffingRequest.setScreenDirty()"></div></div>
+      <div class="col-xs-4 col-xs-offset-1">
+        <div class="form-group">
+          <label class="text-right col-xs-5 ">Candidate Type:<sub>  *</sub></label>
+            <div class="col-xs-2"><div class="checkbox">
+             <label><input type="checkbox" value="" id="candTypInt" onclick="retailStaffingRequest.candidateTypeSelected()">Internal</label>
+           </div>
+          </div>  
+            <div class="col-xs-3"><div class="checkbox">
+            <label><input type="checkbox" value="" id="candTypExt" onclick="retailStaffingRequest.candidateTypeSelected()">External</label>
+            </div>
+             </div> 
+        </div>
+
+         <div class="form-group">
+           <label class="text-right col-xs-5 ">Required Experience:</label>
+           <div class="col-xs-6">
+             <select class="form-control" id="reqExp" onclick="retailStaffingRequest.setScreenDirty()"></select> 
+          </div>
+         </div>
+      </div>
+
+      
+   
+   
+
+</div>
+
+<!-- <div class="form-group">
+<label class="control-label col-xs-4 ">Candidate Type:<sub>  *</sub></label>
+   
+     <div class="col-xs-1"><div class="checkbox">
+  <label><input type="checkbox" value="">Internal</label>
+  </div>
+  </div>    
+   <div class="col-xs-3"><div class="checkBox">
+  <label><input type="checkBox" value="">Internal</label>
+  </div>
+  </div>
+
+  <div class="col-xs-1"><div class="checkbox">
+  <label><input type="checkbox" value="">External</label>
+  </div>
+  </div>   
+
+</div> -->
+
+
+<div class="row schedulePrefRow" onclick="retailStaffingRequest.setScreenDirty()"></div>
+<!-- <div class="form-group">
+<label class="control-label col-xs-4 ">Required Experience:</label>
+<div class="col-xs-2">
+ <select class="form-control"></select> 
+</div>
+</div> -->
+
+<div class="form-group">
+
+<label class="text-right col-xs-3">Target Pay:</label>
+
+<div class="col-xs-4">
+<label class=" col-xs-1">$</label>
+<div class="col-xs-3 noPaddingDiv">
+ <input type="text"class="form-control" id="tgtPay" data-pattern="^[0-9]*(\.)?$" maxlength="5" data-min="NaN" data-max="99.99" data-domain="real" data-precision="2" onclick="retailStaffingRequest.setScreenDirty()"> 
+</div>
+<label class=" col-xs-2 ">per hr</label>
+</div>
+</div>
+
+<!-- Removed per Cindy/Kelly Snow Part of SIR 8663 04/25/2016-->
+<!-- <div class="form-group">
+
+ <label class="text-right col-xs-3">Instructions/Notes/Referrals:</label>
+
+<div class="col-xs-5"> 
+<textarea class="form-control" id="noteTxt" maxlength="500" onclick="retailStaffingRequest.setScreenDirty()"></textarea>
+</div>
+</div>-->
+ 
+<div class="form-group invisible" id="rscToManageItem" >
+<label class="text-right col-xs-3">TAC To Manage?<sub>  *</sub></label>
+<div class="col-xs-4">
+<div class="col-xs-2"><div class="radio">
+  <label class=""><input type="radio" value="YES" id="rscManageYes" name="rscMange" onclick="retailStaffingRequest.rscManageOptionsCLicked(event)" disabled>Yes</label>
+  </div>
+  </div>
+  <div class="col-xs-2"><div class="radio">
+  <label class=""><input type="radio" value="NO" id="rscManageNo" name="rscMange" onclick="retailStaffingRequest.rscManageOptionsCLicked(event)" disabled>No</label>
+  </div>
+  </div>
+</div>
+</div>
+
+
+<div class="form-group invisible" id="rscToSchdItem">
+<label class="text-right col-xs-3">TAC To Schedule Interviews?<sub>  *</sub></label>
+<div class="col-xs-4">
+<div class="col-xs-2"><div class="radio">
+  <label class=""><input type="radio" id="rscSchdYes" onclick= "retailStaffingRequest.hideShowIntvwDur()" checked="checked" name="rscSch" value="YES">Yes</label>
+  </div>
+  </div>
+  <div class="col-xs-2"><div class="radio">
+  <label class=""><input type="radio" value="NO" id="rscSchdNo"  onclick= "retailStaffingRequest.hideShowIntvwDur()" name="rscSch">No</label>
+  </div>
+  </div>
+</div>
+</div>
+
+<div class="form-group invisible" id="hiringEventItem">
+<label class="text-right col-xs-3">Off-site or Multi-store Hiring Event?<sub>  *</sub></label>
+<div class="col-xs-4">
+<div class="col-xs-2"><div class="radio">
+  <label class=""><input type="radio" value="YES" id="hiringEvntYes"
+  onclick="retailStaffingRequest.hiringEventOptions(event)" name="hiringEvent">Yes</label>
+  </div>
+  </div>
+  <div class="col-xs-2"><div class="radio">
+  <label class=""><input type="radio" value="NO" id="hiringEvntNo" onclick="retailStaffingRequest.hiringEventOptions(event)" name="hiringEvent">No</label>
+  </div>
+  </div>
+</div>
+</div>
+
+
+<div class="form-group invisible" id="calendarItem">
+<div class="col-xs-3 text-right"><label id="calendarIemLbl" class="text-right" >Attach to Hiring Event:</label><sub>  *</sub></div>
+<div class="col-xs-4">
+<select class="form-control" id="calendarCbo" onclick="retailStaffingRequest.setScreenDirty()"></select>
+  </div>
+</div>
+
+
+<div class="form-group invisible addCalendarHldr">
+<label class=" col-xs-3"></label>
+<div class="col-xs-3">
+<a class="btn btn-green" id="addCalendarBtn" href="" onclick="retailStaffingRequest.createNewStoreCalendar()" data-toggle="modal">Create New Hiring Event</a>
+<!-- <button class="btn  btn-primary form-control" id="createNewHEvent">Create New Hiring Event</button> -->
+  </div>
+</div>
+
+
+<div class="form-group invisible" id="interviewDuration">
+<label class="text-right col-xs-3">Interview Duration (minutes): <sub> *</sub></label>
+<div class="col-xs-2">
+<select class="form-control" id="intvwDur" onchange="retailStaffingRequest.setScreenDirty()"><option value="0">--Select</option><option value="30">30</option></select>
+  </div>
+</div>
+
+<div class="form-group invisible" id="interviewers">
+<label class="text-right col-xs-3">Name(s) of Interviewer(s): </label>
+<div class="col-xs-4">
+<input type="texc" class="form-control" id="nameOfInterviewers" maxlength="200" onclick="retailStaffingRequest.setScreenDirty()">
+  </div>
+</div>
+</form>
+
+</div>
+
+</div>
+
+<div class="row btnsRow">
+ <div class="col-xs-12">
+  <div class="col-xs-6 col-xs-offset-5"><div class="row">
+  <input type="submit" class="btn btn-green" id="submitRequestBtn" onclick="retailStaffingRequest.submitRequest()" value="Submit" data-toggle="modal">
+  <input type="button" class="btn btn-green" value="Cancel" id="cancelBtn" onclick="retailStaffingRequest.onCancelBtnClick()">
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+
+
+<div class="modal fade" id="submitModal" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+      </div>
+      <div class="modal-body storepopupbody">
+        <div class="row">
+          <div class="col-xs-12">
+           <div class="submitMsg textSelectionTrue"><p>You are about to open a new Requisition in AIMS based on job and information entered.</p>
+          <p>If you already have an open Requisition for this Job Title, please call 1-866-myTHDHR to assist.</p>
+          <p>Click OK, to continue, CANCEL to return.</p>
+           </div>
+          </div>
+        </div>
+        <div class="row"></div>
+        <div class="row text-center submitModalBtn">
+          <button type="button" class="btn btn-default" onclick="retailStaffingRequest.submitOkClicked()"><img src="assets/images/ok.png"> OK</button>
+          <button type="button" class="btn btn-default" onclick="retailStaffingRequest.alertOkClicked('#submitModal')"><img src="assets/images/cross.png"> Cancel</button>      
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="cancelUnsaveModal" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+      </div>
+      <div class="modal-body storepopupbody">
+        <div class="row">
+          <div class="col-xs-12">
+           <div class="warningMsg textSelectionTrue"><p>You have entered information for a Requisition Request.  The data will be lost.</p>
+          <p>Click OK to close window, or CANCEL to return to Requisition Request.</p>
+           </div>
+          </div>
+        </div>
+        <div class="row"></div>
+        <div class="row text-center submitModalBtn">
+          <button type="button" class="btn btn-default" onclick="retailStaffingRequest.onCancelButtonOK()"><img src="assets/images/ok.png"> OK</button>
+          <button type="button" class="btn btn-default" onclick="retailStaffingRequest.onCancelButtonCancel()"><img src="assets/images/cross.png"> Cancel</button>      
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="noOfIntrModal" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+      </div>
+      <div class="modal-body storepopupbody">
+        <div class="row">
+          <div class="col-xs-12">
+           <div class="warningMsg textSelectionTrue"><p>You have requested <span id="noOfIntr"></span> interviews.</p>
+          <p>Is this correct?</p>
+          <p>Click OK to accept or Cancel to edit.</p>
+           </div>
+          </div>
+        </div>
+        <div class="row"></div>
+        <div class="row text-center noOfIntrModalBtn">
+          <button type="button" class="btn btn-default" onclick="retailStaffingRequest.acceptValue()"><img src="assets/images/ok.png"> OK</button>
+          <button type="button" class="btn btn-default" onclick="retailStaffingRequest.rejectValue()"><img src="assets/images/cross.png"> Cancel</button>      
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="infoModal" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div><img src="assets/images/info.png"> Information</div> 
+        <button type="button" class="close"  id="infoModalClose" data-dismiss="modal"
+          aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body storepopupbody">
+        <div class="row">
+          <div class="col-xs-12">
+           <div class="submitMsg textSelectionTrue">
+           </div>
+          </div>
+        </div>
+        <div class="row"></div>
+        <div class="row text-center infoModalBtn">
+          <button type="button" class="btn btn-default" onclick="retailStaffingRequest.windowCloseFunc()"><img src="assets/images/ok.png"> OK</button>
+          <button type="button" class="btn btn-default" onclick="retailStaffingRequest.cancelSubmit()" ><img src="assets/images/cross.png"> Cancel</button>      
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="schdErrorModal" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div><img src="assets/images/error.png"> Error</div> 
+      </div>
+      <div class="modal-body storepopupbody">
+        <div class="row">
+          <div class="col-xs-12">
+           <div class="schdErrorModalBody textSelectionTrue">
+           </div>
+          </div>
+        </div>
+        <div class="row"></div>
+        <div class="row text-center infoModalBtn">
+          <button type="button" class="btn btn-default" onclick="retailStaffingRequest.alertOkClicked('#schdErrorModal')"><img src="assets/images/ok.png"> OK</button>     
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="infoCalModal" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div><img src="assets/images/info.png"> Information</div> 
+      </div>
+      <div class="modal-body storepopupbody">
+        <div class="row">
+          <div class="col-xs-12">
+           <div class="submitMsg textSelectionTrue"><p>A new Requisition #<span class="reqNbr"/> has been created in AIMS based on job and information entered.</p><p>You will be redirected to the calendar selected to enter your available time for interviews.</p><p>Please make note of your requisition number: <span class="reqNbr"/></p>
+           </div>
+          </div>
+        </div>
+        <div class="row"></div>
+        <div class="row text-center infoCalModalBtn">
+          <button type="button" class="btn btn-default" onclick="retailStaffingRequest.redirectToCalandar()" data-dismiss="modal"><img src="assets/images/ok.png"/> OK</button>            
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade alertpopup" id="alert" tabindex="-1"
+  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+
+         <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+      </div>
+      <div class="modal-body ">
+        <div class="alertModalBody text-center textSelectionTrue"></div>
+        <br>
+        <div class="text-center">
+          <button type="button" class="btn btn-default"
+            onclick="retailStaffingRequest.warningOkClicked()"><img src="assets/images/ok.png"/> OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="createCalendarModal" tabindex="-1"
+  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog ">
+    <div class="modal-content shadow-box">
+     <!--  <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"
+          aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>        
+      </div> -->
+      <div class="modal-body">
+      <div class="modal-title" id="createcalendarmodalLabel">Create
+          New Store Calendar</div>
+        <div class="calendarpopupform shadow-box">
+          <div class="calendarpopuptext">
+            <div class="cols-xs-12 cols-xs-offset-1">
+              Please enter a person's name,job title,etc., for this store
+              Calendar.<br>
+            </div>
+            <div class="cols-xs-12 cols-xs-offset-1">
+              (example:"Cashier" or "Homer's Schedule")<br>
+            </div>
+            <div class="cols-xs-12 cols-xs-offset-1">Click Create to
+              create new Calendar or Cancel to close without saving.</div>
+
+          </div>
+          <div>
+            <div class="calNameTxt">
+              <div class="CalendarNmaelabelmodal">Calendar Name: <input
+                type="text" id="CalendarNameModalText" data-pattern="[0-9A-Za-z\-\,\'\(\)\_\. ]" maxlength="75" /></div>
+            </div>
+
+            <div calss="row"><div class="calendarButton">
+              <label class=" col-xs-3"></label>
+              <button type="button" class="btn btn-green"
+                onclick="retailStaffingRequest.createCalendar()">Create</button>
+              <button type="button" class="btn btn-green" onclick="retailStaffingRequest.alertOkClicked('#createCalendarModal')">Cancel</button>
+
+            </div> </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="calAlertPopupModal" tabindex="-1"
+  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="z-index:2000" data-backdrop="static" data-keyboard="false">
+  <div class="alert-modal-dialog ">
+    <div class="modal-content" style="background: rgb(145,165,175)">
+      <div class="alert-modal-header">
+        
+      </div>
+      <div class="modal-body">
+        <div class="myModalBody text-center alertModalBody textSelectionTrue"></div>
+   <br>
+   <div class="text-center">
+    <button type="button" class="alertmodalbtn" onclick="retailStaffingRequest.alertOkClicked('#calAlertPopupModal')">OK</button></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="alertPopupModal" tabindex="-1"
+  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog ">
+    <div class="modal-content" style="background: rgb(145,165,175)">
+      <div class="modal-header">
+      </div>
+      <div class="modal-body">
+        <div class="myModalBody text-center alertModalBody textSelectionTrue"></div>
+   <br>
+   <div class="text-center">
+    <button type="button" class="alertmodalbtn" onclick="retailStaffingRequest.alertOkClicked('#alertPopupModal')">OK</button></div>
+      </div>
+      </div>
+    </div>
+  </div>

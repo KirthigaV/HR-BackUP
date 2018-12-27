@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+
+<!--
+	This is a blank Tiles definition file with a commented example.
+-->
+
+<tiles-definitions>
+
+	
+	
+	<definition name="tile.error.common" extends="tile.template">
+		<put name="body" value="/WEB-INF/common/error.jsp" />
+	</definition>
+	
+	<!-- **********This tile has been written for Error message with no left nav**********  -->
+	<definition name="tile.error.noleftnav" extends="tile.template">
+		<put name="leftnav" value="/WEB-INF/common/blank.jsp" />
+		<put name="body" value="/WEB-INF/common/error.jsp" />
+	</definition>
+	
+	<!-- **********End for the Error message with no left nav**********  -->
+	
+	<definition name="tile.template" path="/WEB-INF/template/jpHomeTemplate.jsp">
+		<put name="headernav" value="tile.jpHeader" />
+		<put name="leftnav" value="/WEB-INF/common/blank.jsp" />
+		<put name="body" value="/WEB-INF/common/blank.jsp" />
+		<put name="footer" value="/WEB-INF/common/copyright.jsp" />
+	</definition>
+	
+	
+
+	<definition name="tile.jpHeader" path="/WEB-INF/template/jpHeaderTemplate.jsp">
+		<put name="headernav" value="/WEB-INF/common/jpheader.jsp" />
+	</definition>
+
+
+	<definition name="tile.jp_template" path="/WEB-INF/template/jpHomeTemplate.jsp">
+		<put name="headernav" value="tile.jpHeader" />
+		<put name="leftnav" value="/WEB-INF/common/blank.jsp" />
+		<put name="body" value="/WEB-INF/common/blank.jsp" />
+		<put name="footer" value="/WEB-INF/common/blank.jsp" />
+	</definition>
+
+	<!--- Start tile definition for Enrollment page Header -->
+	<definition name="tile.include" path="/WEB-INF/template/blankTemplate.jsp">
+		<put name="body" value="/WEB-INF/common/blank.jsp" />
+	</definition>
+	
+	<definition name="tile.jp_init" extends="tile.jp_template">
+		<put name="body" value="/WEB-INF/function/jobpostings/jobPostingsHome.jsp"/>
+	</definition>
+	
+	<definition name="tile.hourPostsInit" extends="tile.jp_template">
+		<put name="body" value="/WEB-INF/function/jobpostings/hourlyPostings.jsp"/>
+	</definition>
+
+	 </tiles-definitions>

@@ -1,0 +1,1083 @@
+ /*
+
+ File: THDstyle.css
+ 
+ Abstract: This is the primary base CSS file used to style the high-level
+ UI wrapper or theme for THD web applications.
+ 
+ Version: 1.1
+ Updated by Douglas Borenstein/Slalom Consulting 
+ Date: 9/3/2013
+
+ */ 
+
+/* HTML5 tags */
+header, section, footer,
+aside, nav, article, figure {
+	display: block;
+}
+
+html {
+    background: rgb(51, 51, 51);
+    min-height: 100%; /* make the background gradient span the entire viewport in Firefox */
+}
+body {
+	color: #333;
+	height: 100%;
+	min-height: 100%;
+	font-family: Arial, Verdana, sans-serif;
+	line-height: 1.4;
+	font-size: 10pt;
+	position: relative;
+}
+p {
+	margin: 0 0 2em;
+	position: relative;
+}
+a.textLink {color: #0070C0}
+a.textLink:hover {color: #F96302;}
+
+#thdWebApp {
+    margin-left: auto;
+    margin-right: auto;
+    width: 98%;
+    height: 95%;
+    min-height: 95%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.9);
+    box-shadow: 5px 4px 5px #000;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#cccccc));
+    background-image: -moz-linear-gradient(top, white 20%, #cccccc);
+    background:  linear-gradient(#fff, #ccc);
+    position: relative;
+	zoom: 1;
+}
+
+.ieGrad {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#cccccc);
+	min-height: 95%;
+	height: 95%;
+	position: relative;
+	zoom: 1;
+} 
+
+#header {
+	margin: 0; padding: 0;
+	width: 100%;
+    background-color: transparent;
+  	border-top-right-radius: 10px; border-top-left-radius: 10px;
+    background: linear-gradient(to bottom, #ffffff 0%,#cdcdcd 100%); 
+    -moz-border-radius-topright: 10px; -moz-border-radius-topleft: 10px;
+    -webkit-border-top-right-radius: 10px; -webkit-border-top-left-radius:10px;
+  	background-image: -moz-linear-gradient(top, white, #cdcdcd);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#cdcdcd));
+	/* The following breaks the top nav */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#cdcdcd);
+   	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#cdcdcd)";
+   
+   	position: relative;
+	zoom: 1;
+	border-collapse: collapse;
+}
+
+#header > tbody > tr > td {
+	width: 33% !important;
+}
+
+#header td {
+	margin: 0;
+	padding: 0;
+}
+
+#header td.menuBox {
+	text-align: center;
+	width: 85%;
+}
+
+img.logo {
+	margin: 10px;
+	border: 0;
+	float: left;
+	width: 57px; height: 57px;
+	border: 1px solid #fff;
+}
+
+#appName {
+	font-weight: bold;
+	font-size: 14pt;
+	white-space: nowrap;
+}
+
+#appTagline {
+	color: #666666;
+	font-style:italic;
+	font-size: 11pt;
+	white-space: nowrap;
+	line-height: 1;
+	/* margin-top: 6px; */
+}
+
+.userName, .storeID {
+	font-size: 9pt;
+	position: relative;
+}
+
+.loginInfo {
+    margin-top: 1em;
+    margin-right: 1em;
+}
+
+.preferenceButton {
+    margin-right: 0px !important;
+    display: block;
+}
+
+.button {
+	display: inline-block;
+	vertical-align: baseline;
+	margin: 0 2px;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	font: 12px/80% Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	border-radius: .5em;
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	position: relative;
+}
+
+a.button {
+	padding: .75em 2em .85em;
+	margin: 0 6px;
+	position: relative;
+}
+
+.defaultBtn {	
+	color: #333;
+	border: solid 1px #b7b7b7;
+	background: #fff;
+	background: linear-gradient(to bottom, #ffffff 0%,#ededed 100%); 
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
+	position: relative;
+}
+
+.defaultBtn:hover, .defaultBtn:focus, .defaultBtn:active {
+	color: white;
+	background: #f47c20;
+	background: linear-gradient(to bottom, #f88e11 0%,#f06015 100%); 
+	position: relative;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+}
+.saveBtn {
+	color: white;
+	border: solid 1px #b7b7b7;
+	background: #f47c20;
+	background: linear-gradient(to bottom, #f88e11 0%,#f06015 100%); 
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+	
+	position: relative;
+}
+.saveBtn:hover, .saveBtn:focus, .saveBtn:active {
+	color: white;
+	background: #f47c20;
+	background: linear-gradient(to bottom, #ec8711 0%,#db5c1b 100%); 
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ec8711', endColorstr='#db5c1b');
+	
+	position: relative;
+}
+/* Nav Buttons */
+.navBtn {
+	color: #d7d7d7;
+	border: solid 1px #333;
+	background: #333;
+	background: linear-gradient(to bottom, #666666 0%,#000000 100%); 
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#000000');
+	
+	position: relative;
+}
+.navBtn:hover {
+	background: #000;
+	background: linear-gradient(to bottom, #444444 0%,#000000 100%); 
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#444444', endColorstr='#000000');
+	
+	position: relative;
+}
+.navBtn:active {
+	color: #666;
+	background: linear-gradient(to bottom, #000000 0%,#666666 100%); 
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#666666');
+	
+	position: relative;
+}
+
+button:hover {cursor:pointer}
+/* Styles for everything under the header and navigation bar */
+
+#messageBar {
+	width: 100%;
+	text-align: center;
+    font: 12pt Calibri, Verdana, Arial, Helvetica, sans-serif;
+    vertical-align: middle;
+    padding-top: .2em; padding-bottom: .2em;
+    color: #fff;
+    background: linear-gradient(to bottom, #e6781e 0%,#c36619 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6781e, endColorstr=#c36619);
+   
+   	position: relative;
+}
+#appBody {
+	width: 95%;
+	background-color: #fff;
+	height: 70%;
+	min-height: 350px;
+	border: 1px solid #979797;
+	margin: 10px auto;
+	border-radius: 10px;
+    padding: 10px;
+    position: relative;
+}
+#appBodyTabs {
+	width: 95%;
+	background-color: #fff;
+	height: 70%;
+	min-height: 70%;
+	border: 1px solid #979797;
+	margin: auto 10px;
+	border-radius: 10px;
+    padding: 10px;
+}
+.content {
+    position: relative;
+    padding-top: 3em;
+	/* min-width: 1024px; */
+	z-index: 1;
+}
+
+.content p {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    min-width: 400px;
+    max-width: 800px;
+    background-color: rgba(203, 222, 233, 0.5);
+    text-indent: 1em;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 13pt;
+}
+
+.content h1 {
+    font-size: 34pt;
+    font-family: "Lobster1.1Regular", Impact, cursive;
+    text-align: center;
+    line-height: 1.3em;
+    margin: 0.2em auto 0.2em auto;
+    text-shadow: white 0 0 20px;
+}
+#copyright {
+	font-size: .7em;
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	width: 100%;
+	text-align: center;
+	line-height: 1.1em;
+	margin-bottom: 2px;
+	position: relative; bottom: 6px;
+}
+#release {
+	color: #fff;
+    font-size: .80em;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    margin-top: 5px;
+    left: 0;
+    width: 100%;
+    height: 18px
+}
+
+#menuBar {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	/* display: block;*/
+	height: 40px;
+}
+table.homeSeachBkg {
+	background-image: url(../../images/searchBkgrd.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	vertical-align:top;
+	position: relative;
+	bottom: 10px;
+	height: 57px;
+}
+
+/* Global Navigation */
+#home, #nav {
+	text-align: center;
+	margin: 0px auto;
+	padding: 0;
+	position: relative;
+}
+
+#home li, #nav li {
+	margin: 0 5px;
+	/* padding: 0 0 8px;*/
+	float: none;
+	position: relative;
+	list-style: none;
+	text-align: center;
+    display: inline-block;
+	*display: inline; /* IE 7 & IE8 Hack */
+}
+
+#home li.menu, #nav li.menu {
+	margin: 0 .5em;
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	border-left: 1px solid #b7b7b7;
+	border-right: 1px solid #b7b7b7;
+	border-bottom: 1px solid #b7b7b7;
+  	border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;
+	background: linear-gradient(to bottom, #ffffff 0%,#cdcdcd 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#cdcdcd);
+   	
+   	position: relative;
+	zoom: 1;
+}
+
+/* Nav menu bar - main level link */
+#home a, #nav a {
+	font-weight: bold;
+	color: #9a9a9a;
+	text-decoration: none;
+	display: block;
+	padding:  8px 30px;
+	margin: 0 auto;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, .8);
+  	border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;
+  	position: relative;
+}
+
+#nav > .menu> a {
+    font-size: 1.4em;
+}
+
+/* main level link hover */
+#home li:hover, #home .current a.here, #home li:hover > a, #home .current a.here:focus, #home li:focus > a, #home .current a.here:active, #home li:active > a,
+#nav li:hover, #nav .current a.here, #nav li:hover > a, #nav .current a.here:focus, #nav li:focus > a, #nav .current a.here:active, #nav li:active > a {
+	background: #f89a1b;  /* for non-css3 browsers */
+	background: linear-gradient(to bottom, #faa41a 0%,#f57d20 100%); 
+	color: #444;
+	/* border-top: solid 1px #f8f8f8; */
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
+}
+
+/* sub levels link hover */
+#home ul li:hover a, #home li:hover li a, #home ul li:focus a, #home li:focus li a,
+#nav ul li:hover a, #nav li:hover li a, #nav ul li:focus a, #nav li:focus li a {
+	background: none;
+	border: none;
+	color: #666;
+	box-shadow: none;
+	position: relative;
+	z-index: 1003;
+}
+
+#home ul a:hover, #home ul a:focus, #home ul a:active,
+#nav ul a:hover, #nav ul a:focus, #nav ul a:active {
+	background: #F96302 !important; /* for non-css3 browsers */
+	background: linear-gradient(to bottom, #faa41a 0%,#f57d20 100%) !important; 
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa41a', endColorstr='#f57d20'); /* for IE */
+	color: #fff !important;
+	border-radius: 0;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+	position: relative;
+}
+
+/* CSS Arrow Shape */
+#home ul li:first-child a:after, #nav ul li:first-child a:after
+{
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: -8px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid #fefefe;
+}
+#home ul li:first-child a:hover:after, #nav ul li:first-child a:hover:after
+{
+    border-bottom-color: #f9a31a;
+}
+
+/* level 2 list Rounded Rectangle Background*/
+#home ul, .current ul, #nav ul, .current ul {
+	position: absolute;
+	z-index: 1004;
+	background: #ddd; /* for non-css3 browsers */
+	background: linear-gradient(to bottom, #ffffff 0%,#cfcfcf 100%); 
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#cfcfcf'); /* for IE */
+ 	text-align:left;
+	display: none;
+	margin: 0;
+	padding: 0;
+	width: 215px;
+	top: 42px;
+	left: 0;
+	border: solid 1px #b4b4b4;
+	border-radius: 10px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+}
+/* dropdown */
+#home li.menu:hover > ul.subnav, #home ul li ul li.menu:hover > ul.subnav, #home li.menu:focus > ul.subnav, #home ul li ul li.menu:focus > ul.subnav,
+#nav li.menu:hover > ul.subnav, #nav ul li ul li.menu:hover > ul.subnav, #nav li.menu:focus > ul.subnav, #nav ul li ul li.menu:focus > ul.subnav {
+	display: block;
+	position: absolute;
+	z-index: 1002;
+}
+
+#home ul.subnav li, #nav ul.subnav li {
+	float: none;
+	margin: 0;
+	padding: 0;
+	display: block;
+	text-align:left;
+	z-index: 1002;
+}
+
+#home ul a, #nav ul a {
+	font-weight: normal;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, .9);
+	display: block;
+	position: relative;
+	zoom: 1;
+}
+
+/* level 3+ list */
+#home ul ul, #nav ul ul {
+	left: 181px;
+	top: -3px;
+}
+/* rounded corners for first and last child */
+#home ul.submenu li:first-child > a, #nav ul.submenu li:first-child > a {
+	border-top-left-radius: 9px;
+	border-top-right-radius: 9px;
+}
+
+#home ul.submenu li:last-child > a, #nav ul.submenu li:last-child > a {
+	border-bottom-left-radius: 9px;
+	border-bottom-right-radius: 9px;
+}
+/* clearfix */
+#home:after, #nav:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+html[xmlns] #nav {
+	display: block;
+	position: relative;
+	top: -19px;
+	/* left: 10px; */
+	z-index: 1000;
+}
+* html #home, * html #nav {
+	height: 1%;
+}
+
+/* form */
+.form {border:#CCC solid 1px;padding:0.5em; width: 100%; margin: 0 auto; background: #FFF;}
+.form h2 {text-align:center;font-size:1.3em;}
+.form p {margin:0.8em auto 0.8em auto;clear:both;}
+.form label {font-weight:bold;}
+.form .required {color:red;font-weight:bold;}
+.form .fieldinfo {color:#666;font-size:0.85em;clear:left;margin-top:1em;}
+.form .error {color:red;font-size:0.8em;float:right;width:20em;margin:1em auto auto auto;text-align:justify;}
+.form .text {margin:1em 1em auto auto;width:10em;}
+.form .button {width:auto;}
+.form .group {margin-bottom:2em;width:20em;display:block;margin-top:0.5em;}
+.form .group .pair {display:block;float:left;}
+
+/* search form 
+-------------------------------------- */
+.searchform {
+	display: inline-block;
+	border: solid 1px #d2d2d2;
+	padding: 3px 5px;
+	margin: 2em auto;
+	text-align: center;
+	border-radius: 2em;
+
+	box-shadow: 0 1px 0px rgba(0,0,0,.1);
+
+	background: #f1f1f1;
+	background: linear-gradient(to bottom, #f1f1f1 0%,#ededed 100%); 
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie7 */
+	
+}
+.searchform input {
+	font: normal 14px/120% Arial, Helvetica, sans-serif;
+}
+.searchform .searchfield {
+	background: #fff;
+	padding: 6px 6px 6px 8px;
+	width: 302px;
+	border-radius: 2em;
+	border: solid 1px #bcbbbb;
+	outline: none;
+}
+.searchform .searchfield:focus {
+	box-shadow: 0 0 3px 2.3px #ff6600;
+	border: 1px solid #ff6600;
+}
+.searchform .searchbutton {
+	color: #fff;
+	border: solid 1px #494949;
+	font-size: 11px;
+	height: 29px;
+	text-shadow: 0 1px 1px rgba(0,0,0,.6);
+
+	border-radius: 2em;
+	margin-left:10px;
+
+	background: #5f5f5f;
+	background: linear-gradient(to bottom, #9e9e9e 0%,#454545 100%); 
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e9e9e', endColorstr='#454545'); /* ie7 */
+	-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e9e9e', endColorstr='#454545'); /* ie8 */
+}
+.searchform .searchbutton:hover, .searchform .searchbutton:focus {
+	color: white;
+	background: #f47c20;
+	background: linear-gradient(to bottom, #f88e11 0%,#f06015 100%); 
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+}
+
+/*
+    ColorBox Core Style
+    The following rules are the styles that are consistant between themes.
+    Avoid changing this area to maintain compatability with future versions of ColorBox.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative; overflow:hidden;}
+#cboxLoadedContent{overflow:auto;}
+#cboxLoadedContent iframe{display:block; width:100%; height:100%; border:0;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+
+/* 
+    Example user style
+    The following rules are ordered and tabbed in a way that represents the
+    order/nesting of the generated HTML, so that the structure easier to understand.
+*/
+#cboxOverlay{background:url(../../images/overlay.png) repeat 0 0;}
+#colorbox{}
+    #cboxTopLeft{width:21px; height:21px; background:url(../../images/controls.png) no-repeat -100px 0;}
+    #cboxTopRight{width:21px; height:21px; background:url(../../images/controls.png) no-repeat -129px 0;}
+    #cboxBottomLeft{width:21px; height:21px; background:url(../../images/controls.png) no-repeat -100px -29px;}
+    #cboxBottomRight{width:21px; height:21px; background:url(../../images/controls.png) no-repeat -129px -29px;}
+    #cboxMiddleLeft{width:21px; background:url(../../images/controls.png) left top repeat-y;}
+    #cboxMiddleRight{width:21px; background:url(../../images/controls.png) right top repeat-y;}
+    #cboxTopCenter{height:21px; background:url(../../images/border.png) 0 0 repeat-x;}
+    #cboxBottomCenter{height:21px; background:url(../../images/border.png) 0 -29px repeat-x;}
+    #cboxContent{background:#fff;}
+        #cboxLoadedContent{margin-bottom:28px;}
+        #cboxTitle{position:absolute; bottom:4px; left:0; text-align:center; width:100%; color:#949494;}
+        #cboxCurrent{position:absolute; bottom:4px; left:58px; color:#949494;}
+        #cboxSlideshow{position:absolute; bottom:4px; right:30px; color:#0092ef;}
+        #cboxPrevious{position:absolute; bottom:0; left: 0; background:url(../../images/controls.png) no-repeat -75px 0px; width:25px; height:25px; text-indent:-9999px;}
+        #cboxPrevious.hover{background-position:-75px -25px;}
+        #cboxNext{position:absolute; bottom:0; left:27px; background:url(../../images/controls.png) no-repeat -50px 0px; width:25px; height:25px; text-indent:-9999px;}
+        #cboxNext.hover{background-position:-50px -25px;}
+        #cboxLoadingOverlay{background:url(../../images/loading_background.png) no-repeat center center;}
+        #cboxLoadingGraphic{background:url(../../images/loading.gif) no-repeat center center;}
+        #cboxClose{position:absolute; top: 0; right:20px; background:url(../../images/controls.png) no-repeat -25px 0px; width:25px; height:25px; text-indent:-9999px;}
+        #cboxClose.hover{background-position:-25px -25px;}
+
+/*
+    The following fixes png-transparency for IE6.  
+    It is also necessary for png-transparency in IE7 & IE8 to avoid 'black halos' with the fade transition
+    
+    Since this method does not support CSS background-positioning, it is incompatible with CSS sprites.
+    Colorbox preloads navigation hover classes to account for this.
+    
+    !! Important Note: AlphaImageLoader src paths are relative to the HTML document,
+    while regular CSS background images are relative to the CSS document.
+*/
+.cboxIE #cboxTopLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/internet_explorer/borderTopLeft.png', sizingMethod='scale');}
+.cboxIE #cboxTopCenter{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/internet_explorer/borderTopCenter.png', sizingMethod='scale');}
+.cboxIE #cboxTopRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/internet_explorer/borderTopRight.png', sizingMethod='scale');}
+.cboxIE #cboxBottomLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/internet_explorer/borderBottomLeft.png', sizingMethod='scale');}
+.cboxIE #cboxBottomCenter{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/internet_explorer/borderBottomCenter.png', sizingMethod='scale');}
+.cboxIE #cboxBottomRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/internet_explorer/borderBottomRight.png', sizingMethod='scale');}
+.cboxIE #cboxMiddleLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/internet_explorer/borderMiddleLeft.png', sizingMethod='scale');}
+.cboxIE #cboxMiddleRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/internet_explorer/borderMiddleRight.png', sizingMethod='scale');}
+
+
+.shadetabs{
+	position: relative;
+	top: -2px;
+	padding: 3px 0;
+	margin-left: 40px;
+	margin-top: 10px;
+	margin-bottom: 0;
+	font: bold 12px Arial, Verdana;
+	list-style-type: none;
+	text-align: left; /*set to left, center, or right to align the menu as desired*/
+	z-index: 1;
+}
+
+.shadetabs li {
+	display: inline;
+	margin: 0;
+	position: relative;
+	z-index: 1;
+}
+
+
+.shadetabs li a {
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000'); /* ie7 */
+	-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000'); /* ie8 */
+	background: linear-gradient(to bottom, #f7f7f7 0%,#cccccc 100%); 
+	text-decoration: none;
+	position: relative;
+	z-index: 1;
+	padding: 5px 7px;
+	margin-right: 3px;
+	border: 1px solid #778;
+	color: #2d2b2b;
+	border-top-right-radius: 3px; border-top-left-radius: 3px;
+}
+
+
+.shadetabs li a:visited{
+color: #2d2b2b;
+}
+
+.shadetabs li a:hover{
+text-decoration: none;
+color: #ff6600;
+}
+
+/*
+.shadetabs li a.selected{ /*selected main tab style  
+position: relative;
+top: 1px;
+}
+*/
+.shadetabs li a.selected{ /*selected main tab style */
+	background-color: #fff;
+	background: #fff;
+	border-bottom-color: white;
+}
+
+.shadetabs li a.selected:hover{ /*selected main tab style */
+	text-decoration: none;
+}
+
+/* Clickable Table Rows for THD list table*/
+.dataTable, .dataTable tr, .dataTable th{
+	border: 1px solid #b7babc;
+}
+.dataTable th {
+	background: linear-gradient(to bottom, #ffffff 0%,#eaeaea 100%); 
+	border: 1px solid #b7babc;
+	padding: 6px;
+	text-align:left;
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eaeaea'); /* ie7 */
+	-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eaeaea'); /* ie8 */
+	position: relative;
+	zoom: 1;
+}
+.dataTable { clear:both; margin: 20px auto; text-align: left;}
+.dataTable td {
+	padding: 6px 0px 6px 6px;
+	background: #fff;
+	/* border: 1px solid #b7babc; */
+	background-color: transparent;
+	position: relative;
+}
+
+.dataTable tr:nth-child(odd), .oddRow {
+	background-color: #fafafa;
+	border:inherit;
+}
+.dataTable tr:nth-child(even), .evenRow {
+	background-color: #ffffff;
+	border:inherit;
+}
+.dataTable tbody tr.active td {
+	background: #f57d20;
+	background: linear-gradient(to bottom, #faa41a 0%,#f57d20 100%) !important; 
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa41a', endColorstr='#f57d20'); /* for IE */
+	border:inherit;
+}
+
+.dataTable tbody tr:hover, .dataTable tbody tr:hover>td, .dataTable tbody td:hover {
+	cursor: pointer;
+	color: white;
+	background-color: #f47c20;
+	background: linear-gradient(to bottom, #f88e11 0%,#f06015 100%); 
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+	border: inherit;
+	position: relative;
+}
+.highlight {
+	cursor: pointer;
+	color: white;
+	background-color: #f47c20;
+	background: linear-gradient(to bottom, #f88e11 0%,#f06015 100%); 
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+	position: relative;
+}
+/* For IE 8 compliance */
+/*tr.highlight td {
+	cursor: pointer;
+	color: white;
+	background-color: #f47c20;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+	background: -moz-linear-gradient(top,  #f88e11,  #f06015);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+	position: relative;
+}*/
+/* AutoComplete CSS Styles */
+.ac_results {
+	padding: 0;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ac_results iframe {
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:-1;
+	filter:mask();
+	width:1000px;
+	height:3000px;
+	overflow: hidden;
+	overflow-x: hidden;
+}
+
+.ac_results li {
+	margin: 0;
+	padding: 2px 5px;
+	cursor: pointer;
+	display: block;
+	width: 96%;
+	overflow: hidden;
+	line-height: 1.3em;
+	font-size: 1.0em;
+}
+
+.ac_loading {
+	background : Window url('../../images/loading.gif') right center no-repeat;
+}
+
+.ac_over {
+	background-color: #f27f22;
+	color: HighlightText;
+}
+/* Form CSS */
+.vertForm {
+	border-radius: .5em;
+	background: #f3f3f3;
+	margin: 0 auto;
+	padding: 10px;
+	box-shadow: 0px 0px 6px rgba(0,0,0,.4);
+	}
+	
+.vertForm label{float:none; margin: .5em 0; display:block;}
+.vertForm label.error {color: red; font-weight: bold; display: inline; background-color: pink; padding: 2px; margin-left: 10px}
+.vertForm em {
+  font-weight: bold;
+  font-style: normal;
+  color: #f00;
+}
+.vertForm fieldset, .vertForm form, .vertForm label, .vertForm legend
+ { margin:0; padding:0; border:0; font-weight:inherit; font-style:inherit; vertical-align:baseline; }
+
+.vertForm fieldset {
+	/* width: 280px; */
+	margin: 0 auto;
+	padding: 1.4em;
+	/* width: 430px; */
+	background: #fff;
+}
+.vertForm legend {
+	/* margin-bottom: 1em; */
+	text-shadow: 0 1px 1px rgba(255, 255, 255, .8);
+}
+/* 
+	Structural
+*/
+
+
+/* fieldset
+	{ margin: 0 0 1.5em 0; padding: 1.4em;  }
+*/
+.vertForm legend
+	{ padding: 0 .4em; font-size:1.2em; position: relative; font-weight: bold;}
+
+
+/*label	 
+	{ float:left; width:9em; display:block; clear:left; margin-right:1em; text-align:left;  cursor:hand; }
+*/
+.vertForm textarea, .vertForm input, .vertForm select, .vertForm label, .vertForm button, .vertForm optgroup
+	{ margin-top:5px; }
+
+
+.vertForm input[type="checkbox"], .vertForm input[type="radio"]
+	{ margin-bottom:7px; }	
+
+	
+/* 	Color palette */
+
+.vertForm fieldset
+	{ border:1px solid #ccc; }
+	
+.vertForm legend
+	{ color: #333; }
+	
+.vertForm label
+	{ color:#333; font-weight: bold; }
+	
+.vertForm textarea
+	{ border: 1px solid #666; }
+
+.vertForm textarea:focus, .vertForm input[type="text"]:focus, .vertForm select:focus
+	{ box-shadow: 0 0 1px 1px #ff6600;
+	border: 2px solid #ff6600; }
+
+.vertForm select option[selected]{background-color:#ff6600; color: #000;}
+.vertForm select option:hover{background-color:#ff6600; color: #000;}
+select option:hover{background-color:#ff6600} 
+option:hover {background-color:#000000}
+
+.vertForm input[type="text"]
+	{ border: 1px solid #ccc; 
+	border-radius: 5px;
+ }
+
+/*
+.vertForm input[type="submit"]
+	{  background-color: #ccc; color: #333; }
+*/
+.vertForm input[type="checkbox"]
+	{ color: #000; }
+
+.vertForm input[type="radio"]
+	{  background-color: #fff; color: #000; }
+.vertForm fieldset ol {
+  margin: 0;
+  padding: 0;
+}
+.vertForm fieldset li {
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+}
+
+/* End Vertical Form CSS Styling */
+#help {
+	padding: 1em;
+	font-family: "Arial", Verdana, Helvetica, sans-serif;
+	color: #454545;
+	line-height: 1.8em;
+	font-size: .8em;
+	height: 400px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+#help h3 {
+	margin: 0;
+    font-size: 1.65em;
+    font-weight: normal;	
+	padding-bottom: 1em;
+}
+
+#help .tocHead {
+	margin: 25px 0 8px;
+    padding: 0;
+    display: block;
+    font-weight: bold;
+}
+
+#help a.section {
+	display: block;
+}
+.sectionHead {
+	display: block;
+	border-bottom: 1px solid #FF6600;
+    color: #454545;
+    font-family: 'Segoe UI',Arial,Verdana;
+    font-size: 1.35em;
+    font-weight: normal;
+    margin: 0 0 10px;
+    padding: 25px 0 10px;
+}
+
+.jscontextBtn
+{
+    margin-bottom: 2px;
+    padding: 3px;
+    min-width: 100px;
+    background: #e4e4e4;
+    cursor: pointer;
+    font-size: 13px;
+    text-align: left;
+}
+.jscontextBtn:hover
+{
+    background: gray;
+    color: #fff;
+}
+.jscontextContainer {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, .3);
+	border-radius: .5em;
+	padding: 5px;
+}
+.contextPopUp
+{
+    width: 300px;
+    height: 60px;
+    background: #fff;
+    padding: 10px;
+}
+.contextCaption
+{
+    display: block;
+    margin-bottom: 10px;
+    font-weight:bold;
+}
+
+.buttonBar {
+	margin: 0 auto;
+	width: 100%;
+	background-color: #e1e1e1;
+	text-align:center;
+	padding-bottom: 5px;
+}
+.grey {
+	background-color:#f5f5f5;
+}
+td.fieldLabel {
+	text-align: right;
+	/* width: 160px; */
+	color: #333;
+	font-weight: bold;
+	padding-right: 5px;
+	line-height: 2.0em;
+}
+td.fieldLabel em {
+	color: red;
+	font-size: 1.1em;
+}
+label em {
+  font-weight: bold;
+  font-style: normal;
+  color: #f00;
+  font-size: 1.1em;
+  padding-left: 5px;
+}
+.formContainer textarea:focus, .formContainer input[type="text"]:focus, .formContainer select:focus {
+	box-shadow: 0 0 1px 1px #ff6600;
+	border: 2px solid #ff6600; 
+}
+.formContainer legend {
+	font-size: 1.5em;
+	color: #666;
+}
+.disabled {
+ background-color: #dcdcdc;
+ border: none;
+}
+
+/* THD Liquid Flexible Carousel Style */
+
+.es-carousel-wrapper{
+	background: #101010;
+	padding:10px 37px;
+	border-radius: 10px;
+	position:relative;
+}
+.es-carousel{
+	overflow:hidden;
+	background:#f8f8f8;
+}
+.es-carousel ul{
+	display:none;
+}
+.es-carousel ul li{
+	height:100%;
+	float:left;
+	display:block;
+	margin: 6px;
+}
+.es-carousel ul li a{
+	display:block;
+	border-style:solid;
+	border-color:#ccc;
+	text-align:center;
+	font-size: 10pt;
+	font-weight:bold;
+	background-color: #fff;
+	font-family: 'Rock Salt', cursive;
+	margin: 10px;
+	padding: 10px;
+	text-decoration: none;
+	color: #666;
+}
+.es-carousel ul li a img{
+	display:block;
+	border:none;
+	max-height:100%;
+	max-width:100%;
+	margin: 0px auto;
+	margin-bottom: .5em;
+	box-shadow: 2px 2px 2px 2px rgba(0,0,0,.2);
+}
+.es-nav span{
+	position:absolute;
+	top:50%;
+	left:12px;
+	background:transparent url(../../images/nav.png) no-repeat top left;
+	width:14px;
+	height:26px;
+	margin-top:-13px;
+	text-indent:-9000px;
+	cursor:pointer;
+	opacity:0.8;
+}
+.es-nav span.es-nav-next{
+	right:12px;
+	left:auto;
+	background-position:top right;
+}
+.es-nav span:hover{
+	opacity:1.0;
+}

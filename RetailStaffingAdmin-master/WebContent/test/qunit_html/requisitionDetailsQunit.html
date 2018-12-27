@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <meta charset="utf-8">  
+        <title>QUnit Example</title>
+        
+        
+        <link rel="stylesheet" href="../css/qunit-1.17.1.css">
+ 
+        <script src="../../assets/js/vendor/jquery-1.11.2.js"></script>
+        <script type="../javascript" src="../../assets/js/vendor/jquery-migrate-1.2.1.min.js"></script>
+        <script src="../../assets/js/vendor/jquery.i18n.properties-min-1.0.9.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../../assets/js/jquery.blockUI.js"></script>
+        <script type="text/javascript" src="../../assets/js/jqgrid/jqModal.js"></script>
+        <script src="../../assets/js/vendor/jquery-ui.min.js"></script>
+        <script src="../../assets/js/vendor/bootstrap.min.js"></script>
+       	<script src="../../assets/js/jquery.event.drag-2.2.js"></script>
+		<script src="../../assets/js/jquery.event.drop-2.2.js"></script>
+		<script src="../../assets/js/vendor/underscore-min.js"></script>
+		<script src="../../assets/js/slick.core.js"></script>
+		<script src="../../assets/js/slick.grid.js"></script>
+		<script src="../js/qunit-1.17.1.js"></script>
+		<script src="../js/blanket.min.js"></script>
+
+        <script type="text/javascript" src="../../app/common/js/constants.js"></script>
+        <script type="text/javascript" src="../../app/common/js/Model.js"></script>
+        <script type="text/javascript" src="../../app/common/js/Utility.js"></script> 
+        <script type="text/javascript" src="../../app/common/js/rsaServices.js"></script>
+		<script type="text/javascript" src="../../app/common/js/reusableComponents.js"></script>
+		<script type="text/javascript" src="../../app/common/js/rsaPopup.js"></script>
+        <script type="text/javascript" src="../../app/common/js/errorHandling.js"></script>
+		<script type="text/javascript" src="../../app/common/js/retailStaffingServices.js"></script>
+        
+        
+		<!-- Requisition Details -->
+		<script type="text/javascript" src="../../app/RSARequisitionDetails/js/requisitionDetails.js" data-cover></script>
+		<script type="text/javascript" src="../../app/RSARequisitionDetails/js/getReqScrDtls.js" data-cover></script>
+		<script type="text/javascript" src="../../app/RSARequisitionDetails/js/getHiringEventsByStr.js"></script>
+		<script type="text/javascript" src="../../app/RSARequisitionDetails/js/getCalendarsByStr.js"></script>
+		<script type="text/javascript" src="../../app/RSARequisitionDetails/js/getHiringEventDetails.js"></script>
+		<script type="text/javascript" src="../../app/RSARequisitionDetails/js/retailStaffingCreatePhnScr.js"></script>
+		<script type="text/javascript" src="../../app/RSARequisitionDetails/js/getCandidateCount.js"></script>
+		<script type="text/javascript" src="../../app/RSARequisitionDetails/js/rsaViewApplPool.js"></script>
+		<script type="text/javascript" src="../../app/RSARequisitionDetails/js/rsaViewAssocPool.js"></script>
+		<script type="text/javascript" src="../../app/RSARequisitionDetails/js/retailStaffingAttachAppl.js"></script>
+		
+		<!-- <script type="text/javascript" src="test/app/RSARequisitionDetails/js/requisitionDetailsTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getReqScrDtlsTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getHiringEventsByStrTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getCalendarsByStrTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getHiringEventDetailsTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/retailStaffingCreatePhnScrTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getCandidateCountTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/rsaViewApplPoolTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/rsaViewAssocPoolTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/retailStaffingAttachApplTest.js"></script> -->
+		
+		
+    <Script>
+    function setLanguage(lang) {
+		jQuery.i18n.properties({
+			name : "Messages",
+			path : "app/common/js/bundle/",
+			mode : "both",
+			language : lang,
+			callback : function() {
+				StaticText.loadStaticText();
+			}
+		});  
+		}  
+    </Script>        
+    </head>
+    <body> 
+
+        <div id="qunit"></div>  
+        <div id="qunit-fixture">
+        <div class="reqDetMainContainer">
+			<div class="reqDetContainer container">
+			  <div class="row first-row">
+			    <div class="col-md-6 form-left reqDetForm">
+			      <div class="form-bg">
+			        <span class="form-title">REQUISITION DETAILS</span>
+			        <div class="white-bg topform">
+			          <div class="row reqNbrText">
+			            <div class="col-md-5 row left-col">
+			              <div class="col-md-6 field-align">Number:</div>
+			              <div class="col-md-6 value-align reqNbr"></div>
+			            </div>
+			            <div class="col-md-7 row right-col">
+			              <div class="col-md-4 field-align">FT:</div>
+			              <div class="col-md-8 value-align ft"></div>
+			            </div>
+			          </div>
+			          <div class="row reqNbrLink">
+			            <div class="col-md-5 row left-col">
+			              <div class="col-md-6 field-align">Number:</div>
+			              <div class="col-md-6 value-align"><a class="reqNbr"></a></div>
+			            </div>
+			            <div class="col-md-7 row right-col">
+			              <div class="col-md-4 field-align">FT:</div>
+			              <div class="col-md-8 value-align ft"></div>
+			            </div>
+			          </div>
+			          <div class="row">
+			            <div class="col-md-5 row left-col">
+			              <div class="col-md-6 field-align">Created:</div>
+			              <div class="col-md-6 value-align dateCreate"></div>
+			            </div>
+			            <div class="col-md-7 row right-col">
+			              <div class="col-md-4 field-align">PT:</div>
+			              <div class="col-md-8 value-align pt"></div>
+			            </div>
+			          </div>
+			
+			          <div class="row">
+			            <div class="col-md-5 row left-col">
+			              <div class="col-md-6 field-align">Creator:</div>
+			              <div class="col-md-6 value-align creator"></div>
+			            </div>
+			            <div class="col-md-7 row right-col">
+			              <div class="col-md-4 field-align">Department:</div>
+			              <div class="col-md-8 value-align dept"></div>
+			            </div>
+			          </div>
+			
+			          <div class="row">
+			            <div class="col-md-5 row left-col">
+			              <div class="col-md-6 field-align">Active:</div>
+			              <div class="col-md-6 value-align active"></div>
+			            </div>
+			            <div class="col-md-7 row right-col">
+			              <div class="col-md-4 field-align">Job Code:</div>
+			              <div class="col-md-8 value-align job"></div>
+			            </div>
+			          </div>
+			
+			          <div class="row">
+			            <div class="col-md-5 row left-col">
+			              <div class="col-md-6 field-align">Openings:</div>
+			              <div class="col-md-6 value-align openings"></div>
+			            </div>
+			            <div class="col-md-7 row right-col">
+			              <div class="col-md-4 field-align">Job Title:</div>
+			              <div class="col-md-8 value-align jobTtl"></div>
+			            </div>
+			          </div>
+			
+			          <div class="row">
+			            <div class="col-md-5 row left-col">
+			              <div class="col-md-6 field-align">Date Needed:</div>
+			              <div class="col-md-6 value-align fillDt"></div>
+			            </div>
+			            <div class="col-md-7 row right-col">
+			              <div class="col-md-4 field-align">Screen Type:</div>
+			              <div class="col-md-8 value-align scrTyp"></div>
+			            </div>
+			          </div>
+			
+			        </div>
+			
+			        </div>  
+			        </div>
+			        <div class="col-md-6 form-right reqStrDetForm">
+			          <div class="form-bg">
+			            <span class="form-title topform">REQUISITION STORE DETAILS</span>
+			              <div class="white-bg topform">
+			
+			                <div class="row">
+			                  <div class="col-md-5 row">
+			                    <div class="col-md-5 field-align">Store Number:</div>
+			                    <div class="col-md-7 value-align strNum"></div>
+			                  </div>
+			                  <div class="col-md-7 row">
+			                    <div class="col-md-4 field-align">Name:</div>
+			                    <div class="col-md-8 value-align strName"></div>
+			                  </div>
+			                </div>
+			
+			                <div class="row">
+			                  <div class="col-md-5 row">
+			                    <div class="col-md-5 field-align">Phone:</div>
+			                    <div class="col-md-7 value-align phone"></div>
+			                  </div>
+			                  <div class="col-md-7 row">
+			                    <div class="col-md-4 field-align">Store Manager:</div>
+			                    <div class="col-md-8 value-align strMgr"></div>
+			                  </div>
+			                </div>
+			
+			                <div class="row">
+			                  <div class="col-md-5 row">
+			                    <div class="col-md-5 field-align">Address:</div>
+			                    <div class="col-md-7 value-align add"></div>
+			                  </div>
+			                  <div class="col-md-7 row">
+			                    <div class="col-md-4 field-align">State:</div>
+			                    <div class="col-md-8 value-align state"></div>
+			                  </div>
+			                </div>
+			
+			                <div class="row">
+			                  <div class="col-md-5 row">
+			                    <div class="col-md-5 field-align">City:</div>
+			                    <div class="col-md-7 value-align city"></div>
+			                  </div>
+			                  <div class="col-md-7 row regionRow">
+			                    <div class="col-md-4 field-align">Region: </div>
+			                    <div class="col-md-8 value-align dstCode"></div>
+			                  </div>
+			                </div>
+			
+			                <div class="row">
+			                  <div class="col-md-5 row">
+			                    <div class="col-md-5 field-align">District Code:</div>
+			                    <div class="col-md-7 value-align reg"></div>
+			                  </div>
+			                  <div class="col-md-7 row">
+			                    <div class="col-md-4 field-align">Zip:</div>
+			                    <div class="col-md-8 value-align zip"></div>
+			                  </div>
+			                </div>
+			
+			                <div class="row">
+			                  <div class="col-md-5 row">
+			                    <div class="col-md-5 field-align">Division:</div>
+			                    <div class="col-md-7 value-align div"></div>
+			                  </div>
+			                  <div class="col-md-7 row">
+			                    <div class="col-md-4 field-align"></div>
+			                    <div class="col-md-8 value-align"></div>
+			                  </div>
+			                </div>
+			
+			            </div>
+			          </div>
+			        </div>
+			  </div>
+			  <div class="row">
+			    <div class="col-md-12 staffDet">
+			      <div class="form-bg">
+			            <span class="form-title topform">STAFFING DETAILS</span>
+			              <div class="white-bg topform">
+			
+			                <div class="row">
+			                  <!-- left column -->
+			                  <div class="col-md-6">
+			                    <div class="row">
+			                      <div class="col-md-4 field-align">Requisition Status:</div>
+			                      <div class="col-md-8 value-align">
+			                        <select class="reqStatus">
+			                          
+			                        </select>
+			                      </div>
+			                    </div>
+			
+			                    <div class="row">
+			                      <div class="col-md-4 field-align">Hiring Manager Name:</div>
+			                      <div class="col-md-8 value-align hrgMgrName mandatory">
+			                        <input type="text" class="hrgMgrNameTxt cls" maxlength="60"/>
+			                      </div>
+			                    </div>
+			
+			                    <div class="row">
+			                      <div class="col-md-4 field-align">Hiring Manager Phone:</div>
+			                      <div class="col-md-8 value-align hrgMgrPhn mandatory">
+			                        <input type="text" class="hrgMgrPhnTxt cls" maxlength="14" data-restrict="[0-9\-\(\)]"/>
+			                      </div>
+			                    </div>
+			
+			                    <div class="row">
+			                      <div class="col-md-4 field-align">Queweb Request Number:</div>
+			                      <div class="col-md-8 value-align requestNbr mandatory">
+			                        <input type="text" class="requestNbrTxt cls" maxlength="8" data-restrict="[a-zA-Z0-9]"/>
+			                      </div>
+			                    </div>
+			
+			                    <div class="row" title="When disabled, Interviews have been scheduled, therefore the RSC To Manage Flag cannot be changed.">
+			                      <div class="col-md-4 field-align">RSC to Manage:</div>
+			                      <div class="col-md-8 value-align rscToManageFlg mandatory">
+			                        <strong>
+			                          <input type="radio" name="rscToManageFlgBtn" value="Y" class="rscToManageFlgBtn"/> Yes &nbsp;&nbsp;
+			                          <input type="radio" name="rscToManageFlgBtn" value="N" class="rscToManageFlgBtn"/>No
+			                        </strong>
+			                      </div>
+			                    </div>
+			
+			                    <div class="row" title="When disabled, Interviews have been scheduled, therefore the RSC Will Schedule Flag cannot be changed.">
+			                      <div class="col-md-4 field-align">RSC will Schedule:</div>
+			                      <div class="col-md-8 value-align rscSchdFlg mandatory">
+			                        <strong>
+			                          <input type="radio" name="rscSchdFlgBtn" value="Y" class="rscSchdFlgBtn"/> Yes &nbsp;&nbsp;
+			                          <input type="radio" name="rscSchdFlgBtn" value="N" class="rscSchdFlgBtn"/>No
+			                        </strong>
+			                      </div>
+			                    </div>
+			
+			                    <div class="row">
+			                      <div class="col-md-4 field-align calendarLabel">Attached to Calendar:</div>
+			                      <div class="col-md-8 value-align calendar mandatory">
+			                        <select class="calendarLst" title="When disabled, Interviews have been scheduled, therefore the Requisition cannot be moved to a different Calendar."></select>
+			                      </div>
+			                    </div>
+			
+			                    <div class="row interviewDurtnRow">
+			                      <div class="col-md-4 field-align">Interview Duration (minutes):</div>
+			                      <div class="col-md-8 value-align duration mandatory">
+			                        <select class="interviewDurtn" title="Sixty minute interviews are no longer available.">
+			                          <option value="0">--Select--</option>
+			                          <option value="30">30</option>
+			                          <option value="60" disabled>60</option>
+			                        </select>
+			                      </div>
+			                    </div>
+			
+			                    <div class="row">
+			                      <div class="col-md-4 field-align">Qualified Pool Notes:</div>
+			                      <div class="col-md-8 value-align quaplnotes ">
+			                        <textarea class="qualPoolNts  cls" maxlength="500"></textarea>
+			                      </div>
+			                    </div>
+			
+			                    <div class="row">
+			                      <div class="col-md-4 field-align">Language Skills Ability:</div>
+			                      <div class="col-md-8 value-align langskillabl">
+			                        <div class="langskillablcontainer">
+			                        </div>
+			                      </div>
+			                    </div>
+			
+			                    <div class="row">
+			                      <div class="col-md-4 field-align">Hiring Event?:</div>
+			                      <div class="col-md-8 value-align hrgEvnt">
+			                        <strong>
+			                          <input type="radio" name="hrgEvntFlg" value="Y" class="hrgEvntFlg" id="hrgEvntFlgY"/> Yes &nbsp;&nbsp;
+			                          <input type="radio" name="hrgEvntFlg" value="N" class="hrgEvntFlg" id="hrgEvntFlgN"/>No
+			                        </strong>
+			                      </div>
+			                    </div>
+			
+			                    <div class="row hrgEvntY left oldHrngDetForm">
+			                      <div class="col-md-12">
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Hiring Event Start Date:</div>
+			                          <div class="col-md-8 value-align"> <input type="text" class="hrgEvntStartDate cls" id="hrgEvntStartDateID"> </div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Hiring Event End Date:</div>
+			                          <div class="col-md-8 value-align"> <input type="text" class="hrgEvntEndDate cls" id="hrgEvntEndDateID"> </div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Hiring Event Phone:</div>
+			                          <div class="col-md-8 value-align"> <input type="text" class="hrgEvntPhn cls" id="hrgEvntPhnID" data-restrict="[0-9\-\(\)]" maxlength="14"> </div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Hiring Event Start Time:</div>
+			                          <div class="col-md-8 value-align hrgEvntStTime">
+			                            <input type="text" class="hours cls" maxlength="2" data-restrict="[0-9]"/><input type="text" class="minutes cls" maxlength="2" data-restrict="[0-9]" /><select class="tmFrmt">
+			                                  <option value="0">--Select--</option>
+			                                  <option value="1">AM</option>
+			                                  <option value="2">PM</option>
+			                                </select> 
+			                          </div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Hiring Event End Time:</div>
+			                          <div class="col-md-8 value-align hrgEvntEndTime">
+			                            <input type="text" class="hours cls" maxlength="2" data-restrict="[0-9]"/><input type="text" class="minutes cls" maxlength="2" data-restrict="[0-9]"/><select class="tmFrmt">
+			                                  <option value="0">--Select--</option>
+			                                  <option value="1">AM</option>
+			                                  <option value="2">PM</option>
+			                                </select>
+			                          </div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Interview Duration(minutes):</div>
+			                          <div class="col-md-8 value-align">
+			                            <input type="text" class="interviewDurtnMin" maxlength="3" data-restrict="[0-9]"/>
+			                          </div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Interviews per Time Slot:</div>
+			                          <div class="col-md-8 value-align">
+			                            <input type="text" class="interviewsperTimeSlot" maxlength="2" data-restrict="[0-9]"/>
+			                          </div>
+			                        </div>
+			                        
+			                      </div>
+			                    </div>
+			
+			                    <div class="row hrgEvntY left newHrngDetForm">
+			                      <div class="col-md-12">
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Hiring Event Dates:</div>
+			                          <div class="col-md-8 value-align"> <span class="hrgEvntStartDateNew" id=""></span> <strong>to</strong> <span class="hrgEvntEndDateNew" id=""> </span></div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Event Type:</div>
+			                          <div class="col-md-8 value-align eventTypeText"></div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Event Manager Name:</div>
+			                          <div class="col-md-8 value-align eventMgrName"></div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Event Manager Title:</div>
+			                          <div class="col-md-8 value-align eventMgrTitle"></div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Event Manager Phone:</div>
+			                          <div class="col-md-8 value-align eventMgrPhone"></div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Event Manager Email:</div>
+			                          <div class="col-md-8 value-align eventMgrEmail"></div>
+			                        </div>
+			                       
+			                        
+			                      </div>
+			                    </div>
+			
+			                  </div>
+			                  <!-- right column -->
+			                  <div class="col-md-6">
+			                    <div class="row">
+			                      <div class="col-md-5 field-align"> &nbsp; </div>
+			                      <div class="col-md-7 value-align"> &nbsp; </div>
+			                    </div>
+			
+			                    <div class="row">
+			                      <div class="col-md-4 field-align">Hiring Manager Title:</div>
+			                      <div class="col-md-8 value-align hrgMgrTtlDiv mandatory">
+			                        <input type="text" class="hrgMgrTtl  cls" maxlength="50" data-restrict="[a-z A-Z]"/>
+			                      </div>
+			                    </div>
+			
+			                    <div class="row">
+			                      <div class="col-md-4 field-align">Target Pay:</div>
+			                      <div class="col-md-8 value-align targetPayDiv">
+			                        <strong>$</strong>&nbsp; <input type="text" class="targetPay textBoxAlignRight cls" maxlength="5" data-restrict="[0-9\.]"/><strong>/hr</strong> 
+			                      </div>
+			                    </div>
+			
+			                    <div class="row">
+			                      <div class="col-md-4 field-align">Desired Experience:</div>
+			                      <div class="col-md-8 value-align desiredExpDiv">
+			                        <select class="desiredExp"></select>
+			                      </div>
+			                    </div>
+			
+			                    <div class="row">
+			                      <div class="col-md-4 field-align">Requested # of interviews:</div>
+			                      <div class="col-md-8 value-align reqNumInterviewsDiv">
+			                        <input class="reqNumInterviews textBoxAlignRight" type="text" maxlength="3" data-restrict="[0-9\.]"/>
+			                      </div>
+			                    </div>
+			
+			                    <div class="row">
+			                      <div class="col-md-4 field-align">Seasonal/Temporary:</div>
+			                      <div class="col-md-8 value-align sealTemp mandatory">
+			                        <strong>
+			                          <input type="radio" name="sealTempJob" value="Y" class="sealTempJob"/> Yes &nbsp;&nbsp;
+			                          <input type="radio" name="sealTempJob" value="N" class="sealTempJob"/>No
+			                        </strong>
+			                      </div>
+			                    </div>
+			
+			                    <div class="row">
+			                      <div class="col-md-4 field-align">Referrals:</div>
+			                      <div class="col-md-8 value-align ReferalsDiv">
+			                        <textarea class="Referals cls" maxlength="500"></textarea>
+			                      </div>
+			                    </div>
+			
+			                    <div class="row">
+			                      <div class="col-md-4 field-align">Name(s) of the Interviewer(s):</div>
+			                      <div class="col-md-8 value-align daysTmMgrAvbleDiv">
+			                        <input type="text" class="daysTmMgrAvble cls" maxlength="200"/>
+			                      </div>
+			                    </div>
+			
+			                    <div class="row schedulePrefRow">
+			                      
+			                    </div>
+			                    <div class="row hrgEvntY right oldHrngDetForm">
+			                      <div class="col-md-12">
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Hiring Event Address:</div>
+			                          <div class="col-md-8 value-align"> <input type="text" class="hrgEvntAddr cls" id="hrgEvntAddrID" maxlength="60"> </div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Hiring Event Location:</div>
+			                          <div class="col-md-8 value-align"> <input type="text" class="hrgEvntLoc cls" id="hrgEvntLocID" maxlength="255"> </div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Hiring Event City:</div>
+			                          <div class="col-md-8 value-align"> <input type="text" class="hrgEvntCity cls" id="hrgEvntCityID" maxlength="60" data-restrict="[a-z A-Z]"> </div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Hiring Event State:</div>
+			                          <div class="col-md-8 value-align"> <select class="hrgEvntState"></select> </div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Hiring Event Zip:</div>
+			                          <div class="col-md-8 value-align"> <input type="text" class="hrgEvntZip cls" maxlength="5" data-restrict="[0-9]"> </div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Hiring Event Breaks:</div>
+			                          <div class="col-md-8 value-align"> <input type="text" class="hrgEvntBrks cls" id="hrgEvntBrksID" maxlength="30"> </div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Hiring Event Lunch:</div>
+			                          <div class="col-md-8 value-align hrgEvntLunch">
+			                            <input type="text" class="hours cls" maxlength="2" data-restrict="[0-9]"/><input type="text" class="minutes cls" maxlength="2" data-restrict="[0-9]"/><select class="tmFrmt">
+			                                  <option value="0">--Select--</option>
+			                                  <option value="1">AM</option>
+			                                  <option value="2">PM</option>
+			                                </select> 
+			                          </div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Last interview Time:</div>
+			                          <div class="col-md-8 value-align lastIntrvTime">
+			                            <input type="text" class="hours cls" maxlength="2" data-restrict="[0-9]" /><input type="text" class="minutes cls" /><select class="tmFrmt">
+			                                  <option value="0">--Select--</option>
+			                                  <option value="1">AM</option>
+			                                  <option value="2">PM</option>
+			                                </select> 
+			                          </div>
+			                        </div>
+			
+			                      </div>
+			                    </div>
+			
+			                    <div class="row hrgEvntY right newHrngDetForm">
+			                      <div class="col-md-12">
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Hiring Event Location:</div>
+			                          <div class="col-md-8 value-align hrgEvntLocNew"></div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Event Address:</div>
+			                          <div class="col-md-8 value-align eventAddrNew"></div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Event City:</div>
+			                          <div class="col-md-8 value-align eventCityNew"></div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Event State:</div>
+			                          <div class="col-md-8 value-align eventStateNew"></div>
+			                        </div>
+			
+			                        <div class="row">
+			                          <div class="col-md-4 field-align">Event Postal Code:</div>
+			                          <div class="col-md-8 value-align eventPostNew"></div>
+			                        </div>                      
+			                        
+			                      </div>
+			                    </div>
+			
+			                  </div>
+			                </div>
+			
+			
+			            </div>
+			          </div>
+			    </div>
+			  </div>
+			    <div class="row reqQua">
+			      <div class="col-md-12 candidates">
+			        <div class="form-bg">
+			              <span class="form-title">CANDIDATES</span>
+			                <div class="white-bg">
+			                  <div id="candidates-grid" class="custom-grid">
+			                    
+			                  </div>
+			                </div>
+			        </div>
+			      </div>
+			    </div>
+			    <div class="row reqQua">
+			      <div class="col-md-12 phnScreen">
+			        <div class="form-bg">
+			              <span class="form-title">PHONE SCREEN</span>
+			                <div class="white-bg">
+			                  <div id="phnscr-grid" class="custom-grid">
+			                    
+			                  </div>
+			                </div>
+			        </div>
+			      </div>
+			    </div>
+			    <div class="row qualPool">
+			      <div class="col-md-12 filterPool">
+			        <div class="form-bg">
+			              <span class="form-title">FILTER POOL</span>
+			                <div class="white-bg">
+			                  <div class="row">
+			                    <div class="col-md-6 field-align">Select a Language to Filter Applicant</div>
+			                    <div class="col-md-6 value-align">
+			                      <select class="langSel">
+			
+			                      </select>
+			                      <button id="filterAppl" class="btn btn-default action-btn primary-green-btn">Filter</button>
+			                    </div>
+			                  </div>
+			                </div>
+			        </div>
+			      </div>
+			    </div>
+			    <div class="row qualPool">
+			      <div class="col-md-12 qualifiedPoolform">
+			        <div class="form-bg">
+			              <span class="form-title">QUALIFIED POOL</span>
+			                <div class="white-bg">
+			                  <div class="row">
+			                    <div class="col-md-12 candCountField"><strong>Candidate Count:</strong> <span class="candCount"></span></div> 
+			                    
+			                  </div>
+			                  <br/>
+			                  <div class="row">
+			                    <div class="col-md-12">
+			                      <div id="qpTabs" class="custom-tabs">
+			                        <ul>
+			                          <li><a href="#qpapplTab">Applicants</a></li>
+			                          <li><a href="#qpassocTab">Associate</a></li>
+			                        </ul>
+			                        <div id="qpapplTab" class="tabcontent">
+			                          <div class="row">
+			                            <div class="col-md-4 text-right"><div id="leftArrow" class="leftOrangeArrow" onclick="reqDet.selectPreviousPageApplicants()"></div></div>
+			                            <div class="col-md-4 text-center">Applicant Group: <span class="currentApplicantGroupStartValue"></span> - <span class="currentApplicantGroupEndValue"></span> of <span class="currentApplicantGroupTotalValue"></span></div>
+			                            <div class="col-md-4 text-left"><div id="rightArrow" class="rightOrangeArrow" onclick="reqDet.selectNextPageApplicants()"></div></div>
+			                          </div>
+			                          <div id="qpapplGrid" class="custom-grid"></div>
+			                          <div class="qpapplTier tierDiv">Tiering:<span class="qpapplTierValue"></span></div>
+			                        </div>
+			                        <div id="qpassocTab" class="tabcontent">
+			                          <div class="row">
+			                            <div class="col-md-4 text-right"><div id="leftArrow" class="leftOrangeArrow" onclick="reqDet.selectPreviousPageAssociates()"></div></div>
+			                            <div class="col-md-4 text-center">Associate Group: <span class="currentAssociateGroupStartValue"></span> - <span class="currentAssociateGroupEndValue"></span> of <span class="currentAssociateGroupTotalValue"></span></div>
+			                            <div class="col-md-4 text-left"><div id="rightArrow" class="rightOrangeArrow" onclick="reqDet.selectNextPageAssociates()"></div></div>
+			                          </div>
+			                          <div id="qpassocGrid" class="custom-grid"></div>
+			                          <div class="qpassocTier tierDiv">Tiering:<span class="qpassocTierValue"></span></div>
+			                        </div>
+			                      </div>
+			                    </div>
+			                  </div>
+			                </div>
+			        </div>
+			      </div>
+			    </div>
+			    <div class="row action-btn-row qualPool">
+			      <div class="col-md-3"></div>
+			      <div class="col-md-9 text-right">
+			        <button id="saveQPButton" class="btn btn-default action-btn primary-green-btn">Save</button>
+			        <button id="submitQPButton" class="btn btn-default action-btn primary-green-btn">Submit</button>
+			        <button id="cancelQPButton" class="btn btn-default action-btn primary-green-btn">Cancel</button>
+			      </div>
+			    </div>
+			   <div class="row action-btn-row reqQua">
+			    <div class="col-md-3"></div>
+			    <div class="col-md-9">
+			      <button id="saveReqDtlsBtn" class="btn btn-default action-btn primary-green-btn">Save</button>
+			      <button id="submitPhnScrnDtlsBtn" class="btn btn-default action-btn primary-green-btn">Submit</button>
+			      <button id="cancelBtn" class="btn btn-default action-btn primary-green-btn">Cancel</button>
+			      <button id="CrtPhnScr" class="btn btn-default action-btn primary-green-btn">Create Phone Screen</button>
+			      <button id="qualifiedPoolBtn" class="btn btn-default action-btn primary-green-btn">View Qualified Pool</button>
+			    </div>
+			  </div>
+			</div>
+			</div>
+        </div>  
+        
+        
+        <script src="../apps/RSARequisitionDetails/js/requisitionDetailsTest.js"></script>
+        
+    </body>
+</html>

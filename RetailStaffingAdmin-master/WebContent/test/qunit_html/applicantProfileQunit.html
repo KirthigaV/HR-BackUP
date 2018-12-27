@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <meta charset="utf-8">  
+        <title>QUnit Example</title>
+        <link rel="stylesheet" href="../css/qunit-1.17.1.css">
+        <script src="../js/qunit-1.17.1.js"></script>
+        <script src="../js/blanket.min.js"></script>
+
+        <script src="../../assets/js/vendor/jquery-1.10.1.min.js"></script>
+		<script src="../../assets/js/vendor/jquery-ui.js"></script>
+		<script src="../../assets/js/vendor/jquery-ui.min.js"></script>
+		<script src="../../assets/js/vendor/jquery.cookie.js"></script>
+		<script src="../../assets/js/jquery.blockUI.js"></script>
+		<script src="../../assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		<script src="../../assets/js/vendor/bootstrap.min.js"></script>
+		<script src="../../assets/js/vendor/jquery.validate.min.js"></script>
+		<script src="../../assets/js/vendor/jquery.dataTables.min.js"></script>
+		<script src="../../assets/js/vendor/jquery.jqGrid.js"></script>
+		<script src="../../assets/js/jquery.event.drag-2.2.js"></script>
+		<script src="../../assets/js/jquery.event.drop-2.2.js"></script>
+		<script src="../../assets/js/vendor/underscore-min.js"></script>
+		<script src="../../assets/js/slick.core.js"></script>
+		<script src="../../assets/js/slick.grid.js"></script>
+        
+        <script type="text/javascript" src="../../app/common/js/rsaServices.js"></script>
+        <script type="text/javascript" src="../../app/common/js/constants.js"></script>
+        <script type="text/javascript" src="../../app/common/js/rsaPopup.js"></script>
+        <script type="text/javascript" src="../../app/common/js/Utility.js"></script>
+        
+        <script type="text/javascript" src="../../app/RSApplicantProfile/js/getApplicantProfile.js" data-cover></script>
+		<script type="text/javascript" src="../../app/RSApplicantProfile/js/loadRejectDetails.js" data-cover></script>
+		<script type="text/javascript" src="../../app/RSApplicantProfile/js/attachApplToReq.js" data-cover></script>
+		<script type="text/javascript" src="../../app/RSApplicantProfile/js/getPhoneScreenMinimumDetails.js" data-cover></script>
+		<script type="text/javascript" src="../../app/RSARequisitionDetails/js/requisitionDetails.js"></script>
+        <script type="text/javascript" src="../../app/RetailStaffing/js/retailStaffing.js"></script>		
+		
+		<script type="text/javascript" src="../../app/RSApplicantProfile/js/applicantProfile.js" data-cover></script>
+        <script type="text/javascript" src="../../test/apps/RSApplicantProfile/js/applicantProfileTest.js" data-cover></script>
+    </head>
+    <body> 
+
+        <div id="qunit"></div>  
+        <div id="qunit-fixture">
+<div class="applProfMainContainer">
+  <div class="applProfContainer">
+    <div class="applProf-left-col col-md-5">
+      <div class="form-bg personalInfo">
+        <span class="form-title">Personal Information</span>
+        <div class="white-bg">
+          <div class="row">
+            <div class="col-md-6 personalDet">
+              <div class="fullname bold value-text"></div>
+              <div class="phoneNum value-text"></div>
+              <div class="address1 value-text"></div>
+              <div class="address2 value-text"></div>
+              <div class="cityStateZip value-text"></div>
+              <div class="candRefNbr value-text"></div>
+              <div class="email value-text"></div>
+            </div>
+            <div class="col-md-6 eligDet personalInfoRt">
+              <div class="row"> <div class="bold">USA Eligibility</div> 
+                <div class="checkBoxCont block-control value-part value-part">
+                       <label class=""><input type="checkBox" class="usaEligCheck" value="Y">Yes</label>&nbsp;&nbsp;&nbsp;
+                       <label class=""><input type="checkBox" class="usaEligCheck" value="N">No</label>
+                     </div>
+                  </div>
+                  
+                  <div class="row"> <div class="bold">Age Eligibility Met</div> 
+                <div class="checkBoxCont block-control value-part">
+                       <label class=""><input type="checkBox" class="ageEligCheck" value="Y">Yes</label>&nbsp;&nbsp;&nbsp;
+                       <label class=""><input type="checkBox" class="ageEligCheck" value="N">No</label>
+                     </div>
+                  </div>
+                  
+                  <div class="row"> <div class="bold">On Leave or Laid Off</div> 
+                <div class="checkBoxCont block-control value-part">
+                       <label class=""><input type="checkBox" class="leaveorlaidCheck" value="Y">Yes</label>&nbsp;&nbsp;&nbsp;
+                       <label class=""><input type="checkBox" class="leaveorlaidCheck" value="N">No</label>
+                     </div>
+                  </div>
+                  
+                  <div class="row"> <div class="bold">Previous Employee</div> 
+                <div class="checkBoxCont block-control value-part">
+                       <label class=""><input type="checkBox" class="prevEmpCheck" value="Y">Yes</label>&nbsp;&nbsp;&nbsp;
+                       <label class=""><input type="checkBox" class="prevEmpCheck" value="N">No</label>
+                     </div>
+                  </div>
+                  
+                  <div class="row"> <div class="bold">Location</div> 
+                <div class="location block-control value-part value-text">
+                       
+                     </div>
+                  </div>
+                  <div class="row"> <div class="bold">Date From</div> 
+                <div class="dateFrom block-control value-part value-text">
+                       
+                     </div>
+                  </div>                  
+                  <div class="row"> <div class="bold">Date To</div> 
+                <div class="dateTo block-control value-part value-text">
+                       
+                     </div>
+                  </div>
+                  <div class="row"> <div class="bold">Relative Working For HD</div> 
+                <div class="checkBoxCont block-control value-part">
+                       <label class=""><input type="checkBox" class="relForHDCheck" value="Y">Yes</label>&nbsp;&nbsp;&nbsp;
+                       <label class=""><input type="checkBox" class="relForHDCheck" value="N">No</label>
+                     </div>
+                  </div>
+                  
+                  <div class="row"> <div class="bold">Name</div> 
+                <div class="relName block-control value-part value-text">
+                       
+                     </div>
+                  </div>
+                  
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-bg assocInfo">
+        <span class="form-title">Associate Information</span>
+        <div class="white-bg">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-5 bold text-right">Current Store</div>
+                <div class="col-md-7 currStoreText value-text"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 bold text-right">Current Dept</div>
+                <div class="col-md-7 currDeptText value-text"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 bold text-right">Current Title</div>
+                <div class="col-md-7 currTittleText value-text"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-5 bold text-right">Current Status</div>
+                <div class="col-md-7 currStatusText value-text"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 bold text-right">Hire Date</div>
+                <div class="col-md-7 hireDateText value-text"></div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="row bold">Review Results</div>
+          <div id="reviewResultsGrid" class="row custom-grid"></div>
+          <br>
+          <div class="row bold">Previous Positions</div>
+          <div id="prevPositionGrid" class="row custom-grid"></div>
+        </div>
+      </div>
+      <div class="form-bg eduInfo">
+        <span class="form-title">Education</span>
+        <div class="white-bg">
+          <div class="education education1 row">
+            <div class="col-md-7">
+              <div class="row">
+                <div class="col-md-5 bold text-right">School Name</div>
+                <div class="col-md-7 _0SchoolName value-text"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 bold text-right">Education</div>
+                <div class="col-md-7 _0Education value-text"></div>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="row degreeRow">
+                <div class="bold">Degree Received</div> 
+                <div class="checkBoxCont block-control value-part">
+                       <label class=""><input type="checkBox" class="_0Graduate" value="Y">Yes</label>&nbsp;&nbsp;&nbsp;
+                       <label class=""><input type="checkBox" class="_0Graduate" value="N">No</label>
+                     </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="education education2 row">
+            <div class="col-md-7">
+              <div class="row">
+                <div class="col-md-5 bold text-right">School Name</div>
+                <div class="col-md-7 _1SchoolName value-text"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 bold text-right">Education</div>
+                <div class="col-md-7 _1Education value-text"></div>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="row degreeRow">
+                <div class="bold">Graduate</div> 
+                <div class="checkBoxCont block-control value-part">
+                       <label class=""><input type="checkBox" class="_1Graduate" value="Y">Yes</label>&nbsp;&nbsp;&nbsp;
+                       <label class=""><input type="checkBox" class="_1Graduate" value="N">No</label>
+                     </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="education education3 row">
+            <div class="col-md-7">
+              <div class="row">
+                <div class="col-md-5 bold text-right">School Name</div>
+                <div class="col-md-7 _2SchoolName value-text"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 bold text-right">Education</div>
+                <div class="col-md-7 _2Education value-text"></div>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="row degreeRow">
+                <div class="bold">Graduate</div> 
+                <div class="checkBoxCont block-control value-part">
+                       <label class=""><input type="checkBox" class="_2Graduate" value="Y">Yes</label>&nbsp;&nbsp;&nbsp;
+                       <label class=""><input type="checkBox" class="_2Graduate" value="N">No</label>
+                     </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="form-bg workHist">
+        <span class="form-title">Work History</span>
+        <div class="white-bg">
+          <div class="miliratySec row">
+            <div class="col-md-6 military-left-col">
+              <div class="row">
+                <div class="col-md-6 text-right bold">Military Experience</div>
+                <div class="col-md-6 ">
+                  <div class="checkBoxCont block-control value-part">
+                          <label class=""><input type="checkBox" class="militaryExp" value="Y">Yes</label>
+                        </div>
+                    </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 text-right"> </div>
+                <div class="col-md-6 ">
+                  <div class="checkBoxCont block-control value-part">
+                          <label class=""><input type="checkBox" class="militaryExp" value="N">No</label>
+                        </div>
+                    </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 text-right bold">Branch</div>
+                <div class="col-md-6 milBranchNameText value-text"></div>
+              </div>
+            </div>
+            <div class="col-md-6 military-right-col">
+              <div class="row">
+                <div class="col-md-4 text-right bold">Date From</div>
+                <div class="col-md-8 milDateFromText value-text"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 text-right bold">Date To</div>
+                <div class="col-md-8 milDatToText value-text"></div>
+              </div>
+            </div>
+          </div>
+          <hr class="thickhr">
+          <hr class="shadowhr">
+          <div class="prevWork1 prevwork">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-4 text-right bold">Company</div>
+                  <div class="col-md-8 _0Company value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 text-right bold">Position</div>
+                  <div class="col-md-8 _0Position value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 text-right bold">Location</div>
+                  <div class="col-md-8 _0Location value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 text-right bold">Supervisor</div>
+                  <div class="col-md-8 _0Supervisor value-text"></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-5 text-right bold">Date From</div>
+                  <div class="col-md-7 _0DateFrom value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 text-right bold">Date To</div>
+                  <div class="col-md-7 _0DateTo value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 text-right bold">Pay at Leaving</div>
+                  <div class="col-md-7 _0PayAtLeaving value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 text-right bold supTitleLbl">Supervisor Title</div>
+                  <div class="col-md-7 _0SupervisorTitle value-text"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row scroll-content">
+              <div class="col-md-3 bold">Job Description</div>
+              <div class="col-md-9 _0JobDescription content value-text"></div>
+            </div>
+            <div class="row scroll-content">
+              <div class="col-md-4 bold">Reason For Leaving</div>
+              <div class="col-md-8 _0ReasonLeaving content value-text"></div>
+            </div>
+          </div>
+          <hr class="thickhr">
+          <hr class="shadowhr">
+          <div class="prevWork2 prevwork">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-4 text-right bold">Company</div>
+                  <div class="col-md-8 _1Company value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 text-right bold">Position</div>
+                  <div class="col-md-8 _1Position value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 text-right bold">Location</div>
+                  <div class="col-md-8 _1Location value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 text-right bold">Supervisor</div>
+                  <div class="col-md-8 _1Supervisor value-text"></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-5 text-right bold">Date From</div>
+                  <div class="col-md-7 _1DateFrom value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 text-right bold">Date To</div>
+                  <div class="col-md-7 _1DateTo value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 text-right bold">Pay at Leaving</div>
+                  <div class="col-md-7 _1PayAtLeaving value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 text-right bold supTitleLbl">Supervisor Title</div>
+                  <div class="col-md-7 _1SupervisorTitle value-text"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row scroll-content">
+              <div class="col-md-3 bold">Job Description</div>
+              <div class="col-md-9 _1JobDescription content value-text"></div>
+            </div>
+            <div class="row scroll-content">
+              <div class="col-md-4 bold">Reason For Leaving</div>
+              <div class="col-md-8 _1ReasonLeaving content value-text"></div>
+            </div>
+          </div>
+          <hr class="thickhr">
+          <hr class="shadowhr">
+          <div class="prevWork3 prevwork">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-4 text-right bold">Company</div>
+                  <div class="col-md-8 _2Company value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 text-right bold">Position</div>
+                  <div class="col-md-8 _2Position value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 text-right bold">Location</div>
+                  <div class="col-md-8 _2Location value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 text-right bold">Supervisor</div>
+                  <div class="col-md-8 _2Supervisor value-text"></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-5 text-right bold">Date From</div>
+                  <div class="col-md-7 _2DateFrom value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 text-right bold">Date To</div>
+                  <div class="col-md-7 _2DateTo value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 text-right bold">Pay at Leaving</div>
+                  <div class="col-md-7 _2PayAtLeaving value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 text-right bold supTitleLbl">Supervisor Title</div>
+                  <div class="col-md-7 _2SupervisorTitle value-text"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row scroll-content">
+              <div class="col-md-3 bold">Job Description</div>
+              <div class="col-md-9 _2JobDescription content value-text"></div>
+            </div>
+            <div class="row scroll-content">
+              <div class="col-md-4 bold">Reason For Leaving</div>
+              <div class="col-md-8 _2ReasonLeaving content value-text"></div>
+            </div>
+          </div>
+          <hr class="thickhr">
+          <hr class="shadowhr">
+          <div class="prevWork4 prevwork">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-4 text-right bold">Company</div>
+                  <div class="col-md-8 _3Company value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 text-right bold">Position</div>
+                  <div class="col-md-8 _3Position value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 text-right bold">Location</div>
+                  <div class="col-md-8 _3Location value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 text-right bold">Supervisor</div>
+                  <div class="col-md-8 _3Supervisor value-text"></div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-5 text-right bold">Date From</div>
+                  <div class="col-md-7 _3DateFrom value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 text-right bold">Date To</div>
+                  <div class="col-md-7 _3DateTo value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 text-right bold">Pay at Leaving</div>
+                  <div class="col-md-7 _3PayAtLeaving value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 text-right bold supTitleLbl">Supervisor Title</div>
+                  <div class="col-md-7 _3SupervisorTitle value-text"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row scroll-content">
+              <div class="col-md-3 bold">Job Description</div>
+              <div class="col-md-9 _3JobDescription content value-text"></div>
+            </div>
+            <div class="row scroll-content">
+              <div class="col-md-4 bold">Reason For Leaving</div>
+              <div class="col-md-8 _3ReasonLeaving content value-text"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-bg jobPref">
+        <span class="form-title">Job Preference</span>
+        <div class="white-bg">
+          <div class="row jobPrefContainer"></div>
+          <div class="row jobtype outrow">
+                <div class="col-md-2 bold">Job Type:</div> 
+                <div class="col-md-10 checkBoxCont block-control value-part">
+                    <label class=""><input type="checkBox" class="jbtypft" value="Y">Full Time</label>&nbsp;&nbsp;&nbsp;
+                    <label class=""><input type="checkBox" class="jbtyppt" value="Y">Part Time</label>
+                </div>
+           </div>
+           <div class="row jobstatus outrow">
+                <div class="col-md-2 bold nowrap">Job Status:</div> 
+                <div class="col-md-10 checkBoxCont block-control value-part">
+                    <label class=""><input type="checkBox" class="jbstperm" value="Y">Permanent</label>&nbsp;&nbsp;&nbsp;
+                    <label class=""><input type="checkBox" class="jbsttemp" value="Y">Temporary</label>
+                </div>
+           </div>
+           <div class="row wagedsrd outrow">
+                <div class="col-md-2 bold nowrap">Wage Desired:</div> 
+                <div class="col-md-10 checkBoxCont block-control value-part">
+                    &nbsp;&nbsp;&nbsp;<label class=""><span class="wagedesired value-text"></span>&nbsp;&nbsp;&nbsp;<input type="checkBox" class="openneg" value="Y" >Open/Negotiable</label>
+                </div>
+           </div>
+        </div>
+      </div>
+    </div>
+    <div class="applProf-right-col col-md-7">
+      <div class="form-bg attachCand">
+        <span class="form-title">Attach Candidate</span>
+        <div class="white-bg">
+          <div class="row">
+            <div class="col-md-2 bold nowrap"><input type="radio" name="attachreq" class="attachreq" value="Y"/>Attach To Requisition</div>
+            <div class="col-md-3 bold nowrap"><input type="radio" name="attachreq" class="attachreq" value="N"/>Do Not Attach to Requisition</div>
+            <div class="col-md-2 bold nopad">Reason For Not Attaching Candidate:</div>
+            <div class="col-md-3 nopad"><select class="rjctRsncb"></select></div>
+            <div class="col-md-2"><button id="saveBtn" class="btn btn-default action-btn primary-green-btn" title="Save and return to Qualified Pool">Save</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="form-bg langAbl">
+        <span class="form-title">Language Abilities</span>
+        <div class="white-bg">
+          <div class="langskillablcontainer row">
+
+          </div>
+        </div>
+      </div>
+      <div class="form-bg skills">
+        <span class="form-title">Skills</span>
+        <div class="white-bg">
+          <div class="skillscontainer row">
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-6 skillLbl bold">Blinds & Wallpaper</div>
+                <div class="col-md-6 skillCheck">Skills in this area</div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Interior Design</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="intDesignCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Window Treatments</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="winTreatCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Wallpaper</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="wallpaperCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl bold">Cashier</div>
+                <div class="col-md-6 skillCheck"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Cash Register</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="cashRegCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl bold">Electrical & Lighting</div>
+                <div class="col-md-6 skillCheck block-control"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Electrical</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="electCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Lighting</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="lightCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl bold">Flooring</div>
+                <div class="col-md-6 skillCheck block-control"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Carpet Sales</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="cptSalesCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Wood - Vinyl</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="wdVinylCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Ceramic Tile</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="ceraTileCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl bold">Hardware</div>
+                <div class="col-md-6 skillCheck block-control"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Hand Tools</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="hdToolsCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Power Tools</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="pwrToolsCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Hardware</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="hdwareCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl bold">Kitchen, Bath & Appliances</div>
+                <div class="col-md-6 skillCheck block-control"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Appliance Sales</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="applSalesCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Kitchen Sales</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="ktchnSalesCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Bath Sales</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="bthSalesCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Kitchen/Bath Design</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="kbDesignCheck"/></div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-6 skillLbl bold">Lumber & Building Materials</div>
+                <div class="col-md-6 skillCheck ">Skills in this area</div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Carpentry</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="carpentryCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Foundation</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="foundCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Home Remodeling</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="homeRemCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Masonry</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="masCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Roofing</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="roofCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Drywall</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="drywallCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Framing</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="framingCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Lumber</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="lumberCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Roofing</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="roofing2Check"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Siding</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="sidingCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl bold">Millwork</div>
+                <div class="col-md-6 skillCheck block-control"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Millwork</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="millworkCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Window/Door Install</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="winDoorInstallCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Trim Carpentry</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="trimCarpCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl bold">Miscellaneous</div>
+                <div class="col-md-6 skillCheck block-control"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Computer</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="computerCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Contractor</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="contractorCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Installation</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="installCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Consultation Sales</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="conSalesCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">General Sales</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="genSalesCheck"/></div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="row">
+                <div class="col-md-6 skillLbl bold">Paint</div>
+                <div class="col-md-6 skillCheck">Skills in this area</div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Painting</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="paintCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl bold">Plumbing</div>
+                <div class="col-md-6 skillCheck block-control"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">HVAC</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="hvacCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Plumbing</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="plumbCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl bold">Pro Sales</div>
+                <div class="col-md-6 skillCheck block-control"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Pro Sales</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="proSalesCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl bold">Receiving & Freight</div>
+                <div class="col-md-6 skillCheck block-control"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Freight Management</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="frtMgmntCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Stocking</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="stockCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Shipping/Receiving</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="shipReceCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Forklift</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="fkliftCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl bold">Seasonal / Garden</div>
+                <div class="col-md-6 skillCheck block-control"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Hard Scaping</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="hdScapingCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Landscape Design</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="laDesignCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Nursery/Horticulture</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="nurHorCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Irrigation</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="irrigationCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Lawn Equipment</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="lawnEquipCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl bold">Tool Rental</div>
+                <div class="col-md-6 skillCheck block-control"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Engine Repair</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="engRepairCheck"/></div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 skillLbl">Tool Rental</div>
+                <div class="col-md-6 skillCheck block-control"><input type="checkbox" class="toolRentalCheck"/></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-bg phnScrHist">
+        <span class="form-title">Phone Screen History</span>
+        <div class="white-bg">
+          <div id="phnScrHistGrid" class="custom-grid row">
+
+          </div>
+        </div>
+      </div>
+      <div class="form-bg candStatHist">
+        <span class="form-title">Candidate Status / History</span>
+        <div class="white-bg">
+          <div id="candStatHistGrid" class="custom-grid row">
+
+          </div>
+        </div>
+      </div>
+      <div class="form-bg appHist">
+        <span class="form-title">Application History</span>
+        <div class="white-bg">
+          <div id="appHistGrid1" class="custom-grid row">
+
+          </div>
+          <br>
+          <div id="appHistGrid2" class="custom-grid row">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        </div>  
+          <script>
+    function setLanguage(lang) {
+        jQuery.i18n.properties({
+            name : "Messages",
+            path : "app/common/js/bundle/",
+            mode : "both",
+            language : lang,
+            callback : function() {
+                StaticText.loadStaticText();
+            }
+        });  
+        }  
+    </script>  
+      
+    </body>
+</html> 
+

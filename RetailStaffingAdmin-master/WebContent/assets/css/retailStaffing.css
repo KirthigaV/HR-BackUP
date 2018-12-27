@@ -1,0 +1,629 @@
+.uncheckSpan:before {
+  content:"\2610";
+  font-size: medium;
+  font-weight: normal;
+  color: rgb(169, 167, 167);
+}
+.checkSpan:before {
+  content:"\2611";
+  font-size: medium;
+  font-weight: normal;
+  color: rgb(169, 167, 167);
+}
+/* display made block as global for all li elements */
+.lstSkill {
+    display: list-item;
+}
+.paddingLeftRight {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+textarea[id*='phoneScreenDetailResponseValue']{
+width: 100%;
+height: 100px;
+margin-bottom: 5px;
+resize: none;
+}
+.subPlusButtonContainer{
+width: 5%;
+float: left;
+margin-top: 12px;
+}
+.mainRows.row.even {
+background: #eee;
+}
+.plusButton {
+font-size: x-large;
+background: #c3c3c3;
+border-radius: 4px;
+padding: 6px;
+padding-top: 0px;
+padding-bottom: 0px;
+}
+#reviewPhoneScreensDetails [class*='col'] {
+padding-left: 0;
+padding-right: 0;
+}
+#reviewPhoneScreensDetails .row{
+	margin-top: 4px;
+} 
+#requisitionStatusValue {
+margin-top: -4px;
+}
+#reviewPhoneScreensDetails{
+	width: 100%;
+	height: 100%;
+overflow-x: scroll;
+overflow-y:scroll;
+padding-right: 15px;
+padding-left: 15px;
+}
+.scrollDiv
+{
+	min-width: 1368px;
+	width: 100%;
+}
+.gridContainerRowClass
+{
+	margin: 22px;
+  margin-top: 5px;
+}
+.paginationButtons {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-weight: 700;
+  color: rgb(107,149,235);
+  text-decoration: underline;
+  font-size: 12px;
+}
+.paginationButtons:hover {
+background: bisque;
+border: none;
+border-radius:4px;
+outline: none;
+color: #000;
+opacity: 0.9;
+text-decoration: underline;
+}
+.paginationButtons:disabled {
+color: #c3c3c3;
+background: transparent;
+}
+#paginationNextButton
+{
+	float: right;
+}
+#warningpopup button:hover,#saveWarningpopup button:hover{
+	 background:bisque;
+} 
+#warningpopup button,#saveWarningpopup button{
+	 background:none;
+	 border:none;
+	 outline:none;
+	 width: 85px;
+	height: 30px;
+}
+#retailStaffing .modal-header,#warningpopup .modal-header,#saveWarningpopup .modal-header {
+padding: 0px;
+border-bottom: none;
+}
+select
+{
+	padding: 4px;
+	background: rgb(250,250,250) !important;
+	background: -webkit-linear-gradient(rgb(240,240,240), rgb(250,250,250)) !important;
+	background: -o-linear-gradient(rgb(240,240,240), rgb(250,250,250));
+	background: -moz-linear-gradient(rgb(240,240,240), rgb(250,250,250));
+	background: linear-gradient(rgb(240,240,240), rgb(250,250,250));
+	border-radius: 7px;
+	/*min-width: 130px;*/ /*Affecting all screens. so commented*/
+	border:1px solid lightgrey; 
+}
+select option:hover
+{
+	background: bisque !important; 
+}
+select option:selected
+{
+	background: rgb(240,187,143) !important;
+}
+
+.candidateDetails .candidateGridTitle
+{
+	font-size: 15px !important;
+	margin-left: -15px;
+}
+.candidateGridTitle,.candidateGridTitle1
+{
+	font-size: 15px !important;
+}
+.bgWhite,[id*='phoneScreenDetailResponseValue']
+{
+	background:#fff;
+}
+#reviewPhoneScreensDetails .bgWhite
+{
+margin-right: 0px;
+margin-left: 0px;
+}
+.labelFull label {
+	min-width: 100%;
+}
+#retailStaffing label{
+font-weight: bold;
+font-style: normal;
+font-family: sans-serif;
+font-size: 12px;
+}
+#retailStaffing label,#reviewPhoneScreensDetails label{
+font-weight: bold;
+font-style: normal;
+font-family: sans-serif;
+font-size: 12px;
+}
+#retailStaffing a,#reviewPhoneScreensDetails a,.candidateDetails a{
+color: rgb(107,149,235);
+text-decoration: underline;
+font-weight: bold;
+font-family: sans-serif;
+font-size: 12px;
+}
+#retailStaffing a:hover,#reviewPhoneScreensDetails a:hover,.candidateDetails a:hover{
+	color:#000;
+}
+#requisitionValue,#phoneScreenValue,#interviewScreenValue,#candidateNumberValue,.ssnLastName.CandidateSearchType label
+{
+	width: 33%;
+}
+.radioButtonContent input {
+	font-family: sans-serif;
+font-weight: 700;
+font-size: 12px;
+}
+#candidateSSNValue {
+width: 30%;
+}
+#candidateLastNameValue {
+width: 60%;
+}
+#WorkQueuesStoreValue {
+width: 35%;
+margin-bottom: 5px;
+}
+.locationValue {
+margin-bottom: 5px;
+}
+.radioButtonContent{
+	border: 1px solid rgb(231,226,176);
+border-radius: 15px;
+}
+#retailStaffing.retailStaffingAdminPage
+{
+	margin-right: 0px;
+}
+#retailStaffing.candidateDetails {
+margin-left: 0px;
+margin-right: 0px;
+}
+#retailStaffing .secondContentRow
+{
+margin: 22px;
+margin-top: 5px;
+}
+#retailStaffing.candidateDetails .secondContentRow {
+margin-left: 2px;
+margin-right: 0px;
+margin-top: 2px;
+margin-bottom: 12px;
+}
+.candidateGridTitle + .bgWhite {
+box-shadow: 0px 4px 3px rgb(166,166,166);
+}
+#retailStaffing .row.gridContainer,#retailStaffing .row.gridContainer2 {
+background:#fff;
+min-height: 210px;
+overflow:auto;
+box-shadow: 0px 4px 3px rgb(166,166,166);
+}
+#retailStaffing
+{
+	height: 100%;
+overflow-y: auto;
+overflow-x: hidden;
+}
+.rowTextIndent
+{
+	text-indent: 10%;
+}
+
+/* slick grid */
+
+.slick-header-column:hover, .slick-header-column-active
+{
+	color: #000;
+	opacity: 0.7;
+}
+.slick-header-column, .slick-header-column-active
+{
+	color: #000;
+	opacity: 0.7;
+}
+.slick-cell, .slick-headerrow-column {
+
+border-bottom-color: transparent;
+
+}
+#myGrid,#reqHistory,#phnIntHistory {
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+[class^="slickgrid_"],[class^="slickgrid_"] div {
+	-webkit-box-sizing: content-box !important;
+	-moz-box-sizing: content-box !important;
+	box-sizing: content-box !important;
+}
+[class*="slickgrid_"],[class*="slickgrid_"] div {
+	-webkit-box-sizing: content-box !important;
+	-moz-box-sizing: content-box !important;
+	box-sizing: content-box !important;
+}
+.ui-widget-content.slick-row:hover {
+background: bisque;
+}
+[class^="slickgrid_"] a:hover,[class^="slickgrid_"] a:focus,[class^="slickgrid_"] a {
+color: rgb(76,28,233);
+text-decoration: underline;
+font-weight:bold;
+}
+.noMarginLeftRight
+{
+	margin-left:0px;
+	margin-right:0px;
+}
+
+#myGrid .slick-viewport{
+	background-size: 50px 60px;
+	background-color: white;
+	background-image: -webkit-linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent);
+	background-image: -moz-linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent);
+	background-image: linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent);
+	-pie-background: linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent) 0 0 / 50px white;
+	behavior: url(/pie/PIE.htc);
+}
+#myGrid .slick-header-column {
+  height: 25px;
+  text-align: center;
+  color: black;
+}
+#myGrid .slick-header-column-sorted {
+  font-style: normal;
+}
+#myGrid .slick-sort-indicator{
+	float: right;
+}
+#myGrid .slick-header{
+	color: black;
+  	font-size: 12px;
+}
+#myGrid .slick-row:hover{
+	background-color: rgb(247,214,187) !important;
+}
+/* #myGrid .slick-cell:hover{
+	background-color: rgb(247,214,187);
+} */
+#myGrid .slick-row.even{
+	background: rgb(247,247,247);
+}
+#myGrid .slick-row.odd{
+	background: white;
+}
+#myGrid .slick-cell{
+	border-bottom: none;
+	border-right: 1px solid silver;
+	font-size: 12px;
+  	text-overflow: clip;
+} 
+/* jq grid css*/
+
+
+[id*='grid_'] .ui-widget-content,[id*='grid_'] .ui-widget-content.jqgrow.ui-row-ltr.ui-state-highlight {
+background: #fff;
+}
+[id*='grid_'] .ui-state-highlight,[id*='grid_'] .ui-widget-content .ui-state-highlight
+{
+	
+	background: transparent;
+	color: #363636;
+}
+[id*='grid_'] .ui-state-hover,[id*='grid_'] .ui-widget-content .ui-state-hover,[id*='grid_'] .ui-state-focus,[id*='grid_'] .ui-widget-content .ui-state-focus {
+border: #ddd !important;
+background: rgb(240,187,143) !important;
+color: #000 !important;
+}
+[id*='grid_'] tbody tr:hover {
+background: bisque;
+}
+[id*='grid_'].table-striped>tbody>tr.selected-row:nth-child(odd)>td {
+background: transparent;
+}
+[id*='grid_'].table-striped>tbody>tr:nth-child(odd):hover>td {
+background: bisque;
+}
+
+
+/*Calender datepicker*/
+.ui-widget-header .ui-icon
+{
+background-image: url(../images/ui-icons_222222_256x240.png)  !important;
+}
+.ui-datepicker-calendar .ui-state-default,.ui-datepicker-calendar .ui-widget-content .ui-state-default{
+	border:none;
+	color:#000;
+}
+.ui-datepicker-calendar .ui-state-highlight,.ui-datepicker-calendar .ui-widget-content .ui-state-highlight {
+	background: #c3c3c3 !important;
+}
+.ui-datepicker-prev.ui-corner-all .ui-icon-circle-triangle-w
+{
+	background-position: -96px -15px;
+	width: 100%;
+}
+.ui-datepicker-next.ui-corner-all .ui-icon-circle-triangle-e{
+background-position: -33px -16px;
+width: 100%;
+}
+.ui-datepicker-header.ui-widget-header {
+	border: none;
+background: #eeeeee; /* Old browsers */
+background: -moz-linear-gradient(top,  #eeeeee 48%, #cccccc 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(48%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #eeeeee 48%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #eeeeee 48%,#cccccc 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #eeeeee 48%,#cccccc 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #eeeeee 48%,#cccccc 100%); /* W3C */
+color: #000;
+font-weight: bold;
+}
+.ui-datepicker-calendar .ui-state-default,.ui-datepicker-calendar .ui-widget-content .ui-state-default {
+border: none !important;
+background: none;
+font-weight: bold;
+color: #000;
+outline: none;
+}
+.ui-datepicker-calendar .ui-state-highlight,.ui-datepicker-calendar .ui-widget-content .ui-state-highlight {
+border: none;
+background: #c3c3c3;
+color: #000;
+}
+.ui-datepicker-calendar
+{
+	background:#fff;
+}
+/* button and button disabled css */
+
+.btn-grey,.btn-grey:hover {
+/* 	behavior: url(../css/PIE-1.0.0/PIE.htc); */
+background: #eeeeee; /* Old browsers */
+background: -moz-linear-gradient(top,  #eeeeee 48%, #cccccc 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(48%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #eeeeee 48%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #eeeeee 48%,#cccccc 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #eeeeee 48%,#cccccc 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #eeeeee 48%,#cccccc 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+color: #aaa;
+border: 1px solid #aaa;
+font-weight: bold;
+padding-top: 0.3%;
+padding-bottom: 0.3%;
+border-radius: 4px;
+}
+
+[disabled].btn-grey ,[disabled].btn-grey:hover{
+/* 	behavior: url(../css/PIE-1.0.0/PIE.htc); */
+background: #eeeeee; /* Old browsers */
+background: -moz-linear-gradient(top,  #eeeeee 48%, #cccccc 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(48%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #eeeeee 48%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #eeeeee 48%,#cccccc 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #eeeeee 48%,#cccccc 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #eeeeee 48%,#cccccc 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+background-color: #eee !important;
+color: #ccc !important;
+border: 1px solid #eee;
+padding-top: 0.3%;
+padding-bottom: 0.3%;
+border-radius: 4px;
+
+}
+
+.btn-green {
+	color: white;
+	padding-top: 0.3%;
+	padding-bottom: 0.3%;
+	border-radius:4px;
+	background: rgb(111,128,43) !important;
+	background: -webkit-linear-gradient(rgb(155,170,97), rgb(111,128,43)) !important;
+	background: -o-linear-gradient(rgb(155,170,97), rgb(111,128,43));
+	background: -moz-linear-gradient(rgb(155,170,97), rgb(111,128,43));
+	background: linear-gradient(rgb(155,170,97), rgb(111,128,43));
+	font-weight: bold; 
+}
+[disabled].btn-green {
+	color: #c3c3c3 !important;
+    border: none !important;
+	opacity: 1;
+	padding-top: 0.3%;
+	padding-bottom: 0.3%;
+	border-radius:4px;
+	background: rgb(111,128,43) !important;
+	background: -webkit-linear-gradient(rgb(155,170,97), rgb(111,128,43)) !important;
+	background: -o-linear-gradient(rgb(155,170,97), rgb(111,128,43));
+	background: -moz-linear-gradient(rgb(155,170,97), rgb(111,128,43));
+	background: linear-gradient(rgb(155,170,97), rgb(111,128,43));
+	font-weight: bold; 
+}
+.btn-green:hover{
+	color: yellow;
+	border:1px solid orangered;
+}
+
+#retailStaffing .btn {
+height: 30px;
+width: 80px;
+}
+.container-fluid {
+background-color: #fff;
+}
+#retailStaffing .jumbotron,#reviewPhoneScreensDetails .jumbotron{
+	padding: 10px !important;
+	box-shadow: 0px 4px 3px rgb(166,166,166);
+}
+.candidateDetails .secondContentRow .bgWhite span {
+  font-size: 12px;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+.fullHeight
+{
+	height:100%;
+}
+#warningpopup .modal-dialog,#saveWarningpopup .modal-dialog
+{
+margin-top: 20%;
+width: 415px;
+}
+.sureMsg
+{
+font-weight: 700;
+font-size: 12px;
+}
+#WorkQueuesProcessSelectBoxIt {
+  min-width: 259px;
+}
+#retailStaffing input[type=text]:focus,#retailStaffing textarea:focus{
+	background: white;
+	box-shadow: 0px 0px 0px 1.5px #ffa853;
+	outline: 0px inset #ffa853;
+}
+#retailStaffing select + span ul,#reviewPhoneScreensDetails select + span ul
+{
+  min-width: 232px;
+  max-height: 125px !important;
+  overflow-y: auto;
+  top: auto;
+  display: none;
+}
+#retailStaffing #WorkQueuesProcess + span ul
+{
+	  max-height: 205px !important;
+}
+#retailStaffing select + span ul li a span,#retailStaffing select + span ul li a,#reviewPhoneScreensDetails select + span ul li a span,#reviewPhoneScreensDetails select + span ul li a{
+  text-decoration: none;
+  color: #333;
+  font-weight: 100;
+  font-size:12px;
+  font-family:arial;
+}
+#reviewPhoneScreensDetails select[id*='interviewScreenStatus'] + span > span,#reviewPhoneScreensDetails select[id*='phoneScreenStatus'] + span > span,#reviewPhoneScreensDetails select[id*='interviewScreenStatus'] + span ul,#reviewPhoneScreensDetails select[id*='phoneScreenStatus'] + span ul
+{
+	  width: 283px !important;
+}
+#retailStaffing .selectboxit-selected,#reviewPhoneScreensDetails .selectboxit-selected{
+	background:rgba(230, 120, 30,0.5) !important;
+}
+/* #retailStaffing select + span .selectboxit-arrow-container,#reviewPhoneScreensDetails select + span .selectboxit-arrow-container {
+	border-left:1px solid #c3c3c3;
+	margin-top: -2px;
+} */
+#retailStaffing select + span,#reviewPhoneScreensDetails select + span {
+	/* border:1px solid #555;
+	border-top-color:#c3c3c3; */
+	margin-bottom:10px;
+/* 	border-radius:7px; */
+	text-indent: 0px !important;
+}
+/* #retailStaffing select + span:hover,#reviewPhoneScreensDetails select + span:hover {
+	border:1px solid #ffa853;
+	border-top-color:#ffa853;
+    border-color: transparent;
+}
+#retailStaffing select + span:hover > span > span.selectboxit-arrow-container,#reviewPhoneScreensDetails select + span:hover > span > span.selectboxit-arrow-container {
+	border-left:1px solid #ffa853;
+} */
+#retailStaffing .selectboxit-btn.selectboxit-enabled:hover,#retailStaffing  .selectboxit-btn.selectboxit-enabled:focus,#reviewPhoneScreensDetails .selectboxit-btn.selectboxit-enabled:hover,#reviewPhoneScreensDetails  .selectboxit-btn.selectboxit-enabled:focus {
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+/*   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-bottom-color: #b3b3b3;
+  border:1px solid #ffa853;
+  border-radius:7px; */
+  background-position: 0px 0px; 
+  }
+#retailStaffing select+span,#reviewPhoneScreensDetails select+span
+{
+height: 25px;
+} 
+#reviewPhoneScreensDetails .selectboxit-text,#retailStaffing .selectboxit-text {
+  font-size: 12px;
+  font-weight: 700;
+}
+#retailStaffing .selectboxit-container span,#retailStaffing .selectboxit-container .selectboxit-options a,#reviewPhoneScreensDetails .selectboxit-container span,#reviewPhoneScreensDetails .selectboxit-container .selectboxit-options a
+{
+height: 25px;
+line-height: 25px;
+}
+#retailStaffing .selectboxit-container span.selectboxit-arrow-container,#reviewPhoneScreensDetails .selectboxit-container span.selectboxit-arrow-container
+{
+	height: 17px;
+}
+#retailStaffing select + span,#reviewPhoneScreensDetails select + span {
+	margin-bottom:10px;
+	text-indent: 0px !important;
+}
+  #retailStaffing .workQueuesResquistions.searchType div:nth-child(2) label {
+  margin-left: 8px;
+}
+#reviewPhoneScreensDetails .mainRows .text-left,#reviewPhoneScreensDetails .basicDetailsTodisplay .text-left {
+  text-indent: 15px;
+}
+#reviewPhoneScreensDetails span {
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  -webkit-user-select: text;  /* Chrome all / Safari all */
+  -moz-user-select: text;     /* Firefox all */
+  -ms-user-select: text;      /* IE 10+ */
+  user-select: element;          /* Likely future */      
+}
+#reviewPhoneScreensDetails select + span * {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */ 
+}
+#reviewPhoneScreensDetails span a {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */ 
+}
+#reviewPhoneScreensDetails span.plusButton {
+  font-size: 24px;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */ 
+}
+.reqDetForm .value-align::selection,.reqStrDetForm .value-align::selection,.qualifiedPoolform .candCountField .candCount::selection,.applProfContainer .value-text:not(.bold)::selection,#createHiringEventPopUp #mgrName::selection,#createHiringEventPopUp #mgrTitle::selection,#createHiringEventPopUp #mgrPhn::selection,#createHiringEventPopUp #mgrMail::selection,#reviewPhoneScreensDetails span::selection,#requestorName::selection, #requestorId::selection,.textSelectionTrue::selection,.textSelectionTrue *::selection,.candidateDetails .secondContentRow .bgWhite span::selection {
+	color:white;
+	background: black;
+}

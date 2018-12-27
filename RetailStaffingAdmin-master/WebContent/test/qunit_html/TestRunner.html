@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <meta charset="utf-8">  
+        <title>QUnit Example</title>
+        
+        
+        <link rel="stylesheet" href="test/css/qunit-1.17.1.css">
+ 
+        <script src="assets/js/vendor/jquery-1.11.2.js"></script>
+        <script type="text/javascript" src="assets/js/vendor/jquery-migrate-1.2.1.min.js"></script>
+        <script src="assets/js/vendor/jquery.i18n.properties-min-1.0.9.js" type="text/javascript"></script>
+        <script type="text/javascript" src="assets/js/jquery.blockUI.js"></script>
+        <script type="text/javascript" src="assets/js/jqgrid/jqModal.js"></script>
+        <script src="assets/js/vendor/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="../../app/common/js/constants.js"></script>
+        <script type="text/javascript" src="../../app/common/js/Model.js"></script>
+        <script type="text/javascript" src="../../app/common/js/Utility.js"></script> 
+        <script type="text/javascript" src="../../app/common/js/rsaServices.js"></script>
+		<script type="text/javascript" src="../../app/common/js/reusableComponents.js"></script>
+		<script type="text/javascript" src="../../app/common/js/rsaPopup.js"></script>
+        <script type="text/javascript" src="../../app/common/js/errorHandling.js"></script>
+		<script type="text/javascript" src="../../app/common/js/retailStaffingServices.js"></script>
+        
+        <!--RetailStaffingRequest-->
+        <script type="text/javascript" src="../../app/RSARetailStaffingRequest/js/retailStaffingRequest.js"></script>
+		<script type="text/javascript" src="../../app/RSARetailStaffingRequest/js/createHiringEventPopUp.js"></script>
+		<script type="text/javascript" src="../apps/RSARetailStaffingRequest/js/retailStaffingRequestTest.js"></script>
+		<script type="text/javascript" src="../apps/RSARetailStaffingRequest/js/createHiringEventPopUpTest.js"></script>
+		
+		<!--InterviewResults-->
+		<script type="text/javascript" src="../../app/RSAInterviewResults/js/interviewResults.js"></script>
+		<script type="text/javascript" src="../apps/RSAInterviewResults/js/interviewResultsTest.js"></script>
+		
+		<!--InterviewScreenDetails-->
+		<script type="text/javascript" src="../../app/RSAInterviewScreenDetails/js/interviewScreenDetails.js"></script>
+		<script type="text/javascript" src="../apps/RSAInterviewScreenDetails/js/interviewScreenDetailsTest.js"></script>
+		
+		<!--PhoneScreenDetails-->
+		<script type="text/javascript" src="../../app/RSAPhoneScreenDetails/js/phoneScreenDetails.js"></script>
+		<script type="text/javascript" src="../../app/RSAPhoneScreenDetails/js/getPhnScrDtlsCmd.js"></script>
+		<script type="text/javascript" src="../../app/RSAPhoneScreenDetails/js/savePhnScrDtlsCmd.js"></script>
+		<script type="text/javascript" src="../apps/RSAPhoneScreenDetails/js/phoneScreenDetailsTest.js"></script>
+		<script type="text/javascript" src="../apps/RSAPhoneScreenDetails/js/getPhnScrDtlsCmdTest.js"></script>
+		<script type="text/javascript" src="../apps/RSAPhoneScreenDetails/js/savePhnScrDtlsCmdTest.js"></script>
+		
+		<!-- Requisition Details -->
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/requisitionDetails.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/getReqScrDtls.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/getHiringEventsByStr.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/getCalendarsByStr.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/getHiringEventDetails.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/retailStaffingCreatePhnScr.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/getCandidateCount.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/rsaViewApplPool.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/rsaViewAssocPool.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/retailStaffingAttachAppl.js"></script>
+		
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/requisitionDetailsTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getReqScrDtlsTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getHiringEventsByStrTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getCalendarsByStrTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getHiringEventDetailsTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/retailStaffingCreatePhnScrTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getCandidateCountTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/rsaViewApplPoolTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/rsaViewAssocPoolTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/retailStaffingAttachApplTest.js"></script>
+		
+		<!-- Applicant Profile -->
+		<script type="text/javascript" src="app/RSApplicantProfile/js/applicantProfile.js"></script>
+		<script type="text/javascript" src="app/RSApplicantProfile/js/getApplicantProfile.js"></script>
+		<script type="text/javascript" src="app/RSApplicantProfile/js/loadRejectDetails.js"></script>
+		<script type="text/javascript" src="app/RSApplicantProfile/js/attachApplToReq.js"></script>
+		<script type="text/javascript" src="app/RSApplicantProfile/js/getPhoneScreenMinimumDetails.js"></script>
+
+		<script type="text/javascript" src="test/app/RSApplicantProfile/js/applicantProfileTest.js"></script>
+		<script type="text/javascript" src="test/app/RSApplicantProfile/js/getApplicantProfileTest.js"></script>
+		<script type="text/javascript" src="test/app/RSApplicantProfile/js/loadRejectDetailsTest.js"></script>
+		<script type="text/javascript" src="test/app/RSApplicantProfile/js/attachApplToReqTest.js"></script>
+		<script type="text/javascript" src="test/app/RSApplicantProfile/js/getPhoneScreenMinimumDetailsTest.js"></script>
+		
+		<!-- Requisition Details -->
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/requisitionDetails.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/getReqScrDtls.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/getHiringEventsByStr.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/getCalendarsByStr.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/getHiringEventDetails.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/retailStaffingCreatePhnScr.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/getCandidateCount.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/rsaViewApplPool.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/rsaViewAssocPool.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/retailStaffingAttachAppl.js"></script>
+		
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/requisitionDetailsTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getReqScrDtlsTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getHiringEventsByStrTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getCalendarsByStrTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getHiringEventDetailsTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/retailStaffingCreatePhnScrTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getCandidateCountTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/rsaViewApplPoolTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/rsaViewAssocPoolTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/retailStaffingAttachApplTest.js"></script>
+		
+		<!-- Applicant Profile -->
+		<script type="text/javascript" src="app/RSApplicantProfile/js/applicantProfile.js"></script>
+		<script type="text/javascript" src="app/RSApplicantProfile/js/getApplicantProfile.js"></script>
+		<script type="text/javascript" src="app/RSApplicantProfile/js/loadRejectDetails.js"></script>
+		<script type="text/javascript" src="app/RSApplicantProfile/js/attachApplToReq.js"></script>
+		<script type="text/javascript" src="app/RSApplicantProfile/js/getPhoneScreenMinimumDetails.js"></script>
+
+		<script type="text/javascript" src="test/app/RSApplicantProfile/js/applicantProfileTest.js"></script>
+		<script type="text/javascript" src="test/app/RSApplicantProfile/js/getApplicantProfileTest.js"></script>
+		<script type="text/javascript" src="test/app/RSApplicantProfile/js/loadRejectDetailsTest.js"></script>
+		<script type="text/javascript" src="test/app/RSApplicantProfile/js/attachApplToReqTest.js"></script>
+		<script type="text/javascript" src="test/app/RSApplicantProfile/js/getPhoneScreenMinimumDetailsTest.js"></script>
+		
+		<!-- Requisition Details -->
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/requisitionDetails.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/getReqScrDtls.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/getHiringEventsByStr.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/getCalendarsByStr.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/getHiringEventDetails.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/retailStaffingCreatePhnScr.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/getCandidateCount.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/rsaViewApplPool.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/rsaViewAssocPool.js"></script>
+		<script type="text/javascript" src="app/RSARequisitionDetails/js/retailStaffingAttachAppl.js"></script>
+		
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/requisitionDetailsTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getReqScrDtlsTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getHiringEventsByStrTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getCalendarsByStrTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getHiringEventDetailsTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/retailStaffingCreatePhnScrTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/getCandidateCountTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/rsaViewApplPoolTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/rsaViewAssocPoolTest.js"></script>
+		<script type="text/javascript" src="test/app/RSARequisitionDetails/js/retailStaffingAttachApplTest.js"></script>
+		
+		<!-- Applicant Profile -->
+		<script type="text/javascript" src="app/RSApplicantProfile/js/applicantProfile.js"></script>
+		<script type="text/javascript" src="app/RSApplicantProfile/js/getApplicantProfile.js"></script>
+		<script type="text/javascript" src="app/RSApplicantProfile/js/loadRejectDetails.js"></script>
+		<script type="text/javascript" src="app/RSApplicantProfile/js/attachApplToReq.js"></script>
+		<script type="text/javascript" src="app/RSApplicantProfile/js/getPhoneScreenMinimumDetails.js"></script>
+
+		<script type="text/javascript" src="test/app/RSApplicantProfile/js/applicantProfileTest.js"></script>
+		<script type="text/javascript" src="test/app/RSApplicantProfile/js/getApplicantProfileTest.js"></script>
+		<script type="text/javascript" src="test/app/RSApplicantProfile/js/loadRejectDetailsTest.js"></script>
+		<script type="text/javascript" src="test/app/RSApplicantProfile/js/attachApplToReqTest.js"></script>
+		<script type="text/javascript" src="test/app/RSApplicantProfile/js/getPhoneScreenMinimumDetailsTest.js"></script>
+    <Script>
+    function setLanguage(lang) {
+		jQuery.i18n.properties({
+			name : "Messages",
+			path : "app/common/js/bundle/",
+			mode : "both",
+			language : lang,
+			callback : function() {
+				StaticText.loadStaticText();
+			}
+		});  
+		}  
+    </Script>        
+    </head>
+    <body> 
+
+        <div id="qunit"></div>  
+        <div id="qunit-fixture"></div>  
+        
+        <script src="test/js/qunit-1.17.1.js"></script>
+        <script src="test/js/blanket.min.js"></script>
+    </body>
+</html> 
+

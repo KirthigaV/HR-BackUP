@@ -1,0 +1,46 @@
+.body-orange-theme{
+	background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#cccccc));
+	background-image:-moz-linear-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#cccccc));
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#cccccc);
+   	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#cccccc)";
+}
+.header-orange-theme{
+     margin: 0px; padding:0px;
+	 width: 100%;
+  	-webkit-border-top-right-radius: 10px; -webkit-border-top-left-radius:10px;
+  	background-image: -moz-linear-gradient(top, white, #cdcdcd);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#cdcdcd));
+   	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#cdcdcd);
+   	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#cdcdcd)";
+   	
+}
+
+.messageBar-orange-theme{
+	  background-image: -moz-linear-gradient(top, #e6781e, #c36619);
+   	background-image: -webkit-gradient(linear, center top, center bottom, from(rgba(230, 120, 30, 1)), color-stop(0.3, rgba(195, 102, 25, 1)));
+   	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6781e, endColorstr=#c36619);
+}
+.container-orange-theme {
+	width: 95%;
+	background-color: #fff;
+	
+	min-height: 500px;
+	border: 1px solid #979797;
+	margin: auto;
+	border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px; margin-bottom: 4%;
+   
+}
+.brand-orange-theme{
+	color:#333;
+}
+.nav-orange-theme{
+	background-color:#E7E7E7 !important;
+	color:#333 !important;
+}
+.navbar-inverse .navbar-brand {
+	color: #fff;
+}

@@ -1,0 +1,572 @@
+<script type="text/javascript"
+	src="app/RSAInterviewAvailability/js/Calendar.js"></script>
+<script type="text/javascript"
+	src="app/RSAInterviewAvailability/js/showCalendar.js"></script>
+<script>
+	var calendarTab = new calendarTab();
+	var showCalendarView = new showCalendar();
+	$(document).ready(function() {
+		calendarTab.initialize();
+
+	});
+</script>
+
+<div class="calendarText">
+
+	<br>
+		
+</div>
+<div id="calendarTask">
+	<div class="row calrow">
+		<div class="col-xs-12 text-center calendartable">
+		<div class="calendarGridContainer">
+		<div id="calendarGrid" class ="custom-grid"></div></div></div>
+
+	</div>
+		<div class="col-xs-12 text-center buttonsCalendar" style="">
+			<button class="col-xs-4 darkOrangeBtn calBtn" id="createNewCalendar"
+				onclick="calendarTab.calendarButtonClick()">Create New
+				Calendar</button>
+			<button class="col-xs-4 col-xs-2 disablegreybtn" disabled
+				id="renameBtn" onclick="calendarTab.renameButtonClick()"
+				title="Select a Calendar Row to Rename a Calendar.">Rename
+				Calendar</button>
+			<button class="col-xs-4 col-xs-2 disablegreybtn" disabled
+				id="deleteBtn" onclick="calendarTab.deleteButtonClick()"
+				title="Select a Calendar Row to Delete a Calendar.">Delete
+				Calendar</button>
+		</div>
+	</div>
+
+<div id="calendarDiv" style="display: none;">
+	<div class="row" id="mainDivRow">
+		<div class="col-xs-12 text-center showCalendar">
+			<div class="row">
+				<div
+					class="col-xs-10 col-xs-offset-1 text-center textBold calendarDue">
+				</div>
+			</div>
+			<div class="row" id="calendarMaindivRow">
+				<div class="col-xs-12 text-center calendarMaindiv">
+					<div class="row">
+						<div class="col-xs-2">
+							<button class="fc-next-button" title="View Previous 14 Days"
+								onclick="showCalendarView.selectPrevious();">
+								<span class="glyphicon-left-arrow"></span>
+							</button>
+						</div>
+
+						<div class="col-xs-8">
+							<label class="labelCalendar">Selected Calendar:&nbsp;</label>
+							 <select id="calendarSelect" onchange="showCalendarView.changeCalendarSummary()">
+							</select>
+
+						</div>
+						<div class="col-xs-2">
+							<button class="fc-next-button" title="View Next 14 Days"
+								onclick="showCalendarView.selectNext();">
+								<span class="glyphicon-right-arrow"></span>
+							</button>
+						</div>
+					</div>
+					<div id='calendar'>
+						<div class="container">
+							<table class="table calendarDetailTable">
+								<thead>
+									<tr>
+										<th>Sunday</th>
+										<th>Monday</th>
+										<th>Tuesday</th>
+										<th>Wednesday</th>
+										<th>Thursday</th>
+										<th>Friday</th>
+										<th>Saturday</th>
+									</tr>
+								</thead>
+								<tbody id="calendarData">
+
+								</tbody>
+							</table>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="modal centeredBackdrop" id="storeModal" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true" class="modal" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog ">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" onclick="calendarTab.storeCancel()"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="storeModalLabel">Interview
+					Availability Form</h4>
+			</div>
+			<div class="modal-body storepopupbody">
+				<div class="row">
+					<div class="col-xs-12 storepopupform">
+						<div class="col-xs-9 storepopupformdiv">
+							<label class="storepopuplabel">Enter four digit
+								Store/Location :</label>
+						</div>
+						<div class="col-xs-3">
+							<input type="text" id="storeNo" maxlength="4" />
+
+						</div>
+
+
+					</div>
+				</div>
+				<div class="row"></div>
+				<div class="row text-center">
+					<button type="button" class="btn storepopupbtn"
+						onclick="calendarTab.validStore()">OK</button>
+					<button type="button" class="btn btn-default storepopupbtnCancel" onclick="calendarTab.storeCancel()">Cancel</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal alertpopup centeredBackdrop" id="alert" tabindex="-1"
+	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header topBorder">
+
+				<h5 class="modal-title" id="alertModalLabel"></h5>
+			</div>
+			<div class="modal-body ">
+				<div class="alertModalBody text-left selectable SelectIE"></div>
+				<br>
+				<div class="text-center">
+					<button type="button" class="greybtn" id="alertOK"
+						onClick="calendarTab.alertOkClicked()">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Day view Popup -->
+<div class="modal centeredBackdrop" id="dayViewModal" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true" class="modal" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog">
+
+		<div class="modal-content bottomBorder">
+			<div class="modal-header popHeader topBorder">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close" onclick="showCalendarView.loadSummary();">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h3 class="modal-title bold-span" id="dayViewLabel">Day View</h3>
+			</div>
+			<div class="modal-body">
+				<h5 class="text-center dayviewColor selectable">Select an edit mode below
+					in order to add/delete availability.</h5>
+				<div class="col-xs-12">
+					<div class="col-xs-1">
+					<button class="fc-next-button" title="View Previous Day"
+						onclick="showCalendarView.selectDayPrevious();">
+						<span class="dayViewPrevious"></span>
+					</button>
+				</div>
+					<div class="col-xs-10">
+						<label class="bold-span text-center dayviewColor" id="dateSlotDetail"></label>
+					</div>
+					<div class="col-xs-1">
+						<button class="fc-next-button" title="View Next Day"
+							onclick="showCalendarView.selectDayNext();">
+							<span class="dayViewNext"></span>
+						</button>
+					</div>
+				</div>
+				<div class="model-radio">
+					<span class="bold-span dayviewColor"> Edit Mode: &nbsp</span> <label
+						class="radio-inline margin-none"> <input type="radio"
+						name="inlineRadioOptions" id="inlineRadio1" value="View">
+						<span class="radio-space">View</span>
+					</label> <label class="radio-inline margin-none"> <input type="radio"
+						name="inlineRadioOptions" id="inlineRadio2" value="Delete">
+						<span class="radio-space" id="deleteRadioBtn">Delete</span>
+					</label> <label class="radio-inline margin-none"> <input type="radio"
+						name="inlineRadioOptions" id="inlineRadio3" value="Add">
+						<span class="radio-space" id="addRadioBtn">Add</span>
+					</label> <label class="radio-inline adjust"> <input type="radio"
+						name="inlineRadioOptions" id="inlineRadio3" value="PrintPackets">
+						<span class="radio-space-print">Print Packets</span>
+					</label>
+				</div>
+				<div class="container daySlotContainer" style="display: none;">
+					<div class="row headerRow">
+							<div class="col-xs-9 viewLabelDiv"></div>
+							<div class="col-xs-3 viewLabelDiv dayviewColor" id="metLoclabel">Interview Location</div>
+					</div>
+					<div class="tableContainer">
+					<table class="table daySlotTable">
+						<thead></thead>
+						<tbody id="daySlotBody">
+						</tbody>
+					</table>
+					</div>
+					<div class="modal-footer ">
+						<div class="row headerRow">
+							<div class="col-xs-4">
+								<button type="button" class="btn btn-default submit"
+									onclick="showCalendarView.confirmSlot()" id="submitView">Submit</button>
+							</div>
+							<div class="col-xs-4">
+								<button type="button" class="btn btn-default cancel"
+								 data-target="#alertModel" onclick="showCalendarView.loadSummary()">Cancel</button>
+							</div>
+							<div class="col-xs-4" id="printTooltip">
+								<button type="button" class="btn btn-default greyPrintBtn"
+									id="printView"onclick="showCalendarView.printAction()" disabled="disabled">Print</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container addDaySlotContainer" style="display: none;">
+					<div class="tableDiv">
+						<div class="row headerRow">
+							<div class="col-xs-3">
+								<button type="button"
+									class="btn btn-default blockimeButton" id="addBlockTimeButton"
+									onclick="showCalendarView.loadBlockTime()">Add a Block
+									of Time</button>
+							</div>
+							<div class="col-xs-2" id="hiddenLableDiv"></div>
+							<div class="col-xs-3">
+								<label class="addLableDiv" title="Select/Deselect All Time Slots">Select&nbsp;All:&nbsp;
+								
+								<input id="selectAll" type="checkbox" name="addAllCheck" value="addCheck"  title="Select/Deselect All Time Slots"/></label>
+								</div>
+							<div class="col-xs-1 dayviewColor selectable SelectIE" id="recurWeeksAddDay" 
+							title="Select the number of weeks you want the availability for this time slot to repeat.">Recuring Weeks</div>
+							<div class="col-xs-1 dayviewColor selectable SelectIE" id="concurWeeksAddDay" 
+							title="When you have more than one Interviewer available, you can increase the number in this field to show the number of interviews you want to hold during each thirty minute time slot.">Concurrent Interviews</div>
+							<div class="col-xs-1 dayviewColor selectable SelectIE" title="Store/Location of Interview for Time slot"
+							 id="metInterviewLabel" style="display:none;">Interview Location</div>
+						</div>
+						<div class="tableContent">
+						<div class="tableContainer">
+							<table class="tableBody addDaySlotTable">
+								<thead></thead>
+								<tbody id="addDaySlotBody">
+								</tbody>
+							</table>
+							</div>
+							<div class="modal-footer addTimeButton">
+							<div class="row headerRow">
+							<div class="col-xs-4"></div>
+							<div class="col-xs-2">
+							<button type="button" class="btn btn-default submit"
+								 id="submitAddAction" onclick="showCalendarView.confirmSlot()">Submit</button>
+								 </div>
+								 <div class="col-xs-3">
+							<button type="button" class="btn btn-default cancel" 
+								onclick="showCalendarView.loadSummary()">Cancel</button></div>
+								<div class="col-xs-3"></div>
+								</div>
+						</div>
+						</div>						
+					</div>
+				</div>
+
+				<div class="container deleteDaySlotContainer" style="display: none;">
+					<div class="row headerRow">
+						<div class="col-xs-10" style="padding-right:0px;">
+							<label class="selectAllCheckBox" title="Select/Deselect All Time Slots">Select&nbsp;All:&nbsp;</label>
+						</div>
+						<div class="col-xs-1" style="padding-left:7px;">
+							<input id="deleteSelectAll" name="deleteAllSlot" type="checkbox" value="deleteCheck" title="Select/Deselect All Time Slots"/>
+						</div>
+					</div>
+					<div class="tableContainer">
+					<table class="table deleteSlotTable">
+						<thead></thead>
+						<tbody id="deleteSlotBody">
+						</tbody>
+					</table>
+					</div>
+					<div class="modal-footer">
+					<div class="row headerRow">
+						<div class="col-xs-2"></div>
+						<div class="col-xs-4">
+						<button type="button" class="btn btn-default submit"  
+						onclick="showCalendarView.confirmSlot()">Submit</button>
+						</div>
+						<div class="col-xs-4">
+						<button type="button" class="btn btn-default cancel" data-target="#alertModel" 
+						onclick="showCalendarView.loadSummary()">Cancel</button></div>
+							<div class="col-xs-2"></div>
+							</div>
+					</div>
+				</div>
+				<div class="container printPacketSlotContainer" style="display: none;">
+					<div class="row headerRow">
+						<div class="col-xs-6"></div>
+						<div class="col-xs-4" id="checkPrintPacket">
+							<label style="font-weight:normal;" class="viewCheckLabel selectable SelectIE" title="Select/Deselect Candidates">Select&nbsp;All:&nbsp;
+							<input id="printpacketCheckAll" name="printPacketSlot" type="checkbox" title="Select/Deselect Candidates"/></label>
+						</div>
+						<div class="col-xs-1" id="recurWeekLabel" style="display: none;">
+							<label style="font-weight:normal;" title="Select the number of weeks you want the availability for this time slot to repeat."
+							 class="dayviewColor selectable SelectIE"></label>
+						</div>
+						<div class="col-xs-1" id="printInterviewLoc" style="display: none;">
+							<label style="font-weight:normal;" title="Store/Location of Interview for Time Slot.
+							" class="dayviewColor selectable SelectIE">Interview Location</label>
+						</div>
+					</div>
+					<form id="printPacketForm" class="form-inline"
+						method="post"
+						target="_blank">
+						<div class="tableContainer">
+						<table class="table printPacketSlotTable">
+							<thead>
+							
+							</thead>
+							<tbody id="printPacketSlotBody">
+							</tbody>
+						</table>
+						</div>
+						<input type="hidden" name="hiringPacket" /> <input
+							type="hidden" name="Content-Type" />
+						<div class="modal-footer">
+						<div class="row headerRow">
+						<div class="col-xs-3"></div>
+							<div class="col-xs-3">
+							<button type="button" class="btn btn-default submit"
+								onclick="showCalendarView.confirmSlot()">Submit</button></div>
+						<div class="col-xs-3">
+							<button type="button" class="btn btn-default cancel"
+						 data-target="#alertModel" onclick="showCalendarView.loadSummary()">Cancel</button>
+								<input type="submit" id="postPrintPacketForm"/></div>
+								<div class="col-xs-3"></div>
+								</div>
+						</div>
+
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Add Blocks popup -->
+
+<div class="modal warningBackdrop" id="addBlocksTime" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true" class="modal" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog">
+		<div class="modal-content bottomBorder">
+			<div class="modal-header popHeader topBorder">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close" onclick="showCalendarView.closeBlockTimePopup();">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h3 class="modal-title bold-span" id="dayViewLabel">Add Blocks Of Time</h3>
+			</div>
+			<div class="modal-body ">
+				<div class="dayviewColor" id="addBlockNote"><label>Add a Block of Time to Calendar:
+				 </label><span id="BlcokTimeDetail"></span></div>
+				<div class="col-xs-12 addBlockLabelDiv dayviewColor">
+				
+					<div class="col-xs-3" title="Begin Availability Time">Begin Time</div>			
+					<div class="col-xs-3" title="End Availability Time">End Time</div>
+					<div class="col-xs-2" style="padding-left: 0%;" id="recurLabelAddBlock">Recurring&nbsp;Weeks</div>
+					<div class="col-xs-2 interviewLabel" id="interviewLabelAddBlock">Concurrent&nbsp;Interviews</div>
+					<div class="col-xs-2" style="display:none; padding-left: 6%;" id="interviewLabel">Interview&nbsp;Location</div>
+				</div>
+				
+				<div class="col-xs-12 addBlockSelects unselectable">			
+					<div class="col-xs-3">
+						<select id="addBlockBeginTime"></select>
+					</div>
+				
+					<div class="col-xs-3">
+						<select id="addBlockEndTime"></select>
+					</div>
+					<div class="col-xs-2">
+						<select id="addBlcokRecurring"></select>
+					</div>
+					<div class="col-xs-2">
+						<select id="addBlockInterview"></select>
+					</div>
+					<div class="col-xs-2" style="display:none;padding-left: 8%;" id="interviewLocDiv" >
+						<input type="text" id="interviewLoc" maxlength="4">
+					</div>
+					
+				</div>
+				
+				<div class="modal-footer  text-center">
+					<button type="button" class="btn btn-default submit"  
+					onclick="showCalendarView.submitAddConfirmBlock()">Submit</button>
+					<button type="button" class="btn btn-default cancel" 
+						onclick="showCalendarView.closeBlockTimePopup()" >Cancel</button>
+				</div>
+				
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Warning Popup -->
+
+<div class="modal warningBackdrop" id="showSlotPopup" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true" class="modal" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header popHeader">
+				<h4 class="modal-title bold-span" id="myModalLabel">
+				<img src="assets/images/warning.png">&nbsp;Warning</h4>
+			</div>
+			<div class="modal-body">
+				<div id="actionMessage" class="actionResponseMessage text-center"></div>
+			</div>
+			<div class="modal-footer text-center">					
+					<button type="button" onClick="showCalendarView.actionBlocks()">
+					<img src="assets/images/ok.png" style="padding: 5px;"/>YES</button>
+				<button type="button" data-dismiss="modal">
+					<img src="assets/images/cross.png" style="padding: 5px;"/>NO</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal centeredBackdrop" id="createCalendarModal" tabindex="-1"
+	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog ">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="createcalendarmodalLabel">Create
+					New Store Calendar</h4>
+			</div>
+			<div class="modal-body">
+				<div class="calendarpopupform">
+					<div class="calendarpopuptext">
+						<div class="cols-xs-12 cols-xs-offset-1">
+						<br>
+							Please enter a person's name, job title, etc. for this Store Calendar.<br>
+						</div>
+						<div class="cols-xs-12 cols-xs-offset-1">
+							(example: &quot;Cashier&quot; or &quot;Homer's Schedule&quot;),<br>
+						</div>
+						<div class="cols-xs-12 cols-xs-offset-1">Click Create to create new Calendar or Cancel to close without saving.
+						</div>
+
+					</div>
+					<div>
+						<div class="text-left">
+							<label class="CalendarNmaelabelmodal">Calendar Name:</label> <input
+								type="text" id="CalendarNameModalText" maxlength="75" />
+
+
+
+						</div>
+
+						<div class="calendarButton">
+							<button type="button" class="orangebtn"
+								onclick="calendarTab.createCalendar()">Create</button>
+							<button type="button" class="greybtn" data-dismiss="modal">Cancel</button>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal centeredBackdrop" id="renameCalendarModal" tabindex="-1"
+	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog ">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="createcalendarmodalLabel">Rename
+					Calendar</h4>
+			</div>
+			<div class="modal-body">
+				<div class="calendarpopupform">
+					<div class="renameCalendarText">
+						<div class="cols-xs-12 cols-xs-offset-1 text-center">
+							Please enter new Calendar name for <label id="oldCalName"></label><br>
+						</div>
+						<div class="cols-xs-12 cols-xs-offset-1 text-center">Click Submit to save new Calendar
+						 Name or Cancel to close without saving.</div>
+					</div>
+					<div>
+						<div class="text-left">
+							<label class="CalendarNmaelabelmodal">Calendar Name:</label> <input
+								type="text" id="newCalendarNameModalText" maxlength="75"/>
+						</div>
+						<div class="renameCalendarButtons">
+							<button type="button" class="orangebtn"
+								onclick="calendarTab.renameCalendar()">Submit</button>
+							<button type="button" class="greybtn" data-dismiss="modal">Cancel</button>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal warningpopClass centeredBackdrop" id="warningpopup" tabindex="-1"
+	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header text-left">
+
+				<img src="assets/images/warning.png"> <label
+					id="WarningModalLabel"></label>
+			</div>
+			<div class="modal-body ">
+				<div class="warningModalBody text-center">
+					<div class="cols-xs-12 cols-xs-offset-1 text-center ">
+						<label class="cautionMsg"></label> <label id="oldRenameCalName"></label>
+					</div>
+					<div class="cols-xs-12 cols-xs-offset-1 text-center sureMsg">
+					</div>
+				</div>
+				<br>
+				<div class="text-center">
+
+					<button type="button" id="confirmDelete" onClick="calendarTab.yesClicked()">
+						<img src="assets/images/ok.png">YES 
+					</button>
+
+					<button type="button" id="denyDelete" data-dismiss="modal">
+						<img src="assets/images/cross.png">NO
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Requisitions Qunit</title>
+<style type="text/css">
+   .hidden {
+        display: none;
+   }
+</style>
+<!--Load Qunit CSS  --> 
+<link rel="stylesheet" href="../css/qunit-1.17.1.css">
+
+<!--Load Common libraries -->
+<script src="../../assets/js/vendor/jquery-1.10.1.min.js"></script>
+<script src="../../assets/js/vendor/jquery-ui.min.js"></script>
+<script src="../../assets/js/vendor/bootstrap.min.js"></script>
+<script src="../../assets/js/vendor/jquery.jqGrid.js"></script>  
+<script src="../../assets/js/vendor/fullcalendar.js"></script>  
+<script src="../../assets/js/vendor/jquery.selectBoxIt.min.js"></script>  
+<script src="../../assets/js/jquery.blockUI.js"></script>
+   
+<!--Load Project Specific scripts  -->
+<script type="text/javascript" src="../../app/common/js/constants.js"data-cover></script>
+<script type="text/javascript" src="../../app/common/js/Model.js"data-cover></script>
+<script type="text/javascript" src="../../app/common/js/Utility.js" data-cover></script>
+<script type="text/javascript" src="../../app/common/js/rsaServices.js"data-cover></script>
+<script type="text/javascript" src="../../app/RSAInterviewAvailability/js/requisitions.js"data-cover></script>
+
+
+<Script>
+	function setLanguage(lang) {
+		jQuery.i18n.properties({
+			name : "Messages",
+			path : "app/common/js/bundle/",
+			mode : "both",
+			language : lang,
+			callback : function() {
+				StaticText.loadStaticText();
+			}
+		});
+	}
+</Script>
+</head>
+<body>
+
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+	<div id="requisitionsFixture" class=hidden>
+	<div class="requisitionTaskContainer">
+
+
+
+<div class="requisitionTable text-left "><label>Requisition Filter</label>
+<div class="requistionDropdown ">
+<div class="row col-xs-12 requistionlist">
+<div class="col-xs-4 ">
+ <select name="Department" id="dept">
+<option>Please select a department</option>
+<option> </option>
+</select> 
+</div>
+<div class="cols-xs-4">
+<button class="col-xs-2 orangebtn deptfilter" onclick="req.filterByDept()" title="Select a Department from the Drop Down and click to filter by Department">Filter By Dept</button>
+</div>
+</div>
+<br>
+<div class="row col-xs-12 requistionlist">
+<div class="col-xs-4">
+ <select name="Job" id="job">
+<option>Please select a Job Title</option>
+<option> </option>
+</select></div>
+<div class="cols-xs-6">
+<button class="col-xs-2 orangebtn" onclick="req.filterByJobTitle()" title="Select a Job Title from the Drop Down and click to filter by Job Title">Filter By Job Title</button>
+<button class="col-xs-2 clearButton orangebtn" title="Click to clear all Filters" onclick="req.clearButtonClick()" >Clear Filter</button>
+</div> 
+
+
+
+
+</div><br>
+<div class="row col-xs-12 requistionlist">
+<div class="col-xs-4">
+ <select name="calendar" id="calendarName">
+<option>Please select a Calendar</option>
+</select> </div>
+<div class="cols-xs-4">
+<button class="col-xs-2 orangebtn" onclick="req.filterByCalendarName()" title="Select a Calendar Name from the Drop Down and click to filter by Calendar Name">Filter By Calendar</button>
+</div>
+</div>
+
+<br>
+<div class="row col-xs-12">
+
+</div>
+<div class="row col-xs-12">
+
+</div>
+</div>
+ </div>
+<div id="requistionTask" class="row">
+<div class="col-xs-12 text-center requisitionGridTable">
+
+<div id="requisitionGrid" class = "custom-grid"></div></div>
+</div>
+
+</div>
+<div class="modal fade alertpopup centeredBackdrop" id="alertRequisition" tabindex="-1"
+	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content bottomBorder">
+			<div class="modal-header topBorder">
+				<h5 class="modal-title" id="alertModalLabel"></h5>
+			</div>
+			<div class="modal-body ">
+				<div class="alertModalBody text-center"></div>
+				<br>
+				<div class="text-center">
+					<button type="button" class="greybtn"
+						onClick="req.alertOkClicked()">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	</div>
+
+	<script src="../js/qunit-1.17.1.js"></script>
+	<script src="../../test/app/RSAInterviewAvailability/js/requisitionsTest.js"  data-cover></script>
+	<script src="../js/blanket.min.js"></script>
+</body>
+</html>

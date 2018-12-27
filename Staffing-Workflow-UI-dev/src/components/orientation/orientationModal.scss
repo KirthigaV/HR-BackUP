@@ -1,0 +1,245 @@
+.rc-time-picker-input {
+  height: 46px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  color: #444;
+  font-size: inherit;
+}
+.rc-time-picker-panel-clear-btn {
+  position: absolute;
+  right: 6px;
+  cursor: pointer;
+  overflow: hidden;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  top: 6px;
+  margin: 0;
+  display: none;
+}
+.rc-time-picker-panel-clear-btn:after {
+  content: "x";
+  font-size: 12px;
+  color: #aaa;
+  display: inline-block;
+  line-height: 1;
+  width: 20px;
+  transition: color 0.3s ease;
+}
+.rc-time-picker-panel-clear-btn:hover:after {
+  color: #666;
+}
+.rc-time-picker-panel-select {
+  height: 148px;
+  overflow-x: hidden;
+  width: 70px;
+}
+.rc-time-picker-panel-select ul {
+  list-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.rc-time-picker-panel-select li {
+  font-size:14px;
+  list-style: none;
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0 0 0 16px;
+  width: 100%;
+  height: 24px;
+  line-height: 24px;
+  text-align: left;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #444;
+}
+.rc-time-picker-panel-select li:hover {
+  background: #f5f5f5;
+}
+li.rc-time-picker-panel-select-option-selected {
+  background: #f96302;
+  font-weight: bold;
+  color: #fff;
+}
+li.rc-time-picker-panel-select-option-disabled {
+  color: #ccc;
+}
+li.rc-time-picker-panel-select-option-disabled:hover {
+  background: transparent;
+  cursor: not-allowed;
+}
+li.rc-time-picker-panel-select-option-selected:hover {
+  background: #f96302;
+  font-weight: bold;
+  color: #fff;
+}
+.date-picker .flatpickr-input, .date-picker .flatpickr-wrapper, .date-range-picker .flatpickr-input, .date-range-picker .flatpickr-wrapper {
+  font-size: inherit;
+}
+.rc-time-picker-panel-inner {
+  width: 211px;
+}
+.rc-time-picker-panel-select:first-child {
+  border-left: 0;
+  margin-left: 0;
+}
+.rc-time-picker-panel-select:last-child {
+  border-right: 0;
+}
+#orntLocationInput {
+  font-size: inherit;
+}
+
+#orientation-label{
+  text-transform: lowercase;
+}
+.candidate-data{
+  white-space: pre-line;
+  margin-top: 4%;
+  .candidate-data-td {
+    padding-right: 100px;
+  }
+}
+.ortTable {
+  display: table;
+  width: 100%;
+
+  .ortTableRow {
+    display: table-row;
+  }
+  .ortTableCell, .ortTableHead {
+    display: table-cell;
+    padding: 3px 3px;
+    width: 35%;
+  }
+
+  .h5-val {
+    color: #222222 ;
+    line-height: 5px;
+  }
+
+  .h5-label {
+    color: #999999;
+    line-height: 16px;
+    text-transform: capitalize;
+    white-space: nowrap;
+  }
+}
+
+#cardOrientation {
+  width: 535px;
+}
+
+section#orntDate {
+  display: table;
+  width: 200%;
+}
+div#orntDateDiv {
+  width: 25%;
+  height: 200px;
+  float: left;
+}
+div#orientation-label {
+  width: 3%;
+  margin-left: -6%;
+  height: 200px;
+  float: left;
+  color: #999999;
+  line-height: 38px;
+  text-transform: lowercase;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -.01em;
+}
+div.orntTimeDiv {
+  margin-left: -7%;
+}
+
+#pickerId {
+  width:59%;
+}
+#orntLocLabel {
+  margin-top: -141px;
+}
+#orntLocation {
+  width: 59%;
+  margin-top: -16px;
+}
+#storeNoLabel {
+  margin-top: 2px;
+  font-size: smaller;
+  white-space: nowrap;
+}
+.h5-label-error {
+  color: #ed1c24;
+  line-height: 18px;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.date-picker.error .flatpickr-icon, .date-picker[aria-invalid=true] .flatpickr-icon, .error.date-range-picker .flatpickr-icon, [aria-invalid=true].date-range-picker .flatpickr-icon {
+  display: none !important;
+}
+
+span.timepicker-error .rc-time-picker-input{
+  border: 1px solid #ED1C24;
+  background-color: #fef2f2;
+  color: #ED1C24;
+}
+
+  .backdrop-style {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    .modal-style {
+      position: relative;
+      background-color: #fff;
+      width: fit-content;
+      max-width: 90%;
+      padding: 40px;
+      margin: 0;
+      position: absolute;
+      top: 56%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      overflow-y: auto;
+      overflow-x: hidden;
+      max-height: fit-content;
+      .date-picker {
+        width: fit-content;
+      }
+      .h3-label {
+        color: #666666;
+        margin-top: 0;
+        white-space: nowrap;
+      }
+      .buttons {
+        left: 10px;
+        bottom: 45px;
+        .button {
+          width: 130px;
+        }
+      }
+    }
+  }
+
+
+.flatpickr-calendar.static.open {
+  top: auto;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  #orntLocationDiv {
+    margin-top: -112px;
+  }
+}

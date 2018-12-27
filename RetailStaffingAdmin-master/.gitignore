@@ -1,0 +1,5 @@
+#Build Directory 
+build/classes 
+
+#Application Compiled Classes
+WebContent/WEB-INF/classes/

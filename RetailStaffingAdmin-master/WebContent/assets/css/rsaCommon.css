@@ -1,0 +1,2362 @@
+/* header css */
+.navBrand{
+	margin-top: -13px;
+	margin-left: 22px;
+}
+.navBrand li{
+	display: block;
+}
+.navBrand.emailNavBrand .brand {
+	margin-left: 7px;
+	line-height: 46px;
+}
+.childBrand{
+	font-size: 11px;
+	color: #6e6e6e;
+	line-height: 14px;
+	margin-left: 9px;
+}
+.navHeaderButtons{
+	width: 87px !important;
+	height: 30px !important;
+	color: black;
+	font-weight: bold;
+	font-family: arial;
+	font-size:12px;
+	margin-top: 21px;
+	background: linear-gradient(rgb(231,231,231), rgb(194,194,194));
+	margin-left: 103px;
+	margin-bottom: 9px;
+	border:1px solid grey;
+}
+li{
+	display:block;
+}
+.brand {
+	color: #333;
+	margin-left: 7px;
+	margin-bottom: 0px;
+	font-size: 20px;
+	line-height: 46px;
+}
+/* email admin module */
+#emailModalId {
+	margin-top: 27px;
+	margin-left: 19px;
+	z-index:1060;
+	background: rgba(238,238,238,0.5);
+}
+.modal-content.emailmodelContent {
+	height: 134px;
+	width: 94%;
+}
+#userProfile{
+	font-size: 12px;
+	font-weight: bold;
+	margin-right: 12%;
+	text-align: right;
+}
+#loggedInUserName{
+	font-size: 12px;
+	font-weight: bold;
+	text-align: right;
+}
+#emailAdminHorizontal{
+	box-shadow: 3px 3px 5px grey;
+	border: 1px solid grey;
+	width: 102.25%;
+	margin-left: -15px;
+	margin-top: 5px
+}
+.emailmodal .modal-header{
+	border-bottom:none;
+	padding-top: 9px;
+}
+.emailmodal .modal-dialog{
+	width:333px;
+	font-size:12px;
+	color:white;
+	margin-top:18%;
+}
+.emailbtn-green {
+	color: white;
+	padding-top: 0.3%;
+	padding-bottom: 0.3%;
+	border-radius:4px;
+	background: rgb(111,128,43) !important;
+	background: -webkit-linear-gradient(rgb(155,170,97), rgb(111,128,43)) !important;
+	background: -o-linear-gradient(rgb(155,170,97), rgb(111,128,43));
+	background: -moz-linear-gradient(rgb(155,170,97), rgb(111,128,43));
+	background: linear-gradient(rgb(155,170,97), rgb(111,128,43));
+	width: 6.5%;
+	font-weight: bold;
+}
+.emailbtn-green:hover{
+	color: yellow;
+	border:1px solid orangered;
+	
+}
+.emailAdminBody{
+	background-color: rgb(76,76,76);
+	background-image:none;
+	padding-top:0px;
+}
+.emailadminappbody{
+	height: 615px;
+	width:96.5% !important;
+	background: -webkit-linear-gradient(white, white);
+	margin-top:26px!important;
+	padding-left: 0px;
+	padding-right: 0px;
+	border-radius: 9px;
+}
+#emailadminnav{
+	position: relative;
+	background: linear-gradient(white, white);
+	height: 16%;
+	width: 100%;
+	border-radius: 9px;
+	border-bottom: none;
+  	box-shadow: none;
+}
+#emailmessageBar{
+	width: 100%;
+	text-align: center;
+	font-weight:bold;
+	vertical-align: middle;
+	padding-top: .2em; padding-bottom: .2em;
+	color: #fff;
+	background-image: -moz-linear-gradient(top, #e6781e, #c36619);
+ 	background-image: -webkit-gradient(linear, center top, center bottom, from(rgba(230, 120, 30, 1)), color-stop(0.3, rgba(195, 102, 25, 1)));
+  	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6781e, endColorstr=#c36619);
+	color: white ;
+	padding: 1px;
+	font-size: 17px;
+	border: 1px solid black;
+/*	margin-top:5px*/
+}
+.emailText{
+	font-size: 12px;
+	margin-top: 11px;
+}
+.alignLeft{
+	padding-left:2%;
+}
+.container{
+	width:100%;
+}
+#emailAdminPage .form-control{
+	font-size:12px;
+	height: 205px;
+}
+.headerEmail{
+	padding-top: 10px;
+	font-size: 15px;
+}
+#requisitionNumber.emailRequisitionNumber {
+	height: 138px;
+	width: 101%;
+	background-color: white;
+	margin-top: 13px;
+}
+
+#emailadminform .control-case{
+	background-color: white;
+	width: 99%;
+	box-shadow: 0px 4px 3px rgb(166,166,166);
+	margin-top: 0px;
+	height: 202px;
+}
+#emailAdminPage label
+{
+	font-size:12px;
+}
+.emailmodalbtn {
+	width: 19%;
+	font-weight: bold;
+	border: 1px solid orangered;
+	padding: 0px;
+	color:black;
+	background-color:rgb(185,195,200);
+}
+.emailmodalbtn:hover
+{
+	background-color:rgb(211,218,221);
+}
+.jumbotron.shadow-box.emailshadowbox{
+	margin-left: 16px;
+	padding-top: 0px !important;
+	height: 250px;
+	box-shadow: 0px 4px 3px rgb(166,166,166);
+	width: 98%;
+	padding-left: 10px !important;
+	padding-right: 14px;
+	padding-bottom: 9px;
+	margin-bottom: 0px;
+	border-bottom-left-radius:0px;
+	border-bottom-right-radius:0px;
+	
+}
+#emailAdminPage label{
+	margin-left: 30px;
+	padding-right: 0px;
+}
+.emailadminlabeldiv{
+	width: 13.666667%;
+	padding-right: 0px;
+	padding-top: 17px;
+}
+#emailadminform {
+padding-bottom: 49px;
+padding-top: 13px;
+}
+
+/*interviewavailability css  */
+#myModal .modal-header{
+	border-bottom:none;
+	background-color: rgb(210,109,27);
+	height: 17px;
+	border: 1px solid black;
+	border-bottom: none;
+}
+.modal-body
+{
+	border:none;	
+}
+#storeNo
+{
+	width: 148%;
+	margin-top: 39px;
+	margin-left: -15px;
+	margin-bottom: 29px;
+	line-height: 20px;
+	border-top:1px solid black;
+	border-color:orangered;																						
+}
+
+#calendarGrid
+{
+	padding-top:28px;
+}
+.modal-body .storepopupbody {
+	background-color: rgb(240,240,240);
+	border: 1px solid black;
+	height: 86%;
+	border-radius: 3px;
+}
+.interviewAvailabilitybody
+{
+	position:relative;
+	background-color: rgb(62,62,62);
+	background-image:none;
+	padding-top:0px;
+	margin-top:-16px;
+}
+#retailstaffingnav{
+	background: -webkit-linear-gradient(white, white);
+	margin-left: 6px;
+	height: 70px;
+	width: 97.6%;
+	position:relative;
+	padding-bottom: 0px;
+	border-bottom: 0px;
+	min-height:60px;
+}
+.interviewavailabiltyAppBody{
+	/* height: 680px; */
+	margin:0px !important;
+	width:100% !important;
+	min-height: 626px !important;
+	background-color: white;
+	border-radius: 9px;
+}
+.appBodyparent{
+	border: 18px solid rgb(56,56,56);
+	border-radius: 10px;
+	width: 72.5%;
+	padding: 0px;
+	padding-top: 22px;
+}
+
+.interviewavailabilityTab {
+	display: inline;
+	border: 1px solid lightgrey;
+	padding: 19px;
+	margin: 17px;
+	margin-left: 29px;
+	background-color: white;
+	border-radius: 4px;
+	box-shadow: 3px 3px 15px grey;
+	width: 94%;
+	padding: 2px !important;
+font-size: 12px;
+	margin-top: -2px;
+	padding-bottom: 87px !important;
+	padding-top: 0px !important;
+}
+#interviewAvailabilitymainNav {
+	
+	border: none;
+	width: 101.2%;
+	margin-left: -2px;
+}
+#tabMessageBar{
+	width: 100.7% !important;
+	margin-left: -2px;
+	padding: 2px !important;
+	color:white !important;
+	text-align: center;
+	font-weight:bold;
+	vertical-align: middle;
+	color: #fff;
+	background-image: -moz-linear-gradient(top, #e6781e, #c36619);
+ 	background-image: -webkit-gradient(linear, center top, center bottom, from(rgba(230, 120, 30, 1)), color-stop(0.3, rgba(195, 102, 25, 1)));
+  	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6781e, endColorstr=#c36619);
+	color: white ;
+	font-size: 11px ;
+	border:1px solid black;
+	}
+.calendarText
+{
+	text-align: left;
+	margin-left: 50px;
+	font-size: 11px;
+	margin-bottom: 5px;
+}
+.calendartable
+{
+	background-color: rgb(243,243,243);
+	width: 93%;
+	height: 240px;
+	padding-top: 14px;
+	border-radius: 9px;
+	margin-left: 38px
+}
+#myModal .modal-content{
+margin-top: 232px;
+width: 50%;
+height: 208px;
+
+} 
+#storeModalLabel {
+text-align: left;
+color: white;
+font-size: 13px;
+font-weight: bold;
+margin-top: -8px;
+}
+
+#interviewAvailabilitymainNav li{
+	background: rgb(111,128,43) !important;
+	background: -webkit-linear-gradient(rgb(231,231,231), rgb(194,194,194)) !important;
+	background: -o-linear-gradient(rgb(231,231,231), rgb(194,194,194));
+	background: -moz-linear-gradient(rgb(231,231,231), rgb(194,194,194));
+	background: linear-gradient(rgb(231,231,231), rgb(194,194,194));
+	width: 33%;
+	height: 21px;
+	margin-right:1.2px;
+}
+#interviewAvailabilitymainNav li:hover{
+	border:1px solid orangered;
+}
+#interviewAvailabilitymainNav li a{
+	color:black;
+	padding-left: 92px;
+	padding-top: 2px;	
+	width: 62%;
+}
+#interviewAvailabilitymainNav .ui-tabs-active.ui-state-active {
+background:white !important;
+}
+.modal-body.storepopupbody {
+background-color: rgb(240,240,240);
+height: 86%;
+border: 1px solid black;
+border-top: none;
+}
+.storepopupform {
+padding-bottom: 20px;
+padding-left: 0px;
+}
+.storepopuplabel
+{
+	margin-top: 42px;
+}
+.storepopupformdiv
+{
+	padding-left:20px;
+}
+.orangebtn
+{
+	padding-top: 0.3%;
+	padding-bottom: 0.3%;
+	border-radius:4px;
+	background: rgb(255,174,62) !important;
+	background: -webkit-linear-gradient(rgb(255,110,0), rgb(255,174,62)) !important;
+	background: -o-linear-gradient(rgb(255,110,0), rgb(255,174,62));
+	background: -moz-linear-gradient(rgb(255,110,0), rgb(255,174,62));
+	background: linear-gradient(rgb(255,110,0), rgb(255,174,62));
+	width: 15%;
+font-weight: bold;
+margin-right: 5px;
+height: 25px;
+}
+.greybtn
+{
+	padding-top: 0.3%;
+	padding-bottom: 0.3%;
+	border-radius:4px;
+	background: rgb(252,252,252) !important;
+	background: -webkit-linear-gradient(rgb(214,214,214), rgb(252,252,252)) !important;
+	background: -o-linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	background: -moz-linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	background: linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	width: 19%;
+	font-weight: bold;
+	height: 25px;
+}
+.greybtn:hover{
+	border:1px solid orangered;
+}
+.orangebtn:hover{
+	border:1px solid orangered;
+	color:white;
+}
+#ui_1 , #ui_2, #ui_3{
+	outline:none;
+}
+.linkclass{
+	color:blue;
+	text-decoration:underline;
+}
+#calendarGrid.table-striped>tbody>tr:nth-child(odd)>td,
+#calendarGrid.table-striped>tbody>tr:nth-child(odd)>th	{
+background-color:transparent;
+}
+.calendartable .table-striped>tbody>tr:nth-child(even)>td,
+.calendartable .table-striped>tbody>tr:nth-child(even)>th	{
+background-color:#F2F2F2;
+}
+.calendartable .ui-jqgrid-bdiv{
+	background:white;
+}
+
+
+/*Applicant profile*/
+
+.whiteContent{
+	background:white;
+	padding:1%;
+}	
+.lblNrml{
+	font-weight:normal;
+}
+/*Retail Staffing request*/
+.control-label{
+  font-size:12px;
+}
+.hdrLbl{
+ font-size:10px; 
+}
+.rExp{
+  width:95%;
+}
+.checkbox label{
+  font-size:12px;
+}
+.whiteContent{
+background:white;
+}
+.greyContent{
+background:lightgray;
+}
+
+#name,#userId{
+
+text-align:left;
+}
+.requestInfoHolder,.hiringMangerInfoHolder,.requisitionInfoHolder{
+	padding:1%;
+}
+.requestInfoHolder #requestInfoHolder{
+	padding-right: 3px;
+}
+.checkboxGrid{
+    display: block;
+    float: left;
+    width:100%;
+    
+}
+sub{
+  color: rgb(220,80,80);
+  font-size:20px;
+  vertical-align: middle;
+}
+.rowSelected {
+	background-color: rgb(242, 187, 142);
+}
+
+/*interviewsummary module*/
+.thdLogo{
+  width:80px;
+  height:60px;
+  margin-left: -10px;
+}
+.whiteContent{
+background:white;
+}
+.greyContent{background:lightgray;
+}
+.userInfoHolder{
+padding:1%;
+margin-top: 10px;
+}
+.interviewInfoHolder{
+padding:1%;
+margin-top: -26px;
+}
+.formContainer{
+  background: #4E4D4C;  
+  height:100%;
+}
+.name{
+    font-weight: normal !Important;
+    font-size:12px;
+ }
+.screenInfo{
+   margin-top: 10px;
+    font-size: 12px;
+    text-align:left;
+ }
+ .notes{
+    margin-top: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align:center;
+ }
+.titleHolder{
+  color:white;
+  background: #D26E1B;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  border:1px solid black;
+  width:103%;
+  margin-left: -20px;
+}
+.interviewSummary{
+  background: white;  
+  height:95%;
+  margin-top: 15px;
+  border-radius: 8px;
+  border: 1px solid black;
+  padding: 20px;
+}
+.content{  
+  overflow-y: auto;
+  height: 78%;
+}
+.closeBtn
+{
+  background: linear-gradient(white, #D5D5D5);
+  width:90px;
+  font-weight: bold;
+  margin-right: 6%;
+  border: 1px solid black;
+}
+.submitBtn
+{
+  background: linear-gradient(#AFC35F, #71822C);
+  width:90px;
+  font-weight: bold;
+  color: white;
+  margin-left: 40%;
+}
+.cancel
+{
+  margin-left:1%;
+}
+.headerInfo{ 
+  height:13%;
+}
+.pageTitle{ 
+  font-size: 20px;
+  font-weight: bold;
+  position:absolute;
+  margin-left: -10px;
+}
+#requistionGrid #candidateGrid{ 
+  overflow-y : auto;
+}
+.versionLabel
+{
+  margin-top: 33px;
+  margin-left: -10px;
+  font-size: 11px;
+  font-weight: normal;
+  position: absolute;
+} 
+.developerLabel
+{
+  margin-top:46px;
+}
+.userLabel
+{
+  margin-top: 46px;
+  font-size: 13px;
+  font-weight: bold;  
+  margin-right:-11%;
+
+}
+.userName
+{
+  margin-right:-22%;
+}
+.candidateLabel
+{
+  margin-top: 2%;
+}
+.interviewQuestionLabel
+{
+  margin-top: 4%;
+}
+.footerContent
+{
+  height: 9%;
+}
+.mandatoryField
+{
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+}
+.textBold
+{
+  font-weight: bold;
+  font-size: 14px;
+}
+.radioText
+{
+  font-weight: bold;
+  font-size: 12px;
+}
+.displayBlock
+{
+  display:block;  
+  position:absolute;
+}
+
+.reqdetappbody{
+	height: 96%;
+	width:96.5% !important;
+	background: -webkit-linear-gradient(white, white);
+	background: -ms-linear-gradient(white, white);
+	margin-top:6px!important;
+	border-radius: 8px;
+	padding: 0px;
+}
+.reqdetBody{
+	background: -webkit-linear-gradient(rgb(76,76,76), rgb(37,37,37)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgb(76,76,76), rgb(37,37,37)); /* For Opera 11.1 to 12.0 */
+    background: -ms-linear-gradient(rgb(76,76,76), rgb(37,37,37)); 
+    background: linear-gradient(rgb(76,76,76), rgb(37,37,37)); /* Standard syntax (must be last) */
+	padding-top: 20px;
+	height:100%;
+}
+.reqdetappbody .container-fluid {
+	background-color: #fff;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+.navbar .navbar-right{
+	width: 56%;
+	float: right;
+}
+.navbar-header{
+	float: left;
+}
+.closeBtnReq {
+	margin-right: 7% !important;
+}
+.navbar-brand{
+	padding: 20px;
+	line-height: 15px;
+}
+.navbar-brand .brand{
+	line-height: 1;
+	margin-left: 16px;
+	font-weight: bold;
+}
+.headerShortDesc {
+	font-size: 11px;
+	font-style: normal;
+	text-shadow: none;
+	color: rgb(59,59,59);
+	line-height: initial;
+	display: block;
+	margin-left: 78px;
+}
+.headerShortDesc.first{
+	margin-top: 7px;
+}
+.reqnavHeaderButtons{
+	
+	color: black;
+	font-weight: bold;
+	font-family: arial;
+	font-size:14px;
+	margin-top: 21px;
+	background: linear-gradient(rgb(231,231,231), rgb(194,194,194));
+	margin-left: 15px;
+	margin-bottom: 9px;
+	border:1px solid grey;
+}
+.action-btn{
+	font-weight: bold;
+	font-family: arial;
+	font-size:14px;
+	background: linear-gradient(rgb(231,231,231), rgb(194,194,194));
+	margin-left: 5px;
+	border:1px solid grey;
+}
+.primary-green-btn,.primary-green-btn:active{
+	color: #FFFFFF;
+	background: linear-gradient(#819433 33.33%, #6E7F2B 66.66%);
+	
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+#goHome.reqnavHeaderButtons{
+	width: 75px;
+	display: none;
+	
+}
+.primary-green-btn:hover{
+	color: #FFF600;
+	border: 1px solid orange;
+	background: linear-gradient(#819433 33.33%, #6E7F2B 66.66%);
+}
+.primary-green-btn:active:hover{
+	color:black;
+	border: 1px solid orange;
+	background: linear-gradient(rgb(251,238,229),rgb(245,202,166));
+}
+#goPrevious.reqnavHeaderButtons{
+	width: auto;
+	display: none;
+}
+#CloseBtn.reqnavHeaderButtons{
+	background: linear-gradient(#FFFFFF , #CCCCCC );
+	padding-top: 4px;
+	padding-right: 20px;
+	padding-bottom: 4px;
+	padding-left: 20px;
+	width: 85px;
+}
+.reqnavHeaderButtons.navCloseBtn{
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+  background: #ffffff;
+  background: -moz-linear-gradient(top, #ffffff 0%, #cfcfcf 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#cfcfcf));
+  background: -webkit-linear-gradient(top, #ffffff 0%,#cfcfcf 100%);
+  background: -o-linear-gradient(top, #ffffff 0%,#cfcfcf 100%);
+  background: -ms-linear-gradient(top, #ffffff 0%,#cfcfcf 100%);
+  background: linear-gradient(to bottom, #ffffff 0%,#cfcfcf 100%);
+  border: 1px solid grey;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cfcfcf',GradientType=0 );
+}
+.reqnavHeaderButtons.navCloseBtn:hover{
+	background: #4c4c4c; /* Old browsers */
+	background: -moz-linear-gradient(top,  #4c4c4c 0%, #111111 50%, #131313 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(50%,#111111), color-stop(100%,#131313)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #4c4c4c 0%,#111111 50%,#131313 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #4c4c4c 0%,#111111 50%,#131313 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #4c4c4c 0%,#111111 50%,#131313 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #4c4c4c 0%,#111111 50%,#131313 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+	border: 1px solid rgb(230,120,30);
+	color: white;
+}
+.reqDetContainer #qualifiedPoolBtn:disabled{
+	background: linear-gradient(#94A452,#84924B);
+	color: #AAB3B3;
+	border: 1px solid #AEAFB0;
+}
+#reqdetnav{
+	position: relative;
+	background: linear-gradient(white, white);
+	height: 16%;
+	width: 100%;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	z-index: 100;
+	border-bottom: none;
+  	box-shadow: none;
+}
+.reqmessageBar{
+	width: 100%;
+	text-align: center;
+	font-weight:bold;
+	vertical-align: middle;
+	padding-top: .2em; padding-bottom: .2em;
+	color: #fff;
+	/*background-image: -moz-linear-gradient(top, #e6781e, #c36619);
+ 	background-image: -webkit-gradient(linear, center top, center bottom, from(rgba(230, 120, 30, 1)), color-stop(0.3, rgba(195, 102, 25, 1)));
+  	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6781e, endColorstr=#c36619);*/
+  	background: -webkit-linear-gradient(rgb(228,119,30), rgb(194,101,25));
+    background: -o-linear-gradient(rgb(228,119,30), rgb(194,101,25));
+    background: -moz-linear-gradient(rgb(228,119,30), rgb(194,101,25));
+    background: linear-gradient(rgb(228,119,30), rgb(194,101,25));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e4771e, endColorstr=#c26519);
+	color: white ;
+	padding: 1px;
+	font-size: 16px;
+	border: 1px solid black;
+	margin-bottom: 0px;
+}
+#appBody #divLandingView{
+	height:80%;
+}
+.reqDetContainer{
+	width: 100%;
+	overflow: auto;
+	min-width: 1300px;
+	font-size: 15px\0;
+}
+.reqDetMainContainer{
+	height: 100%;
+	overflow: auto;
+}
+.reqDetContainer .form-bg,.applProfContainer .form-bg{
+	background: rgb(243,243,243);
+	padding: 0.75%;
+	padding-top: 0.5%;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	box-shadow: 0px 4px 3px rgb(166,166,166);
+}
+.reqDetContainer .white-bg,.applProfContainer .white-bg{
+	background: white;
+	margin-top: 1%;
+	padding: 2% 0%;
+	box-shadow: 0px 4px 3px rgb(182,182,182);
+}
+.reqDetContainer .field-align{
+	text-align: right;
+	font-weight: bold;
+	padding-right: 3px;
+}
+.reqDetContainer .value-align{
+	text-align: left;
+	/*padding-right: 0px;*/
+}
+.reqDetContainer .field-align,.reqDetContainer .value-align{
+	font-size: smaller;
+	white-space: nowrap;
+}
+.reqDetContainer .form-title,.applProfContainer .form-title{
+	font-weight: bolder;
+	font-size: 15px;
+}
+.reqDetContainer .first-row .form-left{
+	padding-right: 5px;
+}
+.reqDetContainer .first-row .form-right{
+	padding-left: 5px;
+}
+.reqDetContainer .row{
+	line-height: 27px;
+}
+.reqDetContainer .left-col{
+	padding-right: 0px;
+}
+.reqDetContainer .right-col{
+	padding-left: 0px;
+}
+.reqDetContainer>.row{
+	margin-bottom: 10px;
+}
+html{
+	height: 100%;
+	-webkit-user-select: none;  
+	-moz-user-select: none;    
+	-ms-user-select: none;      
+	user-select: element;
+}
+html div::selection,html span::selection{
+	background: transparent;
+}
+.staffDet input[type=text]:focus:not(.invalid-red-outline),.staffDet textarea:focus{
+	background: white;
+	/* border-bottom: 1px inset #ffa853; */
+	box-shadow: 0px 0px 0px 1.5px #ffa853;
+	outline: 0px inset #ffa853;
+}
+.reqDetContainer textarea{
+	resize: none;
+	line-height: 20px;
+	padding-bottom: 8px;
+}
+.reqDetForm .reqNbrLink{
+	display: none;
+}
+.reqDetForm .reqNbrLink .reqNbr{
+	color: #4077E8;
+	text-decoration: underline;
+	font-weight: bold;
+	padding: 7px;
+}
+.reqDetForm .reqNbrLink .reqNbr:hover{
+	background-color: rgb(247,214,187);
+	color: rgb(43,51,60);
+	border-radius: 3px;
+}
+.reqStrDetForm .white-bg>.row{
+	padding: 0px;
+}
+.reqStrDetForm .value-align{
+	padding-right: 0px;
+}
+.reqStrDetForm .regionRow{
+	/*padding: 0px;*/
+}
+.reqStrDetForm .regionRow .field-align{
+	padding-right: 0px;
+}
+.reqDetForm .reqNbrLink .left-col{
+	z-index: 500;
+}
+.reqDetForm .value-align,.reqStrDetForm .value-align,.qualifiedPoolform .candCountField .candCount,.applProfContainer .value-text:not(.bold){
+	-webkit-user-select: element; 
+	-moz-user-select: element; 
+	-ms-user-select: element; 
+	user-select: element;
+}
+.reqDetForm .value-align::selection,.reqStrDetForm .value-align::selection,.qualifiedPoolform .candCountField .candCount::selection,.applProfContainer .value-text:not(.bold)::selection{
+	color:white;
+	background: black;
+}
+.leftOrangeArrow{
+	background-image: url("../images/leftOrangeArrow.png");
+	height: 32px;
+	width: 32px;
+	float: right;
+}
+.rightOrangeArrow{
+	background-image: url("../images/rightOrangeArrow.png");
+	height: 32px;
+	width: 32px;
+	float: left;
+}
+.staffDet select{
+	background: -webkit-linear-gradient(rgb(253,253,253), rgb(235,235,235));
+    background: -o-linear-gradient(rgb(253,253,253), rgb(235,235,235));
+    background: -moz-linear-gradient(rgb(253,253,253), rgb(235,235,235));
+    background: linear-gradient(rgb(253,253,253), rgb(235,235,235));
+    border-radius: 5px;
+    height: 25px;
+}
+.staffDet .reqStatus{
+    width: 118px;	
+}
+.hrgEvntY.left .ui-datepicker-trigger{
+	vertical-align: sub;
+}
+.staffDet input[type=text]{
+	height: 25px;
+	line-height: 25px;
+	padding: 0px 2px;
+}
+.staffDet .hrgMgrNameTxt{
+	width: 200px;
+}
+.staffDet .hrgMgrPhnTxt{
+	
+	width: 160px;
+}
+.staffDet .row .row{
+	margin-bottom: 5px;
+}
+.mandatory::before{
+	content: "\2217";
+	color:rgb(220,80,80);
+	font-weight: bold;
+	font-size: 14px;
+}
+.mandatory .blockUI.blockOverlay{
+	margin-left: 14px !important;
+}
+.mandatory.value-align{
+	padding-left: 0px;
+
+}
+.staffDet .white-bg{
+	padding: 1% 0%;
+}
+.first-row .form-bg{
+	padding: 1.5%;
+}
+.staffDet .field-align{
+	padding-left: 0px;
+}
+.staffDet .calendarLst{
+	width: 275px !important;
+}
+.staffDet .calendarLst .selectboxit-text{
+	width: 250px;
+}
+.staffDet .calendarLst+.selectboxit-options{
+	min-width: 275px !important;
+	width: 275px !important;
+	overflow-x: hidden;
+}
+.staffDet .calendarLst+.selectboxit-options .selectboxit-option .selectboxit-option-anchor{
+	overflow: hidden;
+    text-overflow: ellipsis;	
+}
+.staffDet .interviewDurtn{
+	width: 94px;
+}
+.staffDet .hrgEvntY{
+	display: none;
+}
+.staffDet .qualPoolNts{
+	width: 250px;
+	height: 72px;
+}
+.staffDet .hrgMgrTtl{
+	width: 200px;
+}
+.staffDet .targetPay{
+	width: 65px;	
+}
+.staffDet .desiredExp{
+	width: 100px;
+}
+.staffDet .textBoxAlignRight{
+	text-align: right;
+}
+.staffDet .reqNumInterviews{
+	width: 45px;
+}
+.staffDet .ReferalsDiv{
+	height: 73px;
+}
+.staffDet .Referals{
+	width: 270px;
+	height: 72px;
+}
+.staffDet .daysTmMgrAvble{
+	width: 270px;
+}
+.staffDet .langskillablcontainer{
+	padding-left: 0px;
+}
+.staffDet .langskillablcontainer .form-group{
+	margin: 0px;
+}
+.staffDet .langskillablcontainer .form-group .checkbox{
+	margin-top: 0px;
+}
+.staffDet .langskillablcontainer .langSkills{
+	padding:0px;
+}
+.staffDet .schedulePrefRow .row{
+	line-height: 18px;
+  	margin-bottom: 0px;
+}
+.staffDet .schedulePrefRow .row .value-align{
+	padding-left: 35px;
+}
+.schedulePrefRow .row{
+  	margin-bottom: 0px;
+  	white-space: nowrap;
+	padding-left: 2%;
+}
+.staffDet .schedulePrefRow>.row, .schedulePrefRow>.row {
+	padding-right: 0px;
+	padding-left: 21px;
+}
+.staffDet .schedulePrefRow .schedulePref .checkBoxRow{
+	padding-left: 0px;
+}
+
+.staffDet .hrgEvntStartDate,.staffDet .hrgEvntEndDate{
+	width: 70px;
+	margin-right: 2px;
+}
+.staffDet .hrgEvntPhn{
+	text-align: right;
+	width: 160px;
+}
+.staffDet .schedulePrefRow .weekHeader, .staffDet .schedulePrefRow .slots {
+	padding: 0px;
+}
+.staffDet .schedulePrefRow input {
+	margin: 0px;
+	padding: 0px;
+}
+.staffDet .hrgEvntStTime input,.staffDet .hrgEvntEndTime input,.staffDet .hrgEvntLunch input,.staffDet .lastIntrvTime input{
+	width: 40px;
+	text-align: right;
+}
+.staffDet .hrgEvntStTime select,.staffDet .hrgEvntEndTime select,.staffDet .hrgEvntLunch select,.staffDet .lastIntrvTime select{
+	width: 85px;
+}
+.staffDet .hrgEvntStTime,.staffDet .hrgEvntEndTime{
+	display: inline;
+}
+.staffDet .interviewDurtnMin{
+	width: 45px;
+}
+.staffDet .interviewsperTimeSlot{
+	width: 40px;
+}
+.staffDet .hrgEvntY.left input{
+	text-align: right;
+}
+.staffDet .hrgEvntY .row{
+	padding-left: 20px
+}
+.staffDet .hrgEvntState{
+	width: 95px;
+}
+.staffDet .hrgEvntAddr,.staffDet .hrgEvntLoc,.staffDet .hrgEvntCity,.staffDet .hrgEvntBrks{
+	width: 200px;
+}
+.staffDet .hrgEvntZip{
+	width: 70px;
+	text-align: right;
+}
+/*
+.candidates{
+	width: 98.3%;
+}
+*/
+.candidates #candidates-grid,.phnScreen #phnscr-grid {
+	height: 300px;
+}
+.callHist #callHistory-grid {
+	height: 200px;
+}
+.qualifiedPoolform .pager-row{
+	font-weight: bold;
+	font-size: 12px;
+}
+#qpTabs>div{
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+#qpapplGrid,#qpassocGrid{
+	height: 240px;
+}
+#qpapplGrid .slick-cell,#qpassocGrid .slick-cell{
+	text-align: center;
+}
+.candidateIDLink{
+	
+}
+.reqDetContainer .qualPool{
+	display: none;
+}
+.reqDetContainer .action-btn-row.qualPool{
+	margin: 34px 0px;
+}
+.reqDetContainer .filterPool #filterAppl{
+	margin-bottom: 0px;
+}
+.reqDetContainer .filterPool .langSel{
+	font-weight:bold;
+}
+.tierDiv{
+	font-size: 10px;
+	padding: 3px 0px;
+	font-weight: bold;
+  	line-height: 17px;
+}
+.reqDetContainer .filterPool .white-bg{
+	padding: 0px;
+}
+.reqDetContainer .action-btn-row{
+	margin:0;
+}
+.custom-grid{
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	border: 1px solid #B7BABC;
+}
+.custom-grid .slick-viewport{
+	background-size: 50px 60px;
+	background-color: white;
+	background-image: -webkit-linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent);
+	background-image: -moz-linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent);
+	background-image: linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent);
+	-pie-background: linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent) 0 0 / 50px white;
+	behavior: url(/pie/PIE.htc);
+}
+.custom-grid .slick-header-column {
+  box-sizing: content-box;
+  text-align: center;
+  color: rgb(11,51,60);
+  opacity: 1;
+}
+.custom-grid .slick-header-column:hover{
+  background: rgb(247,214,187);
+  color: rgb(11,51,60);
+  opacity: 1;
+}
+.custom-grid .slick-header-column-sorted {
+  font-style: normal;
+}
+.custom-grid .slick-sort-indicator{
+	float: right;
+}
+.custom-grid .slick-header{
+	color: black;
+  	font-size: 12px;
+}
+.custom-grid .slick-row:hover{
+	background-color: rgb(247,214,187);
+}
+.custom-grid .slick-cell:hover{
+	background-color: rgb(247,214,187);
+}
+.custom-grid .slick-row.even{
+	background: rgb(247,247,247);
+}
+.custom-grid .slick-row.odd{
+	background: white;
+}
+.custom-grid .slick-cell{
+	border-bottom: none;
+	border-right: 1px solid silver;
+	font-size: 12px;
+  	text-overflow: clip;
+}
+.custom-grid .slick-cell a{
+	color: #4077E8;
+	text-decoration: underline;
+	font-weight: bold;
+}
+.custom-grid .slick-cell .linkcell{
+	text-align: center;
+}
+.candidates .white-bg{
+	padding: 0%;
+}
+
+.phnScreen .white-bg{
+	padding: 0%;
+}
+.qualifiedPoolform .white-bg{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+}
+.qualifiedPoolform .candCountField{
+	font-size: 12px;
+}
+/*custom tabs*/
+.custom-tabs{
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+.custom-tabs.ui-tabs{
+	background: transparent;
+	border: none;
+}
+.custom-tabs .ui-tabs-nav {
+	background: transparent;
+	padding: 0px;
+	border:none;
+}
+.custom-tabs.ui-tabs .ui-tabs-nav li.ui-state-default a.ui-tabs-anchor{
+	color: black;
+	padding: 0px;
+}
+.custom-tabs.ui-tabs .tabcontent{
+	border: 1px solid #AAB3B3;
+}
+.custom-tabs.ui-tabs .ui-tabs-nav li.ui-state-default.ui-tabs-active{
+	background : white;
+}
+.custom-tabs.ui-tabs .ui-tabs-nav li.ui-state-default{
+	background-image: linear-gradient(rgb(249,249,249) ,rgb(210,210,210));
+	margin-right: 0px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border: 1px solid #BEC0C2;
+	padding: 5px 20px;
+}
+/*Generic popups*/
+.genericPopupClass,.alertmodal{
+	font-size: 12px;
+	line-height:25px;
+}
+.genericPopupClass .warning-icon{
+	background-image: url("../images/warning.png"); 
+}
+.genericPopupClass .button {
+	background: none;
+	border: none;
+	outline: none;
+	width: 68px;
+	height: 30px;
+}
+.genericPopupClass .modal-body {
+	padding-top: 0px;
+}
+.genericPopupClass .modal-content{
+	border-radius: 0px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	-webkit-box-shadow: 0 6px 6px -3px black;
+	-moz-box-shadow:0 6px 6px -3px black;
+	box-shadow: 0 6px 6px -3px black;
+}
+.genericPopupClass .modal-header{
+	padding: 7px;
+	border-bottom: none;
+	padding-bottom: 0px;
+}
+.genericPopupClass .modal-header ul li{
+	display: inline;
+}
+.genericPopupClass .modal-header #icon{
+	height: 25px;
+	width: 25px;
+}
+.genericPopupClass .modal-header>div:nth-child(1){
+	padding-left: 20px;
+}
+.genericPopupClass .modal-header>div:nth-child(2){
+	padding-left: 15px;
+	line-height: 25px;
+}
+.genericPopupClass button:hover {
+	background: rgb(247,214,187);
+}
+.genericPopupClass button {
+	background: none;
+	border: none;
+	outline: none;
+	font-weight: bold;
+	padding: 5px;
+	border-radius: 5px;
+	font-size: larger;
+}
+.genericPopupClass .modalBody{
+	font-weight: bold;
+}
+.genericPopupClass .modalBody .row .message{
+	padding: 0px;
+}
+.genericPopupClass.in~.modal-backdrop,#phnScrDetpopup.in~.modal-backdrop{
+	background-color: rgb(243,243,243);
+	opacity: 0.5;
+}
+.genericPopupClass .modal-dialog-center,.alertmodal .modal-dialog-center{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.alertmodal.in~.modal-backdrop{
+	background-color: #EEEEEE;
+	opacity: 0.4;
+}
+.alertmodal .modal-content{
+	border-radius: 3px;
+	-webkit-box-shadow: 0 4px 4px -1px gray;
+	-moz-box-shadow:0 4px 4px -1px gray;
+	box-shadow: 0 4px 4px -1px gray;
+}
+.alertmodal .modal-header{
+	padding: 7px;
+	border-bottom: none;
+	padding-bottom: 0px;
+}
+.alertmodal .modal-body{
+	padding-bottom: 7px;
+	color: white;
+}
+.alertmodal .alertmodalbtn,.alertmodal .alertmodalbtn:focus{
+	height: 20px;
+	width: 65px;
+	line-height: 15px;
+	font-weight: bold;
+	border-radius: 5px;
+	border: 2px solid #E6781E;
+	color:#123941;
+	background: linear-gradient(#DEE4E7,#ACB8BD);
+}
+.alertmodal .alertmodalbtn:hover{
+	border: 1px solid #E6781E;
+	background : rgb(221, 221, 221);
+}
+
+.blurBody{
+	-webkit-filter: blur(1px); /* Chrome, Opera, etc. */
+	filter: blur(1px); /* Firefox 35+, eventually all */
+}
+.datepicker-flex{
+	width: 180px;
+	height: 200px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	padding: 0px;
+	background: white;
+	font-size: 13px;
+	box-shadow: 0px 4px 3px rgb(166,166,166);
+	z-index: 200 !important;
+}
+.datepicker-flex td,.datepicker-flex td a{
+	padding:0px;
+	text-align: center;
+}
+.datepicker-flex thead,.datepicker-flex tr{
+	height:22px;
+}
+.datepicker-flex .ui-datepicker-header.ui-widget-header {
+	border: none;
+	background: linear-gradient(rgb(226,230,236) ,rgb(242,243,245));
+	color: #000;
+	font-weight: bold;
+	border-bottom: 1px solid rgb(183,186,188);
+}
+.datepicker-flex .ui-datepicker-next,.datepicker-flex .ui-datepicker-prev{
+	background: linear-gradient(rgb(242,243,245), rgb(226,230,236));
+	border: 1px solid rgb(95,97,98);
+	width: 1.5em;
+	height: 1.5em;
+	margin:3px;
+}
+.datepicker-flex .ui-datepicker-next:hover,.datepicker-flex .ui-datepicker-prev:hover{
+	background: linear-gradient(rgb(242,243,245), rgb(226,230,236));
+	border:1px solid rgb(174,91,22);
+}
+.datepicker-flex .ui-datepicker-year{
+	float: right;
+	margin-right: 7px;
+}
+.datepicker-flex .ui-widget-header .ui-icon
+{
+background-image: url(../images/ui-icons_222222_256x240.png)  !important;
+}
+/*Calender datepicker*/
+.ui-widget-header .ui-icon
+{
+background-image: url(../images/ui-icons_222222_256x240.png)  !important;
+}
+.ui-datepicker-calendar .ui-state-default,.ui-datepicker-calendar .ui-widget-content .ui-state-default{
+	border:none;
+	color:#000;
+}
+.ui-datepicker-calendar .ui-state-highlight,.ui-datepicker-calendar .ui-widget-content .ui-state-highlight {
+	background: #c3c3c3 !important;
+}
+.ui-datepicker-prev.ui-corner-all .ui-icon-circle-triangle-w
+{
+	background-position: -96px -15px;
+}
+.ui-datepicker-next.ui-corner-all .ui-icon-circle-triangle-e{
+background-position: -33px -16px;
+}
+.ui-datepicker-header.ui-widget-header {
+	border: none;
+background: #eeeeee; /* Old browsers */
+background: -moz-linear-gradient(top,  #eeeeee 48%, #cccccc 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(48%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #eeeeee 48%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #eeeeee 48%,#cccccc 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #eeeeee 48%,#cccccc 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #eeeeee 48%,#cccccc 100%); /* W3C */
+color: #000;
+font-weight: bold;
+}
+.ui-datepicker-calendar .ui-state-default,.ui-datepicker-calendar .ui-widget-content .ui-state-default {
+border: none !important;
+background: none;
+font-weight: normal;
+color: #000 !important;
+outline: none;
+}
+.ui-datepicker-calendar .ui-state-active {
+	background-color: rgb(242,187,142) !important;
+}
+.ui-datepicker-calendar .ui-state-highlight,.ui-datepicker-calendar .ui-widget-content .ui-state-highlight {
+border: none;
+background: #c3c3c3;
+color: #000;
+}
+.ui-datepicker-calendar
+{
+	background:#fff;
+}
+
+
+
+
+/*CSS For RETAIL STAFFING REQUEST, FORM ELMENTS SPACING CSS STARTS */
+.retailStafReq #divLandingView {
+	font-size: 12px;
+	overflow-y: scroll;
+}
+.retailStafReq .field-align{
+	text-align: right;
+	font-weight: bold;
+	padding-right: 3px;
+}
+.retailStafReq .shadow-box{
+	box-shadow: 3px 3px 5px grey;
+	padding:1% !important;
+}
+.retailStafReq .rowTitle {
+	font-size: 14px;
+}
+#createHiringEventPopUp .modal-content {
+	background: transparent;
+	width: 675px;
+	/*margin-left: -9%;*/
+}
+#createHiringEventPopUp .modal-body {
+	background: #fff;
+	margin: 2%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 570px;
+}
+.firstReqRow {
+	min-width: 1135px;
+	width: 100%;
+	margin: 0%;
+}
+.retailStafReq .jumbotron.box-grey-shadow {
+	padding: 1%;
+	-webkit-box-shadow: 0 3px 1px #777;
+	-moz-box-shadow: 0 3px 1px #777;
+	box-shadow: 0 0px 1px -12px #70;
+}
+#requestorName, #requestorId {
+	text-align: left !important;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: element;      
+}
+#requestorName::selection, #requestorId::selection,#createHiringEventPopUp #mgrName::selection,#createHiringEventPopUp #mgrTitle::selection,#createHiringEventPopUp #mgrPhn::selection,#createHiringEventPopUp #mgrMail::selection,.textSelectionTrue::selection,.textSelectionTrue *::selection
+{
+	color:white;
+	background: black;
+}
+#createHiringEventPopUp #mgrName,#createHiringEventPopUp #mgrTitle,#createHiringEventPopUp #mgrPhn,#createHiringEventPopUp #mgrMail
+{
+	-webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: element;
+}
+.textSelectionTrue,.textSelectionTrue * {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: element;
+}
+.retailStafReq .form-control {
+	display: block;
+	width: 100%;
+	padding: 0px 0px;
+	color: #555;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	height: 26px;
+}
+.retailStafReq .radio label, .retailStafReq .checkbox label{
+	font-weight: bold;
+	font-size: 12px
+}
+.retailStafReq .jumbotron {
+	margin-bottom: 10px;
+}
+.schedulePreference .col-xs-6 .col-xs-1{
+	width:6%;
+} 
+.retailStafReq select{
+	border: 1px solid #E5E5E5;
+	border-radius: 6px;
+}
+.retailStafReq .form-group {
+	margin-bottom: 5px;
+}
+.requestInfoHolder  {
+	margin-top: 1%;
+	min-width: 1155px;
+	width: 100%;
+}
+.firstWhiteContent{
+	margin: 1%;
+	padding: 0.5%;
+	font-weight: normal;
+	white-space: nowrap;
+}
+#headerLabel{
+	font-weight: normal;
+	padding: 0px;
+	text-align: center;
+}
+#fillDt, #eventDtEnd, #eventDtStart {
+	background-color: #fff;
+}
+.toLbl {
+	margin-left: -12%;
+}
+ #eventDtEnd, #eventDtStart {
+	width: 65% !important;
+}
+.retailStafReq #ui-datepicker-div 
+{
+ z-index: 2050 !important; 
+}
+.retailStafReq .modal-backdrop {
+	opacity: 0.6 !important;
+	background-color: #E4E4E4 !important;
+}    
+.storeDelBtn {
+	width: 140px !important;
+}                  
+.datePick, .datePickDtEnd, .datePickDt {
+	background: transparent;
+	border: none;
+	padding: 5px;
+
+}
+.retailStafReq select {
+	padding: 4px;
+	width: 100%;
+	background: rgb(250,250,250) !important;
+	background: -webkit-linear-gradient(rgb(240,240,240), rgb(250,250,250)) !important;
+	background: -o-linear-gradient(rgb(240,240,240), rgb(250,250,250));
+	background: -moz-linear-gradient(rgb(240,240,240), rgb(250,250,250));
+	background: linear-gradient(rgb(240,240,240), rgb(250,250,250));
+	border-radius: 7px;
+	border:1px solid lightgrey; 
+}
+.submitMsg p, .warningMsg p, .calendarpopuptext div, .calNameTxt div, .calendarButton button {
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+}
+#submitModal div, #cancelUnsaveModal div, #infoModal div, #infoCalModal div, #alert div, #schdErrorModal div {
+	font-size: 12px;
+
+}
+
+#noOfIntr {
+	font-weight: 700;
+}
+
+#submitModal button, #cancelUnsaveModal button, #infoModal button, #infoCalModal button, #alert button, #noOfIntrModal button, #schdErrorModal button {
+	background: transparent;
+	border: none;
+	font-size: 14px;
+	font-weight: 700;
+}
+#submitModal button:hover, #cancelUnsaveModal button:hover, #infoModal button:hover, #infoCalModal button:hover, #alert button:hover, #noOfIntrModal button:hover, #schdErrorModal button:hover {
+	background-color: rgb(247, 214, 187);
+}
+#submitModal .modal-header, #cancelUnsaveModal .modal-header, #infoModal .modal-header, #infoCalModal .modal-header,  #alert .modal-header, #noOfIntrModal .modal-header, #schdErrorModal .modal-header{
+	border: none;
+}
+#submitModal .modal-body, #cancelUnsaveModal .modal-body, #infoModal .modal-body, #createCalendarModal .modal-body, #infoCalModal .modal-body, #alert .modal-body, #noOfIntrModal .modal-body, #schdErrorModal .modal-body {
+	background-color: #fff;
+	border: none;
+}
+.retailStafReq .glyphicon-ok {
+	color: green;
+}
+.retailStafReq .glyphicon-remove {
+	color: orangered;
+}
+.retailStafReq .glyphicon-warning-sign {
+	color: orange;
+}
+.retailStafReq .glyphicon-info-sign {
+	color: blue;
+}
+.retailStafReq .glyphicon-minus-sign {
+	color: red;
+}
+.btn-green {
+	color: white;
+	padding-top: 0.3%;
+	padding-bottom: 0.3%;
+	border-radius:4px;
+	background: rgb(111,128,43) !important;
+	background: -webkit-linear-gradient(rgb(155,170,97), rgb(111,128,43)) !important;
+	background: -o-linear-gradient(rgb(155,170,97), rgb(111,128,43));
+	background: -moz-linear-gradient(rgb(155,170,97), rgb(111,128,43));
+	background: linear-gradient(rgb(155,170,97), rgb(111,128,43));
+	font-weight: bold; 
+}
+.btn-green:hover{
+	color: yellow;
+	border:1px solid orangered;
+}
+
+.retailStafReq .btn {
+height: 30px;
+width: 80px;
+}
+.release {
+	margin-top: 5%;
+}
+#createHiringEventPopUp button {
+	color: black;
+	font-weight: 700;
+}
+#addCalendarBtn {
+	width: 190px;
+}
+
+#alertPopupModal .modal-content, #hiringAlertPopupModal .modal-content {
+	width: 45% !important;
+	margin: auto;
+}
+#calAlertPopupModal .modal-content {
+	height: 110px !important;
+	width: 30% !important;
+}
+#calAlertPopupModal .alertModalBody {
+	margin-top: 10%;
+}
+#alertPopupModal .alertModalBody, #hiringAlertPopupModal .alertModalBody {
+	word-break: break-word;
+}
+#alertPopupModal .modal-header, #calAlertPopupModal .alert-modal-header, #hiringAlertPopupModal .modal-header{
+	border-bottom:none;
+}
+#alertPopupModal .modal-dialog, #calAlertPopupModal .alert-modal-dialog, #hiringAlertPopupModal .modal-dialog{
+	color: white;
+	font-size: 12px;
+	margin-top: 20%;
+	margin-left: 35%;
+}
+#alertPopupModal button, #calAlertPopupModal .alertmodalbtn, #hiringAlertPopupModal button {
+	width: 19%;
+	font-weight: bold;
+	border: 1px solid orangered;
+	padding: 0px;
+	color:black;
+	background-color:rgb(185,195,200);
+}
+#alertPopupModal button:hover, #calAlertPopupModal .alertmodalbtn:hover, #hiringAlertPopupModal button:hover
+{
+	background-color:rgb(211,218,221);
+}
+
+/*Create Calendar pop up*/
+#createCalendarModal .modal-content{
+	width: 600px;
+	height: 295px;
+	background: transparent;
+}
+#createCalendarModal .modal-header {
+	background: -webkit-linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	background: -o-linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	background: -moz-linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	background: linear-gradient(rgb(203,106,26), rgb(231,148,81));	
+	height: 17px;
+	border: 1px solid black;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom:none;
+}
+#createCalendarModal .modal-body {
+height: 90%;
+padding:0;
+background: transparent;
+}
+#createCalendarModal .calendarpopupform {
+height: 91%;
+margin: 19px;
+background: white;
+padding-top:4px;
+margin-top: 7px;
+}
+#createCalendarModal .modal-dialog {
+margin-left: 390px;
+}
+#createCalendarModal .CalendarNmaelabelmodal {
+	
+}
+#CalendarNameModalText{
+	width: 50%;
+	margin-left: 5px;
+	height: 124%;
+	height: 31px;
+}
+.calendarpopupform .row {
+	padding-top:4px;
+}
+.calendarpopuptext div {
+	font-weight:bold;
+	margin-left: -46px;
+	margin-bottom: 11px;
+	margin-top: 3%;
+}
+#createcalendarmodalLabel, #createhiringmodalLabel{
+	font-weight:bold;
+	font-size: 12px;
+	margin-left: 15px;
+}
+#createHiringEventPopUp .greyBox {
+	width: 625px;
+	margin-left: -2%;
+	margin-top: -2%;
+}
+#createHiringEventPopUp .greyBoxPartStr {
+	width: 625px;
+	margin-left: -2%;
+	margin-top: 1%;
+}
+#createHiringEventPopUp.whitBox {
+	width: 525px;
+	margin-left: 1%;
+}
+.eventDatesDiv {
+	margin-left: -2.5%;
+}
+.CalendarNmaelabelmodal {
+	
+}
+#CalendarNameModalText{
+	width: 50%;
+	margin-left: 5px;
+	height: 124%;
+	height: 31px;
+}
+#CalendarNameModalText:focus{
+	outline:none;
+}
+.calendarButton {
+	text-align: left;
+	margin-top: 35px;
+}
+.calendarButton button{
+	width:25%;
+}
+
+.secondContentRow {
+	margin: 0;
+}
+
+/* slick grid */
+
+#createEventGrid .gridContainer {
+	min-height: 120px;
+}
+#createEventGrid .slick-header-columns {
+	/*left: 0px !important;*/
+}
+#createEventGrid .slick-header-column {
+	min-height: 25px;
+}
+#createEventGrid .grid-canvas {
+	height: 90px !important;
+}
+#createEventGrid .slick-cell {
+	/*width: 145px !important;*/
+}
+
+/* slick grid */
+
+.slick-header-column:hover, .slick-header-column-active
+{
+	color: #000;
+	opacity: 0.7;
+}
+.slick-header-column, .slick-header-column-active
+{
+	color: #000;
+	opacity: 0.7;
+}
+.slick-cell, .slick-headerrow-column {
+
+border-bottom-color: transparent;
+
+}
+#myGrid,#reqHistory,#phnIntHistory {
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+[class^="slickgrid_"],[class^="slickgrid_"] div {
+	-webkit-box-sizing: content-box !important;
+	-moz-box-sizing: content-box !important;
+	box-sizing: content-box !important;
+}
+.ui-widget-content.slick-row:hover {
+background: bisque;
+}
+[class^="slickgrid_"] a:hover,[class^="slickgrid_"] a:focus,[class^="slickgrid_"] a {
+color: blue;
+text-decoration: underline;
+}
+
+
+#myGrid .slick-viewport{
+	background-size: 50px 60px;
+	background-color: white;
+	background-image: -webkit-linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent);
+	background-image: -moz-linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent);
+	background-image: linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent);
+	-pie-background: linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent) 0 0 / 50px white;
+	behavior: url(/pie/PIE.htc);
+}
+#myGrid .slick-header-column {
+  height: 25px;
+  text-align: center;
+  color: black;
+}
+#myGrid .slick-header-column-sorted {
+  font-style: normal;
+}
+#myGrid .slick-sort-indicator{
+	float: right;
+}
+#myGrid .slick-header{
+	color: black;
+  	font-size: 12px;
+}
+#myGrid .slick-row:hover{
+	background-color: rgb(247,214,187) !important;
+}
+/* #myGrid .slick-cell:hover{
+	background-color: rgb(247,214,187);
+} */
+#myGrid .slick-row.even{
+	background: rgb(247,247,247);
+}
+#myGrid .slick-row.odd{
+	background: white;
+}
+#myGrid .slick-cell{
+	border-bottom: none;
+	border-right: 1px solid silver;
+	font-size: 12px;
+  	text-overflow: clip;
+} 
+/*CSS For RETAIL STAFFING REQUEST, FORM ELMENTS SPACING CSS ENDS*/
+
+/*  APPLICANT PROFILE css starts*/
+.applicantProfile label{
+	font-size: 12px;
+}
+
+label.panelHeader{
+	font-size: 14px;
+}
+.bold{
+	font-weight: bold;
+}
+.nowrap{
+	white-space: nowrap;
+}
+.nopad{
+	padding:0px;
+}
+.applProfContainer{
+	min-width: 1516px;
+	padding: 10px;
+	font-size: 13px\0;
+}
+.applProf-left-col{
+	width: 40%;
+	padding: 0px;
+}
+.applProf-right-col{
+	width: 893px;
+	padding-right: 0px;
+	padding-left: 8px;
+}
+.applProfMainContainer{
+	height: 96%;
+	overflow: auto;
+}
+.applProfContainer .white-bg{
+	padding:20px;
+}
+.applProfContainer .form-bg{
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.applProfContainer .white-bg{
+	font-size: 12px;
+	font-size:12px\0;
+}
+.applProfContainer .personalInfo .personalDet>div{
+	margin-bottom: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.applProfContainer .personalInfo .white-bg{
+	height: 310px;
+}
+.applProfContainer .personalInfo .eligDet>.row{
+	margin-bottom:10px;
+}
+.applProfContainer .personalInfo .eligDet .row>div{
+	display: inline-block;
+}
+.applProfContainer .personalInfo .eligDet .row .value-part,.applProfContainer .eduInfo .value-part{
+	margin-left: 13px;
+}
+
+.applProfContainer .degreeRow>div{
+	display: inline-block;
+}
+.applProfContainer .eduInfo .education:not(:last-child){
+	margin-bottom: 20px;
+}
+.applProfContainer .eduInfo .education .row{
+	margin-bottom: 12px;
+}
+.applProfContainer .workHist{
+	line-height: 25px;
+}
+.applProfContainer .workHist .military-right-col{
+	padding: 0px;
+	line-height: 25px;
+}
+.applProfContainer .thickhr{
+	margin: 0px;
+	border-top: 1px solid #C4CCCC;
+}
+.applProfContainer .shadowhr{
+	margin: 0px;
+}
+.applProfContainer .miliratySec{
+	margin-bottom: 25px;
+}
+.applProfContainer .workHist .prevwork{
+	margin-top: 20px;
+}
+.applProfContainer .workHist .supTitleLbl{
+	padding-left: 0px;
+}
+.applProfContainer .workHist .scroll-content{
+	height: 100px;
+	overflow-y: scroll;
+}
+.applProfContainer .workHist .scroll-content .content{
+	min-height: 125px;
+}
+.applProfContainer .langskillablcontainer>.row{
+	margin-bottom: 5px;
+}
+.applProfContainer .attachCand .rjctRsncb{
+	width: 160px;
+}
+.applProfContainer .attachCand #saveBtn{
+	width: 80px;
+}
+.applProfContainer .skillscontainer{
+	font-size:12px;
+}
+.applProfContainer .skillscontainer .skillCheck{
+	text-align: center;
+}
+.applProfContainer .skillscontainer .skillLbl{
+	padding: 0px;
+	white-space: nowrap;
+}
+.applProfContainer .skillscontainer .row{
+	line-height: 25px;
+	margin-bottom: 3px;
+}
+.applProfContainer .jobPrefContainer{
+	padding: 10px;
+}
+.applProfContainer .jobPrefContainer .schedLbl{
+	margin-left: 0px;
+}
+.applProfContainer .jobPrefContainer .weekHeader>label,.applProfContainer .jobPrefContainer .slots>label{
+	padding-left: 0px;
+}
+.applProfContainer .jobPrefContainer .accomreq{
+	margin-top: 3px;
+}
+.applProfContainer .jobPref .outrow{
+	margin-left: -5px;
+	line-height: 25px;
+}
+.applProfContainer #reviewResultsGrid{
+	height: 121px;
+	width: 330px;
+	margin-top: 15px;
+}
+.applProfContainer #prevPositionGrid{
+	height: 121px;
+	width: 420px;
+	margin-top: 15px;
+}
+.applProfContainer #appHistGrid1,.applProfContainer #appHistGrid2{
+	height: 200px;
+	width: 370px;
+}
+.applProfContainer #phnScrHistGrid,.applProfContainer #candStatHistGrid{
+	height: 175px;
+}
+.attachCand .medwidth{
+	width:20%;
+}
+.eduInfo .value-text{
+	white-space: nowrap;
+	padding: 0px;
+}
+#phnScrDetpopup{
+	font-size: 12px;
+}
+#phnScrDetpopup .modal-dialog{
+	width: 1100px;
+	height: 660px;
+	margin: auto;
+}
+#phnScrDetpopup .modal-dialog .modal-content{
+	background: rgba(255,255,255,0.3);
+	padding: 10px;
+	border-top-right-radius: 7px;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	height: 100%;
+}
+#phnScrDetpopup .modal-header{
+	padding: 0px;
+	border: none;
+	min-height: 0px;
+	height: 3%;
+}
+#phnScrDetpopup .modal-body{
+	border-radius: 0px;
+	background: white;
+	padding: 5px 30px;
+	height: 97%;
+}
+#phnScrDetpopup .second-col{
+	padding-right: 20px;
+	text-align: center;
+}
+#phnScrDetpopup .content-div{
+	margin-top: 30px;
+}
+#phnScrDetpopup .header-div{
+	margin-top: 10px;
+}
+#phnScrDetpopup .field-label{
+	text-align: right;
+	white-space: nowrap;
+	font-weight: bold;
+	padding: 0px;
+}
+#phnScrDetpopup .posspecific{
+	padding-left: 20px;
+}
+#phnScrDetpopup .reqspecific{
+	padding-right: 45px;
+}
+#phnScrDetpopup .header-label{
+	font-weight: bold;
+	white-space: nowrap;
+	padding: 0px;
+}
+#phnScrDetpopup .header-label span{
+	font-weight: normal;
+	margin-left: 15px;
+}
+#phnScrDetpopup .phnscrlbl{
+	padding-left: 5px;
+}
+#phnScrDetpopup select{
+	width: 65px;
+	margin-left: 15px;
+	opacity: 0.35;
+}
+#phnScrDetpopup .selectrow{
+	line-height: 33px;
+}
+#phnScrDetpopup .selectCont{
+	display: inline-block;
+}
+#phnScrDetpopup .select-label{
+	font-weight: bold;
+	white-space: nowrap;
+}
+#phnScrDetpopup .selectrow.row-right{
+	white-space: nowrap;
+	float: right;
+}
+#phnScrDetpopup #contacthistTextarea{
+	resize:none;
+	width: 300px;
+	height: 98px;
+}
+#phnScrDetpopup #phnDtlResp{
+	width: 100%;
+	height:170px;
+	resize:none;
+}
+#phnScrDetpopup .phnScrDisp{
+	margin-left: 0px;
+	width: 200px;
+}
+#phnScrDetpopup textarea{
+	margin-top: 10px;
+}
+/*  APPLICANT PROFILE css ends*/
+/*to make comaptible with IE 10*/
+.messageBar-orange-theme {
+	background-image: -ms-linear-gradient(top, #E6781E 0%, #C36619 100%) !important;
+}
+.selectboxit-selected{
+	background:rgba(230, 120, 30,0.5) !important;
+}
+select + span .selectboxit-arrow-container{
+	border-left:1px solid #c3c3c3;
+	height: 17px;
+	width: 20px;
+ 	margin-top: 3px;
+}
+/* select + span{
+	border:1px solid #555;
+	border-top-color:#c3c3c3;
+	margin-bottom:2px;
+	border-radius:5px;
+	text-indent: 0px !important;
+} */
+select + span>span:hover{
+	border:1px solid #ffa853;
+	border-top-color:#ffa853;
+	margin-bottom:2px;
+	border-radius:5px;
+	background: white;
+}
+select + span > span:hover > span.selectboxit-arrow-container{
+	border-left:1px solid #ffa853;
+}
+.selectboxit-btn.selectboxit-enabled:hover,.selectboxit-btn.selectboxit-enabled:focus{
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-bottom-color: #b3b3b3;
+  border:1px solid #ffa853;
+  border-radius:5px;
+  background-position: 0px 0px; 
+  }
+.selectboxit-btn.selectboxit-enabled.selectboxit-btn.selectboxit-hover:hover{
+	background-color: white;
+}
+select+span
+{
+height: 25px;
+}
+.selectboxit-container span,.selectboxit-container .selectboxit-options a
+{
+height: 25px;
+line-height: 25px;
+font-size: 12px;
+}
+.selectboxit-btn{
+	border-color: rgb(183,186,188) rgb(146,148,150) rgb(94,96,97);
+}
+.langSel .selectboxit-text{
+	font-weight: bold;
+}
+.invalid-red-outline{
+	border: 1px solid red;
+	border-color: rgb(153,0,0) rgb(255,63,63) rgb(255,102,102);
+}
+.invalid-red-outline:focus{
+	background: white;
+	box-shadow: 0px 0px 0px 1.5px red;
+	outline: 0px inset red;
+}
+.invalid-red-outline+.tooltip .tooltip-inner{
+	background: rgb(203,46,46);
+	color: white;
+	height:25px;
+	font-size: 11px;
+  	line-height: 19px;
+  	max-width: none;
+}
+.invalid-red-outline+.tooltip .tooltip-arrow{
+	border-right-color: rgb(203,46,46);
+}
+html {
+	width: 100%;
+	min-width: 1280px;
+	height: 100%;
+	min-height: 660px;
+}
+.navbar-collapse	{
+width:auto;
+border-top:0;
+box-shadow:none;
+}
+ 
+.navbar-collapse.collapse	{
+display:block !important;
+height:auto !important;
+padding-bottom:0;
+overflow:visible !important;
+}
+ 
+.navbar-collapse.in	{
+overflow-y:visible;
+}
+ 
+.navbar-fixed-top .navbar-collapse,
+.navbar-static-top .navbar-collapse,
+.navbar-fixed-bottom .navbar-collapse	{
+padding-left:0;
+padding-right:0;
+}
+#myGrid .slick-row.loading:hover,#myGrid .slick-row.loading .slick-cell:hover,.custom-grid .slick-row.loading:hover,.custom-grid .slick-row.loading .slick-cell:hover {
+    background-color: transparent !important;
+}
+#myGrid .slick-row.loading,#myGrid .slick-row.loading .slick-cell,.custom-grid .slick-row.loading,.custom-grid .slick-row.loading .slick-cell
+{
+opacity: 1;
+}
+input[readonly='readonly'], textarea[readonly='readonly'], input[type='text']:disabled, textarea:disabled {
+	cursor: text !important;
+}
+.retailStaffingReq #requestorPhnNum{
+	padding-right: 4px;
+}
+.slick-cell div {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+.slick-cell:hover a,#retailStaffing .slick-cell:hover a, #reviewPhoneScreensDetails .slick-cell:hover a, .candidateDetails .slick-cell:hover a {
+    color: #000;
+}
+textarea {
+	white-space: normal !important;
+}
+.hiringMangerInfoHolder #managerPhoneNum{
+	padding-right: 4px;
+}
+.applProfContainer .eduInfo .education .row.degreeRow .checkBoxCont.block-control,.eligDet.personalInfoRt .checkBoxCont.block-control{
+	position: relative;
+}
+.reqDetContainer .strName, .reqDetContainer .strMgr, .reqDetContainer .add {
+	overflow: hidden;
+}

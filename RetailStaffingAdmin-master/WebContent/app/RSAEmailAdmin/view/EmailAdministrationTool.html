@@ -1,0 +1,67 @@
+
+<script>
+	var emailAdmin = new emailAdministrationTool();
+	$(document).ready(function() {
+		emailAdmin.initialize();
+
+	});
+
+</script>
+		<div class="container">
+<div id="emailTool">
+<div class="row">
+<div class="col-xs-9 col-xs-offset-2 text-center emailText"><span class="textSelectionTrue">Use this tool to resend emails using requisition numbers. Enter the requisition numbers separated by commas (,) and<br> 
+click submit to resend the emails for the selected requisitions.</span></div>
+</div>
+<form id="emailadminform"class="control-case">
+<div class="jumbotron shadow-box emailshadowbox">
+<strong><div class="headerEmail"><label>Email Administration Tool</label></div></strong>
+		<div class="control-case shadow-box">
+<div id ="emailAdminPage" class="row">
+
+
+		<div class="col-xs-12 form-control">
+			<div class="row"class="form-group">
+				<div class="col-xs-2 text-left emailadminlabeldiv">
+					<label style="margin-left: 20px;"><strong>Requisition Number(s):</strong> </label></div>
+					<div class="col-xs-10"> <textarea  id="requisitionNumber" class="emailRequisitionNumber" cols="12" ></textarea>
+					
+				</div>
+				
+			</div>
+		</div>
+
+</div>
+</div>
+		</div>
+		</form>	
+		<br>
+		<div class="row">
+		<div class="col-xs-12 text-center">
+				 
+				<button  class="emailbtn-green" id="emailAdminButtonSubmit" onclick="emailAdmin.validate()">Submit</button>
+				<button class="emailbtn-green" id="emailAdminButtonCancel"onclick="emailAdmin.closeWindow()">Cancel</button>
+		</div>
+			</div>
+			
+			<hr id="emailAdminHorizontal">
+	</div>
+</div>
+		
+<div class="modal fade emailmodal"  id="emailModalId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content emailmodelContent" style="background: rgb(145,165,175)">
+      <div class="modal-header">
+        
+        <h5 class="modal-title" id="emailModalLabel"></h5>
+      </div>
+   <div class="modal-body ">
+   <div class="myModalBody text-center emailModalBody textSelectionTrue"></div>
+   <br>
+   <div class="text-center">
+    <button type="button" class="emailmodalbtn" data-dismiss="modal">OK</button></div>
+      </div> 
+    </div>
+  </div>
+</div>		
+

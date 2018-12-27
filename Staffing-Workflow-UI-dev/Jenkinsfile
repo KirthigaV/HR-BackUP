@@ -1,0 +1,97 @@
+pipeline {
+agent {
+
+	docker {
+		image 'docker.artifactory.homedepot.com/common-tax/tax-build:latest'
+ }
+}
+
+	stages {
+
+			stage('TestSuite For SWF UI') {
+ 				steps {
+ 									echo 'Starting SWF UI Test Suite Run'
+                                    sh 'yarn install'
+									sh 'yarn test'
+ 									echo 'End of SWF UI Test Suite Run'
+ 							}
+				  post {
+                  success {
+						sh '''
+                        export AUTH_TOKEN=6LnFzlpRIhCHlh2AANdeNQ==
+                        export JE_API_KEY=HR_StaffUp
+                        export JE_JOB_NAME=JestEnzyme
+						export VERSION=1.0.0
+                        export JOB_SET_NAME=Unit_Testing
+						export ENV=Q1
+						mkdir -p $WORKSPACE/jar_results
+						export RESULT_PATH=$WORKSPACE/junit.xml
+						export JE_TARPATH=$WORKSPACE/jar_results/jejunit.tar
+                        export JE_PATH=$WORKSPACE/jar_results/
+                        export JE_TARNAME=jejunit.tar
+                        export TEST_TYPE=JestEnzyme
+						export PROXY=thd-svr-proxy-qa.homedepot.com:7070
+                        echo "----Zipping the test results----"
+                        cd $JE_PATH
+                        tar vcfz $JE_TARNAME $RESULT_PATH
+                        echo "----Test Case Results Upload-----"
+                        curl -x -k -i -H "X-Auth-Token: ${AUTH_TOKEN}" -H "X-MyApplication-API-Key: ${JE_API_KEY}" -H "Content-Type: multipart/form-data" -X POST -F pipelineExecutionId="StaffUp""_""${TodayDate}" -F "jobName=${JE_JOB_NAME}" -F "applicationName=HR_StaffUp" -F "version=${VERSION}" -F "jobSetName=${JOB_SET_NAME}" -F "jobExecutionStatus=COMPLETED" -F "deploymentEnvironment=${ENV}" -F "testType=${TEST_TYPE}" -F "file=@${JE_TARPATH};type=application/zip" http://api-cipipeline.sqhub.homedepot.com/buildpipeline/publish --proxy ${PROXY}
+
+                    '''
+							}
+						}
+
+			 }
+
+			 stage('Fortify Scan - UI'){
+                                 steps {
+                                     sh '''
+
+                                     export FORTIFY_TOKEN=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm9qTmFtZSI6ImhyLXN0YWZmaW5nX3N0YWZmaW5nLXdvcmtmbG93LXVpIn0.-65-1uxYyuwvt4JaHe0ODR5eb_a-0uQ17nauYgcboM0
+                                     export SRC_PATH=$WORKSPACE/UI/
+                                     export FILE_TARPATH=$WORKSPACE/UI.tar
+                                     export FORTIFY_PATH=$WORKSPACE/
+                                     export FORTIFY_TARNAME=UI.tar
+                                     export PROXY=thd-svr-proxy-qa.homedepot.com:7070
+
+                                     if [ ! -d "$SRC_PATH" ]; then
+                                     mkdir $WORKSPACE/UI/
+                                     fi
+                                     cp -r $WORKSPACE/src/ $SRC_PATH
+                                     cp -r $WORKSPACE/node_modules/ $SRC_PATH
+             						cp $WORKSPACE/server.js $SRC_PATH
+                                     echo "----Zipping the src code----"
+                                     tar vcfz $FORTIFY_TARNAME $SRC_PATH
+
+                                     echo "----Fortify Upload-----"
+                                     $(curl -k -X POST https://lnc3fd5.homedepot.com:9443/upload -H "authorization: Bearer ${FORTIFY_TOKEN}" -H "content-type: multipart/form-data;" -F "file=@${FILE_TARPATH}" -o output.json)
+
+                                     FORTIFY_UPLOADED_FILE=$(cat output.json | cut -d: -f2 | sed 's/}//g')
+
+                                     echo $FORTIFY_UPLOADED_FILE
+
+                                     echo "----Fortify Scan-----"
+
+                                     $(curl -X POST https://viper-static-scan-service.apps-np.homedepot.com/api/scan -H "authorization: Bearer ${FORTIFY_TOKEN}" -H "content-type: application/json" -d '{"projVer": "dev", "language": "java", "payloadFile": '$FORTIFY_UPLOADED_FILE'}' -o scanoutput.json)
+                                     '''
+                                     }
+                                    post {
+                                    success {
+                                    sh '''
+                                    export FS_AUTH_TOKEN=6LnFzlpRIhCHlh2AANdeNQ==
+                                    export FS_API_KEY=HR_StaffUp
+                                    export FS_JOB_NAME=UI
+                                    export FS_VERSION=1.0.0
+                                    export FS_JOB_SET_NAME=FortifyScan
+                                    export FS_ENV=Q1
+                                    export FS_linkDetail=https://fortify-ssc.homedepot.com/ssc/html/ssc/version/13758/fix?filterSet=a243b195-0a59-3f8b-1403-d55b7a7d78e6
+                                     export FS_PROXY=thd-svr-proxy-qa.homedepot.com:7070
+                                     echo "----Test Case Results Upload-----"
+                                     curl -x -k -i -H "X-Auth-Token: ${FS_AUTH_TOKEN}" -H "X-MyApplication-API-Key: ${FS_API_KEY}" -H "Content-Type: multipart/form-data" -X POST -F pipelineExecutionId="StaffUp""_""${TodayDate}" -F "jobName=${FS_JOB_NAME}" -F "applicationName=${FS_API_KEY}" -F "version=${FS_VERSION}" -F "jobSetName=${FS_JOB_SET_NAME}" -F "jobExecutionStatus=COMPLETED" -F "deploymentEnvironment=${FS_ENV}" -F "jobMoreInfoLink=${FS_linkDetail}" http://api-cipipeline.sqhub.homedepot.com/buildpipeline/publish --proxy ${FS_PROXY}
+                                     '''
+                                     }
+                                     }
+              }
+
+	}
+}

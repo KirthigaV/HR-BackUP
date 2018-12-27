@@ -1,0 +1,25 @@
+.home {
+  .home-layout {
+    overflow: scroll;
+  }
+.utility-header{
+  overflow: hidden;
+}
+  .card {
+    .card-content {
+      .standard-table {
+        margin-top: 0;
+        th {
+          color: #999999;
+        }
+        td.availability-column {
+          white-space: pre-line;
+        }
+      }
+    }
+    .card-toolbar {
+      margin-bottom: 0px;
+
+    }
+  }
+}

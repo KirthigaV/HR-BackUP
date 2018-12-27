@@ -1,0 +1,108 @@
+#gregheader
+{
+   	background-color:#ffffff;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+#header
+{
+    background: #ffffff;
+}
+#wrapper
+{
+    min-width:800px;
+    /* IE Dynamic Expression to set the width */
+    width:expression(document.body.clientWidth < 950 ? "940px" : "100%" );
+}
+#container
+{
+    width: 98%;
+    float: right;
+    margin-left: -212px;
+}
+#content
+{
+    margin-right: 30px;
+    margin-left: 210px;
+    font-family: arial;
+    font-size: 12px;
+}
+#sidebar
+{
+    width: 210px;
+    float: left;
+    margin-left: 3px;
+}
+
+#sidebarcontainer
+{
+    margin-top: 57px;
+    margin-right: 10px;
+}
+.clearing
+{
+    height: 0;
+    clear: both;
+}
+#footer
+{
+    clear: both;
+}
+.TwoColumnWrap
+{
+    position: relative;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    padding: 0px;
+    margin: 0px;
+    clear: both;
+}
+.TwoColumnWrap:after
+{
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.LeftColumn
+{
+    float: left;
+    width: 47%;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+.RightColumn
+{
+    float: right;
+    width: 47%; /* a 50/50 split causes bouncing in IE */
+    padding-left: 5px;
+    padding-right: 10px;
+}
+#contentWithoutRightNav
+{
+    background: #ffffff;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: arial;
+    font-size: 12px;
+}
+#centerContainer
+{
+    background: #ffffff;
+    float: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    font-family: arial;
+    font-size: 12px;
+}
+
+#popupContent
+{
+    margin-right: 120px;
+    margin-left: 120px;
+    font-family: arial;
+    font-size: 12px;
+}

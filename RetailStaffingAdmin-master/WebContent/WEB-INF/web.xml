@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>RetailStaffingAdmin</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>RetailStaffing.html</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>ServletAdaptor</servlet-name>
+		<servlet-class>
+			com.sun.jersey.server.impl.container.servlet.ServletAdaptor</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+   
+	<servlet-mapping>
+		<servlet-name>ServletAdaptor</servlet-name>
+		<url-pattern>/service/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LogManager</servlet-name>
+		<servlet-class>com.homedepot.ta.aa.log4j.LogManager</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogManager</servlet-name>
+		<url-pattern>/LogManager</url-pattern>
+	</servlet-mapping>
+	
+	<resource-ref>
+		<res-ref-name>jdbc/DB2Z.PR1.005</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref>	
+	
+	<error-page>
+		<error-code>401</error-code>
+		<location>/Unauthorized.html</location>
+	</error-page>
+	
+	<error-page>
+		<error-code>403</error-code>
+		<location>/Unauthorized.html</location>
+	</error-page>
+
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/Login.html</form-login-page>
+			<form-error-page>/LoginFailed.html</form-error-page>
+		</form-login-config>
+	</login-config>
+
+	<security-role>
+		<description>All Authenticated</description>
+		<role-name>All Authenticated</role-name>
+	</security-role>
+	
+	<security-role>
+		<description>Human Resources Retail Staffing Associates</description>
+		<role-name>HR RSA Associates</role-name>
+	</security-role>
+	
+	<security-role>
+		<description>Human Resources Retail Stafffing Contractors</description>
+		<role-name>HR CPROF</role-name>
+	</security-role>
+
+	<security-role>
+		<description>HR EDW Reporting 020</description>
+		<role-name>HR EDW Reporting 020</role-name>
+	</security-role>
+	
+	<security-role>
+		<description>HR EDW Reporting 004</description>
+		<role-name>HR EDW Reporting 004</role-name>
+	</security-role>
+
+	<security-role>
+		<description>WPS Admins</description>
+		<role-name>wpsadmins</role-name>
+	</security-role>
+
+	<security-role>
+		<description>HR Portal Team</description>
+		<role-name>HR Portal Team</role-name>
+	</security-role>
+
+	<security-role>
+		<description>HR ASDSUP</description>
+		<role-name>HR ASDSUP</role-name>
+	</security-role>
+
+	<security-role>
+		<description>HR Store MSS</description>
+		<role-name>HR Store MSS</role-name>
+	</security-role>
+
+	<security-role>
+		<description>HR HR Services</description>
+		<role-name>HR HR Services</role-name>
+	</security-role>
+	
+	<security-role>
+		<description>HR EDW Reporting 007</description>
+		<role-name>HR EDW Reporting 007</role-name>
+	</security-role>
+		
+	<security-role>
+		<description>HR ASM</description>
+		<role-name>HR ASM</role-name>
+	</security-role>
+
+	<security-role>
+		<description>HR DVHRM</description>
+		<role-name>HR DVHRM</role-name>
+	</security-role>
+	
+	<security-role>
+		<description>hr.hr.RSCT CTI Services</description>
+		<role-name>hr.hr.RSCT CTI Services</role-name>
+	</security-role>	
+
+	<security-role>
+		<description>HR EDW Reporting 023</description>
+		<role-name>HR EDW Reporting 023</role-name>
+	</security-role>
+
+	<security-role>
+		<description>HR EDW Reporting 005</description>
+		<role-name>HR EDW Reporting 005</role-name>
+	</security-role>
+	
+	<security-role>
+		<description>HR QUEWEB</description>
+		<role-name>HR QUEWEB</role-name>
+	</security-role>
+
+	<security-role>
+		<description>HR MET Sups</description>
+		<role-name>HR MET Sups</role-name>
+	</security-role>
+
+	<security-role>
+		<description>HR Advice and Counsel</description>
+		<role-name>HR Advice and Counsel</role-name>
+	</security-role>
+
+	<security-role>
+		<description>HR Services SUPP1</description>
+		<role-name>HR Services SUPP1</role-name>
+	</security-role>
+	
+	<security-role>
+		<description>HR Services SUPPT</description>
+		<role-name>HR Services SUPPT</role-name>
+	</security-role>
+	
+	<security-role>
+		<description>HR HRM</description>
+		<role-name>HR HRM</role-name>
+	</security-role>	
+
+	<security-role>
+		<description>HR EDW Reporting 014</description>
+		<role-name>HR EDW Reporting 014</role-name>
+	</security-role>	
+
+	<security-role>
+		<description>HR DC Mgmt</description>
+		<role-name>HR DC Mgmt</role-name>
+	</security-role>
+	
+	<security-role>
+		<description>HR Fuel Store Manager</description>
+		<role-name>HR Fuel Store Manager</role-name>
+	</security-role>
+	
+	<security-role>
+		<description>HR HRVP</description>
+		<role-name>HR HRVP</role-name>
+	</security-role>
+	
+	<security-role>
+		<description>HR Store Manager</description>
+		<role-name>HR Store Manager</role-name>
+	</security-role>
+
+	<security-role>
+		<description>HR HRDirectors</description>
+		<role-name>HR HRDirectors</role-name>
+	</security-role>
+
+	<security-role>
+		<description>HR HRManagers</description>
+		<role-name>HR HRManagers</role-name>
+	</security-role>
+
+	<security-role>
+		<description>HR DEM</description>
+		<role-name>HR DEM</role-name>
+	</security-role>
+
+	<security-role>
+		<description>HR MEM</description>
+		<role-name>HR MEM</role-name>
+	</security-role>
+
+	<security-role>
+		<description>HR STFNG FRMS Interview Availability</description>
+		<role-name>HR STFNG FRMS Interview Availability</role-name>
+	</security-role>
+	
+	<security-role>
+		<description>HR STFNG FRMS Staffing Request</description>
+		<role-name>HR STFNG FRMS Staffing Request</role-name>
+	</security-role>	
+				
+	<security-role>
+		<description>HR STFNG FRMS Interview Summary</description>
+		<role-name>HR STFNG FRMS Interview Summary</role-name>
+	</security-role>
+					
+	<security-role>
+		<description>HR STFNG FRMS Cand Personal Data</description>
+		<role-name>HR STFNG FRMS Cand Personal Data</role-name>
+	</security-role>
+						
+	<security-constraint>
+    	<display-name>Be able to view the Drivers License Information from the Link</display-name>
+        <web-resource-collection>
+        	<web-resource-name>Retail Staffing</web-resource-name>
+        	<description>Retail Staffing Drivers License Link</description>                                  
+        	<url-pattern>/service/DlLinkService/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+        	<description>RSA Associates ONLY</description>
+            <role-name>HR RSA Associates</role-name>
+            <role-name>wpsadmins</role-name>
+            <role-name>HR Portal Team</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+        	<transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>                               
+	</security-constraint>
+
+	<security-constraint>
+    	<display-name>Retail Staffing Constraints</display-name>
+        <web-resource-collection>
+        	<web-resource-name>Retail Staffing</web-resource-name>
+            <description>Retail Staffing Web Resource Constraints</description>                                   
+            <url-pattern>/service/BackgroundService/*</url-pattern>
+            <url-pattern>/service/InterviewService/*</url-pattern>
+            <url-pattern>/service/PhoneScreenService/*</url-pattern>
+            <url-pattern>/service/RetailStaffingService/*</url-pattern>
+            <url-pattern>/service/Service/*</url-pattern>      
+			<url-pattern>/service/HiringEventService/*</url-pattern>                                            
+            <url-pattern>/RetailStaffingServices.xsd</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+        	<description>Human Resources Retail Staffing Contractors and Associates and CTI</description>
+            <role-name>HR RSA Associates</role-name>
+            <role-name>HR CPROF</role-name>
+            <role-name>HR EDW Reporting 020</role-name>
+            <role-name>HR EDW Reporting 004</role-name>
+            <role-name>wpsadmins</role-name>
+            <role-name>HR Portal Team</role-name>
+            <role-name>HR ASDSUP</role-name>
+            <role-name>HR Store MSS</role-name>                             
+            <role-name>HR HR Services</role-name>
+            <role-name>HR EDW Reporting 007</role-name>
+            <role-name>HR ASM</role-name>                                                                                        
+            <role-name>HR DVHRM</role-name>
+            <role-name>hr.hr.RSCT CTI Services</role-name>
+            <role-name>HR EDW Reporting 023</role-name>  
+            <role-name>HR EDW Reporting 005</role-name>
+            <role-name>HR MET Sups</role-name>      
+            <role-name>HR Advice and Counsel</role-name>
+    		<role-name>HR Services SUPP1</role-name>
+    		<role-name>HR Services SUPPT</role-name>
+		    <role-name>HR HRM</role-name>	
+		    <role-name>HR EDW Reporting 014</role-name>	
+		    <role-name>HR DC Mgmt</role-name>
+		    <role-name>HR Fuel Store Manager</role-name>	
+			<role-name>HR HRVP</role-name>
+		    <role-name>HR Store Manager</role-name>	
+		    <role-name>HR HRDirectors</role-name>
+		    <role-name>HR HRManagers</role-name>
+			<role-name>HR DEM</role-name>
+			<role-name>HR MEM</role-name>		    			
+			<role-name>HR STFNG FRMS Interview Availability</role-name>
+			<role-name>HR STFNG FRMS Staffing Request</role-name>
+			<role-name>HR STFNG FRMS Interview Summary</role-name>
+			<role-name>HR STFNG FRMS Cand Personal Data</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+        	<transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>                               
+	</security-constraint>
+
+	<security-constraint>
+        <web-resource-collection>
+          <web-resource-name>Retail Staffing Request</web-resource-name>
+          <description>Permission to Retail Staffing Request Page</description>
+          <url-pattern>/RetailStaffingRequest.html</url-pattern>         
+		  <http-method>POST</http-method>
+		  <http-method>GET</http-method>
+		  <http-method>PUT</http-method>
+		  <http-method>DELETE</http-method>	
+        </web-resource-collection>
+        <auth-constraint>
+          <description>Permission to Retail Staffing Request Page</description>
+          <role-name>HR RSA Associates</role-name>
+		  <role-name>HR CPROF</role-name>
+		  <role-name>HR EDW Reporting 020</role-name>
+		  <role-name>HR EDW Reporting 004</role-name>
+		  <role-name>wpsadmins</role-name>
+		  <role-name>HR Portal Team</role-name>
+		  <role-name>HR ASDSUP</role-name>
+		  <role-name>HR Store MSS</role-name>		  
+		  <role-name>HR HR Services</role-name>
+		  <role-name>HR EDW Reporting 007</role-name>
+		  <role-name>HR ASM</role-name>		  		  		  
+		  <role-name>HR DVHRM</role-name>
+  		  <role-name>HR EDW Reporting 023</role-name>
+          <role-name>HR EDW Reporting 005</role-name> 
+          <role-name>HR MET Sups</role-name>  
+          <role-name>HR Advice and Counsel</role-name>
+    	  <role-name>HR Services SUPP1</role-name>
+    	  <role-name>HR Services SUPPT</role-name>
+		  <role-name>HR HRM</role-name>	
+		  <role-name>HR EDW Reporting 014</role-name>	
+		  <role-name>HR DC Mgmt</role-name>
+		  <role-name>HR Fuel Store Manager</role-name>	
+		  <role-name>HR HRVP</role-name>  		
+		  <role-name>HR Store Manager</role-name>	
+		  <role-name>HR HRDirectors</role-name>
+	      <role-name>HR HRManagers</role-name>
+		  <role-name>HR DEM</role-name>
+	      <role-name>HR MEM</role-name>
+	      <role-name>HR STFNG FRMS Staffing Request</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+		  <transport-guarantee>NONE</transport-guarantee>
+		</user-data-constraint>		
+    </security-constraint>
+	
+	<security-constraint>
+        <web-resource-collection>
+          <web-resource-name>Interview Summary Page</web-resource-name>
+          <description>Permission to Interview Summary Page</description>
+           <url-pattern>/InterviewResults.html</url-pattern>  
+		  <http-method>POST</http-method>
+		  <http-method>GET</http-method>
+		  <http-method>PUT</http-method>
+		  <http-method>DELETE</http-method>	
+        </web-resource-collection>
+        <auth-constraint>
+          <description>Permission to Interview Summary Page</description>
+          <role-name>HR RSA Associates</role-name>
+		  <role-name>HR CPROF</role-name>
+		  <role-name>HR EDW Reporting 020</role-name>
+		  <role-name>HR EDW Reporting 004</role-name>
+		  <role-name>wpsadmins</role-name>
+		  <role-name>HR Portal Team</role-name>
+		  <role-name>HR ASDSUP</role-name>
+		  <role-name>HR Store MSS</role-name>		  
+		  <role-name>HR HR Services</role-name>
+		  <role-name>HR EDW Reporting 007</role-name>
+		  <role-name>HR ASM</role-name>		  		  		  
+		  <role-name>HR DVHRM</role-name>
+  		  <role-name>HR EDW Reporting 023</role-name>
+          <role-name>HR EDW Reporting 005</role-name> 
+          <role-name>HR MET Sups</role-name>  
+          <role-name>HR Advice and Counsel</role-name>
+    	  <role-name>HR Services SUPP1</role-name>
+    	  <role-name>HR Services SUPPT</role-name>
+		  <role-name>HR HRM</role-name>	
+		  <role-name>HR EDW Reporting 014</role-name>	
+		  <role-name>HR DC Mgmt</role-name>
+		  <role-name>HR Fuel Store Manager</role-name>	
+		  <role-name>HR HRVP</role-name>  		
+		  <role-name>HR Store Manager</role-name>	
+		  <role-name>HR HRDirectors</role-name>
+	      <role-name>HR HRManagers</role-name>
+		  <role-name>HR DEM</role-name>
+	      <role-name>HR MEM</role-name>
+	      <role-name>HR STFNG FRMS Interview Summary</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+		  <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>		
+    </security-constraint>
+    	
+	<security-constraint>
+        <web-resource-collection>
+          <web-resource-name>CandidateDataForm</web-resource-name>
+          <description>Permission to the Candidate Data Form</description>
+          <url-pattern>/CDP_Form.html</url-pattern>
+		  <url-pattern>/service/CandidateDataFormService/*</url-pattern>  
+		  <http-method>POST</http-method>
+		  <http-method>GET</http-method>
+		  <http-method>PUT</http-method>
+		  <http-method>DELETE</http-method>	
+        </web-resource-collection>
+        <auth-constraint>
+          <description>Permission to Request and Calendar Pages</description>
+          <role-name>HR RSA Associates</role-name>
+		  <role-name>HR CPROF</role-name>
+		  <role-name>HR EDW Reporting 020</role-name>
+		  <role-name>HR EDW Reporting 004</role-name>
+		  <role-name>wpsadmins</role-name>
+		  <role-name>HR Portal Team</role-name>
+		  <role-name>HR ASDSUP</role-name>
+		  <role-name>HR Store MSS</role-name>		  
+		  <role-name>HR HR Services</role-name>
+		  <role-name>HR EDW Reporting 007</role-name>
+		  <role-name>HR ASM</role-name>		  		  		  
+		  <role-name>HR DVHRM</role-name>
+  		  <role-name>HR EDW Reporting 023</role-name>
+          <role-name>HR EDW Reporting 005</role-name> 
+          <role-name>HR MET Sups</role-name>     	
+          <role-name>HR Advice and Counsel</role-name>
+    	  <role-name>HR Services SUPP1</role-name>
+    	  <role-name>HR Services SUPPT</role-name>
+		  <role-name>HR HRM</role-name>	
+		  <role-name>HR EDW Reporting 014</role-name>	
+		  <role-name>HR DC Mgmt</role-name>
+		  <role-name>HR Fuel Store Manager</role-name>	
+		  <role-name>HR HRVP</role-name> 
+		  <role-name>HR Store Manager</role-name>	
+		  <role-name>HR HRDirectors</role-name>
+		  <role-name>HR HRManagers</role-name>
+		  <role-name>HR DEM</role-name>
+	      <role-name>HR MEM</role-name>		      
+	      <role-name>HR STFNG FRMS Cand Personal Data</role-name>     	  
+        </auth-constraint>
+        <user-data-constraint>
+		  <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>		
+    </security-constraint>
+    	
+	<security-constraint>
+        <web-resource-collection>
+          <web-resource-name>RSA Application Pages</web-resource-name>
+          <description>Permission to RSA</description>
+<!--           <url-pattern>/flex/*</url-pattern> -->
+          <url-pattern>/RetailStaffing.html</url-pattern>     
+          <url-pattern>/EmailAdmin.html</url-pattern>         
+          <!-- <url-pattern>/playerProductInstall.swf</url-pattern>
+		  <url-pattern>/AC_OETags.js</url-pattern>
+		  <url-pattern>/css/*</url-pattern>	
+		  <url-pattern>/images/*</url-pattern>-->
+		  <http-method>POST</http-method>
+		  <http-method>GET</http-method>
+		  <http-method>PUT</http-method>
+		  <http-method>DELETE</http-method>	
+        </web-resource-collection>
+        <auth-constraint>
+          <description>Permission to RSA</description>
+          <role-name>HR RSA Associates</role-name>
+		  <role-name>HR CPROF</role-name>
+		  <role-name>HR EDW Reporting 020</role-name>
+		  <role-name>HR EDW Reporting 004</role-name>
+		  <role-name>wpsadmins</role-name>
+		  <role-name>HR Portal Team</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+		  <transport-guarantee>NONE</transport-guarantee>
+		</user-data-constraint>		
+    </security-constraint>
+
+</web-app>

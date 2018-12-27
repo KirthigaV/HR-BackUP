@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Hiring Calendar Qunit</title>
+
+<!--Load Qunit CSS  --> 
+<link rel="stylesheet" href="../css/qunit-1.17.1.css">
+
+<!--Load Common libraries -->
+<script src="../../assets/js/vendor/jquery-1.10.1.min.js"></script>
+<script src="../../assets/js/vendor/bootstrap.min.js"></script>
+<script src="../../assets/js/vendor/jquery.jqGrid.js"></script>  
+<script src="../../assets/js/vendor/fullcalendar.js"></script> 
+<script src="../../assets/js/SlickGrid/lib/jquery.event.drag-2.2.js"></script>  
+<script src="../../assets/js/SlickGrid/lib/jquery.event.drop-2.2.js"></script> 
+<script src="../../assets/js/SlickGrid/lib/jquery-ui-1.8.16.custom.min.js"></script>  
+<script src="../../assets/js/SlickGrid/lib/jquery.jsonp-1.1.0.min.js"></script> 
+<script src="../../assets/js/SlickGrid/lib/jquery.simulate.js"></script>  
+<script src="../../assets/js/SlickGrid/slick.core.js"></script>  
+<script src="../../assets/js/SlickGrid/slick.grid.js"></script>  
+<script src="../../assets/js/SlickGrid/slick.groupitemmetadataprovider.js"></script>  
+<script src="../../assets/js/SlickGrid/slick.remotemodel.js"></script> 
+<script src="../../assets/js/SlickGrid/slick.editors.js"></script> 
+<script src="../../assets/js/SlickGrid/slick.dataview.js"></script> 
+<script src="../../assets/js/jquery.blockUI.js"></script>
+   
+<!--Load Project Specific scripts  -->
+<script type="text/javascript" src="../../app/common/js/constants.js"data-cover></script>
+<script type="text/javascript" src="../../app/common/js/Model.js"data-cover></script>
+<script type="text/javascript" src="../../app/common/js/Utility.js"
+	data-cover></script>
+<script type="text/javascript" src="../../app/common/js/rsaServices.js"data-cover></script>
+<script type="text/javascript" src="../../app/RSAInterviewAvailability/js/hiringCalendar.js"
+	data-cover></script>
+
+
+<Script>
+	function setLanguage(lang) {
+		jQuery.i18n.properties({
+			name : "Messages",
+			path : "app/common/js/bundle/",
+			mode : "both",
+			language : lang,
+			callback : function() {
+				StaticText.loadStaticText();
+			}
+		});
+	}
+</Script>
+</head>
+<body>
+
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+
+	<script src="../js/qunit-1.17.1.js"></script>
+	<script src="../../test/app/RSAInterviewAvailability/js/hiringCalendarTest.js"data-cover></script>
+	<script src="../js/blanket.min.js"></script>
+</body>
+</html>

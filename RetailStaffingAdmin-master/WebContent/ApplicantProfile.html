@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+	<title>HR Systems</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" href="assets/css/jquery-ui.css" />
+	<link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+	<link rel="stylesheet" href="assets/css/jquery-ui.structure.css" />
+	<link rel="stylesheet" href="assets/css/jquery-ui-1.7.3.custom.css" />
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css" />	
+	<link rel="stylesheet" href="assets/css/prettify.css" />
+	<link rel="stylesheet" href="assets/css/navbar-fixed-top.css" />
+	<link rel="stylesheet" href="assets/css/prettify.css" />
+	<link rel="stylesheet" href="assets/css/jq/ui.jqgrid.css" /> 
+	<link rel="stylesheet" href="assets/css/rsaCommon.css" />	
+	<link rel="stylesheet" href="assets/css/orangeTheme.css" />
+	<link href="assets/js/SlickGrid/slick.grid.css" rel="stylesheet" />
+	<link href="assets/js/SlickGrid/controls/slick.columnpicker.css" rel="stylesheet" />
+	<link href="assets/js/SlickGrid/controls/slick.pager.css" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/css/slick-default-theme.css" />
+	<link rel="stylesheet" href="assets/css/slickGridManual.css" />
+	<link href="app/RetailStaffing/css/retailStaffing.css" rel="stylesheet" />
+
+	
+	<script src="assets/js/vendor/jquery-1.10.1.min.js"></script>
+	<script src="assets/js/vendor/jquery-ui.js"></script>
+	<script src="assets/js/vendor/jquery-ui.min.js"></script>
+	<script src="assets/js/vendor/jquery.cookie.js"></script>
+	<script src="assets/js/jquery.blockUI.js"></script>
+	<script src="assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	<script src="assets/js/vendor/bootstrap.min.js"></script>
+	<script src="assets/js/vendor/jquery.validate.min.js"></script>
+	<script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+	<script src="assets/js/vendor/jquery.jqGrid.js"></script>
+	<script src="assets/js/jquery.event.drag-2.2.js"></script>
+	<script src="assets/js/jquery.event.drop-2.2.js"></script>
+	<script src="assets/js/vendor/underscore-min.js"></script>
+	<script src="assets/js/slick.core.js"></script>
+	<script src="assets/js/slick.grid.js"></script>
+	
+	
+	<script type="text/javascript" src="app/common/js/constants.js"></script>
+	
+	<!--  security files. -->
+	<script type="text/javascript" src="app/common/js/Utility.js"></script>
+	<script type="text/javascript" src="app/common/js/Model.js"></script>
+	<script type="text/javascript" src="app/common/js/rsaServices.js"></script>
+	<script type="text/javascript" src="app/common/js/reusableComponents.js"></script>
+	
+	<script type="text/javascript" src="app/common/js/rsaPopup.js"></script>
+
+<script type="text/javascript">
+
+$(function() {
+		//Tells the web app to fit the entire browser viewport
+		$(window).resize(function() {
+			fit();
+		});
+		setLandingPage();
+	});
+	function setLandingPage() {
+		$.get('app/RSApplicantProfile/view/applicantProfileNew.html', setContent);
+	}
+	window.alert = (function() {
+	   var nativeAlert = window.alert;
+	    return function(message) {
+	       //window.alert = nativeAlert;
+	        message.indexOf("DataTables warning") === 0 ?
+	            console.warn(message) :
+	            nativeAlert(message);
+	    }
+	})();
+	function setContent(data) {
+		$("#divLandingView").html(data);
+	}
+	
+	function setContentInPopUp(contentUrl, heading) {
+		$("#modelContent").empty();
+		console.log("in setContentInPopUp :"+contentUrl);
+		$.get(contentUrl, function(data) {
+			console.log("in get");
+			$("#modelContent").html(data);
+			$("#alertButton").trigger('click');
+			$('.modal-title').text(heading);
+		});
+	}
+	function callAlert(msg) {
+		$("#modelContent").empty();
+		$("#modelContent").html(msg);
+		$("#alertButton").trigger('click');
+		//alert("ok");
+		//$('#myModal').model('show');
+	}
+	function fit() {
+		var w = window, d = document, e = d.documentElement, g = d
+				.getElementsByTagName('body')[0], y = w.innerHeight
+				|| e.clientHeight || g.clientHeight;
+		var height = y - $("#header").height() - $("#messageBar").height()
+				- $("#release").height() - $("#copyright").height() - 60;
+		//$("#appBody").css("min-height", height);
+
+	}
+	
+	</script>
+	
+	<style>
+		p.indexGrid {
+			padding: 50px;
+			font-size: 2.0em;
+			font-weight: 900;
+			background: #eee;
+		}
+		
+		p.indexGrid a {
+			font-weight: 300;
+			width: 100%;
+			height: 100%;
+		}
+		
+		p.indexGrid a:hover {
+			text-decoration: none;
+		}
+	</style>
+  </head>
+
+  <body class="reqdetBody">
+<div ></div>
+    <!-- Fixed navbar -->
+   
+
+	<div id="appBody" class="container reqdetappbody">
+ <nav id="reqdetnav" class="navbar navbar-default navbar-fixed-top navbar-inverse header-class" style="position:relative;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        <!--    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>-->
+          <div class="navbar-brand">
+	            <img src="assets/images/com-hd-logo.png" height="58" width="58">
+	            <span class="brand brand-orange-theme" id="brand">Retail Staffing Administration</span>
+	            <br/>
+	            <span class="headerShortDesc first">Release v9.0</span>
+	            <span class="headerShortDesc">Developed by The Home Depot</span>
+	        </div>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <!-- <ul class="nav navbar-nav">
+            <li class=""><a href="index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menu <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="typography.html">Typography</a></li>
+                <li><a href="colors.html">Colors</a></li>
+                <li><a href="grid.html">Grid</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="forms.html">Forms</a></li>
+                <li><a href="tables.html">Tables</li>
+                <li><a href="buttons.html">Buttons</a></li>
+                <li><a href="lists.html">Lists</a></li>
+                <li><a href="navigation.html">Navigation</a></li>
+                <li><a href="widgets.html">Widgets</a></li>
+                <li><a href="tabs.html">Tabs</a></li>
+              </ul>
+            </li>
+          </ul>-->
+          
+          <ul class="navbar-right">
+            <li class="text-right">
+            <button type="button" id="goPrevious" class="btn btn-default reqnavHeaderButtons primary-green-btn">Back to Qualified Pool</button>
+            <button type="button" id="goHome" class="btn btn-default reqnavHeaderButtons primary-green-btn">Home</button> 
+            <button type="button" class="btn btn-default navHeaderButtons firstNavButton">Help</button> 
+            <button type="button" class="btn btn-default navHeaderButtons">Close</button>
+        </li>
+
+          <li id="userProfile"></li>
+
+          </ul> 
+        </div><!--/.nav-collapse -->
+      </div>	      
+	    <section class="container-fluid">
+		    <div class="row text-center">
+		    	<div id="messageBar" class="alert alert-info reqmessageBar" >				
+				   APPLICANT PROFILE     			
+				       
+				    </div>
+		    </div>
+		</section>
+    </nav>
+		<!-- Here you can render your Template -->
+		<div id="divLandingView" style="width: 100%;"></div>
+
+		<!-- template  ends -->
+	</div>
+	<!-- /container -->
+
+
+	<!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close"></i></button>
+                    <h4 class="modal-title">Settings</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Do you want to save changes you made to document before closing?</p>
+                    <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade genericPopupClass" id="genericPopup" tabindex="-1" role="dialog" aria-labelledby="genericModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-center">
+			<div class="modal-content">
+				<div class="modal-header text-left row" >
+					<div class="col-md-1"><div id="icon" class=""></div></div>
+					<div id="modalLabel" class="col-md-10"></div>
+					<div class="col-md-1">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</div>
+					
+				</div>
+				<div class="modal-body ">
+					<div class="modalBody text-center">
+						<div class="row"> 
+							<div class="col-md-12 txtMessageOne message"></div>
+						</div>
+						<div class="row"> 
+							<div class="col-md-12 txtMessageTwo message"></div>
+						</div>
+						<div class="row"> 
+							<div class="col-md-12 txtMessageThree message"></div>
+						</div>
+						<div class="row"> 
+							<div class="col-md-12 txtMessageFour message"></div>
+						</div>
+					</div>
+					<br>
+					<div class="text-center">
+
+						<button type="button" id="okbutton" data-dismiss="modal">
+						<img src="assets/images/ok.png">
+						OK</button> &nbsp; &nbsp;
+
+						<button type="button" id="cancelbutton" data-dismiss="modal">
+						<img src="assets/images/cross.png">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  
+
+</body></html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+        <meta charset="utf-8">  
+        <title>QUnit Example</title>
+        
+        
+        <link rel="stylesheet" href="../css/qunit-1.17.1.css">
+ 
+  <script src="../../assets/js/vendor/jquery-1.11.2.js"></script>
+        <script type="../javascript" src="../../assets/js/vendor/jquery-migrate-1.2.1.min.js"></script>
+        <script src="../../assets/js/vendor/jquery.i18n.properties-min-1.0.9.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../../assets/js/jquery.blockUI.js"></script>
+        <script type="text/javascript" src="../../assets/js/jqgrid/jqModal.js"></script>
+        <script src="../../assets/js/vendor/jquery-ui.min.js"></script>
+        <script src="../../assets/js/vendor/bootstrap.min.js"></script>
+        <script src="../../assets/js/jquery.event.drag-2.2.js"></script>
+		<script src="../../assets/js/jquery.event.drop-2.2.js"></script>
+        <script src="../../assets/js/slick.core.js"></script>
+		<script src="../../assets/js/slick.grid.js"></script>
+		<script src="../js/blanket.min.js"></script>
+		<script src="../js/qunit-1.17.1.js"></script>
+	
+	<script type="text/javascript" src="../../app/common/js/constants.js"></script>
+	<script type="text/javascript" src="../../app/common/js/Utility.js"></script>
+	<script type="text/javascript" src="../../app/common/js/rsaServices.js"></script>
+  <script type="text/javascript" src="../../app/common/js/reusableComponents.js"></script>
+  <script type="text/javascript" src="../../app/RSARetailStaffingRequest/js/retailStaffingRequest.js"></script>
+  <script type="text/javascript" src="../../app/RSARetailStaffingRequest/js/createHiringEventPopUp.js" data-cover></script>
+
+
+    <Script>
+    </Script>        
+    </head>
+    <body> 
+
+        <div id="qunit"></div>
+          
+        <div id="qunit-fixture">
+        <div class="modal fade" id="createHiringEventPopUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-title" id="createhiringmodalLabel">Create
+          New Hiring Event</div>
+          <button type="button" class="close" id="closeCreateHire" data-dismiss="modal"
+          aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> 
+      <div class="modal-body">
+      <div class="contentHolder">
+        <div class="jumbotron shadow-box col-md-12 greyBox" >
+          <label class="col-md-4 rowTitle">Event Location</label>
+          <div class="col-md-12 whiteContent shadow-box whitBox" style="padding:1%">
+
+            <div class="form-group">
+              <label class="col-md-5 control-label">Event Name:<sub>  *</sub></label>
+              <div class="col-md-5">
+                <input type="text" class="" id="eventName">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-5 control-label">Event Dates:<sub>  *</sub></label>
+              <div class="col-md-7 eventDatesDiv">
+                <div class="col-md-5">
+                <div class='input-group date' id='hiringFromDate'>
+                    <input type='text' class="eventDate" id="eventDt" onchange="createHiringEvent.setEndDate()" placeholder="" readonly="readonly" > <span
+                      class="input-group-addon btn-default datePickDt" onclick="createHiringEvent.focusFromDate()" >
+                    
+                </div>
+                </div>
+                <label class="col-md-1 control-label">to</label>
+                <div class="col-md-5">
+                  <div class='input-group date' id='hiringToDate'>
+                    <input type='text' class="eventDate" id="eventDtEnd" placeholder="" readonly="readonly" onchange=""> <span
+                      class="input-group-addon btn-default datePickDtEnd" onclick="createHiringEvent.focusToDate()" >
+                   
+                </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-5 control-label">Is this an off-site event?<sub>  *</sub></label>
+             <div class="col-md-4">
+              <div class="col-md-4 noPaddingDiv"><div class="radio">
+                <label class="control-label"><input type="radio" value="YES" name="offsiteEvent"
+                id="offSiteEventYes" onclick="createHiringEvent.onSite_OffSiteShow()">Yes</label>
+              </div>
+            </div>
+            <div class="col-md-6 noPaddingDiv"><div class="radio">
+           <label class="control-label"><input type="radio" value="NO" checked="checked" name="offsiteEvent"
+           id="offSiteEventNo" onclick="createHiringEvent.onSite_OffSiteShow()">No</label>
+          </div>
+         </div>
+          </div>
+            </div>
+            <div class="row " id="offSiteEntryNo">
+               <div class="form-group">
+              <label class="col-md-5 control-label">Store #:<sub>  *</sub></label>
+              <div class="col-md-2">
+                <input type="text" class="form-control" id="eventStrNum" onkeyup="createHiringEvent.getStoreInfo(event)" data-pattern="^(0|[1-9][0-9]*)$" maxlength="4">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">Address:</label>
+              <div class="col-md-5">
+                <div class="" id="eventAddress"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">City:</label>
+              <div class="col-md-5">
+                <div class="" id="eventCity"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">State:</label>
+              <div class="col-md-5">
+               <div class="" id="eventState" ></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">Postal Code:</label>
+              <div class="col-md-5">
+                  <div  class="" id="eventZip"></div>
+              </div>
+            </div>
+            </div>
+            <div class="row" id="offSiteEntryYes">
+              <div class="form-group">
+              <label class="col-md-5 control-label">Venue Name:<sub>  *</sub></label>
+              <div class="col-md-5">
+                <input type="text" class="" id="venueName">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">Address:<sub>  *</sub></label>
+              <div class="col-md-5">
+                <input type="text" class="" id="venueAddress">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">City:<sub>  *</sub></label>
+              <div class="col-md-5">
+                <input type="text" class="" id="venueCity"> 
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">State:<sub>  *</sub></label>
+              <div class="col-md-5">
+               <select class=""  id="venueStateCbo" ><option></option></select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">Postal Code:<sub>  *</sub></label>
+              <div class="col-md-5">
+                  <input type="text" class="" id="venueZip">
+              </div>
+            </div>
+           
+            </div>
+             <div class="form-group">
+              <label class="col-md-5 control-label">Enter Manager LDAP:<sub>  *</sub></label>
+              <div class="col-md-3">
+                  <input type="text" class="" id="eventMgrLdap">
+              </div>
+              <div class="col-md-2 noPaddingLeft">
+                  <button class="btn btn-default btn-primary" id="refreshMgrData" onclick="javascript:createHiringEvent.refreshManagerData();return false;">Refresh</button>
+              </div>
+            </div>
+           
+           <div class="form-group">
+              <label class="col-md-5 control-label">Event Manager Name:</label>
+              <div class="col-md-5 " id="mgrName"></div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">Event Manager's Title:</label>
+              <div class="col-md-5 " id="mgrTitle"></div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">Event Manager's Phone:</label>
+              <div class="col-md-5 " id="mgrPhn"></div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">Event Manager's Email:</label>
+              <div class="col-md-5 " id="mgrMail"></div>
+            </div>
+            
+
+          </div>
+
+        </div>
+       <div class="jumbotron shadow-box col-md-12 greyBoxPartStr" >
+         <label class="col-md-4 rowTitle">Participating Stores</label>
+          <div class="col-md-12 whiteContent shadow-box whitBox" style="padding:1%">
+            <div class="form-group">
+              <label class="col-md-4 control-label">Participating Store:<sub>  *</sub></label>
+              <div class="col-md-2">
+                  <input type="text" class="form-control"  id="enterStrNum" onkeyup="createHiringEvent.addStoreToHiringEvent(event)" data-pattern="^(0|[1-9][0-9]*)$" maxlength="4">
+              </div>
+            </div>
+            <div class="col-xs-offset-1 col-md-11 noPaddingLeft">
+            <div class="gridContainer" id="createEventGrid"></div>
+            </div>
+
+          </div>
+       </div>
+
+        </div>
+      
+      <div class="form-group">
+      <div class="col-md-2 col-md-offset-4">
+        <button type="button" class="btn  btn-primary " id="create" onclick="createHiringEvent.createHiringEvent()">Create</button>
+        </div>
+         <div class="col-md-2">
+        <button type="button" class="btn  btn-default  " onclick="createHiringEvent.alertOkClicked('#createHiringEventPopUp')" id="cancel">Cancel</button>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="modal fade" id="alertPopupModal" tabindex="-1"
+  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content" style="background: rgb(145,165,175)">
+      <div class="modal-header">
+        
+      </div>
+      <div class="modal-body">
+        <div class="myModalBody text-center alertModalBody"></div>
+   <br>
+   <div class="text-center">
+    <button type="button" class="alertmodalbtn" onclick="createHiringEvent.alertOkClicked('#alertPopupModal')">OK</button></div>
+      </div>
+      </div>
+    </div>
+  </div>
+   		
+                       
+   	   </div>  
+          <Script>
+    function setLanguage(lang) {
+        jQuery.i18n.properties({
+            name : "Messages",
+            path : "app/common/js/bundle/",
+            mode : "both",
+            language : lang,
+            callback : function() {
+                StaticText.loadStaticText();
+            }
+        });  
+        }  
+    </Script>  
+        <script src="../js/qunit-1.17.1.js"></script>
+        <script src="../apps/RSARetailStaffingRequest/js/createHiringEventPopUpTest.js" data-cover></script>
+        <script src="../js/blanket.min.js"></script>
+    </body>
+</html> 
+

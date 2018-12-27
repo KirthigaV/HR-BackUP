@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tab Navigator QUnit</title>
+
+<style type="text/css">
+   .hidden {
+        display: none;
+   }
+</style>
+
+<!--Load Qunit CSS  --> 
+<link rel="stylesheet" href="../css/qunit-1.17.1.css">
+
+<!--Load Common libraries -->
+<script src="../../assets/js/vendor/jquery-1.10.1.min.js"></script>
+<script src="../../assets/js/vendor/jquery-ui.min.js"></script>
+<script src="../../assets/js/vendor/bootstrap.min.js"></script>
+<script src="../../assets/js/vendor/jquery.selectBoxIt.min.js"></script>
+<script src="../../assets/js/jquery.blockUI.js"></script>
+     
+<!--Load Project Specific scripts  -->
+
+<script type="text/javascript" src="../../app/common/js/constants.js"data-cover></script>
+<script type="text/javascript" src="../../app/common/js/Model.js"data-cover></script>
+<script type="text/javascript" src="../../app/common/js/Utility.js"data-cover></script>
+<script type="text/javascript" src="../../app/common/js/rsaServices.js"data-cover></script>
+<script type="text/javascript" src="../../app/RSAInterviewAvailability/js/tabNavigator.js" data-cover></script>
+	<script type="text/javascript" src="../../app/RSAInterviewAvailability/js/hiringEvent.js"></script>
+	<script type="text/javascript" src="../../app/RSAInterviewAvailability/js/Calendar.js"></script>
+	<script type="text/javascript" src="../../app/RSAInterviewAvailability/js/requisitions.js"></script>
+
+
+<Script>
+	function setLanguage(lang) {
+		jQuery.i18n.properties({
+			name : "Messages",
+			path : "app/common/js/bundle/",
+			mode : "both",
+			language : lang,
+			callback : function() {
+				StaticText.loadStaticText();
+			}
+		});
+	}
+</Script>
+</head>
+<body>
+
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+
+	<div class=hidden id="tab">
+		<div class="row tabRow">
+			<div class="tabContainer col-xs-12" align="center">
+				<div id="tabs" class="col-xs-12 interviewavailabilityTab">
+					<ul id="interviewAvailabilitymainNav"
+						class="tabsContainer  col-xs-12" style="text-align: right">
+						<li title="Calendar Summary Page"><a id="ui_1" href="#tabs-1"
+							onclick="tabNavigator.calendarTabClick()">Calendar(s)</a></li>
+						<li title="Hiring Event(s) Summary Page"><a id="ui_2"
+							href="#tabs-2" onclick="tabNavigator.hiringEventTabClick()">Hiring
+								Event(s)</a></li>
+						<li title="" id="requistionTab"><a id="ui_3" href="#tabs-3"
+							onclick="tabNavigator.requisitionTabClick()">Requisitions</a></li>
+					</ul>
+					<section class="container-fluid">
+						<div class="row text-center">
+							<div id="tabMessageBar">
+
+								<label id="tabMessageBarLabel"></label>
+							</div>
+						</div>
+					</section>
+					<div id="tabs-1"></div>
+					<div id="tabs-2"></div>
+					<div id="tabs-3"></div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<script src="../js/qunit-1.17.1.js"></script>
+	<script
+		src="../../test/app/RSAInterviewAvailability/js/tabNavigatorTest.js" data-cover></script>
+	<script src="../js/blanket.min.js"></script>
+</body>
+</html>
+

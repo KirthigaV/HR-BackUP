@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+	<title>Staffing Forms</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+	<link rel="stylesheet" href="assets/css/jquery-ui.structure.css" />
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css" />	
+	<link rel="stylesheet" href="assets/css/prettify.css" />
+	<link rel="stylesheet" href="assets/css/navbar-fixed-top.css" />
+	<link rel="stylesheet" href="assets/css/prettify.css" />
+	<link rel="stylesheet" href="assets/css/jquery.selectBoxIt.css" />
+	<link rel="stylesheet" href="assets/css/jq/ui.jqgrid.css" />
+	<link rel="stylesheet" href="assets/css/rsaCommon.css" />		
+	<link rel="stylesheet" href="assets/css/orangeTheme.css" />
+	
+	<link rel="stylesheet" href="assets/css/slick.grid.css" />
+	<link rel="stylesheet" href="assets/css/slickGridManual.css" /> 
+	<script src="assets/js/vendor/jquery-1.10.1.min.js"></script>
+	<script src="assets/js/vendor/jquery-ui.js"></script>
+	<script src="assets/js/vendor/jquery-ui.min.js"></script>
+	<script src="assets/js/vendor/jquery.cookie.js"></script>
+	<script src="assets/js/vendor/underscore-min.js"></script>
+	<script src="assets/js/jquery.blockUI.js"></script>
+	<script src="assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	<script src="assets/js/vendor/bootstrap.min.js"></script>
+	<script src="assets/js/vendor/jquery.validate.min.js"></script>
+	<script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+	<script src="assets/js/vendor/jquery.jqGrid.js"></script>
+	<script src="assets/js/vendor/jquery.event.drag-2.2.js"></script>
+	<script src="assets/js/vendor/jquery.event.drop-2.2.js"></script> 
+	<script src="assets/js/vendor/slick.core.js"></script>
+	<script src="assets/js/vendor/slick.grid.js"></script> 
+	<script src="assets/js/vendor/jquery.selectBoxIt.js"></script> 
+	<script type="text/javascript" src="app/common/js/constants.js"></script>
+	
+	<!--  security files. -->
+	<script type="text/javascript" src="app/common/js/Utility.js"></script>
+	<script type="text/javascript" src="app/common/js/Model.js"></script>
+	<script type="text/javascript" src="app/common/js/rsaServices.js"></script>
+	<script type="text/javascript" src="app/common/js/reusableComponents.js"></script>
+	<script type="text/javascript" src="app/RSAInterviewAvailability/js/createHiringEventPopUp.js"></script>
+	<script type="text/javascript" src="app/RSAInterviewAvailability/js/editHiringEventPopUp.js"></script>
+	
+	
+
+<script type="text/javascript">
+
+$(function() {
+	//Tells the web app to fit the entire browser viewport
+	$(window).resize(function() {
+		fit();
+	});
+	setLandingPage();
+	document.addEventListener('mousedown', mousedown, false);
+	document.addEventListener('mouseup', mouseup, false);
+});
+var selectionTextSelectors = ".selectable,.managerDetaildiv,.hiringAddressDetails";
+//While selecting disallow selection of other text.
+function mousedown (event) {
+ var current = findParentTextBox(event.target);
+ var list = document.querySelectorAll(selectionTextSelectors);
+ for (var i = 0, textbox; textbox = list[i]; i++) {
+     if (textbox != current) {
+         textbox.style.webkitUserSelect = 'none';
+    
+     }
+ }
+ if(current === null){
+ 	if (window.getSelection) {
+ 		  if (window.getSelection().empty) {  // Chrome
+ 		    window.getSelection().empty();
+ 		  } else if (window.getSelection().removeAllRanges) {  // Firefox
+ 		    window.getSelection().removeAllRanges();
+ 		  }
+ 		} else if (document.selection) {  // IE?
+ 		  document.selection.empty();
+ 		}
+ }
+}
+
+//Once finished selecting allow all text to be selected again.
+function mouseup (event) {
+ var list = document.querySelectorAll(selectionTextSelectors);
+ for (var i = 0, textbox; textbox = list[i]; i++) {
+     textbox.style.webkitUserSelect = 'text';
+ }
+}
+
+function findParentTextBox (node) {
+ while (node != null) {
+     if ($(node).is($(this.selectionTextSelectors)))
+         return node;
+     node = node.parent;
+ }
+ return null;
+}
+function setLandingPage() {
+	$.get('app/RSAInterviewAvailability/view/tabNavigator.html', setContent);
+}
+function setContent(data) {
+	$("#divLandingView").html(data);
+}
+function fit() {
+	var w = window, d = document, e = d.documentElement, g = d
+			.getElementsByTagName('body')[0], y = w.innerHeight
+			|| e.clientHeight || g.clientHeight;
+	var height = y - $("#header").height() - $("#messageBar").height()
+			- $("#release").height() - $("#copyright").height() - 60;
+	$("#appBody").css("min-height", height);
+}
+function closeWindow(){
+	window.close();
+}
+function redirectToHelp(){
+	var url = window.location.hostname;
+	var faqUrl="";
+	//Non Production
+	if (url.indexOf("localhost") > -1 || url.indexOf("-qa") > -1 || url.indexOf("-qp") > -1 || url.indexOf("-st") > -1 ||
+	    url.indexOf("-tr") > -1)
+	{
+		faqUrl=CONSTANTS.Faq_Non_Prod_Url;
+		window.open(faqUrl);
+	} 
+	//Production
+	else 
+	{
+		faqUrl=CONSTANTS.Faq_Prod_Url;
+		window.open(faqUrl);
+	}
+}
+	
+</script>
+	
+	<style>
+		p.indexGrid {
+			padding: 50px;
+			font-size: 2.0em;
+			font-weight: 900;
+			background: #eee;
+		}
+		
+		p.indexGrid a {
+			font-weight: 300;
+			width: 100%;
+			height: 100%;
+		}
+		
+		p.indexGrid a:hover {
+			text-decoration: none;
+		}
+	</style>
+  </head>
+
+  <body class="interviewAvailabilitybody">
+<div></div>
+    <!-- Fixed navbar -->
+   <div class="appBodyparent container">
+
+	<div id="appBody" class="interviewavailabiltyAppBody">
+ <nav id="retailstaffingnav" class="">
+      <div class="container-fluid">
+        <div class="navbar-header">
+      
+          <div class="navbar-brand">
+	            <img src="images/logo.png" height="55" width="55">
+	              <ul class="navBrand">
+		           <li class="brand"> Staffing Forms</li>           
+		           <li class="childBrand"> Interview Availability Management</li>
+	          	 </ul>
+	        </div>
+	         
+        </div>
+      
+        <div id="navbar" class="">          
+          <ul class="navbar-right">
+            <li><button type="button" class="btn btn-default navHeaderButtons navCloseBtn" onclick="redirectToHelp();">Help</button>&nbsp;
+            <button type="button" class="btn btn-default navHeaderButtons navCloseBtn" onclick="closeWindow();">Close</button>          
+          	<li id="loggedUserId"></li>
+         	<li id="storeLocation"></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>	      
+    </nav>  
+		<!-- Here you can render your Template -->
+		<div id="divLandingView" style="width: 100%;"></div>
+		<!-- template  ends -->	
+	</div>
+	<!-- 	<div class="copyright">Copyright &copy; 2008 - 2015 Homer TLC,
+			Inc. All Rights Reserved.</div> -->
+	</div>
+	<!-- /container -->
+</body>
+</html>

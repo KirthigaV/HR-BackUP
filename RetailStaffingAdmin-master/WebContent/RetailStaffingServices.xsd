@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://webapps.homedepot.com/RetailStaffing" xmlns:tns="http://webapps.homedepot.com/RetailStaffing" elementFormDefault="qualified">
+	<element name="error">
+		<complexType>
+			<sequence>
+				<element name="errorMessage" type="string" />
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="phoneScreenInboundResponse">
+		<complexType>
+			<choice>
+				<sequence>
+					<element name="confirmationNo" type="string" />										
+					<element name="candidateDetails">
+						<complexType>
+							<sequence>
+								<element name="candidateId" type="string" />
+								<element name="candidateFirstName" type="string" />
+								<element name="candidateLastName" type="string" />
+								<element name="candidatePhone1" type="string" />
+								<element name="candidatePhone2" type="string" nillable="true" />
+								<element name="candidateEmail" type="string" nillable="true" />
+								<element name="candidateTimeZone" type="string" />
+								<element name="candidateLanguagePref" type="string" />
+								<element name="candidateSkillType" type="string" />
+								<element name="candidateJobTitle" type="string" />
+								<element name="candidateAppStatus" type="string" />
+								<element name="candidateIntrwStatus" type="string" />
+								<element name="candidatePhoneScreenStatus" type="string" />
+								<element name="candidateReqStatus" type="string" />
+								<element name="candidateType" type="string" />
+								<element name="associateId" type="string" nillable="true" />
+								<element name="managerID" type="string" nillable="true" />
+								<element name="accessCode" type="string" />
+							</sequence>
+						</complexType>
+					</element>			
+					<sequence minOccurs="0">
+						<element name="candidateIntrwDetails">
+							<complexType>
+								<sequence>
+									<element name="intrwDate" type="string" />
+									<element name="intrwTime" type="string" />
+								</sequence>
+							</complexType>
+						</element>
+						<element name="candidateIntrwStoreDetails">
+							<complexType>
+								<sequence>
+									<element name="storeNo" type="string" />
+									<element name="storeName" type="string" />
+									<element name="storeAddress" type="string" />
+									<element name="storeLocationCity" type="string" />
+									<element name="storeLocationState" type="string" />
+									<element name="storeLocationZip" type="string" />
+									<element name="storePhoneNo" type="string" />
+									<element name="storeTimeZone" type="string" />
+								</sequence>
+							</complexType>
+						</element>
+						<element name="candidateSchdIntrwChecks">
+							<complexType>
+								<sequence>						
+								 	<element name="offersInterviewsCheck" type="string"/>
+									<element name="calendarAvailability" type="string"/>
+								</sequence>
+							</complexType>
+						</element>					
+					</sequence>
+				</sequence>
+				<element ref="tns:error" />							
+			</choice>
+		</complexType>
+	</element>
+	
+	<element name="updateResponse">
+		<complexType>
+			<choice>
+				<element name="updated" type="boolean" />
+				<element ref="tns:error" />			
+			</choice>
+		</complexType>
+	</element>
+	
+	<element name="phoneScreenKnockOutResponse">
+		<complexType>
+			<choice>		
+				<sequence>
+					<element name="confirmationNo" type="string" />
+					<element name="questionsList">
+						<complexType>
+							<sequence>
+								<element name="question" maxOccurs="unbounded">
+									<complexType>
+										<sequence>
+											<element name="id" type="string" />
+										</sequence>
+									</complexType>
+								</element>
+							</sequence>
+						</complexType>
+					</element>
+				</sequence>
+				<element ref="tns:error" />
+			</choice>
+		</complexType>
+	</element>
+	
+	<element name="request">
+		<complexType>
+			<sequence>
+				<element name="phoneScreenId" type="string" />
+				<element name="questionsList">
+					<complexType>
+						<sequence>
+							<element name="question" maxOccurs="unbounded">
+								<complexType>
+									<sequence>
+										<element name="id" type="string" />
+										<element name="answer" type="string" />
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>				
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="phoneScreenQuestResponse">
+		<complexType>
+			<choice>
+				<element name="candidatePhnScrnResult" type="string" />
+				<element ref="tns:error" />
+			</choice>
+		</complexType>
+	</element>
+	
+	<element name="interviewAvailableDatesRequest">
+		<complexType>
+			<sequence>
+				<element name="confirmationNo" type="string" />
+				<element name="interviewAvailDateList">
+					<complexType>
+						<sequence>
+							<element name="interviewDate" type="string" minOccurs="0" maxOccurs="unbounded" />
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="interviewAvailableDatesResponse">
+		<complexType>
+			<choice>
+				<sequence>
+					<element name="confirmationNo" type="string" />
+					<element name="interviewAvailDateList">
+						<complexType>
+							<sequence>
+								<element name="interviewDate" type="string" minOccurs="0" maxOccurs="unbounded" />
+							</sequence>
+						</complexType>
+					</element>
+				</sequence>
+				<element ref="tns:error" />
+			</choice>
+		</complexType>
+	</element>
+	
+	<element name="interviewTimePreferenceResponse">
+		<complexType>
+			<choice>
+				<sequence>
+					<element name="interviewDate" type="string" />
+					<element name="interviewAvailableTime" type="string" />
+				</sequence>
+				<element ref="tns:error" />
+			</choice>
+		</complexType>
+	</element>
+		
+	<element name="interviewAvailDate">
+		<complexType>
+			<sequence>
+				<element name="interviewDate" type="string" />
+				<element name="beginTime" type="string" />
+				<element name="endTime" type="string" />
+				<element name="interviewDetailsList">
+					<complexType>
+						<sequence>
+							<element name="interviewDetails" maxOccurs="unbounded">
+								<complexType>
+									<sequence>
+										<element name="calendarId" type="string" />
+										<element name="interviewDateTime" type="string" />
+										<element name="seqNumber" type="string" />
+										<element name="storeNo" type="string" />
+										<element name="reservedDateTime" type="string" />
+									</sequence>
+								</complexType>
+							</element>	
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="interviewAvailRequest">
+		<complexType>
+			<sequence>
+				<element name="phoneScreenId" type="string" />
+				<element name="preferredTime" type="string" />
+				<element name="preferredDate" type="string" />
+				<element name="interviewAvailDateList">
+					<complexType>
+						<sequence>
+							<element ref="tns:interviewAvailDate" minOccurs="0" maxOccurs="unbounded" />
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="interviewAvailResponse">
+		<complexType>
+			<choice>
+				<sequence>
+					<element name="phoneScreenId" type="string" />
+					<element name="preferredTime" type="string" />
+					<element name="preferredDate" type="string" />
+					<element name="interviewAvailDateList">
+						<complexType>
+							<sequence>
+								<element ref="tns:interviewAvailDate" minOccurs="0" maxOccurs="unbounded" />
+							</sequence>
+						</complexType>
+					</element>					
+				</sequence>
+				<element ref="tns:error" />
+			</choice>
+		</complexType>
+	</element>
+	
+	<element name="interviewSchedRequest">
+		<complexType>
+			<sequence>
+				<element name="phoneScreenId" type="string" />
+				<element name="schedule">
+					<complexType>
+						<sequence>
+							<element ref="tns:interviewAvailDate" />
+						</sequence>
+					</complexType>
+				</element>
+				<element name="release">
+					<complexType>
+						<sequence>
+							<element name="interviewAvailDateList">
+								<complexType>
+									<sequence>
+										<element ref="tns:interviewAvailDate" minOccurs="0" maxOccurs="unbounded" />
+									</sequence>
+								</complexType>
+							</element>												
+						</sequence>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="interviewSchedResponse">
+		<complexType>
+			<choice>
+				<element name="scheduled" type="boolean" />
+				<element ref="tns:error" />
+			</choice>
+		</complexType>
+	</element>
+
+	<element name="Response">
+		<complexType>
+			<choice>
+				<element name="vdnId" type="string" />
+				<element ref="tns:error" />
+			</choice>
+		</complexType>
+	</element>
+	
+	<element name="phoneScreenReqnSpecKODetailResponse">
+		<complexType>
+			<choice>
+				<sequence>
+					<element name="confirmationNo" type="string"/>										
+					<element name="positionTitle" type="string"/>
+					<element name="employmentCategory" type="string"/>
+					<element name="employmentCategoryId" type="int"/>
+					<element name="travelingPosition" type="string"/>
+					<element name="hourlyRate" type="string" nillable="true"/>										
+					<element name="hourlyRateQuestId" type="int"/>
+					<element name="bypassDateTime" type="string"/>
+					<element name="storeLocation" type="string"/>
+					<element name="positionQuestId" type="int"/>
+					<element name="weekdaysSelected" type="string"/>
+					<element name="weekdaysSelectedId" type="int"/>			
+					<element name="saturdaysSelected" type="string"/>
+					<element name="saturdaysSelectedId" type="int"/>					
+					<element name="sundaysSelected" type="string"/>
+					<element name="sundaysSelectedId" type="int"/>					
+					<element name="earlyMorningSelected" type="string"/>
+					<element name="earlyMorningSelectedId" type="int"/>					
+					<element name="morningSelected" type="string"/>
+					<element name="morningSelectedId" type="int"/>
+					<element name="afternoonSelected" type="string"/>
+					<element name="afternoonSelectedId" type="int"/>
+					<element name="nightSelected" type="string"/>
+					<element name="nightSelectedId" type="int"/>
+					<element name="lateNightSelected" type="string"/>
+					<element name="lateNightSelectedId" type="int"/>	
+					<element name="overnightSelected" type="string"/>
+					<element name="overnightSelectedId" type="int"/>
+					<element name="reasonableAccommodationId" type="int"/>										
+					<element name="requiresDriversLicense" type="string"/>
+					<element name="requiresDriversLicenseId" type="int"/>
+					<element name="reliableTransportation" type="string"/>
+					<element name="reliableTransportationId" type="int"/>																																				
+				</sequence>
+				<element ref="tns:error" />							
+			</choice>
+		</complexType>
+	</element>	
+	
+	<element name="updatePhoneScreenReqnSpecKnockOutRequest">
+		<complexType>
+			<choice>
+				<sequence>
+					<element name="confirmationNo" type="string"/>										
+					<element name="acceptsEmploymentCategory" type="string"/>
+					<element name="employmentCategoryId" type="int"/>
+					<element name="acceptsPosition" type="string"/>
+					<element name="positionQuestId" type="int"/>
+					<element name="acceptsHourlyRate" type="string"/>										
+					<element name="hourlyRateQuestId" type="int"/>
+					<element name="canWorkWeekdays" type="string"/>
+					<element name="weekdaysSelectedId" type="int"/>			
+					<element name="canWorkSaturdays" type="string"/>
+					<element name="saturdaysSelectedId" type="int"/>					
+					<element name="canWorkSundays" type="string"/>
+					<element name="sundaysSelectedId" type="int"/>					
+					<element name="canWorkEarlyMorning" type="string"/>
+					<element name="earlyMorningSelectedId" type="int"/>					
+					<element name="canWorkMornings" type="string"/>
+					<element name="morningSelectedId" type="int"/>
+					<element name="canWorkAfternoon" type="string"/>
+					<element name="afternoonSelectedId" type="int"/>
+					<element name="canWorkNight" type="string"/>
+					<element name="nightSelectedId" type="int"/>
+					<element name="canWorkLateNight" type="string"/>
+					<element name="lateNightSelectedId" type="int"/>	
+					<element name="canWorkOvernight" type="string"/>
+					<element name="overnightSelectedId" type="int"/>
+					<element name="needsReasonableAccommodation" type="string"/>
+					<element name="reasonableAccommodationId" type="int"/>										
+					<element name="hasDriversLicense" type="string"/>
+					<element name="requiresDriversLicenseId" type="int"/>
+					<element name="hasReliableTransportation" type="string"/>
+					<element name="reliableTransportationId" type="int"/>																																				
+				</sequence>
+				<element ref="tns:error" />							
+			</choice>
+		</complexType>
+	</element>	
+	
+	<element name="updatePhoneScreenReqnSpecKnockOutResponse">
+		<complexType>
+			<choice>
+				<sequence>
+					<element name="confirmationNo" type="string"/>										
+					<element name="candidatePhnScrnResult" type="string"/>
+					<element name="phoneScreenRequired" type="string" nillable="true"/>
+					<element name="offersInterviewsCheck" type="string" nillable="true"/>
+					<element name="rscToSchedule" type="string" nillable="true"/>
+					<element name="calendarAvailability" type="string" nillable="true"/>										
+				</sequence>
+				<element ref="tns:error" />							
+			</choice>
+		</complexType>
+	</element>	
+</schema>

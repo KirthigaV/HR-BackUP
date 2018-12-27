@@ -1,0 +1,37 @@
+#icon-calendarActive {
+  font-size: 40px;
+  margin-top: 15%;
+  // margin-top: 116px;
+  color: #D0021B !important;
+}
+
+#cardActive {
+  border: 1px solid #ED1C24;
+  border-radius: 1px;
+  background-color: #FEF2F2;
+}
+
+.parent-cal-div .child-cal-div .card-center .card-toolbar-display {
+  display: block;
+  .card-title-span h3 {
+    color: #666666;
+  }
+}
+
+.parent-cal-div {
+  font-size: 0;
+  text-align: center;
+  // padding: 5%;
+}
+
+
+.child-cal-div {
+  width: 484px;
+  height: 400px;
+  margin: 0 0 0 50px;
+  display: inline-flex;
+  font-size: medium;
+  text-align: left;
+  vertical-align: top;
+  padding: 1%;
+}

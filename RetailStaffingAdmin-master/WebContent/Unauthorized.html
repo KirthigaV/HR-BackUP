@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>Unauthorized Access</title>
+		<script language="JavaScript">
+			function closeWindow()
+			{
+				if(window.opener == null)
+				{
+					window.opener = window.self;
+				} // end if(window.opener == null)
+				
+				window.close();
+			} // end function closeWindow()
+		</script>
+	</head>
+	<body>
+		<center>
+			<font style="font-family: Arial; font-size: 12pt; font-weight: bold">
+				You have received this error due to an LDAP group/Tomcat set up issue for RSA access.  Please see your manager to get this resolved.
+			</font><br><br>
+			<a href="javascript:closeWindow();">
+				<font style="font-family: Arial; font-size: 12pt; font-weight: normal;">Close Window</font>
+			</a>
+		</center>				
+	</body>
+</html>

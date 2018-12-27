@@ -1,0 +1,220 @@
+<script type="text/javascript" src="app/RSAInterviewAvailability/js/createHiringEventPopUp.js"></script>
+<script >
+var createHiringEventObj = new createHiringEvent();
+$(document).ready(function() {
+	//createHiringEventObj.initialize();
+	 $("input[data-restrict]").restrictInputFeature();
+  });
+</script>
+
+
+<div class="modal fade centeredBackdrop" id="createHiringEventPopUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal" data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				 <div class="modal-title" id="createhiringmodalLabel">Create
+          New Hiring Event</div>
+			</div>
+   
+      <div class="modal-body">
+      <div class="contentHolder">
+        <div class="jumbotron shadow-box col-xs-12 greyBox" >
+          <div class="col-xs-4 rowTitle">Event Location</div>
+          <div class="col-xs-12 whiteContent shadow-box whitBox" style="padding:1%">
+
+            <div class="form-group">
+              <label class="col-xs-5 control-label">Event Name:<sub>  *</sub></label>
+              <div class="col-xs-6 noPadding">
+                <input type="text" class="" id="eventName" maxlength="60" data-restrict="[0-9A-Za-z\-\,\'\(\)\_\. ]">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-5 control-label">Event Dates:<sub>  *</sub></label>
+              <div class="col-xs-7 eventDatesDiv">
+                <div class="col-xs-3 noPadding nopaddingright">
+                <div class='input-group date' id='hiringFromDate'>
+                    <input type='text' class="" id="eventDt" onchange="createHiringEventObj.setEndDate()" placeholder="" readonly="readonly" > <span
+                      class="input-group-addon btn-default datePickDt" onclick="createHiringEventObj.focusFromDate()" ></span>
+                    
+                </div>
+                </div>
+                <div class="col-xs-1 control-label eventDateTo">to</div>
+                <div class="col-xs-3 noPadding nopaddingright">
+                  <div class='input-group date' id='hiringToDate'>
+                    <input type='text' class="" id="eventDtEnd" placeholder="" readonly="readonly" onchange=""> <span
+                      class="input-group-addon btn-default datePickDtEnd" onclick="createHiringEventObj.focusToDate()" ></span>
+                   
+                </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-xs-5 control-label">Is this an off-site event?<sub>  *</sub></label>
+             <div class="col-xs-4 noPadding">
+              <div class="col-xs-3 noPadding"><div class="radio">
+                <label class="control-label"><input type="radio" value="YES" name="offsiteEvent"
+                id="offSiteEventYes" onclick="createHiringEventObj.onSite_OffSiteShow()">Yes</label>
+              </div>
+            </div>
+            <div class="col-xs-6 noPadding"><div class="radio">
+           <label class="control-label"><input type="radio" value="NO" checked="checked" name="offsiteEvent"
+           id="offSiteEventNo" onclick="createHiringEventObj.onSite_OffSiteShow()">No</label>
+          </div>
+         </div>
+          </div>
+            </div>
+            <div class="row " id="offSiteEntryNo">
+               <div class="form-group">
+              <label class="col-xs-5 control-label">Store #:<sub>  *</sub></label>
+              <div class="col-xs-2 noPadding">
+                <input type="text" class="" id="eventStrNum" data-restrict="^(0|[1-9][0-9]*)$" maxlength="4" data-restrict="[0-9]">
+              </div>
+            </div>
+            <div class="hiringAddressDetails">
+	            <div class="form-group">
+	              <label class="col-xs-5 control-label labelpadding">Address:</label>
+	              <div class="col-xs-5 noPadding">
+	                <div class="selectable SelectIE" id="eventAddress"></div>
+	              </div>
+	            </div>
+	            <div class="form-group">
+	              <label class="col-xs-5 control-label labelpadding">City:</label>
+	              <div class="col-xs-5 noPadding">
+	                <div class="selectable SelectIE" id="eventCity"></div>
+	              </div>
+	            </div>
+	            <div class="form-group">
+	              <label class="col-xs-5 control-label labelpadding">State:</label>
+	              <div class="col-xs-5 noPadding">
+	               <div class="selectable SelectIE" id="eventState" ></div>
+	              </div>
+	            </div>
+	            <div class="form-group">
+	              <label class="col-xs-5 control-label labelpadding">Postal Code:</label>
+	              <div class="col-xs-5 noPadding">
+	                  <div  class="selectable SelectIE" id="eventZip"></div>
+	              </div>
+	            </div>
+            </div>
+            </div>
+            <div class="row" id="offSiteEntryYes">
+              <div class="form-group">
+              <label class="col-xs-5 control-label">Venue Name:<sub>  *</sub></label>
+              <div class="col-xs-5 noPadding">
+                <input type="text" class="" id="venueName" data-restrict="[0-9A-Za-z\-\,\'\(\)\_\. ]" maxlength="75">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-5 control-label">Address:<sub>  *</sub></label>
+              <div class="col-xs-5 noPadding">
+                <input type="text" class="" id="venueAddress" data-restrict="[0-9A-Za-z\-\,\'\(\)\_\. ]" maxlength="60">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-5 control-label">City:<sub>  *</sub></label>
+              <div class="col-xs-5 noPadding">
+                <input type="text" class="" id="venueCity" data-restrict="[0-9A-Za-z\-\,\'\(\)\_\. ]" maxlength="60"> 
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-5 control-label">State:<sub>  *</sub></label>
+              <div class="col-xs-5 noPadding">
+               <select class=""  id="venueStateCbo" ><option>Select</option></select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-5 control-label">Postal Code:<sub>  *</sub></label>
+              <div class="col-xs-5 noPadding">
+                  <input type="text" class="" id="venueZip" data-restrict="[0-9]" maxlength="5">
+              </div>
+            </div>
+           
+            </div>
+             <div class="form-group managerdiv">
+              <label class="col-xs-5 control-label">Event Manager LDAP:<sub>  *</sub></label>
+              <div class="col-xs-3 noPadding">
+                  <input type="text" class="" id="eventMgrLdap" maxlength="60" data-restrict="[0-9a-zA-ZÀ]">
+              </div>
+              <div class="col-xs-3">
+                  <button class="btn btn-default btn-primary" id="refreshMgrData" onclick="javascript:createHiringEventObj.refreshManagerData();return false;">Refresh</button>
+              </div>
+            </div>
+           
+           <div class="managerDetaildiv">
+           <div class="form-group">
+              <label class="col-xs-5 control-label labelpadding">Event Manager Name:</label>
+              <div class="col-xs-5 noPadding selectable SelectIE" id="mgrName"></div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-5 control-label labelpadding">Event Manager's Title:</label>
+              <div class="col-xs-5 noPadding selectable SelectIE" id="mgrTitle"></div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-5 control-label labelpadding">Event Manager's Phone:</label>
+              <div class="col-xs-5 noPadding selectable SelectIE" id="mgrPhn"></div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-5 control-label labelpadding">Event Manager's Email:</label>
+              <div class="col-xs-5 noPadding selectable SelectIE" id="mgrMail"></div>
+            </div>
+            </div>
+
+          </div>
+
+        </div>
+       <div class="jumbotron shadow-box col-xs-12 greyBoxPartStr" >
+         <div class="col-xs-4 rowTitle">Participating Stores</div>
+          <div class="col-xs-12 whiteContent shadow-box whitBox" style="padding:1%">
+            <div class="form-group">
+              <label class="col-xs-3 control-label">Participating Store:<sub>  *</sub></label>
+              <div class="col-xs-3 noPadding">
+                  <input type="text" class=""  id="enterStrNum" onkeyup="createHiringEventObj.addStoreToHiringEvent(event)" data-pattern="^(0|[1-9][0-9]*)$" maxlength="4" data-restrict="[0-9]">
+              </div>
+            </div>
+            <div class="col-xs-12">
+            <div class="gridContainer" id="createEventGrid">
+      <div id="storescreategrid" class ="custom-grid"></div> 
+            </div>
+            </div>
+
+          </div>
+       </div>
+
+        </div>
+      
+      <div class="form-group">
+      <div class="col-xs-2 col-xs-offset-4">
+        <button type="button" class="btn btn-default" id="create" onclick="createHiringEventObj.createHiringEvent()">Create</button>
+        </div>
+         <div class="col-xs-2">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="cancel">Cancel</button>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="modal fade centeredBackdrop" id="createAlertPopupModal" tabindex="-1"
+  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal" data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+      </div>
+      <div class="modal-body">
+        <div class="myModalBody text-center alertModalBody selectable SelectIE"></div>
+   <div class="text-center">
+    <button type="button" class="alertmodalbtn" onclick="createHiringEventObj.Okclicked()" id="createHiringButton">OK</button></div>
+      </div>
+      </div>
+    </div>
+  </div>

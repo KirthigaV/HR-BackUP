@@ -1,0 +1,58 @@
+body {
+    margin: 0px;
+    padding: 0px; /*background: yellow;*/ /*font:small Sans-serif;*/ /*font-size: 100%; IE Text Size Bug*/
+    font-family: Arial,Helvetica,Sans-Serif;
+    font-size: 0.8em; /*font-size:medium;*/
+}
+#POANav {
+    margin: auto;
+    padding: auto; /*background: yellow;*/ /*font:small Sans-serif;*/ /*font-size: 100%; IE Text Size Bug*/
+    font-size:medium; /*font-size:medium;*/
+}
+
+#globalRow, #helpRow, #navRow {
+	width:100%;
+	height:19px;
+	padding:0px;
+	margin:0px;
+	background-color:#408ADA; 
+}
+#helpRow{background-color:#FFFFFF; height:40px;}
+#navRow{background-color:#D8E8F8;}
+@media print{
+    #helpMenu{display:none;visibility:hidden;}
+    #globalRow{display:none;visibility:hidden;}
+    #helpRow table tr td table{display:none;visibility:hidden;}
+}
+
+.headergif {height:40px;}
+.fullwidth{
+	width:1500px;
+}
+
+.MenuBar {
+    color: #002163;
+    cursor: pointer;
+    cursor: hand;
+    font-family: Arial;
+    font-size: 8pt;
+}
+a.helpmenu {
+	font-family:Arial; 
+	font-size: 12pt;
+	font-size: 60%; 
+	color: #002163;
+}
+.helpmenudivider{
+	font-family:Arial; 
+	font-size: 70%; 
+	color: #002163;
+	text-decoration:none;
+}
+/*** /GLOBAL NAV ***/
+.TopLine {
+    position:absolute;
+    background-color:#002163;
+    overflow-y:hidden;
+    height:1px;
+}

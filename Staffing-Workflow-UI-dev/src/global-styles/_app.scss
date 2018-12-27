@@ -1,0 +1,33 @@
+$font-family-text: "Open Sans", sans-serif;
+
+html,
+body,
+#app,
+#app > div,
+div[data-reactroot] {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+.radio-container.horizontal {
+    margin-right: 16px;
+}
+
+.global-loader {
+    z-index: 2;
+    position: relative;
+}

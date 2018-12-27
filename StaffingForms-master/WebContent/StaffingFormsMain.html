@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+	<title>HR Systems</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+	<link rel="stylesheet" href="assets/css/jquery-ui.structure.css" />
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css" />	
+	<link rel="stylesheet" href="assets/css/prettify.css" />
+	<link rel="stylesheet" href="assets/css/navbar-fixed-top.css" />
+	<link rel="stylesheet" href="assets/css/prettify.css" />
+	<link rel="stylesheet" href="assets/css/jq/ui.jqgrid.css" />
+	<link rel="stylesheet" href="assets/css/rsaCommon.css" />		
+	<link rel="stylesheet" href="assets/css/orangeTheme.css" />
+	
+	<script src="assets/js/vendor/jquery-1.10.1.min.js"></script>
+	<script src="assets/js/vendor/jquery-ui.js"></script>
+	<script src="assets/js/vendor/jquery-ui.min.js"></script>
+	<script src="assets/js/vendor/jquery.cookie.js"></script>
+	<script src="assets/js/jquery.blockUI.js"></script>
+	<script src="assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	<script src="assets/js/vendor/bootstrap.min.js"></script>
+	<script src="assets/js/vendor/jquery.validate.min.js"></script>
+	<script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+	<script src="assets/js/vendor/jquery.jqGrid.js"></script>
+	<script type="text/javascript" src="app/common/js/constants.js"></script>
+	
+	<!--  security files. -->
+	<script type="text/javascript" src="app/common/js/Utility.js"></script>
+	<script type="text/javascript" src="app/common/js/Model.js"></script>
+	<script type="text/javascript" src="app/common/js/rsaServices.js"></script>
+	
+	
+
+<script type="text/javascript">
+
+$(function() {
+	//Tells the web app to fit the entire browser viewport
+	$(window).resize(function() {
+		fit();
+	});
+	setLandingPage();
+	document.addEventListener('mousedown', mousedown, false);
+	document.addEventListener('mouseup', mouseup, false);
+});
+var selectionTextSelectors = ".selectable,.managerDetaildiv,.hiringAddressDetails";
+//While selecting disallow selection of other text.
+function mousedown (event) {
+var current = findParentTextBox(event.target);
+var list = document.querySelectorAll(selectionTextSelectors);
+for (var i = 0, textbox; textbox = list[i]; i++) {
+   if (textbox != current) {
+       textbox.style.webkitUserSelect = 'none';
+   }
+}
+if(current === null){
+	if (window.getSelection) {
+		  if (window.getSelection().empty) {  // Chrome
+		    window.getSelection().empty();
+		  } else if (window.getSelection().removeAllRanges) {  // Firefox
+		    window.getSelection().removeAllRanges();
+		  }
+		} else if (document.selection) {  // IE?
+		  document.selection.empty();
+		}
+}
+}
+
+//Once finished selecting allow all text to be selected again.
+function mouseup (event) {
+var list = document.querySelectorAll(selectionTextSelectors);
+for (var i = 0, textbox; textbox = list[i]; i++) {
+   textbox.style.webkitUserSelect = 'text';
+}
+}
+
+function findParentTextBox (node) {
+while (node != null) {
+   if ($(node).is($(this.selectionTextSelectors)))
+       return node;
+   node = node.parent;
+}
+return null;
+}
+function setLandingPage() {
+$.get('app/RSAStaffingForms/view/StaffingForm.html', setContent);
+}
+function setContent(data) {
+	$("#divLandingView").html(data);
+} 
+function fit() {
+	var w = window, d = document, e = d.documentElement, g = d
+			.getElementsByTagName('body')[0], y = w.innerHeight
+			|| e.clientHeight || g.clientHeight;
+	var height = y - $("#header").height() - $("#messageBar").height()
+			- $("#release").height() - $("#copyright").height() - 60;
+	$("#appBody").css("min-height", height);
+}
+function closeWindow(){
+    window.close();
+}
+	</script>
+	
+	<style>
+		p.indexGrid {
+			padding: 50px;
+			font-size: 2.0em;
+			font-weight: 900;
+			background: #eee;
+		}
+		
+		p.indexGrid a {
+			font-weight: 300;
+			width: 100%;
+			height: 100%;
+		}
+		
+		p.indexGrid a:hover {
+			text-decoration: none;
+		}
+	</style>
+  </head>
+
+  <body class="interviewAvailabilitybody">
+<div></div>
+    <!-- Fixed navbar -->
+   <div class="appBodyparent container">
+
+	<div id="appBody" class="interviewavailabiltyAppBody">
+ <nav id="retailstaffingnav" class="" style="height: 90px;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+      
+        <div class="navbar-brand">
+	            <img src="images/logo.png" height="55" width="55">
+	              <ul class="navBrand">
+		           <li class="brand"> Staffing Forms</li>           
+		           <li class="childBrand"> Staffing Forms Menu</li>
+	          	 </ul>
+	          	  
+	        </div> 
+	        
+	         
+        </div>
+      
+        <div id="navbar" class="">
+          
+          <ul class="navbar-right">
+            <button type="button" class="btn btn-default navHeaderButtons navCloseBtn staffingFormMainButton" onclick="closeWindow();">Close</button>
+           
+          <li class="WelcomeText text-right" style="font-size: 12px;"></li>
+         <li class="Storenumber text-right" style="font-size: 12px;"></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>	
+        <section class="container-fluid staffingFormFluid">
+		    <div class="text-center">
+		    	<div id="staffingformMessageBar" class="alert alert-info" >				
+				        			
+				      Please select from the  Staffing Form Links below.
+				    </div>
+		    </div>
+		</section>      
+    </nav>
+		<!-- Here you can render your Template -->
+		<div id="divLandingView" style="width: 100%;height:80%;"></div>
+
+		<!-- template  ends -->
+	</div>
+	</div>
+	<!-- /container -->
+
+  
+
+</body></html>

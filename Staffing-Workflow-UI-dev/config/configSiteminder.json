@@ -1,0 +1,44 @@
+{
+    "local": {
+        "projectInfo": {
+            "appName": "StaffingWorkFlow",
+            "hostName": "staffingworkflow",
+            "memory": "512M",
+            "instances": 1,
+            "env": "nonprod"
+        },
+        "ssoUrl": "https://auth.login.run-np.homedepot.com",
+        "dapperUrl": "https://dapper.apps-np.homedepot.com/users/",
+        "authUrl": "http://localhost.homedepot.com:3000",
+        "apiurl": "http://localhost:8080/api/",
+        "intvAvailUrl": "https://webapps-qa.homedepot.com/StaffingForms/InterviewAvailability.html"
+    },
+    "develop": {
+        "projectInfo": {
+            "appName": "StaffingWorkFlow",
+            "hostName": "staffingworkflow",
+            "memory": "512M",
+            "instances": 1,
+            "env": "nonprod"
+        },
+        "ssoUrl": "https://auth.login.run-np.homedepot.com",
+        "dapperUrl": "https://dapper.apps.homedepot.com/users/",
+        "authUrl": "",
+        "apiurl": "https://commonstaffingservices.apps-np.homedepot.com/api/",
+        "intvAvailUrl": "https://webapps-qa.homedepot.com/StaffingForms/InterviewAvailability.html"
+    },
+    "production": {
+        "projectInfo": {
+            "appName": "StaffingWorkFlow",
+            "hostName": "staffingworkflow",
+            "memory": "512M",
+            "instances": 1,
+            "env": "prod"
+        },
+        "ssoUrl": "https://auth.login.run-za.homedepot.com",
+        "dapperUrl": "https://dapper.apps.homedepot.com/users/",
+        "authUrl": "",
+        "apiurl": "https://commonstaffingservices.apps-za.homedepot.com/api/",
+        "intvAvailUrl": "https://webapps.homedepot.com/StaffingForms/InterviewAvailability.html"
+    }
+}

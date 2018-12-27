@@ -1,0 +1,12 @@
+---
+applications:
+- name: StaffingWorkFlow
+  host: staffingworkflow
+  memory: 512M
+  instances: 1
+  command: node server.js
+  buildpack: nodejs_buildpack
+
+  env:
+    config:
+      '{"projectInfo":{"appName":"StaffingWorkFlow","hostName":"staffingworkflow","memory":"512M","instances":1,"env":"prod"},"ssoUrl":"https://auth.login.run-za.homedepot.com","dapperUrl":"https://dapper.apps.homedepot.com/users/","authUrl":"","apiurl":"https://commonstaffingservices.apps.homedepot.com/api/","intvAvailUrl":"https://webapps.homedepot.com/StaffingForms/InterviewAvailability.html"}'

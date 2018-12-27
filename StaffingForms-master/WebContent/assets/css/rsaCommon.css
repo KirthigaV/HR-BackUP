@@ -1,0 +1,3872 @@
+@CHARSET "ISO-8859-1";
+/*jqgrd common css  */
+[id*='grid_'] .ui-widget-content,[id*='grid_'] .ui-widget-content.jqgrow.ui-row-ltr.ui-state-highlight {
+background: #fff;
+}
+[id*='grid_'] .ui-state-highlight,[id*='grid_'] .ui-widget-content .ui-state-highlight
+{
+
+	background: transparent;
+	color: #363636;
+}
+[id*='grid_'] .ui-state-hover,[id*='grid_'] .ui-widget-content .ui-state-hover,[id*='grid_'] .ui-state-focus,[id*='grid_'] .ui-widget-content .ui-state-focus {
+border: #ddd !important;
+background: rgb(240,187,143) !important;
+color: #000 !important;
+}
+[id*='grid_'] tbody tr:hover {
+background: bisque;
+}
+[id*='grid_'].table-striped>tbody>tr.selected-row:nth-child(odd)>td {
+background: transparent;
+}
+[id*='grid_'].table-striped>tbody>tr:nth-child(odd):hover>td {
+background: bisque;
+}
+input[type="radio"][disabled],input[type="checkbox"][disabled],
+input[type="radio"].disabled,input[type="checkbox"].disabled,
+fieldset[disabled] input[type="radio"],fieldset[disabled] 
+input[type="checkbox"]
+{
+	cursor: auto;
+}
+
+.selectboxit-selected{
+	background:rgba(230, 120, 30,0.5) !important;
+}
+select + span .selectboxit-arrow-container{
+	border-left:1px solid #e2e2e2;
+	height: 17px;
+	width: 18px;
+	margin-top: 2px;
+}
+.selectboxit-container .selectboxit {
+	border-radius:4px;
+}	
+select + span>span:hover{
+	border:1px solid #ffa853;
+	border-top-color:#ffa853;
+	margin-bottom:2px;
+	border-radius:5px;
+	background: white;
+}
+select + span > span:hover > span.selectboxit-arrow-container{
+	border-left:1px solid #ffa853;
+}
+.selectboxit-btn.selectboxit-enabled:hover,.selectboxit-btn.selectboxit-enabled:focus{
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-bottom-color: #b3b3b3;
+  border:1px solid #ffa853;
+  border-radius:5px;
+  background-position: 0px 0px; 
+  }
+.selectboxit-btn.selectboxit-enabled.selectboxit-btn.selectboxit-hover:hover{
+	background-color: white;
+}
+select+span
+{
+height: 25px;
+}
+.selectboxit-container span,.selectboxit-container .selectboxit-options a
+{
+height: 25px;
+line-height: 25px;
+font-size: 12px;
+}
+.selectboxit-btn{
+	border-color: rgb(183,186,188) rgb(146,148,150) rgb(94,96,97);
+} 
+
+.tableContainer{
+	height:76%;
+	overflow-y:scroll;
+	overflow-x:hidden;	
+	border:  1px solid #b8b8b8;
+}
+.tableContainer table{
+	height:100% !important;
+	width:100% !important;
+}
+.tableContainer table tbody{
+	width:100% !important;
+}
+#loggedUserId, #storeLocation{
+	font-size: 12px;
+}
+#storeLocation{
+	float: right;
+}
+.copyright{
+	color: #fff;
+	z-index: 2;
+	text-align: center;
+	font-size: 12px;
+}
+
+/* email admin module */
+#emailAdminHorizontal{
+	box-shadow: 3px 3px 5px grey;
+	border: 1px solid grey;
+	width: 103.7%;
+	margin-left: -2%;
+	margin-top:5px;
+}
+.emailmodal .modal-header{
+	border-bottom:none;
+}
+.emailmodal .modal-dialog{
+	width:333px;
+	font-size:12px;
+	color:white;
+	margin-top:18%;
+}
+.emailbtn-green {
+	color: white;
+	padding-top: 0.3%;
+	padding-bottom: 0.3%;
+	border-radius:4px;
+	background: rgb(111,128,43) !important;
+	background: -webkit-linear-gradient(rgb(155,170,97), rgb(111,128,43)) !important;
+	background: -o-linear-gradient(rgb(155,170,97), rgb(111,128,43));
+	background: -moz-linear-gradient(rgb(155,170,97), rgb(111,128,43));
+	background: linear-gradient(rgb(155,170,97), rgb(111,128,43));
+	width: 7%;
+	font-weight: bold;
+}
+.emailbtn-green:hover{
+	color: yellow;
+	border:1px solid orangered;	
+}
+.emailAdminBody{
+	background-color: rgb(76,76,76);
+	background-image:none;
+	padding-top:0px;
+}
+.emailadminappbody{
+	height: 615px;
+	width:96.5% !important;
+	background: -webkit-linear-gradient(white, white);
+	margin-top:6px!important;
+}
+#emailadminnav{
+	position: relative;
+	background: -webkit-linear-gradient(white, white);
+	margin-left: -10px;
+	height: 16%;
+	width: 101.6%;
+	position:relative;
+}
+#emailmessageBar{
+	width: 100%;
+	text-align: center;
+	font-weight:bold;
+	vertical-align: middle;
+	padding-top: .2em; padding-bottom: .2em;
+	color: #fff;
+	background-image: -moz-linear-gradient(top, #e6781e, #c36619);
+ 	background-image: -webkit-gradient(linear, center top, center bottom, from(rgba(230, 120, 30, 1)), color-stop(0.3, rgba(195, 102, 25, 1)));
+  	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6781e, endColorstr=#c36619);
+	color: white ;
+	padding: 3px;
+	font-size: 16px ;
+}
+.emailText{
+	margin-top: 25px;
+	font-size: 12px;
+}
+.container{
+	width:100%;
+}
+#emailAdminPage .form-control{
+	font-size:12px;
+}
+.headerEmail{
+	padding-bottom:5px;
+	font-size: 15px;
+}
+#requisitionNumber {
+	height: 138px;
+	width: 109%;
+	border: 2px solid rgb(92,192,255);
+	background-color: white;
+}
+#emailadminform .control-case{
+	background-color: white;
+}
+#emailAdminPage label
+{
+	font-size:12px;
+}
+.modalbtn {
+	width: 19%;
+	font-weight: bold;
+	border: 1px solid orangered;
+	padding: 0px;
+	color:black;
+	background-color:rgb(185,195,200);
+}
+.modalbtn:hover
+{
+	background-color:rgb(211,218,221);
+}
+
+
+/*interviewavailability css  */
+#storeModal .modal-header{
+	border-top-left-radius:6px;
+	border-top-right-radius:6px;
+	color: white !important;
+	text-align: left;
+	font-weight: bold;
+	vertical-align: middle;
+	color: #fff;
+	background-image: -moz-linear-gradient(top, #e6781e, #c36619);
+	background-image: -webkit-gradient(linear, center top, center bottom, from(rgba(206, 111, 34, 1)), color-stop(0.3, rgba(195, 102, 25, 1)));
+	background: -ms-linear-gradient(top, #e6781e 0%, #c36619 100%) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6781e, endColorstr=#c36619);
+	color: white;
+	font-size: 8px;
+	border: 1px solid black;
+	height: 31px;
+	padding-top: 5%;
+}
+
+#storeModal .modal-header .close{
+	text-shadow: 1px 0 #000;
+	opacity: 1;
+	filter: alpha(opacity=20);
+	margin-top: -2%;
+}
+.modal-body
+{
+	border:none;	
+}
+#appBody{
+	overflow:hidden;
+}
+#storeNo
+{
+	width: 60px;
+	margin-top: 39px;
+	margin-left: -15px;
+	margin-bottom: 29px;
+	line-height: 21px;
+	border-top:1px solid black;
+	border: 2px solid #D59E72;
+	height:27px;																		
+}
+#storeModal input[type="text"]:focus{
+   outline: 2px solid #D59E72 !important;
+}
+#grid_calendarGrid
+{
+	padding-top:28px;
+}
+.modal-body .storepopupbody {
+	background-color: rgb(240,240,240);
+	border: 1px solid black;
+	height: 86%;
+	border-radius: 3px;
+}
+.interviewAvailabilitybody
+{
+	position:relative;
+	background-color: rgb(62,62,62);
+	background-image:none;
+	padding-top:0px;
+	margin-top:-22px;
+	 height:100%; 
+}
+#retailstaffingnav{
+	background: -ms-linear-gradient(white, white);
+	background: -webkit-linear-gradient(white, white);
+	/* margin-left: 6px; */
+	height: 70px;
+	width: 100%;
+	position:relative;
+	padding-bottom: 0px;
+	border-bottom: 0px;
+	min-height:60px;
+	border-radius:6px;
+}
+.interviewavailabiltyAppBody{
+	height:100%;		
+	margin:0px !important;
+	width:100% !important;
+	min-height: 607px !important;
+	background-color: white;
+	border-radius: 5px;
+background: -o-linear-gradient(top, rgb(255, 255, 255) 0%,
+		rgb(240, 247, 250) 30%, rgb(210, 220, 225) 51%, rgb(195, 200, 205)
+		100% );
+background: -moz-linear-gradient(top, rgb(255, 255, 255) 0%,
+		rgb(240, 247, 250) 30%, rgb(210, 220, 225) 51%, rgb(195, 200, 205)
+		100% );
+	
+	background: -webkit-linear-gradient(top, rgb(255, 255, 255) 0%,
+		rgb(240, 247, 250) 30%, rgb(210, 220, 225) 51%, rgb(195, 200, 205)
+		100% ) !important;
+		 background: -ms-linear-gradient(top, rgb(255, 255, 255) 0%,
+		rgb(240, 247, 250) 30%, rgb(210, 220, 225) 51%, rgb(195, 200, 205)
+		100% ) 
+}
+.interviewavailabiltyAppBody #divLandingView{
+	width: 100%;
+	height: 88%;
+}
+.interviewavailabiltyAppBody #divLandingView #tab,.interviewavailabiltyAppBody #divLandingView #tab .tabRow,.interviewavailabiltyAppBody #divLandingView #tab .tabContainer{
+	height: 100%;
+}
+.appBodyparent{
+	border: 20px solid rgb(56,56,56);
+	border-radius: 4px;
+	width: 96%;
+	padding: 0px;
+	margin-top: 22px;
+	max-width: 982px;
+	height:100%;		
+}
+.interviewavailabilityTab {
+	display: inline;
+	border: 1px solid #a2a2a2;
+	padding: 19px;
+	margin: 17px;
+	margin-left: 29px;
+	background-color: white;
+	border-radius: 6px;
+	box-shadow: 3px 3px 15px grey;
+	width: 93%;
+	font-size: 12px;
+	margin-top: 0%;
+	padding-top: 0px !important;
+	padding-left: 0px!important;
+	padding-right: 0px !important;
+	height:92%;
+}
+#appBody .navbar-brand{
+	padding-left: 0;
+}
+
+#appBody #navbar ul li:first-child{
+	margin-left: -9px;
+}
+#interviewAvailabilitymainNav {	
+	border: none;
+	width: 100%;
+	padding: 0px;
+	background: white !important;
+	border-radius: 8px;
+}
+#tabMessageBar{
+	width: 100% !important;
+	color:white !important;
+	text-align: center;
+	font-weight:bold;
+	vertical-align: middle;
+	color: #fff;
+	background-image: -moz-linear-gradient(top, #e6781e, #c36619) !important;
+ 	background-image: -webkit-gradient(linear, center top, center bottom, from(rgba(230, 120, 30, 1)), color-stop(0.3, rgba(195, 102, 25, 1))) !important;
+ 	background: -ms-linear-gradient(top, #e6781e 0%, #c36619 100%) !important;
+  	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6781e', endColorstr='#c36619', GradientType=0) !important;
+	color: white ;
+	border: 1px solid #a2a2a2;
+	height: 0%;
+	line-height: 18px;
+	font-size: 12px;
+}
+#tabMessageBarLabel{
+	margin-top: 1px;
+    vertical-align: middle;
+    margin-bottom: 1px;
+}
+
+.calendarText
+{
+	text-align: left;
+	margin-left: 50px;
+	font-size: 12px;
+	margin-bottom: 5px;
+	margin-top: 1%;
+	-webkit-user-select: text;  
+	 -moz-user-select: text;    
+	 -ms-user-select: text;      
+	 user-select: text;             
+}
+.hiringCalendarText{
+	text-align: left;
+	margin-left: 50px;
+	font-size: 12px;
+	margin-bottom: 5px;
+	margin-top: 1%;
+	padding:0% 2% 0% 2%;
+	-webkit-user-select: text;  
+	 -moz-user-select: text;    
+	 -ms-user-select: text;      
+	 user-select: text;           
+}
+#storeModal .modal-content{
+	margin-top: 38%;
+	width: 50%;
+	height: 205px;
+	border-radius: 7px;
+} 
+#storeModalLabel ,#createcalendarmodalLabel {
+	text-align: left;
+	color: white;
+	font-size: 14px;
+	font-weight: 700;
+	margin-top: -10px;
+	font-family: arial;
+	letter-spacing: 0.7px;
+	text-shadow: 0 0 0;
+}
+.brand {
+color: #333;
+} 
+#interviewAvailabilitymainNav li{
+	background: rgb(194,194,194) !important;
+	background: -webkit-linear-gradient(rgb(231,231,231), rgb(194,194,194)) !important;
+	background: -o-linear-gradient(rgb(231,231,231), rgb(194,194,194));
+	background: -moz-linear-gradient(rgb(231,231,231), rgb(194,194,194));
+	background: linear-gradient(rgb(231,231,231), rgb(194,194,194));
+	width: 33.3%;
+	height: 27px;
+	margin-right:0px;
+	margin-top:0px;	
+}
+#interviewAvailabilitymainNav li:hover{
+	border:1px solid rgb(245, 154, 121);
+	background: -webkit-linear-gradient(#D6D6D6, #FCFCFC) !important;
+background: -o-linear-gradient(#D6D6D6, #FCFCFC);
+background: -moz-linear-gradient(#D6D6D6, #FCFCFC);
+background: linear-gradient(#D6D6D6, #FCFCFC);
+background: -ms-linear-gradient(#D6D6D6, #FCFCFC);
+}
+#interviewAvailabilitymainNav li a{
+	color: #666;
+	padding-top: 5px;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	text-shadow: 1px 1px #e2e2e2;
+	cursor: auto;
+}
+
+#interviewAvailabilitymainNav .ui-tabs-active.ui-state-active {
+	background:white !important;
+	border-top: 1px solid #e2e2e2;
+}
+#interviewAvailabilitymainNav .ui-tabs-active.ui-state-active:hover {
+	border:0px !important;
+}
+
+#interviewAvailabilitymainNav li:not(:last-child){
+	border-right: 1px solid white;
+}
+#interviewAvailabilitymainNav li:first-child{
+ 	border-top-left-radius: 5px;
+}
+#interviewAvailabilitymainNav li:last-child{
+	border-top-right-radius: 5px;
+	width: 33.4%;
+}
+.modal-body.storepopupbody {
+	background-color: rgb(240,240,240);
+	height: 85%;
+	border: 1px solid black;
+	border-top: none;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+}
+.storepopupform {
+	padding-bottom: 20px;
+	padding-left: 0px;
+}
+.storepopuplabel
+{
+	margin-top: 42px;
+	color: #0B2353 !important;
+}
+.storepopupformdiv
+{
+	padding-left:4%;
+}
+.orangebtn
+{
+	padding-top: 0.3%;
+	padding-bottom: 0.3%;
+	background: rgb(255,174,62) !important;
+	background: -webkit-linear-gradient(rgb(255,110,0), rgb(223, 155, 61)) !important;
+	background: -o-linear-gradient(rgb(255,110,0), rgb(255,174,62));
+	background: -moz-linear-gradient(rgb(255,110,0), rgb(255,174,62));
+	background: linear-gradient(rgb(255,110,0), rgb(255,174,62));
+	background: -ms-linear-gradient(rgb(255,110,0), rgb(255,174,62));
+	width: 16%;
+	font-weight: bold;
+	margin-right: 5px;
+	height: 25px;
+	border-radius: 5px !important;
+	padding-left:7px;
+	border-color: rgb(245, 154, 121);
+}
+.greybtn
+{
+	padding-top: 0.3%;
+	padding-bottom: 0.3%;
+	border-radius:5px;
+	background: rgb(252,252,252) !important;
+	background: -webkit-linear-gradient(rgb(214,214,214), rgb(252,252,252)) !important;
+	background: -o-linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	background: -moz-linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	background: linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	background: -ms-linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	
+	width: 19%;
+	color: #585858 !important;
+	font-weight: bold;
+	height: 25px;
+}
+.greybtn:hover{
+	color: #000000 !important;
+	border: 1px solid #E6781E !important;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, gray)) !important;
+	background: -moz-linear-gradient(top, #ffffff 0%, gray 100%) !important;
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff),
+		color-stop(100%, gray)) !important; /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ffffff 0%, gray 100%) !important;
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ffffff 0%, gray 100%) !important;
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ffffff 0%, gray 100%) !important;
+	/* IE10+ */
+	background: linear-gradient(to bottom, #ffffff 0%, gray 100%) !important;
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff',
+		endColorstr='gray', GradientType=0) !important; /* IE6-9 */
+	color:#000 !important;
+	background-position:0px !important;
+	border:none;
+	outline:none;
+}
+
+.orangebtn:hover{
+	border:1px solid orangered;
+	color:white;
+}
+#ui_1 , #ui_2, #ui_3{
+	outline:none;
+}
+.linkclass{
+	color:blue;
+	text-decoration:underline;
+}
+/* #calendarGrid.table-striped>tbody>tr:nth-child(odd)>td,
+#calendarGrid.table-striped>tbody>tr:nth-child(odd)>th	{
+background-color:transparent;
+} */
+.requisitionTable
+{
+	background-color: rgb(243,243,243);
+	width: 100%;
+	height: 33%;
+	margin-left: 0px;
+	padding-left: 0px;
+	margin-bottom: 17px;
+	box-shadow: 0px 3px 3px grey;
+}
+
+.requistionDropdown
+{
+	background-color: white;
+	height: 100px;
+	width: 97%;
+	margin-left: 15px;
+	margin-top: 9px;
+}
+.requistionDropdown select,#createHiringEventPopUp select,#editHiringEventPopUp select{
+	padding: 4px;
+	width: 100%;
+	background: rgb(250,250,250) !important;
+	background: -webkit-linear-gradient(rgb(240,240,240), rgb(250,250,250)) !important;
+	background: -o-linear-gradient(rgb(240,240,240), rgb(250,250,250));
+	background: -moz-linear-gradient(rgb(240,240,240), rgb(250,250,250));
+	background: linear-gradient(rgb(240,240,240), rgb(250,250,250));
+	border-radius: 7px;
+	border:1px solid lightgrey;
+}
+#tabs-3 {
+padding-left: 0px;
+padding-top: 6px;
+height:96%;
+}
+.requistionlist {
+	padding-top: 4px;
+	padding-bottom:1px;
+}
+.clearButton {
+margin-left: 15px;
+width:12%
+}
+#gview_grid_requisitiongrid thead{
+	background: rgb(250,250,250) !important;
+	background: -webkit-linear-gradient(rgb(240,240,240), rgb(250,250,250)) !important;
+	background: -o-linear-gradient(rgb(240,240,240), rgb(250,250,250));
+	background: -moz-linear-gradient(rgb(240,240,240), rgb(250,250,250));
+	background: linear-gradient(rgb(240,240,240), rgb(250,250,250));
+}
+.requisitionTable label{
+	margin-left: 16px;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 3px;
+	margin-top: 15px;
+}
+.deptfilter {
+width: 13%;
+}
+.requistionDropdown select:hover{
+	border:1px solid orangered;
+}
+/*staffing form main  */
+#staffingformMessageBar{
+	text-align: center;
+	font-weight:bold;
+	vertical-align: middle;
+	padding-top: .1em; padding-bottom: .1em;
+	color: #fff;
+	background-image: -ms-linear-gradient(top, #e6781e, #c36619);
+ 	background-image: -webkit-gradient(linear, center top, center bottom, from(rgba(230, 120, 30, 1)), color-stop(0.3, rgba(195, 102, 25, 1)));
+  	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6781e, endColorstr=#c36619);
+	color: white ;
+	font-size: 12px ;
+	border:1px solid black;
+}
+.staffingFormFluid{
+	padding-left:0px;
+	padding-right:0px;
+}
+.staffingformChild{
+	padding: 19px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 3px 3px 15px grey;
+	width: 94%;
+	font-size: 12px;
+	margin-top: 40px;
+	margin-left: 29px;
+	margin-right: 50px;
+	border: 1px solid lightgrey;
+	height:94%;
+}
+.staffingformText {
+	padding-left: 40px;
+	font-weight: bold;
+	font-size: 13px;
+}
+.staffingLinks a{
+	color: rgb(69,122,232);
+	font-weight: bold;
+	text-decoration: underline;
+	font-size: 13px;
+}
+.link1 {
+	padding-top: 8px;
+	padding-left: 34px;
+}
+.staffingLinks label{
+	margin-left: 6px;
+	font-weight:normal;
+}
+.staffingLinks button{
+	margin-right: 17px;
+	background-color: white;
+	border: none;
+	padding-top:4px;
+	padding-bottom: 4px;
+}
+
+.staffingLinks button a:hover{
+	color:black;
+	border:none;
+}
+.staffingLinks button:hover{
+	background-color:rgb(247,214,187);
+		border:none;
+}
+.staffingFormMainButton {
+	margin-left: 128px !important;
+}
+/*Create Calendar modal  */
+#createCalendarModal .modal-content{
+	margin-top: 191px;
+	width: 91%;
+	height: 308px;
+}
+#renameCalendarModal .modal-content{
+	margin-top: 196px;
+	width: 100%;
+	height: 267px;
+}
+#createCalendarModal .modal-header,#renameCalendarModal .modal-header{
+	background: -webkit-linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	background: -o-linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	background: -moz-linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	background: linear-gradient(rgb(203,106,26), rgb(231,148,81));	
+	height: 17px;
+	border: 1px solid black;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom:none;
+}
+#createCalendarModal .modal-body,#renameCalendarModal .modal-body {
+height: 90%;
+border: 1px solid black;
+padding:0;
+background-color: rgb(240,240,240);
+word-break: break-all;
+}
+#createCalendarModal .calendarpopupform ,#renameCalendarModal .calendarpopupform{
+height: 86%;
+margin: 19px;
+background: white;
+padding-top:11px;
+}
+.calendarpopupform .row {
+	padding-top:4px;
+}
+.calendarpopuptext div{
+	font-weight:bold;
+	color:rgb(50,79,119);
+/* 	margin-left: -46px; */
+	margin-bottom: 11px;
+}
+#renameCalendarModal .calendarpopuptext {
+	margin-top: 23px;
+}
+.renameCalendarText {
+	font-weight:bold;
+	color:rgb(50,79,119);
+	margin-bottom: 14px;
+	margin-top: 19px;
+}
+.warningModalBody {
+	font-weight: bold;
+	color: rgb(50,79,119);
+	margin-bottom: 14px;
+	margin-top: 10px;
+	font-size: 12px;
+}
+
+.CalendarNmaelabelmodal {
+	margin-left: 154px;
+	color:rgb(50,79,119);
+}
+#createCalendarModal .CalendarNmaelabelmodal {
+	margin-left: 80px;
+}
+#CalendarNameModalText{
+	width: 50%;
+	margin-left: 5px;
+	border: 3px solid #EFA86F;
+	height: 124%;
+	height: 31px;
+}
+#newCalendarNameModalText{
+	width: 40%;
+	margin-left: 5px;
+	border: 3px solid #EFA86F;
+	height: 124%;
+	height: 31px;
+}
+.renameCalendarButtons {
+	margin-top: 37px;
+	margin-left:30px;
+}
+.renameCalendarButtons button{
+	width:15%;	
+}
+.calendarButton {
+	text-align: left;
+	margin-left: 155px;
+	margin-top: 35px;
+}
+.calendarButton button{
+	width:25%;
+}
+#alertModalLabel, #hiringAlertLabel ,#alertPopupModalLabel{
+	color: white;
+	text-align: left;
+	font-size: 13px;
+	line-height: 0px;
+	font-weight: bold;
+}
+#CalendarNameModalText:focus{
+	outline:none;
+}
+.alertpopup{
+	z-index:1060;
+}
+.warningpopClass{
+	z-index:1070;
+}
+#alert .modal-content,#hiringAlert .modal-content{
+	margin-top: 49%;
+	width: 48%;
+	margin-left: 1%;
+}
+.renameErrorWidth{
+	width: 74% !important;
+	margin-top: 46% !important;
+}
+#warningpopup .modal-content{
+	margin-top: 237px;
+	width: 88%;
+	height: 189px;	
+}
+#alert .modal-header,#hiringAlert .modal-header{
+	background-color: rgb(205,139,66);
+	height: 17px;
+	border: 1px solid black;
+	border-bottom: none;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+	padding: 12px;
+}
+#warningpopup .modal-header{
+	background: -webkit-linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	background: -o-linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	background: -moz-linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	background: linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	border: 1px solid black;
+	border-bottom: none;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+	height: 26px;
+	padding-top: 0px;
+}
+
+/*Dynamic height and width for alert popup for reusability*/
+.popupHeight{
+	height: 118px !important;
+}
+.slotErrorHeight{
+	height: 150px !important;
+}
+.popupWidth{
+	width: 60% !important;
+}
+.rangeMessage{
+	margin-left: 2%;
+}
+.slotExceedWidth{
+	width: 67% !important;
+}
+.slotExceedBodyHeight{
+	height: 177px !important;
+}
+.slotExceedModalBody{
+	height: 116px !important;
+	padding-top: 5%;
+}
+/********************************/
+#alert .modal-body, #hiringAlert .modal-body{
+	border: 1px solid black;
+	background: rgb(231,227,231);
+	height: 97px;
+	padding: 7px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.alertModalBody.text-center {
+	font-size: 14px;
+}
+.manualWidth{
+	width: 55% !important;
+}
+#warningpopup .modal-body {
+	border: 1px solid black;
+	height: 89%;
+	background:rgb(240,240,240);
+	word-break: break-all;
+}
+#alert button, #hiringAlert button{
+	border: 2px solid rgb(205,110,60);
+	padding-top: 0px;
+	width: 67px;
+	height: 22px;
+}
+
+#warningpopup button{
+	 background:none;
+	 border:none;
+	 outline:none;
+	 width: 12%;
+	 height: 30px;
+	 font-size: 11px;
+}
+ #warningpopup button:hover{
+	 background:bisque;
+	 border-radius: 7px;
+}
+#confirmDelete img,#denyDelete img{
+	margin-right:4px;
+}
+.darkOrangeBtn
+{
+	padding-top: 0.4%;
+	padding-bottom: 0.3%;
+	border-radius:4px;
+	background: rgb(255,170,56) !important;
+	background: -webkit-linear-gradient(rgb(255,170,56),rgb(248, 115, 20)) !important;
+	background: -o-linear-gradient(rgb(255,170,56), rgb(248, 115, 20));
+	background: -moz-linear-gradient(rgb(255,170,56), rgb(248, 115, 20))!important;
+	background: -ms-linear-gradient(rgb(255,170,56), rgb(248, 115, 20))!important;
+	background: linear-gradient(rgb(228, 152, 50), rgb(248, 115, 20))!important
+	width: auto;
+	font-weight: bold;
+	margin-right: 30px;
+	height: 27px;
+	border-radius: 5px !important;
+	padding-left:9px;
+	border-color: rgb(245, 154, 121);
+}
+.darkOrangeBtn:hover
+{
+	color: #FFFFFF !important;
+}
+.calBtn{
+	margin-left: 23%;
+	width: auto;
+}
+#renameCalendarModal .modal-dialog {
+width: 50%;
+}
+.largeModal{
+	width: 77% !important;
+}
+.largeBody{
+	height: 116px !important;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	background:rgb(231,227,231);
+}
+/*Applicant profile*/
+
+.whiteContent{
+	background:white;
+	padding:1%;
+}	
+.lblNrml{
+	font-weight:normal;
+}
+/*Retail Staffing request*/
+.control-label{
+  font-size:12px;
+}
+.hdrLbl{
+ font-size:10px; 
+}
+.rExp{
+  width:95%;
+}
+.checkbox label{
+  font-size:12px;
+}
+.whiteContent{
+background:white;
+}
+.greyContent{
+background:lightgray;
+}
+
+#name,#userId{
+
+text-align:left;
+}
+.requestInfoHolder,.hiringMangerInfoHolder,.requisitionInfoHolder{
+	padding:1%;
+}
+.checkboxGrid{
+    display: block;
+    float: left;
+    width:100%;
+    
+}
+sub{
+  color: rgb(220,80,80);
+  font-size:19px;
+  vertical-align: sub;
+padding-left: 5px;
+}
+
+/*interviewsummary module*/
+.thdLogo{
+  width:80px;
+  height:60px;
+  margin-left: -10px;
+}
+.whiteContent{
+background:white;
+}
+.greyContent{background:lightgray;
+}
+.userInfoHolder{
+padding:1%;
+margin-top: 10px;
+}
+.interviewInfoHolder{
+padding:1%;
+margin-top: -26px;
+}
+.formContainer{
+  background: #4E4D4C;  
+  height:100%;
+}
+.name{
+    font-weight: normal !Important;
+    font-size:12px;
+ }
+.screenInfo{
+   margin-top: 10px;
+    font-size: 12px;
+    text-align:left;
+ }
+ .notes{
+    margin-top: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align:center;
+ }
+.titleHolder{
+  color:white;
+  background: #D26E1B;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  border:1px solid black;
+  width:103%;
+  margin-left: -20px;
+}
+.interviewSummary{
+  background: white;  
+  height:95%;
+  margin-top: 15px;
+  border-radius: 8px;
+  border: 1px solid black;
+  padding: 20px;
+}
+.content{  
+  overflow-y: auto;
+  height: 78%;
+}
+.closeBtn
+{
+  background: linear-gradient(white, #D5D5D5);
+  width:90px;
+  font-weight: bold;
+  margin-right: 6%;
+  border: 1px solid black;
+}
+.submitBtn
+{
+  background: linear-gradient(#AFC35F, #71822C);
+  width:90px;
+  font-weight: bold;
+  color: white;
+  margin-left: 40%;
+}
+.cancel
+{
+  margin-left:1%;
+}
+.headerInfo{ 
+  height:13%;
+}
+.pageTitle{ 
+  font-size: 20px;
+  font-weight: bold;
+  position:absolute;
+  margin-left: -10px;
+}
+#requistionGrid #candidateGrid{ 
+  overflow-y : auto;
+}
+.versionLabel
+{
+  margin-top: 33px;
+  margin-left: -10px;
+  font-size: 11px;
+  font-weight: normal;
+  position: absolute;
+} 
+.developerLabel
+{
+  margin-top:46px;
+}
+.userLabel
+{
+  margin-top: 46px;
+  font-size: 13px;
+  font-weight: bold;  
+  margin-right:-11%;
+
+}
+.userName
+{
+  margin-right:-22%;
+}
+.candidateLabel
+{
+  margin-top: 2%;
+}
+.interviewQuestionLabel
+{
+  margin-top: 4%;
+}
+.footerContent
+{
+  height: 9%;
+}
+.mandatoryField
+{
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+}
+.textBold
+{
+  font-weight: bold;
+  font-size: 14px;
+}
+.radioText
+{
+  font-weight: bold;
+  font-size: 12px;
+}
+.displayBlock
+{
+  display:block;  
+  position:absolute;
+}
+
+/*Calendar design css*/
+
+.calendarDetailTable>tbody>tr>td{
+	border:1px solid #000 !important;
+	width:14.3%;
+	height:8.5em;
+	text-align:right;
+}
+.hiringcalendarTable>tbody>tr>td{
+	border:1px solid #000 !important;
+	width:14.3%;
+	height:8.5em;
+	text-align:right;
+}
+.calendarDetailTable>thead>tr>th{
+	border: 1px solid #000 !important;
+	text-align: center;
+	width:14.28%;
+	background:#f8f8f8 !important;
+	color: #b9b9b9;
+	line-height: 0.428571;
+}
+.hiringcalendarTable>thead>tr>th{
+	border: 1px solid #000 !important;
+	text-align: center;
+	width:14.28%;
+	background:#f8f8f8 !important;
+	color: #b9b9b9;
+	line-height: 0.428571;
+}
+#calendar{
+	margin-top: 25px;
+	 height: 80%; 
+}
+#hiringCalendar{
+	margin-top: 25px;
+	height: 80%; 
+}
+#calendar .container{
+	overflow-y: auto;
+	height: 96%;
+}
+#hiringCalendar .container{
+	overflow-y: auto;
+	height: 96%;
+}
+#calendarDiv, #hiringCalendarDiv{
+	height:100%;
+}
+#mainDivRow,#hiringMainDivRow{
+	height:80%;
+}
+#calendarMaindivRow,#hiringDivRow{
+	height:100%;
+}
+.showCalendar
+{
+	background-color: rgb(243,243,243);
+	width: 95%;
+	height: 100%;
+	padding-top: 10px;
+	border-top-left-radius: 9px;
+	margin-left: 2.5%;
+	border-top-right-radius: 9px;
+}
+.hiringShowCalendar{
+	background-color: rgb(243,243,243);
+	width: 90%;
+	height: 100%;
+	padding-top: 14px;
+	border-radius: 9px;
+	margin-left: 5%;
+}
+.glyphicon-right-arrow{	
+	background-image:url(../images/right-arrow.png);
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	background-repeat: no-repeat;
+	margin-left:-24px;
+	margin-top: 0px;
+	outline:none;
+}
+.glyphicon-left-arrow{
+	background-image:url(../images/left-arrow.png);
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	background-repeat: no-repeat;
+	margin-left: 14px;
+	margin-top: 0px;
+	outline:none;
+
+}
+.labelCalendar{
+	font-weight:bold;
+	font-size:12px;
+	margin-top: 4%;
+}
+
+/* .selectCalendar{
+	background: #f2f2f2;
+	width: 305px;
+	height: 27px;
+	border-radius: 5px;
+	border-color: #d2d2d2;
+	margin-top:11px;
+	margin-left: 8px;
+}
+
+.selectBeginTime{
+	background: #f2f2f2;
+	width: 100px;
+	height: 25px;
+	border-radius: 5px;
+	border-color: #d2d2d2;
+	
+}
+.weeksInterviews{
+	background: #f2f2f2;
+	width: 55px;
+	height: 25px;
+	border-radius: 5px;
+	border-color: #d2d2d2;
+	
+} */
+
+.calendarDue{
+	top:-6px;
+}
+.calendarMaindiv, .hiringCalendarMaindiv{
+	background: #fff;
+	width: 97%;
+	margin-left: 10px;
+	height: 92%;
+}
+
+.fc-next-button{
+	border:0px;
+	background:none;
+	outline: none;
+}
+
+.blockColumn{
+	background:#b9b9b9;
+}
+.slotSummaryList{
+	line-height: 17px;
+	margin-left: -48px;
+	margin-right: -8px;
+	text-align: center;
+	font-family:arial;
+	word-spacing: 1px;
+	margin-top: 5%;
+}
+
+.navBrand{
+	margin-top: -13px;
+	margin-left: 29px;
+	
+}
+.navBrand .brand{
+	display: block;
+	font-size: 20px;
+	font-weight: 700;
+	color: #181818;
+}
+
+.childBrand{
+	margin-top: -23px;
+	font-size: 15px;
+	font-style: italic;
+	color: #787878;
+}
+.navHeaderButtons{
+	width: 78px;
+	color: #707070;
+	font-weight: bold;
+	font-family: arial;
+	font-size:12px;
+	margin-top: 12px;
+	background: -webkit-linear-gradient(#FFFFFF, #D0D0D0) !important;
+	background: -ms-linear-gradient(top, #FFFFFF 0%, #D0D0D0 100%) !important;
+  	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#D0D0D0', GradientType=0) !important;
+	margin-left:7px;
+}
+.navHeaderButtons:hover{
+	color: #FFFFFF;
+	font-weight: bold;
+	font-family: arial;
+	background: rgb(242,245,246); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(242,245,246,1) 0%, rgba(144,145,136,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,245,246,1)), color-stop(100%,rgba(144,145,136,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(242,245,246,1) 0%,rgba(144,145,136,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(242,245,246,1) 0%,rgba(144,145,136,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(242,245,246,1) 0%,rgba(144,145,136,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(242,245,246,1) 0%,rgba(144,145,136,1) 100%); /* W3C */
+	border-color: rgb(255,106,0);
+}
+li{
+	display:block;
+}
+
+
+
+#showSlotPopup .modal-header, #warningHiringPopup .modal-header{
+	background: -webkit-linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	background: -o-linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	background: -moz-linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	background: linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	border: 1px;
+	border-bottom: none;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	height: 29px;
+	color:#000 !important;
+	padding: 4px;
+}
+#showSlotPopup .modal-content, #warningHiringPopup .modal-content{
+	background-color: rgb(243,243,243);
+	height: 185px;
+	width: 92%;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	margin-left: 1%;
+	color: #0f3177;
+	border: 1px solid;
+	margin-top: 43%;
+}
+.printPacketWidth{
+	width: 100% !important;
+	height: 177px !important;	
+}
+.deletePopupWidth{
+	width: 70% !important;
+}
+#showSlotPopup .modal-body .actionResponseMessage, #warningHiringPopup .modal-body .actionResponseMessage{
+	width: 82%;
+	font-weight: bold;
+	line-height: 25px;
+	height: 52px;
+}
+.deleteActionMessage{
+	width: 54%;
+	font-weight: bold;
+	line-height: 25px;
+	height: 52px;
+}
+
+.printPacketMessage{
+	width: 97% !important;
+	line-height: 25px !important;
+	height: 52px !important;
+	font-weight: bold;
+}
+
+#showSlotPopup .modal-footer, #warningHiringPopup .modal-footer{
+	text-align: center;
+	margin-top:0%;
+	width: 100%;
+	border-top: 0px solid;
+	margin-left: 0;
+}
+
+#showSlotPopup .modal-footer button,#warningHiringPopup .modal-footer button{
+	border:none;
+	text-decoration: underline;
+	/* width: 12%; */
+	background:none;
+	font-size: 11px;
+	color: #0f3177;
+	font-weight: bold;
+	
+}
+/*
+.deleteWarningFooter{
+	 width: 12%;
+}
+.addWarningFooter{
+	 width: 8%;
+}*/
+/*#showSlotPopup .modal-footer div, #warningHiringPopup .modal-footer div{
+	width: 6%;
+	padding-top: 1%;
+	
+}*/
+.confirmIcon{
+	background-image:url(../images/confirmIcon.png);
+	position: absolute;
+	height: 15px;
+	width: 30px;
+	background-repeat: no-repeat;	
+}
+.NotConfirmIcon{
+	background-image:url(../images/NotConfirmedIcon.png);
+	position: absolute;
+	height: 17px;
+	width: 30px;
+	background-repeat: no-repeat;
+}
+
+
+#addBlocksTime .modal-content, #hiringAddBlocksTime .modal-content{
+	background-color: rgb(243,243,243);
+	height: 250px;
+	width: 710px;
+	margin-left: -8%;
+	margin-top: 36%;
+}
+.bottomBorder{
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+.topBorder{
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+#addBlocksTime .modal-body, #hiringAddBlocksTime .modal-body{
+	background: #fff;
+	width: 95%;
+	height: 81%;
+	margin-top: 1%;
+} 
+#addBlocksTime .modal-footer, #hiringAddBlocksTime .modal-footer{
+	padding: 0;
+	text-align: center;
+	border-top: 0px solid #e5e5e5;
+}
+
+#addBlocksTime .modal-footer .submit, #hiringAddBlocksTime .modal-footer .submit{
+	border-radius:5px;
+	border-color:#d2d2d2;
+	background: rgb(255,170,56) !important;
+	background: -webkit-linear-gradient(rgb(255,170,56), rgb(255,106,0)) !important;
+	background: -o-linear-gradient(rgb(255,170,56), rgb(255,106,0));
+	background: -moz-linear-gradient(rgb(255,170,56), rgb(255,106,0))!important;
+	background: linear-gradient(rgb(255,170,56), rgb(255,106,0))!important;
+   	color: #333333;
+  	width: 97px;
+   	height: 25px;
+   	font-family: Arial;
+   	font-size: 12px;
+   	font-weight: bold;
+   	padding: 2px 8px;
+   	margin-top: 5%;
+}
+#addBlocksTime .modal-footer .cancel, #hiringAddBlocksTime .modal-footer .cancel{
+	width: 97px;
+   	font-family: Arial;
+   	font-size: 12px;
+   	height: 25px;
+   	border-color: #c1c1c1;
+   	font-weight: bold;
+   	padding: 2px 8px;
+	border-radius: 5px;
+	background: rgb(252,252,252) !important;
+	background: -webkit-linear-gradient(rgb(214,214,214), rgb(252,252,252)) !important;
+	background: -o-linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	background: -moz-linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	background: linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	color: #585858 !important;
+	outline: none;
+   	margin-top: 4.3%;
+}
+#addBlocksTime .modal-header .close,#hiringAddBlocksTime .modal-header .close{
+	text-shadow: 1px 0 #000;
+	opacity: 1;
+	filter: alpha(opacity=20);
+	margin-top: 1%;
+}
+#addBlocksTime label,#hiringAddBlocksTime label{
+	font-weight: normal;
+}
+.addBlockLabelDiv{
+	margin-top:5%;
+	margin-left: -2%;
+}
+.endTime{
+	margin-left: 10%;
+}
+.addBlockSelects{
+	margin-top:2%;
+	margin-left: -2%;
+}
+.interviewLabel{
+	margin-left: -2%;
+}
+.storeDisabled{
+	color: #e4e4e4;
+}
+#interviewLoc, #hiringInterviewLoc{
+	width:53px;
+	border-top: 1px solid black;
+	border: 2px solid #D59E72;
+	height: 27px;
+}
+#interviewLoc input[type="text"]:focus,#hiringInterviewLoc input[type="text"]:focus{
+   outline: 2px solid #D59E72 !important;
+}
+#dayViewModal .modal-content,#hiringDayViewModal .modal-content{
+	background-color: rgb(243,243,243);
+	height: 83%;
+	width: 98%;
+}
+#dayViewModal .modal-body,#hiringDayViewModal .modal-body{
+	background: #fff;
+	width: 95%;
+	height: 87%;
+	margin-top: 23px;
+} 
+#dayViewModal .modal-dialog,#hiringDayViewModal .modal-dialog {
+	width:  820px;
+	margin: 60px auto;
+	height:100%;
+}
+.dayviewColor{
+	color: #0f3177;
+}
+
+#dayViewModal .modal-header .close,#hiringDayViewModal .modal-header .close{
+	margin-top: 5px;
+}
+#dayViewModal .modal-footer {
+	padding: 0;
+	text-align: center;
+	border-top: 0px solid #e5e5e5;
+	margin-top: 2%;
+}
+#hiringDayViewModal .modal-footer {
+	padding: 0;
+	text-align: center;
+	border-top: 0px solid #e5e5e5;
+	width: 430px;
+	margin-top:5%;
+	
+}
+.bottomSpace{
+	margin-bottom: 2%;
+}
+.hiringViewContainer .modal-footer .roaster{
+	width: 118px;
+    color: #333333;
+   	border-color: #fff;
+   	width: 120px;
+   	font-family: Arial;
+   	font-size: 12px;
+   	height: 25px;
+   	font-weight: bold;
+	border-radius:5px;
+	border-color:#d2d2d2;
+	background: rgb(255,170,56) !important;
+	background: -webkit-linear-gradient(rgb(255,110,0), rgb(223, 155, 61)) !important;
+	background: -o-linear-gradient(rgb(255,110,0), rgb(223, 155, 61));
+	background: -moz-linear-gradient(rgb(255,110,0), rgb(223, 155, 61))!important;
+	background: linear-gradient(rgb(255,110,0), rgb(223, 155, 61))!important;
+	outline: none;
+	padding: 2px 8px;
+}
+.hiringViewContainer .modal-footer .disableRoaster{
+   	width: 118px;
+   	font-family: Arial;
+   	font-size: 12px;
+   	height: 25px;
+	padding: 2px 8px !important;
+  	font-weight: bold !important;
+  	color: #b9b9b9 !important;
+	background: #ffffff !important;
+  	background: -moz-linear-gradient(top, #ffffff 0%, #cdcdcd 100%) !important;
+  	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff),
+ 	color-stop(100%, #cdcdcd)) !important;
+ 	 background: -webkit-linear-gradient(top, #ffffff 0%, #cdcdcd 100%) !important;
+ 	 background: -o-linear-gradient(top, #ffffff 0%, #cdcdcd 100%) !important;
+ 	 background: -ms-linear-gradient(top, #ffffff 0%, #cdcdcd 100%) !important;
+  	background: linear-gradient(to bottom, #ffffff 0%, #cdcdcd 100%) !important;
+  	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff',
+ 	endColorstr='#cdcdcd', GradientType=0) !important;
+ 	border-bottom: 1px solid gray !important;
+ 	border-radius: 5px !important;
+}
+
+#printRoster:hover,#exportRoster:hover{
+	border: transparent !important;
+}
+
+#dayViewModal .dateLabel{
+	padding: 8px;
+	margin-left: 71px;
+}
+
+#hiringDayViewModal h5,#dayViewModal h5{
+	margin-top: 0;
+}
+#hiringDateSlotDetail{
+	word-spacing: 1px;
+	margin-top: 2.2%;
+}
+.hiringPrintPacketContainer .modal-footer,.hiringDeleteContainer .modal-footer{
+	margin-top:3%;
+}
+#dateSlotDetail{
+	padding: 8px;
+	word-spacing: 1px;
+}
+
+#create{
+   	color: #333333;
+   	border-color: #fff;
+    width: 97px;
+   	font-family: Arial;
+   	font-size: 12px;
+   	height: 25px;
+   	font-weight: bold;
+	border-radius:5px;
+	border-color:#d2d2d2;
+	background: rgb(255,170,56) !important;
+	background: -webkit-linear-gradient(rgb(255,110,0), rgb(223, 155, 61)) !important;
+	background: -o-linear-gradient(rgb(255,110,0), rgb(223, 155, 61));
+	background: -moz-linear-gradient(rgb(255,110,0), rgb(223, 155, 61))!important;
+	background: linear-gradient(rgb(255,110,0), rgb(223, 155, 61))!important;
+	outline: none;
+	padding: 2px 8px;
+}
+#create:disabled{
+	width: 97px;
+   	font-family: Arial;
+   	font-size: 12px;
+   	height: 25px;
+	padding: 2px 8px !important;
+  	font-weight: bold !important;
+  	color: #b9b9b9 !important;
+	background: #ffffff !important;
+  	background: -moz-linear-gradient(top, #ffffff 0%, #cdcdcd 100%) !important;
+  	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff),
+ 	color-stop(100%, #cdcdcd)) !important;
+ 	 background: -webkit-linear-gradient(top, #ffffff 0%, #cdcdcd 100%) !important;
+ 	 background: -o-linear-gradient(top, #ffffff 0%, #cdcdcd 100%) !important;
+ 	 background: -ms-linear-gradient(top, #ffffff 0%, #cdcdcd 100%) !important;
+  	background: linear-gradient(to bottom, #ffffff 0%, #cdcdcd 100%) !important;
+  	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff',
+ 	endColorstr='#cdcdcd', GradientType=0) !important;
+ 	border-bottom: 1px solid gray !important;
+ 	border-radius: 5px !important;
+}
+#cancel{
+	width: 97px;
+   	font-family: Arial;
+   	font-size: 12px;
+   	height: 25px;
+   	border-color: #c1c1c1;
+   	font-weight: bold;
+   	padding: 2px 8px;
+	border-radius: 5px;
+	background: rgb(252,252,252) !important;
+	background: -webkit-linear-gradient(rgb(214,214,214), rgb(252,252,252)) !important;
+	background: -o-linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	background: -moz-linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	background: linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	color: #585858 !important;
+	outline: none;
+}
+#create:hover{
+	background: -webkit-linear-gradient(#ff9900,#ff9900,#e6781e) !important;
+	color:#fff;
+	border-color:#e6781e;
+	font-weight: bold;
+	padding:0;
+	outline: none;
+}
+#cancel:hover{
+	border: 1px solid #E6781E !important;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, gray)) !important;
+	background: -moz-linear-gradient(top, #ffffff 0%, gray 100%) !important;
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff),
+		color-stop(100%, gray)) !important; /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ffffff 0%, gray 100%) !important;
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ffffff 0%, gray 100%) !important;
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ffffff 0%, gray 100%) !important;
+	/* IE10+ */
+	background: linear-gradient(to bottom, #ffffff 0%, gray 100%) !important;
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff',
+		endColorstr='gray', GradientType=0) !important; /* IE6-9 */
+	color:#000 !important;
+	background-position:0px !important;
+	border:none;
+	outline:none;
+}
+.daySlotContainer .modal-footer .submit ,.hiringViewContainer .modal-footer .submit {
+   	color: #333333;
+   	border-color: #fff;
+    width: 97px;
+   	font-family: Arial;
+   	font-size: 12px;
+   	height: 25px;
+   	font-weight: bold;
+	border-radius:5px;
+	border-color:#d2d2d2;
+	background: rgb(255,170,56) !important;
+	background: -webkit-linear-gradient(rgb(255,110,0), rgb(223, 155, 61)) !important;
+	background: -o-linear-gradient(rgb(255,110,0), rgb(223, 155, 61));
+	background: -moz-linear-gradient(rgb(255,110,0), rgb(223, 155, 61))!important;
+	background: linear-gradient(rgb(255,110,0), rgb(223, 155, 61))!important;
+	outline: none;
+	padding: 2px 8px;
+}
+.daySlotContainer .modal-footer .submit:hover,.hiringViewContainer .modal-footer .submit:hover,
+.printPacketSlotContainer .modal-footer .submit:hover, .hiringPrintPacketContainer .modal-footer .submit:hover,
+.addDaySlotContainer .modal-footer .submit:hover,.hiringAddContainer .modal-footer .submit:hover,
+.deleteDaySlotContainer .modal-footer .submit:hover, .hiringDeleteContainer .modal-footer .submit:hover,
+#addBlocksTime .modal-footer .submit:hover, #hiringAddBlocksTime .modal-footer .submit:hover
+{
+	background: -webkit-linear-gradient(#ff9900,#ff9900,#e6781e) !important;
+	color:#fff;
+	border-color:#e6781e;
+	font-weight: bold;
+	padding:0;
+	outline: none;
+}
+
+.daySlotContainer .modal-footer .cancel,.hiringViewContainer .modal-footer .cancel{
+	width: 97px;
+   	font-family: Arial;
+   	font-size: 12px;
+   	height: 25px;
+   	border-color: #c1c1c1;
+   	font-weight: bold;
+   	padding: 2px 8px;
+	border-radius: 5px;
+	background: rgb(252,252,252) !important;
+	background: -webkit-linear-gradient(rgb(214,214,214), rgb(252,252,252)) !important;
+	background: -o-linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	background: -moz-linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	background: linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	color: #585858 !important;
+	outline: none;
+}
+.daySlotContainer .modal-footer .cancel:hover,.hiringViewContainer .modal-footer .cancel:hover,
+.printPacketSlotContainer  .modal-footer .cancel:hover,.hiringPrintPacketContainer .modal-footer .cancel:hover,
+.addDaySlotContainer .modal-footer .cancel:hover,.hiringAddContainer .modal-footer .cancel:hover,
+.deleteDaySlotContainer .modal-footer .cancel:hover, .hiringDeleteContainer .modal-footer .cancel:hover,
+#addBlocksTime .modal-footer .cancel:hover, #hiringAddBlocksTime .modal-footer .cancel:hover{
+	border: 1px solid #E6781E !important;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, gray)) !important;
+	background: -moz-linear-gradient(top, #ffffff 0%, gray 100%) !important;
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff),
+		color-stop(100%, gray)) !important; /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ffffff 0%, gray 100%) !important;
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ffffff 0%, gray 100%) !important;
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ffffff 0%, gray 100%) !important;
+	/* IE10+ */
+	background: linear-gradient(to bottom, #ffffff 0%, gray 100%) !important;
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff',
+		endColorstr='gray', GradientType=0) !important; /* IE6-9 */
+	color:#000 !important;
+	background-position:0px !important;
+	border:none;
+	outline:none;
+}
+.greyPrintBtn{
+	width: 97px;
+   	font-family: Arial;
+   	font-size: 12px;
+   	height: 25px;
+	padding: 2px 8px !important;
+  	font-weight: bold !important;
+  	color: #b9b9b9 !important;
+	background: #ffffff !important;
+  	background: -moz-linear-gradient(top, #ffffff 0%, #cdcdcd 100%) !important;
+  	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff),
+ 	color-stop(100%, #cdcdcd)) !important;
+ 	 background: -webkit-linear-gradient(top, #ffffff 0%, #cdcdcd 100%) !important;
+ 	 background: -o-linear-gradient(top, #ffffff 0%, #cdcdcd 100%) !important;
+ 	 background: -ms-linear-gradient(top, #ffffff 0%, #cdcdcd 100%) !important;
+  	background: linear-gradient(to bottom, #ffffff 0%, #cdcdcd 100%) !important;
+  	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff',
+ 	endColorstr='#cdcdcd', GradientType=0) !important;
+ 	border-bottom: 1px solid gray !important;
+ 	border-radius: 5px !important;
+}
+.printPacketSlotContainer  .modal-footer .cancel, .hiringPrintPacketContainer .modal-footer .cancel{
+		width: 97px;
+   	font-family: Arial;
+   	font-size: 12px;
+   	height: 25px;
+   	border-color: #c1c1c1;
+   	font-weight: bold;
+  	 padding: 2px 8px;
+	border-radius: 5px;
+	background: rgb(252,252,252) !important;
+	background: -webkit-linear-gradient(rgb(214,214,214), rgb(252,252,252)) !important;
+	background: -o-linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	background: -moz-linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	background: linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	color: #585858 !important;
+	outline: none;
+}
+.printPacketSlotContainer .modal-footer .submit, .hiringPrintPacketContainer .modal-footer .submit {
+	border-radius:5px;
+	border-color:#d2d2d2;
+	background: rgb(255,170,56) !important;
+	background: -webkit-linear-gradient(rgb(255,170,56), rgb(255,106,0)) !important;
+	background: -o-linear-gradient(rgb(255,170,56), rgb(255,106,0));
+	background: -moz-linear-gradient(rgb(255,170,56), rgb(255,106,0))!important;
+	background: linear-gradient(rgb(255,170,56), rgb(255,106,0))!important;
+   	color: #333333;
+   	border-color: #fff;
+    width: 97px;
+   	font-family: Arial;
+   	font-size: 12px;
+   	height: 25px;
+   	font-weight: bold;
+   	outline: none;
+   	padding: 2px 8px;
+}
+
+#dayViewLabel .modal-title,#hiringDayViewLabel .modal-title{
+	text-align: left;
+    font: 14pt Arial;
+    vertical-align: middle;
+    color: #0f3177;
+}
+.popHeader{    
+	color: white !important;
+	text-align: left;
+	font-weight: bold;
+	vertical-align: middle;
+	color: #fff;
+	background-image: -moz-linear-gradient(top, #e6781e, #c36619);
+	background-image: -webkit-gradient(linear, center top, center bottom, from(rgba(255,153,0, 4)), color-stop(0.7, rgba(195, 102, 25, 1)));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6781e, endColorstr=#c36619);
+	color: white;
+	font-size: 8px;
+	border: 1px solid black;
+	height: 31px;
+	padding-top: 5px;
+}
+
+.bold-span{
+	font-weight:bold;
+	
+}
+
+.close {
+	float: right;
+	font-size: 21px;
+	font-weight: bold;
+	line-height: 0.55;
+	color: #000;
+	text-shadow: 1px 0 #000;
+	opacity: 1;
+	filter: alpha(opacity=20);
+}
+.dayViewPrevious{
+	background-image:url(../images/left-arrow.png);
+	position: absolute;
+	height: 30px;
+	width: 50px;
+	background-repeat: no-repeat;
+	margin-top:  -10%;
+}
+.dayViewNext{
+	background-image:url(../images/right-arrow.png);
+	position: absolute;
+	height: 30px;
+	width: 50px;
+	background-repeat: no-repeat;
+	margin-top:  -10%;
+}
+.daySlotTable tbody, .daySlotTable thead { 
+	display: block;
+}
+.hiringViewSlotTable tbody, .hiringViewSlotTable thead { 
+	display: block;
+}
+.hiringViewSlotTable{
+	height:74%;
+}
+.daySlotTable tbody, .hiringViewSlotTable tbody {
+  /*  height: 96%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 335px;
+	border:  1px solid #b8b8b8;*/
+	color: #0f3177;	
+}
+	
+.hiringViewSlotTable tbody {
+  /*  height: 95%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 400px !important;
+	border:  1px solid #b8b8b8;*/
+	color: #0f3177;
+	
+}
+.addDaySlotTable{
+	height:74%;
+}
+.hiringAddDayTable{
+	height: 91%;
+}
+.addDaySlotTable tbody {
+    height: 100%;
+   /* overflow-y: auto;
+    overflow-x: hidden;
+    width: 550px;
+	border:  1px solid #b8b8b8;*/
+	color: #0f3177;
+	
+}
+.hiringAddDayTable tbody  {
+    height: 96%;
+  /*  overflow-y: auto;
+    overflow-x: hidden;*/
+    width: 440px;
+	
+	color: #0f3177;
+	
+}
+.deleteSlotTable,.hiringDeleteSlotTable{
+	height:75%;
+}
+.deleteSlotTable tbody, .hiringDeleteSlotTable tbody{
+	height: 100%;
+   /* overflow-y: auto;
+    overflow-x: hidden;
+    width: 355px;
+	border:  1px solid #b8b8b8;*/
+	color: #0f3177;
+}
+.printPacketSlotTable,.hiringPrintPacketTable{
+	height: 75%;
+}
+.printPacketSlotTable tbody, .hiringPrintPacketTable tbody{
+	height: 100%;
+   /* overflow-y: auto;
+    overflow-x: hidden;*/
+    width: 378px;
+	
+	color: #0f3177;
+}
+.viewLabelDiv{
+	height: 30px;
+	text-align:left;
+	margin-right: 0%;
+}
+.daySlotContainer{	
+	width: 380px;
+	margin: 0px auto;
+	margin-top: 2%;
+	height: 82%;
+}
+.viewMetContainer{
+	width: 415px;
+}
+.viewCheckLabel{
+	margin-right: 6%;
+	margin-top: 10px;
+}
+.printMet{
+	margin-right: -7%;
+	margin-left: 5.5%;
+}
+
+.daySlotTable{
+	height:74%;
+}
+ .hiringViewContainer{	
+	width: 410px;
+	margin: 0px auto;
+	margin-top: 1%;
+	height: 79%;
+}
+.addDaySlotContainer{
+	width: 80%;
+	margin: 0px auto;
+	margin-top: 1%;
+	height: 97%;
+}
+.addMetContainer{
+	width: 86% !important;
+}
+
+.addLableDiv{
+	margin-left: 41%;
+	margin-right: -4%;
+	margin-top: 10px;
+	font-weight: normal;
+}
+
+.hiddenSpaceDiv{
+	margin-right: -7.5%;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+   .hiddenSpaceDiv{
+		margin-right: -7% !important;
+	}
+	.viewCheckLabel{
+		margin-right: 0 !important;
+		margin-top: 10px;
+	}
+	.checkMet{
+		margin-right: -7%;
+		margin-left: 2% !important;
+	}
+	.addDaySlotTable tbody>tr>td:first-child, .hiringAddDayTable tbody>tr>td:first-child {
+  	 border-left: 0px;
+  	  padding-left: 0.3%;	
+	}
+	.storeNumText{
+		padding-top:5px !important;
+		padding-bottom:5px !important;
+		padding-left:0px !important;
+		padding-right:0px !important;
+	}
+	button{
+		-ms-user-select: none; 
+		user-select: none; 
+	}
+	.SelectIE{
+		-ms-user-select: element;      
+	  	user-select: element;         
+	}
+	.unSelectIE{
+		-ms-user-select: none; 
+		user-select: none; 
+	}
+	#calendarGrid,#hiringEventGrid,#requisitionGrid{
+		-ms-user-select: none; 
+		user-select: none; 
+	}
+	#dateSlotDetail,#hiringDateSlotDetail{
+		-ms-user-select: none; 
+		user-select: none;
+	}
+	model-radio{
+		-ms-user-select: none; 
+		user-select: none;
+	}
+	input[type="text"]{
+	  	-ms-user-select: element;     
+	  	user-select: element;          
+	}
+	#addBlockNote,#hiringAddBlockNote{
+		 -ms-user-select: element;      
+	 	user-select: element;          
+	}
+	 .calendarText,.hiringCalendarText
+	{
+	  	-ms-user-select: element;      
+	  	user-select: element;         
+	}
+	
+	#dayViewModal h5,#hiringDayViewModal h5{	
+	  	-ms-user-select: element;      
+	  	user-select: element;        
+	}
+	.SelectIE::selection{
+		color:white;
+		background: black;
+	}
+}
+
+.selectable{
+	-webkit-user-select: text;  
+	 -moz-user-select: text;        
+	 user-select: text;       
+}
+.selectable::selection,#addBlocksTime label::selection,#addBlocksTime span::selection,
+#hiringAddBlocksTime label::selection,#hiringAddBlocksTime span::selection,.calendarText div::selection,
+.hiringCalendarText div::selection,.managerDetaildiv .form-group div::selection,
+.hiringAddressDetails .form-group div::selection
+{
+	color:white;
+	background: black;
+}
+input[type="text"]::selection{
+	color:white;
+	background: black;
+}
+.tableBodyBackground{
+	color:white;
+	background: black;
+}
+
+.unselectable{
+	-webkit-user-select: none; 
+	-moz-user-select: none; 
+	user-select: none; 
+}
+
+button{
+	-webkit-user-select: none; 
+	-moz-user-select: none; 
+	user-select: none; 
+	}
+.interviewavailabiltyAppBody input[type="text"]{
+	-webkit-user-select: text;  
+	 -moz-user-select: text;       
+	 user-select: text;         
+}
+#addBlockNote,#hiringAddBlockNote{
+	-webkit-user-select: text;  
+	-moz-user-select: text;       
+	 user-select: text;           
+}
+
+/******************************************************************************************/
+.addDaySlotContainer .tableDiv{
+	height: 100%;
+}
+.addDaySlotContainer .tableContent,.hiringAddContainer .tableContent{
+	height: 84%;
+}
+.hiringAddContainer{
+	width: 455px;
+	margin: 0px auto;
+	margin-top: 1%;
+	height: 82%;
+}
+.deleteDaySlotContainer, .hiringDeleteContainer{
+	width: 370px;
+	margin: 0px auto;
+	margin-top: 2%;
+	height: 87%;
+}
+.printPacketSlotContainer{
+	width: 53%;
+	margin: 0px auto;
+	margin-top: 1%;
+	height: 87%;
+}
+.printPacketMet{
+	width: 61% !important;
+}
+.hiringPrintPacketContainer{
+	width: 50%;
+	margin: 0px auto;
+	margin-top: 1%;
+	height: 87%;
+}
+.checkNormal{
+	margin-left: 15%;
+}
+.checkAdd{
+	margin-left: -2%;
+}
+.metAdd{
+	 margin-left: -10%; 
+}
+.metAddLabel{
+	margin-right: -10% !important;
+}
+
+.checkMetAdd{
+	margin-left: -9%;
+	margin-right: -4%;
+}
+.checkMet{
+	margin-right: -7%;
+	margin-left: 2%;
+}
+
+.addDaySlotContainer .modal-footer .submit,.hiringAddContainer .modal-footer .submit {
+	border-radius:5px;
+	border-color:#d2d2d2;
+	background: rgb(255,170,56) !important;
+	background: -webkit-linear-gradient(rgb(255,170,56), rgb(255,106,0)) !important;
+	background: -o-linear-gradient(rgb(255,170,56), rgb(255,106,0));
+	background: -moz-linear-gradient(rgb(255,170,56), rgb(255,106,0))!important;
+	background: linear-gradient(rgb(255,170,56), rgb(255,106,0))!important;
+   	color: #333333;
+  	width: 97px;
+   	height: 25px;
+   	font-family: Arial;
+   	font-size: 12px;
+   	font-weight: bold;
+   	padding: 2px 8px;
+}
+.addDaySlotContainer .modal-footer .cancel,.hiringAddContainer .modal-footer .cancel{
+		width: 97px;
+   	font-family: Arial;
+   	font-size: 12px;
+   	height: 25px;
+   	border-color: #c1c1c1;
+   	font-weight: bold;
+   	padding: 2px 8px;
+	border-radius: 5px;
+	background: rgb(252,252,252) !important;
+	background: -webkit-linear-gradient(rgb(214,214,214), rgb(252,252,252)) !important;
+	background: -o-linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	background: -moz-linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	background: linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	color: #585858 !important;
+}
+.deleteDaySlotContainer .modal-footer .submit, .hiringDeleteContainer .modal-footer .submit {
+	border-radius:5px;
+	border-color:#d2d2d2;
+	background: rgb(255,170,56) !important;
+	background: -webkit-linear-gradient(rgb(255,170,56), rgb(255,106,0)) !important;
+	background: -o-linear-gradient(rgb(255,170,56), rgb(255,106,0));
+	background: -moz-linear-gradient(rgb(255,170,56), rgb(255,106,0))!important;
+	background: linear-gradient(rgb(255,170,56), rgb(255,106,0))!important;
+   	color: #333333;
+    width: 97px;
+   	height: 25px;
+   	font-family: Arial;
+   	font-weight: bold;
+   	font-size: 12px;
+    padding: 2px 8px;
+} 
+.deleteDaySlotContainer .modal-footer .cancel, .hiringDeleteContainer .modal-footer .cancel{
+		width: 97px;
+   	font-family: Arial;
+   	font-size: 12px;
+   	height: 25px;
+   	border-color: #c1c1c1;
+   	font-weight: bold;
+  	 padding: 2px 8px;
+	border-radius: 5px;
+	background: rgb(252,252,252) !important;
+	background: -webkit-linear-gradient(rgb(214,214,214), rgb(252,252,252)) !important;
+	background: -o-linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	background: -moz-linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	background: linear-gradient(rgb(214,214,214), rgb(252,252,252));
+	color: #585858 !important;
+}
+
+#dayViewModal,#hiringDayViewModal{
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+#dayViewModal table>tbody>tr>td,#hiringDayViewModal table>tbody>tr>td{
+	border-top: 1px solid #eee;
+}
+
+.addDaySlotTable tbody, .addDaySlotTable thead { 
+	display: block;
+}
+
+.hiringAddDayTable tbody, .hiringAddDayTable thead { 
+	display: block;
+}
+.deleteSlotTable tbody, .deleteSlotTable thead { 
+	display: block;
+}
+.hiringDeleteSlotTable  tbody, .hiringDeleteSlotTable thead { 
+	display: block;
+}
+.printPacketSlotTable tbody, .printPacketSlotTable thead { 
+	display: block;
+}
+.hiringPrintPacketTable tbody, .hiringPrintPacketTable thead { 
+	display: block;
+}
+
+.daySlotTable tbody>tr, .hiringViewSlotTable tbody>tr{
+	height: 31px;
+}
+.deleteSlotTable tbody>tr, .hiringDeleteSlotTable tbody>tr{
+	height: 31px;
+}
+
+.printPacketSlotTable tbody>tr, .hiringPrintPacketTable tbody>tr{
+	height: 31px;
+}
+.addDaySlotTable tbody>tr, .hiringAddDayTable tbody>tr{
+	height: 31px;
+	border-bottom: 1px solid #E8E8E8;
+}
+
+.deleteSlotTable tbody>tr>td:nth-child(1), .hiringDeleteSlotTable tbody>tr>td:nth-child(1){
+	padding-left: 1%;
+}
+
+.daySlotTable tbody>tr>td:nth-child(1)  {
+   width: 9%;
+   border-left: 0px;
+   padding-left: 1%;
+	
+}
+.hiringViewSlotTable tbody>tr>td:nth-child(1)  {
+   width: 9%;
+   border-left: 0px;
+   padding-left: 1%;
+	
+}
+.printPacketSlotTable tbody>tr>td:nth-child(1), .hiringPrintPacketTable tbody>tr>td:nth-child(1){
+	padding-left: 1%;
+	vertical-align: middle;
+}
+
+.daySlotTable tbody>tr>td:nth-child(2)  {
+    width:19%;
+    border-left:  1px solid #ccc;
+    padding-left: 2px;
+}
+.hiringViewSlotTable tbody>tr>td:nth-child(2)  {
+    width:19%;
+    border-left:  1px solid #ccc;
+}
+
+.daySlotTable tbody>tr>td:nth-child(3)  {
+   width: 5%;
+    border-left:  1px solid #ccc;
+    color:#e4e4e4;
+}
+.hiringViewSlotTable tbody>tr>td:nth-child(3)  {
+  	 width: 5%;
+    border-left:  1px solid #ccc;
+    color:#000;
+}
+.hiringViewSlotTable tbody>tr:nth-child(odd)>td:nth-child(3){
+	background: #f8f8f8;
+}
+
+.addDaySlotTable tbody>tr>td:first-child, .hiringAddDayTable tbody>tr>td:first-child {
+   border-left: 0px;
+    padding-left: 1%;	
+}
+.printPacketSlotTable tbody>tr>td:first-child, .hiringPrintPacketTable tbody>tr>td:first-child {
+   	border-left: 0px;
+    padding-left: 1%;
+	
+}
+.daySlotTable>tbody>tr>td, .hiringViewSlotTable>tbody>tr>td{
+	line-height: 0.428571;
+	border-left: 1px solid #c8c8c8;
+}
+.addDaySlotTable>tbody>tr>td, .hiringAddDayTable>tbody>tr>td{
+	line-height: 0.428571;
+	border-left: 1px solid #c8c8c8;
+}
+.deleteSlotTable>tbody>tr>td, .hiringDeleteSlotTable>tbody>tr>td{
+	line-height: 0.428571;
+	border-left: 1px solid #c8c8c8;
+	padding-bottom: 1.5%;
+	vertical-align: middle;
+}
+.printPacketSlotTable>tbody>tr>td, .hiringPrintPacketTable>tbody>tr>td{
+	line-height: 0.428571;
+	border-left: 1px solid #c8c8c8;
+	padding-right: 8px;
+	padding-top: 1%;
+	padding-bottom: 0.8%;
+	vertical-align: middle;
+}
+#printPacketForm,#hiringPacketForm{
+	height: 100%;
+}
+.storeNumText{
+	width: 30px;
+	height: 25px;
+	color:#000;
+	outline: none;
+	border: transparent;
+	background-color:none;	
+}
+
+.printPacketSlotTable tbody>tr>td:nth-child(5){
+	height: 36px !important;
+}
+
+
+.addTimeSelect {
+	height: 25px;
+	border-radius: 4px;
+	padding: 0px;
+	width: 50px !important;
+	background-image: -webkit-gradient(linear, center top, center bottom, from(rgba(216, 232, 224, 255)), 
+	color-stop(0.3, rgba(255, 248, 240, 255)));
+	border-color: #C0C0C0;
+}
+.addInterviewSelect {
+	height: 25px;
+	border-radius: 4px;
+	padding: 0px;
+	width: 50px !important;
+	background-image: -webkit-gradient(linear, center top, center bottom, from(rgba(216, 232, 224, 255)), 
+	color-stop(0.3, rgba(255, 248, 240, 255)));
+	border-color: #C0C0C0;
+}
+.headerRow{
+	font-size:10px;
+}
+.blockimeButton{
+	border-radius:4px;
+	border-color:#d2d2d2;
+	background: rgb(255,170,56) !important;
+	background: -webkit-linear-gradient(rgb(255,170,56), rgb(255,106,0)) !important;
+	background: -o-linear-gradient(rgb(255,170,56), rgb(255,106,0));
+	background: -moz-linear-gradient(rgb(255,170,56), rgb(255,106,0))!important;
+	background: linear-gradient(rgb(255,170,56), rgb(255,106,0))!important;
+   	font-family: Arial;
+   	font-size: 12px;
+   	height: 28px;
+   	font-weight: bold;
+   	width: 140px;
+}
+.blockimeButton:hover{
+	border-color:#e6781e;
+	color:#fff !important;
+}
+.addSelectLabel{
+	margin-left: 69%;
+	margin-top: 10px;
+	font-weight: normal;
+}
+.hiringdeleteLabel{
+	float: right;
+	margin-right: -18%!important;
+	font-weight: normal;
+	margin-top: 2px;
+}
+.inline-class{
+	display:inline;
+}
+
+.slotBackground{
+	background: #c6f3d5;
+	color:#000;
+	padding-left:2px;
+}
+.candidateBackground{
+	background: #F5F4A3;
+	color:#000;
+	padding-left:2px;
+	max-width: 0;
+	overflow: hidden !important;
+	white-space: nowrap;
+}
+.reserveBackground{
+	background: #E8E3E3;
+	color:#000;
+	padding-left:2px;
+}
+
+.custom-grid .slick-viewport{
+	background-size: 50px 60px;
+	background-color: white;
+	background-image: -webkit-linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent);
+	background-image: -moz-linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent);
+	background-image: linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent);
+	-pie-background: linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent) 0 0 / 50px white;
+	behavior: url(/pie/PIE.htc);
+	height: 180px;
+	overflow-y:auto !important;
+}
+.custom-grid .slick-header-column {
+  box-sizing: content-box;
+  text-align: left; 
+  color: #0B333C;
+  font-size: 12px;
+  font-weight: bold; 
+}
+.custom-grid .slick-header-column-sorted {
+  font-style: normal;
+}
+.custom-grid .slick-sort-indicator{
+	float: right;
+	margin-top: 0 !important;
+}
+.custom-grid .slick-header{
+	color: black;
+  	font-size: 12px;
+  	font-family: Arial;
+}
+.custom-grid .slick-row:hover{
+	background-color: rgb(247,214,187) !important;
+}
+ .custom-grid .slick-row.even{
+	background: rgb(247,247,247);
+}
+ .custom-grid .slick-row.odd{
+	background: white;
+}
+ .custom-grid .slick-cell{
+	border-bottom: none;
+	border-right: 1px solid silver;
+	font-size: 12px;
+	font-family: Arial;
+  	height: 30px !important;
+} 
+ .custom-grid {
+ 	border:1px solid lightgray;
+ }
+ #calendarGrid, #hiringEventGrid{
+ 	box-shadow: 0px 2px 3px gray;
+ 	height:100%;
+   -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;	 /* Likely future */     
+ 
+ }
+ 
+ .disablegreybtn
+{
+	padding-top: 0.4%;
+	padding-bottom: 0.3%;
+	border-radius:4px;
+	padding:6px 8px !important;
+  	font-size: 12px !important;
+  	font-weight: bold !important;
+  	color: #b9b9b9 !important;
+	background: #ffffff;
+  	background: -moz-linear-gradient(top, #ffffff 0%, #cdcdcd 100%);
+  	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff),
+ 	color-stop(100%, #cdcdcd));
+ 	 background: -webkit-linear-gradient(top, #ffffff 0%, #cdcdcd 100%);
+ 	 background: -o-linear-gradient(top, #ffffff 0%, #cdcdcd 100%);
+ 	 background: -ms-linear-gradient(top, #ffffff 0%, #cdcdcd 100%);
+  	background: linear-gradient(to bottom, #ffffff 0%, #cdcdcd 100%);
+  	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff',
+ 	endColorstr='#cdcdcd', GradientType=0);
+ 	border-bottom: 1px solid gray;
+ 	height: 27px;
+	width: auto;
+	font-weight: bold;
+	margin-right: 30px;
+	border-radius: 5px !important;
+	padding-left:9px;
+}
+
+.calendarGridContainer{
+	margin-left: 20px;
+	margin-right: 20px;
+	padding: 10px;
+	background: whitesmoke;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	box-shadow: 0px 2px 3px gray;
+	height: 100%;
+	 -webkit-user-select: none;  /* Chrome all / Safari all */
+  	-moz-user-select: none;     /* Firefox all */
+  	-ms-user-select: none;      /* IE 10+ */
+  	user-select: none;	 /* Likely future */     
+	
+}
+.hiringEventGridContainer{
+	margin-left: 20px;
+	margin-right: 20px;
+	padding-top: 15px !important;
+	padding: 10px;
+	background: whitesmoke;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	box-shadow: 0px 2px 3px gray;
+	height: 97%;
+}
+
+/*create hiring event*/
+#createhiringmodalLabel, #headerAlertModalLabel{
+	font-weight: bold;
+	font-size: 12px;
+	height: 19px;
+	line-height: 4px;
+	color: white;
+}
+#createHiringEventPopUp .modal-header,#editHiringEventPopUp .modal-header{
+	background: -webkit-linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	background: -o-linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	background: -moz-linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	background: linear-gradient(rgb(203,106,26), rgb(231,148,81));	
+	height: 17px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+#createHiringEventPopUp .greyBox,#editHiringEventPopUp .greyBox {
+	width: 655px;
+	white-space: nowrap;
+	margin-bottom: -6px;
+	border: 1px solid lightgray;
+	padding-left: 0px !important;
+	padding-top: 0px !important;
+	padding-right: 0px !important;
+}
+#createHiringEventPopUp .greyBoxPartStr,#editHiringEventPopUp .greyBoxPartStr {
+	width: 652px;
+	border: 1px solid lightgrey;
+	margin-top: 2%;
+	 height: 245px; 
+	padding: 0px!important;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+
+}
+#createHiringEventPopUp .whitBox,#editHiringEventPopUp .whitBox {
+	width: 629px;
+	margin-left: 2%;
+	padding-top: 18px !important;
+}
+.eventDatesDiv {
+	padding-left:0px;
+}
+#createHiringEventPopUp #eventName,#editHiringEventPopUp #editEventName {
+	width: 86%;
+}
+.managerdiv {
+	padding-top: 10px !important;
+}
+.managerDetaildiv div{
+	color: rgb(15,49,96);
+	font-size: 12px;
+}
+.secondContentRow {
+	margin: 0;
+}
+#eventMgrLdap, #editEventMgrLdap {
+width: 80%;
+}
+#refreshMgrData, #editrefreshMgrData {
+	margin-left: -47px;
+	width: 85%;
+	height: 24px;
+	line-height: 4px;
+	color: black;
+	font-family: Arial;
+   	font-size: 12px;
+   	height: 25px;
+   	border-color: #c1c1c1;
+   	font-weight: bold;
+	background: linear-gradient(rgb(255,170,56), rgb(255,106,0))!important;
+}
+#storescreategrid .slick-viewport,#storesEditgrid .slick-viewport
+{
+	height:90px;
+}
+/* slick grid */
+#createEventGrid .gridContainer {
+	min-height: 120px;
+}
+#createEventGrid .slick-header-columns {
+	/*left: 0px !important;*/
+}
+#createEventGrid .slick-header-column {
+	text-align: center;
+	font-weight: 700;
+}
+#createEventGrid .grid-canvas {
+	height: 90px !important;
+}
+#createEventGrid .slick-cell {
+	/* width: 145px !important; */
+}
+.interviewAvailabilitybody .jumbotron {
+margin-bottom: 10px;
+}
+.interviewAvailabilitybody .shadow-box {
+box-shadow: 3px 3px 5px grey;
+padding: 1% !important;
+}
+.interviewAvailabilitybody .form-group {
+margin-bottom: 33px;
+padding: 1px;
+}
+.firstWhiteContent{
+	margin: 1%;
+	padding: 0.5%;
+	font-weight: normal;
+	white-space: nowrap;
+}
+.whiteContent{
+	background:white;
+	padding:1%;
+}
+.labelpadding {
+padding-right: 18px !important;
+}
+#createHiringEventPopUp .modal-content,#editHiringEventPopUp .modal-content {
+	background: rgb(240,240,240);
+	width: 700px;
+margin-left: -45px;
+border: 1px solid rgb(89,112,160);
+box-shadow: 3px 3px 5px grey;
+border-radius: 6px 6px 0px 0px;
+}
+#createHiringEventPopUp .modal-body,#editHiringEventPopUp .modal-body{
+	background: rgb(240,240,240);
+	margin: 2%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 522px;
+	padding: 0px;
+	width: 98%
+}
+#editEnterStrNum, #editEventStrNum {
+	width: 50%;
+}
+.cancelEditBtn {
+	background: -webkit-linear-gradient(#FFFFFF, #D0D0D0) !important;
+border: 1px solid #D0D0D0;
+width: 110%;
+font-weight: 700;
+height: 30px;
+font-size: 12px;
+color: grey;
+}
+.submitEditBtn {
+	width: 110%;
+font-weight: 700;
+height: 30px;
+font-size: 12px;
+}
+.submitEditBtn:disabled {
+background: -webkit-linear-gradient(#FFFFFF, #979595) !important;
+color: grey;
+border: none;
+width: 110%;
+font-weight: 700;
+height: 30px;
+font-size: 12px;
+}
+.cancelEditBtn:hover {
+	color: black !important;
+	border: 1px solid rgb(204, 106, 26);
+}
+.eventLocDtls  {
+	font-size: 12px;
+}
+#createHiringEventPopUp .rowTitle,#editHiringEventPopUp .rowTitle {
+	background: rgb(230,189,156);
+	line-height: 32px;
+	width: 100%;
+	font-size: 12px;
+}
+.eventDateTo{
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+	font-size: 12px;
+	width: 5%;
+	color:rgb(15,49,96);
+	font-weight: bold;
+	margin-left: 2%;
+}
+.nopaddingright {
+	padding-right: 0px;
+}
+
+.ui-datepicker-trigger {
+	margin-top: 0px !important;
+	padding-top: 4px !important;
+	vertical-align: top !important;
+	padding-left: 2px !important;
+	padding-right: 2px !important;
+	padding-bottom: 2px !important;
+}
+#createHiringEventPopUp .radio,#editHiringEventPopUp .radio{
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+#eventStrNum {
+	width: 63%;
+}
+#offSiteEntryNo div {
+	color: rgb(15,49,96);
+	font-size: 12px;
+}
+#offSiteEntryYes input{
+	width: 99%;
+}
+#fillDt, #eventDtEnd, #eventDt,#editeventDt,#editeventDtEnd  {
+	background-color: #fff;
+	width: 90%;
+	font-size: 12px;
+}
+.datePickDtEnd, .datePickDt {
+	background: transparent;
+	border: none;
+	padding: 5px;
+}
+.input-group-addon .btn-default .datePickDtEnd:hover {
+background: transparent !important;
+border: none !important;
+}
+
+.interviewAvailabilitybody .ui-datepicker-calendar .ui-state-default {
+	font-weight: normal !important;
+}
+.interviewAvailabilitybody .ui-state-disabled .ui-state-default {
+	color: #9E9D9D !important;
+}
+.greyBoxPartStr .whiteContent{
+	 height: 205px;
+}
+.greyBoxPartStr label {
+text-align: left !important;
+}
+#headerAlertModalLabel {
+	color: #fff;
+}
+#alertPopupModal .modal-content,#createAlertPopupModal .modal-content,#editAlertPopupModal .modal-content,#alertRequisition .modal-content{
+	margin-top: 45%;
+	width: 44%;
+	margin-left: 0%;
+	border: 1px solid rgb(89,112,160);
+}
+#alertRequisition .modal-content{
+	width: 53% !important;
+}
+#alertPopupModal .modal-header,#createAlertPopupModal .modal-header,#editAlertPopupModal .modal-header,#alertRequisition .modal-header{
+	background-color: rgb(205,139,66);
+	height: 17px;
+	border-bottom: none;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+	background: #e7b175;
+background: -moz-linear-gradient(top, #e7b175 0%, #cf8a42 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e7b175), color-stop(100%, #cf8a42));
+background: -webkit-linear-gradient(top, #e7b175 0%, #cf8a42 100%);
+background: -o-linear-gradient(top, #e7b175 0%, #cf8a42 100%);
+background: -ms-linear-gradient(top, #e7b175 0%, #cf8a42 100%);
+background: linear-gradient(to bottom, #e7b175 0%, #cf8a42 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7b175', endColorstr='#cf8a42', GradientType=0);
+}
+#alertPopupModal .modal-body,#createAlertPopupModal .modal-body,#editAlertPopupModal .modal-body,#alertRequisition .modal-body{
+	background: rgb(231,227,231);
+	padding-top: 8px;
+	border-bottom-left-radius: 5px;
+}
+#alertPopupModal .modal-body{
+	height: 100px;
+}
+#createAlertPopupModal .modal-body,#alertRequisition .modal-body{
+	height: 92px;
+}
+.invalidStore{
+	height: 75px;
+}
+
+#alertPopupModal button,#createAlertPopupModal button,#editAlertPopupModal button,#alertRequisition button{
+	border:1px solid orangered;
+	padding-top: 0px;
+	width: 68px;
+	background: #ffffff;
+	background: -moz-linear-gradient(top, #ffffff 0%, #cdcdcd 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #cdcdcd));
+	background: -webkit-linear-gradient(top, #ffffff 0%, #cdcdcd 100%);
+	background: -o-linear-gradient(top, #ffffff 0%, #cdcdcd 100%);
+	background: -ms-linear-gradient(top, #ffffff 0%, #cdcdcd 100%);
+	background: linear-gradient(to bottom, #ffffff 0%, #cdcdcd 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cdcdcd', GradientType=0);
+	border: 2px solid #E6781E !important;
+	border-radius: 6px !important;
+	background-color: rgb(228, 228, 228) !important;
+	height: 23px;
+	font-size: 13px;
+}
+#alertPopupModal button:hover,#createAlertPopupModal button:hover,#editAlertPopupModal button:hover,#alertRequisition button:hover {
+	border: 1px solid #E6781E !important;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, rgb(149, 148, 148))) !important;
+	background: -moz-linear-gradient(top, #ffffff 0%, rgb(149, 148, 148) 100%) !important;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, rgb(149, 148, 148))) !important;
+	background: -webkit-linear-gradient(top, #ffffff 0%, rgb(149, 148, 148) 100%) !important;
+	background: -o-linear-gradient(top, #ffffff 0%, rgb(149, 148, 148) 100%) !important;
+	background: -ms-linear-gradient(top, #ffffff 0%, rgb(149, 148, 148) 100%) !important;
+	background: linear-gradient(to bottom, #ffffff 0%, rgb(149, 148, 148) 100%) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='gray', GradientType=0) !important;
+	color: black !important;
+	background-position: 0px !important;
+	border: none;
+	outline: none;
+}
+#createAlertPopupModal .modal-dialog{
+	margin-left: 41%;
+}
+#editAlertPopupModal .modal-dialog {
+	margin-left: 41%;
+}
+#editAlertPopupModal .modal-body{
+	height: auto;
+}
+.addAlertHeight {
+	height: 140px !important;
+}
+.addAlertBodyHeight {
+	height: 80px !important;
+}
+/*  delete hiring event*/
+#deletewarningpopup .modal-content{
+	margin-top: 40%;
+	width: 709px;
+	height: 189px;	
+}
+#editwarningpopup .modal-content{
+	margin-top: 240px;
+	height: 189px;	
+}
+#deletewarningpopup .modal-header,#editwarningpopup .modal-header{
+	background: -webkit-linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	background: -o-linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	background: -moz-linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	background: linear-gradient(rgb(203,106,26), rgb(231,148,81));
+	border: 1px solid black;
+	border-bottom: none;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+	height: 26px;
+	padding-top: 0px;
+}
+#deletewarningpopup .modal-body,#editwarningpopup .modal-body {
+	border: 1px solid black;
+	height: 86%;
+	background:rgb(240,240,240)
+}
+.addHeight {
+	height: 110% !important;
+}
+#deletewarningpopup button,#editwarningpopup button{
+	 background:none;
+	 border:none;
+	 outline:none;
+	 width: 12%;
+	height: 30px;
+	color: rgb(50,79,119);
+	text-decoration: underline;
+	font-size: 11px;
+	font-weight: bold;
+}
+#deletewarningpopup button:hover,#editwarningpopup button:hover{
+	 background:bisque;
+}
+.noPadding{
+	padding-left:0px;
+}
+#createHiringEventPopUp label,#editHiringEventPopUp label {
+	text-align: right;
+	padding-right: 1px;
+	color: rgb(15,49,96);
+}
+#createHiringEventPopUp .modal-body input:focus,.editHiringEventPopUp .modal-body input:focus{
+	border: 2px solid #D59E72;
+	outline:none;
+}
+#calendarGrid .slick-header-column.ui-state-default{
+	height:50px;
+	background: rgb(250,250,250) !important;
+	background: -webkit-linear-gradient(rgb(240,240,240), rgb(250,250,250)) !important;
+	background: -o-linear-gradient(rgb(240,240,240), rgb(250,250,250))!important;
+	background: -moz-linear-gradient(rgb(240,240,240), rgb(250,250,250))!important;
+	background: linear-gradient(rgb(240,240,240), rgb(250,250,250))!important;
+	line-height:18px;
+	white-space:normal;
+	text-align:center;
+}
+#hiringEventGrid .slick-header-column.ui-state-default{
+	height:40px;
+	background: rgb(250,250,250) !important;
+	background: -webkit-linear-gradient(rgb(240,240,240), rgb(250,250,250)) !important;
+	background: -o-linear-gradient(rgb(240,240,240), rgb(250,250,250))!important;
+	background: -moz-linear-gradient(rgb(240,240,240), rgb(250,250,250))!important;
+	background: linear-gradient(rgb(240,240,240), rgb(250,250,250))!important;
+	line-height:20px;
+	white-space:normal;
+	text-align:center;
+}
+.cellalignleft{
+	text-align:left;
+}
+.cellalignright{
+	text-align:right;
+}
+.cellaligncenetr{
+	text-align:center;
+}
+.calendarNameIdLink , .hiringEventIdIdLink {
+	color: rgb(64,119,232);
+	font-weight: bold;
+	text-decoration: underline;
+	width:100%;
+	display:block;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	height:100%;
+}
+.hiringEventIdIdLink a{
+	color: rgb(64,119,232);
+}
+#addCalendarBtn{
+	color: #333300;
+	text-decoration: none !important;
+}
+#edithiringEvent {
+	color: #333300;
+	text-decoration: none !important;
+}
+#deleteHiringEventBtn {
+	color: #333300;
+	text-decoration: none !important;
+	cursor: pointer;
+}
+
+.opacityDiv {
+	opacity: 0.6;
+	pointer-events: none;
+}
+input:disabled, select:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+button:disabled {
+	background-color: lightgrey;
+	color: grey;
+	border: none;
+}
+.storeDelBtn {
+	width: 100%;
+}
+.ui-widget-content.slick-row.active{
+	background-color: rgb(242,187,142) !important;
+}
+.custom-grid .slick-cell.active {
+border: none !important;
+}
+.ui-widget-content.slick-row {
+height: 23px;
+}
+/*Hiring event calendar Css*/
+.HIREEVENTDATEBACKGROUNDCOLOR{
+	background:#FF9900;
+}
+.appBodyColor{
+	border: 20px solid rgb(184,184,184);
+}
+.storepopupbtn{
+	width: 15%;
+	height: 27px;
+	line-height: 4px;
+	color: #333 !important;
+	font-size: 12px;
+	font-weight: bold;
+}
+.storepopupbtn {
+	background-image: -webkit-linear-gradient(top, #FFAA38, #FF6A00);
+	background-image: -moz-linear-gradient(top, #FFAA38, #FF6A00);
+	background-image: -ms-linear-gradient(top, #FFAA38, #FF6A00);
+}
+
+.storepopupbtn:hover{
+	color: #FFF !important;
+}
+.storepopupbtnCancel{
+	border-radius:4px;
+	width: 65px;
+	padding: 2px 8px !important;
+  	font-size: 12px !important;
+  	font-weight: bold !important;
+  	color: #666 !important;
+	background: #ffffff;
+  	background: -moz-linear-gradient(top, #ffffff 0%, #cdcdcd 100%);
+  	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff),
+ 	color-stop(100%, #cdcdcd));
+ 	 background: -webkit-linear-gradient(top, #ffffff 0%, #cdcdcd 100%);
+ 	 background: -o-linear-gradient(top, #ffffff 0%, #cdcdcd 100%);
+ 	 background: -ms-linear-gradient(top, #ffffff 0%, #cdcdcd 100%);
+  	background: linear-gradient(to bottom, #ffffff 0%, #cdcdcd 100%);
+  	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff',
+ 	endColorstr='#cdcdcd', GradientType=0);
+ 	border-bottom: 1px solid gray;
+ 	 height: 27px;
+}
+.storepopupbtnCancel:hover{
+	border:1px solid #FF9900;
+	color: #000000 !important;
+}
+#alert .alertModalBody {
+	font-size: 14px;
+	margin-left: 2%;
+	margin-bottom: 3px;
+	margin-top: 1%;
+}
+.largestoreModal
+{
+	width: 55% !important;
+}
+.largeBodystoreModal{
+	height:84px !important;
+}
+.sameCalendarExistsModal
+{
+    width: 58% !important;
+}
+.storeNotActive{
+	height: 140px !important;
+	width: 55% !important;
+}
+.storeNotActiveBody{
+	height: 50px !important;
+	width: 90% !important;
+}
+.sameCalendarExistsStoreModalBodyModal{
+    height:120px !important;
+}
+.smallalertmodal{
+	width: 33% !important;
+}
+.smallalertModal{
+	height:100px !important;
+}
+.alignalertModal{
+	margin-left:25px !important;
+}
+.longModalBody{
+	height: 107px !important;	
+}
+.longModalContent{
+	width: 73% !important;
+	margin-top: 40%;
+}
+.alignModal {
+	margin-left: 8% !important;
+	margin-top: 17px;
+	word-break: break-all;
+}
+/*.deleteWarn{
+	margin-left: 158px;
+}*/
+.deleteWarnContent{
+	width: 693px !important;
+}
+.createHiringEventlargeModal {
+	width: 52% !important;
+}
+.createHiringEventalignModal {
+	text-align: left;
+	margin-left: 18px;
+	margin-bottom: 3% !important;
+}
+.createHiringEventlargeBody{
+	height:100px !important;
+}
+.centeredBackdrop{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+}
+.modal-backdrop{
+	background: rgba(235,238,240,0.8);
+}
+.warningBackdrop{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+	 background: rgba(240,240,240,0.4); 
+}
+.modal-backdrop.fade.in {
+	opacity: 0.6 !important;
+	background-color: #E4E4E4 !important;
+}
+.editHiringEventlargeModal {
+	width: 56% !important;
+}
+.editHiringEventalignModal {
+	text-align: left;
+	margin-left: 10px; /*changes on aug 25*/
+	margin-bottom: 0px !important;
+}
+.editHiringEventlargeBody{
+	height:107px !important;
+}
+.editHiringEventlargeBody .alertModalBody {
+	width: 96% !important;
+	height: 40px;
+}
+.editHiringEventlargeBody .alertmodalbtn {
+	margin-top: 10% !important;
+}
+.editAlertPopupModalmargin{
+	margin-left:20%;
+}
+#deletewarningpopup .modal-dialog {
+	margin-left: 23%;
+}
+#tabs-1{
+	height:96%;
+}
+#calendarTask {
+height: 92%;
+}
+.calrow {
+height: 80%;
+}
+.calendartable {
+	height: 96%;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;	 /* Likely future */     
+	
+}
+html
+{
+	height:100%;
+}
+#requistionTask {
+	height: 60%;
+}
+.requisitionGridTable{
+	height:100%;
+}
+#requisitionGrid{
+	height:100%;
+}
+.requisitionTaskContainer {
+height: 100%;
+}
+#tabs-2 {
+height: 90%;
+}
+.hiringEventcontainer {
+height: 100%;
+}
+#hiringEventTask {
+	height: 84%;
+}
+.HiringEventTable {
+	height: 88%;
+}
+#alert .modal-dialog {
+	margin-top: 10px;
+}
+/*#warningpopup .modal-dialog {
+	margin-top: 30%;
+}*/
+#deptSelectBoxItOptions,#jobSelectBoxItOptions,#calendarNameSelectBoxItOptions,#venueStateCboSelectBoxItOptions,#editVenueStateCboSelectBoxItOptions
+{height: 120px;
+}
+#deptSelectBoxItOptions .selectboxit-option-anchor,#jobSelectBoxItOptions .selectboxit-option-anchor,
+#calendarNameSelectBoxItOptions .selectboxit-option-anchor,
+#venueStateCboSelectBoxItOptions .selectboxit-option-anchor,
+#editVenueStateCboSelectBoxItOptions .selectboxit-option-anchor
+{height:20px;
+line-height:20px;
+}
+#deptSelectBoxItOptions span,#jobSelectBoxItOptions span,#calendarNameSelectBoxItOptions span,#venueStateCboSelectBoxItOptions span,#editVenueStateCboSelectBoxItOptions span{
+	height:20px;
+}
+#deptSelectBoxItOptions.selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor,
+#jobSelectBoxItOptions.selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor,
+#calendarNameSelectBoxItOptions.selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor,
+#venueStateCboSelectBoxItOptions.selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor,
+#editVenueStateCboSelectBoxItOptions.selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor
+#hiringSelectSelectBoxItOptions.selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor
+{
+color: black;
+background-color: bisque;
+background-image:none;
+}
+#deptSelectBoxIt, #deptSelectBoxIt span,
+#jobSelectBoxIt, #jobSelectBoxIt span,
+#calendarNameSelectBoxIt, #calendarNameSelectBoxIt span,
+#venueStateCboSelectBoxIt,#venueStateCboSelectBoxIt span,
+#editVenueStateCboSelectBoxIt,#editVenueStateCboSelectBoxIt span,
+#hiringSelectSelectBoxIt,#hiringSelectSelectBoxIt span{
+height: 25px;
+line-height: 25px;
+}
+#deptSelectBoxItArrowContainer .selectboxit-arrow,
+#jobSelectBoxItArrowContainer .selectboxit-arrow,
+#calendarNameSelectBoxItArrowContainer .selectboxit-arrow,
+#venueStateCboSelectBoxItArrowContainer .selectboxit-arrow,
+#editVenueStateCboSelectBoxItArrowContainer .selectboxit-arrow
+#hiringSelectSelectBoxItArrow .selectboxit-arrow
+{
+	top:45%;
+}
+#deptSelectBoxItContainer *,
+#jobSelectBoxItContainer *,
+#calendarNameSelectBoxItContainer *,
+#venueStateCboSelectBoxItContainer *,
+#editVenueStateCboSelectBoxItContainer *,
+#hiringSelectSelectBoxItContainer*
+{
+	font-size:12px;
+}
+#deptSelectBoxIt,#calendarNameSelectBoxIt,#deptSelectBoxItOptions,#calendarNameSelectBoxItOptions,
+#jobSelectBoxIt,#jobSelectBoxItOptions
+{
+	width:256px !important;	
+}
+#createHiringEventPopUp .modal-dialog {
+	margin-top: 3%;
+}
+#createAlertPopupModal .alertModalBody,#editAlertPopupModal .alertModalBody{
+	margin-bottom: 2%;
+}
+
+.confirmedPopupHeight{
+	height: 70px;
+}
+
+#editPopUpText {
+color: red !important;
+text-align: center !important;
+margin-left: 35px;
+font-size: 12px;
+}
+#deptSelectBoxItOptions.selectboxit-list .selectboxit-option-anchor,
+#jobSelectBoxItOptions.selectboxit-list .selectboxit-option-anchor,
+#calendarNameSelectBoxItOptions.selectboxit-list .selectboxit-option-anchor,
+#venueStateCboSelectBoxItOptions.selectboxit-list .selectboxit-option-anchor,
+#editVenueStateCboSelectBoxItOptions.selectboxit-list .selectboxit-option-anchor {
+	height:20px;
+	line-height:20px;
+}
+#hiringSelectSelectBoxItOptions.selectboxit-list .selectboxit-option-anchor{
+	height:20px;
+	line-height:20px;
+}
+#hiringSelectSelectBoxIt,#hiringSelectSelectBoxItOptions{
+	width:310px !important;	
+}
+#hiringSelectSelectBoxItOptions
+{
+	height: 120px;
+}
+#hiringSelectSelectBoxItOptions span
+{
+	height: 20px;
+}
+.alertModalBody{
+	height: auto;
+	width: 87%;
+	word-break: break-word;
+}
+#confirmDelete, #denyDelete{
+	text-decoration: underline;
+	color:rgb(50,79,119);
+	font-weight:bold;
+}
+#confirmDelete:hover, #denyDelete:hover{	
+	color:rgb(0,0,0);
+	font-weight:bold;
+}
+.ui-datepicker-today {
+background: lightgrey !important;
+}
+.datepicker-flex{
+	width: 180px;
+	height: 200px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	padding: 0px;
+	background: white;
+	font-size: 13px;
+	box-shadow: 0px 4px 3px rgb(166,166,166);
+	z-index: 200 !important;
+}
+.datepicker-flex td,.datepicker-flex td a{
+	padding:0px;
+	text-align: center;
+}
+.datepicker-flex thead,.datepicker-flex tr{
+	height:22px;
+}
+.datepicker-flex .ui-datepicker-header.ui-widget-header {
+	border: none;
+	background: linear-gradient(rgb(226,230,236) ,rgb(242,243,245));
+	color: #000;
+	font-weight: bold;
+	border-bottom: 1px solid rgb(183,186,188);
+}
+.datepicker-flex .ui-datepicker-next,.datepicker-flex .ui-datepicker-prev{
+	background: linear-gradient(rgb(242,243,245), rgb(226,230,236));
+	border: 1px solid rgb(95,97,98);
+	width: 1.5em;
+	height: 1.5em;
+	margin:3px;
+}
+.datepicker-flex .ui-datepicker-next:hover,.datepicker-flex .ui-datepicker-prev:hover{
+	background: linear-gradient(rgb(242,243,245), rgb(226,230,236));
+	border:1px solid rgb(174,91,22);
+}
+.datepicker-flex .ui-datepicker-year{
+	float: right;
+	margin-right: 7px;
+}
+.datepicker-flex .ui-widget-header .ui-icon
+{
+background-image: url(../images/ui-icons_222222_256x240.png)  !important;
+}
+/*Calender datepicker*/
+.ui-widget-header .ui-icon
+{
+background-image: url(../images/ui-icons_222222_256x240.png)  !important;
+}
+.ui-datepicker-calendar .ui-state-default,.ui-datepicker-calendar .ui-widget-content .ui-state-default{
+	border:none;
+	color:#000;
+}
+.ui-datepicker-calendar .ui-state-highlight,.ui-datepicker-calendar .ui-widget-content .ui-state-highlight {
+	background: #c3c3c3 !important;
+}
+.ui-datepicker-prev.ui-corner-all .ui-icon-circle-triangle-w
+{
+	background-position: -96px -15px;
+	height: 16px;
+width: 16px;
+}
+.ui-datepicker-next.ui-corner-all .ui-icon-circle-triangle-e{
+background-position: -33px -16px;
+height: 16px;
+width: 16px;
+}
+.ui-datepicker-header.ui-widget-header {
+	border: none;
+background: #eeeeee; /* Old browsers */
+background: -moz-linear-gradient(top,  #eeeeee 48%, #cccccc 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(48%,#eeeeee), color-stop(100%,#cccccc)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #eeeeee 48%,#cccccc 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #eeeeee 48%,#cccccc 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #eeeeee 48%,#cccccc 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #eeeeee 48%,#cccccc 100%); /* W3C */
+color: #000;
+font-weight: bold;
+}
+.ui-datepicker-calendar .ui-state-default,.ui-datepicker-calendar .ui-widget-content .ui-state-default {
+border: none !important;
+background: none;
+font-weight: normal;
+color: #000 !important;
+outline: none;
+}
+.ui-datepicker-calendar .ui-state-highlight,.ui-datepicker-calendar .ui-widget-content .ui-state-highlight {
+border: none;
+background: #c3c3c3;
+color: #000;
+}
+.ui-datepicker-calendar
+{
+	background:#fff;
+}
+#ui-datepicker-div 
+{
+ z-index: 1050 !important; 
+}
+#calendarSelectSelectBoxIt,#calendarSelectSelectBoxItOptions{
+	width: 320px !important;
+}
+#calendarSelectSelectBoxIt,#calendarSelectSelectBoxIt span{
+	height: 25px;
+	line-height: 24px;
+}
+#calendarSelectSelectBoxItArrowContainer .selectboxit-arrow{
+	top: 40%;
+}
+#hiringSelectSelectBoxItArrowContainer .selectboxit-arrow{
+	top: 40%;
+}
+#calendarSelectSelectBoxItOptions,#hiringSelectSelectBoxItOptions{
+	height: 124px;
+}
+#calendarSelectSelectBoxItContainer{
+	margin-top: 3.5%;
+}
+#hiringSelectSelectBoxItContainer{
+	margin-top: 3.5%;
+}
+#addBlockBeginTimeSelectBoxIt span,#addBlockEndTimeSelectBoxIt span,
+#addBlcokRecurringSelectBoxIt span,#addBlockInterviewSelectBoxIt span {
+	height: 25px;
+	line-height: 24px;
+}
+#addBlockBeginTimeSelectBoxIt,#addBlockBeginTimeSelectBoxItOptions{
+	width: 100px !important;
+}
+#addBlockBeginTimeSelectBoxItArrowContainer .selectboxit-arrow,
+#addBlockEndTimeSelectBoxItArrowContainer .selectboxit-arrow,
+#addBlcokRecurringSelectBoxItArrowContainer .selectboxit-arrow,
+#addBlockInterviewSelectBoxItArrowContainer .selectboxit-arrow
+{
+	top: 40%;
+}
+#addBlockBeginTimeSelectBoxItOptions,#addBlockBeginTimeSelectBoxItOptions{
+	height: 124px;
+}
+#addBlcokRecurringSelectBoxItOptions,#addBlcokRecurringSelectBoxItOptions{
+	height: 124px;
+}
+#addBlockInterviewSelectBoxItOptions,#addBlockInterviewSelectBoxItOptions{
+	height: 124px;
+}
+#addBlockEndTimeSelectBoxIt,#addBlockEndTimeSelectBoxItOptions{
+	width: 100px !important;
+}
+#addBlockEndTimeSelectBoxIt,#addBlockBeginTimeSelectBoxIt,
+#addBlcokRecurringSelectBoxIt,#addBlockInterviewSelectBoxIt{
+	height:25px;
+}
+#addBlcokRecurringSelectBoxIt,#addBlcokRecurringSelectBoxItOptions{
+	width: 55px !important;
+}
+#addBlockInterviewSelectBoxIt,#addBlockInterviewSelectBoxItOptions{
+	width: 55px !important;
+}
+#addBlockEndTimeSelectBoxItOptions,#addBlockEndTimeSelectBoxItOptions{
+	height: 124px;
+}
+
+
+#hiringBlockBeginTimeSelectBoxIt span,#hiringBlockEndTimeSelectBoxIt span,
+#hiringBlockInterviewSelectBoxIt span{
+	height: 25px;
+	line-height: 24px;
+}
+#hiringBlockInterviewSelectBoxIt,#hiringBlockInterviewSelectBoxItOptions{
+	width: 55px !important;
+}
+#hiringBlockBeginTimeSelectBoxIt,#hiringBlockEndTimeSelectBoxIt,
+#hiringBlockInterviewSelectBoxIt{
+	height: 25px;
+}
+#hiringBlockBeginTimeSelectBoxItArrowContainer .selectboxit-arrow,
+#hiringBlockEndTimeSelectBoxItArrowContainer .selectboxit-arrow,
+#hiringBlockInterviewSelectBoxItArrowContainer .selectboxit-arrow
+{
+	top: 40%;
+}
+#hiringBlockBeginTimeSelectBoxItOptions,#hiringBlockBeginTimeSelectBoxItOptions{
+	height: 124px;
+}
+#hiringBlockEndTimeSelectBoxItOptions,#hiringBlockEndTimeSelectBoxItOptions{
+	height: 124px;
+}
+#hiringBlockInterviewSelectBoxItOptions,#hiringBlockInterviewSelectBoxItOptions{
+	height: 124px;
+}
+.popHeader {
+	background-image: -ms-linear-gradient(top, #e6781e, #c36619)
+}
+#tabs{
+	margin-bottom:8px;
+	border: 1px solid #a2a2a2;
+}
+
+.cpyright{
+	color:#666;
+font-size:10px;
+font-weight:bold
+}
+.realease{
+	color:#fff;
+font-size:10px;
+font-weight:bold;
+margin-top:7px;
+}
+.radio input[type="radio"], .radio-inline input[type="radio"]{
+	position:relative !important;
+	margin-top:-3px !important;
+	vertical-align:middle;
+}
+#addCheckDiv{
+	margin-left:3px !important;
+	margin-top: 9px;
+}
+.btn-default:hover {
+	border: 1px solid #E6781E !important;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, gray)) ;
+	background: -moz-linear-gradient(top, #ffffff 0%, gray 100%) ;
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff),
+		color-stop(100%, gray)) !important; /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ffffff 0%, gray 100%) ;
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ffffff 0%, gray 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ffffff 0%, #c3c3c3 100%) ;
+	/* IE10+ */
+	background: linear-gradient(to bottom, #ffffff 0%, gray 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff',
+		endColorstr='gray', GradientType=0) ; /* IE6-9 */
+	color:black ;
+	background-position:0px !important;
+	border:none;
+	outline:none;
+}
+.blockimeButton{
+	padding:4px !important;
+	width:165px;
+}
+.blockimeButton:hover{
+background: rgb(255,170,56) !important;
+	background: -webkit-linear-gradient(rgb(255,170,56), rgb(255,106,0)) !important;
+	background: -o-linear-;(rgb(255,170,56), rgb(255,106,0));
+	background: -moz-linear-gradient(rgb(255,170,56), rgb(255,106,0))!important;
+	background: linear-gradient(rgb(255,170,56), rgb(255,106,0))!important;
+}
+.slick-header-column:hover{
+	background-color:rgb(247,214,187) !important;
+}
+.custom-grid .slick-row:hover {
+	background-color:rgb(247,214,187) !important;
+}
+#enterStrNum{
+	width:50px;
+}
+.warningModalBody button{
+	text-decoration:underline;
+	
+	color:#0B2C77;
+}
+.underlined-button{
+	text-decoration:underline;
+}
+input[type="radio"],input[type="checkbox"]{
+	pointer-events: auto !important;
+}
+.selectboxit:hover{
+	border:1px solid #F96302 !important;
+}
+select:hover{
+	border:1px solid #F96302 !important;
+}
+.selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor {
+background-color: #F7D6BB !important;
+}
+.selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor {
+  /*color: #ffffff;*/
+  background-color: #F7D6BB !important;;
+  background-image: -moz-linear-gradient(top, #F7D6BB, #F7D6BB);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#F7D6BB), to(#F7D6BB));
+  background-image: -webkit-linear-gradient(top, #F7D6BB, #F7D6BB);
+  background-image: -o-linear-gradient(top, #F7D6BB, #F7D6BB);
+  background-image: linear-gradient(to bottom, #F7D6BB, #F7D6BB);
+  background-repeat: repeat-x;
+}
+.selectboxit-selected{
+	background-color: rgb(242, 187, 142) !important;
+}
+.selectboxit-list > .selectboxit-disabled > .selectboxit-option-anchor {
+  color: #999999;
+}
+.selectAllCheckBox {
+    float:right;
+    font-weight:normal;
+}
+.deleteDaySlotContainer #deleteSelectAll {
+    margin :0px;
+}
+/*.printPacketSlotContainer #printpacketCheckAll {
+	margin: 0px 0px 0px 0px;
+}*/
+
+#ui_1:hover, #ui_2:hover, #ui_3:hover {
+	color:black;
+}
+#recurWeekLabel {
+margin-left: 0px;
+padding-left: 0px;
+}
+
+#recurWeeksAddDay {
+margin-left: 2px;
+}
+
+#concurWeeksAddDay {
+margin-left: 32px;
+}
+
+#metInterviewLabel {
+margin-left: 25px;
+}
+
+#calendarGrid .slick-header-column.ui-state-hover, #hiringEventGrid .slick-header-column.ui-state-hover, #requisitionGrid .slick-header-column.ui-state-hover {
+    background: #F7D6BB !important;
+}
+#calendarGrid .slick-sort-indicator,#hiringEventGrid .slick-sort-indicator{
+	margin-top: -20px !important;
+}
+#requisitionGrid .slick-sort-indicator{
+	margin-top: -10px !important;
+}
+#create, #editrefreshMgrData{
+    color:black;
+}
+ 
+#refreshMgrData:hover, #create:hover, #editrefreshMgrData:hover {
+    color:white;
+}
+.storeDelBtn:hover {
+    border: 1px solid #E6781E !important;
+}
+
+#warningHiringPopup .modal-footer .yesBlock,
+#showSlotPopup .modal-footer .yesBlock,
+#warningHiringPopup .modal-footer .noBlock,
+#showSlotPopup .modal-footer .noBlock  {
+	width: 14%;
+	float: left;
+}
+
+#warningHiringPopup .modal-footer .noBlock,#showSlotPopup .modal-footer .noBlock {
+    margin-left:2%;
+}
+
+
+.yesBlock .confirmIcon, .noBlock .NotConfirmIcon{
+	margin-left:-5%;
+}
+
+.yesBlock:hover , .noBlock:hover{
+	background-color:#F7D6BB;
+	border:none;
+}
+
+.yesBlock .btn-default {
+	margin-left:24%;
+}
+
+.noBlock .btn-default {
+	margin-left:28%;
+}
+
+#showSlotPopup .modal-footer .yesBlock .btn-default:hover,#showSlotPopup .modal-footer .noBlock .btn-default:hover,
+#warningHiringPopup .modal-footer .yesBlock .btn-default:hover,#warningHiringPopup .modal-footer .noBlock .btn-default:hover{
+	border:none !important;
+	background:none !important;
+	outline:none !important;
+}
+#showSlotPopup .modal-footer .yesBlock .btn-default:focus,#showSlotPopup .modal-footer .noBlock .btn-default:focus,
+#warningHiringPopup .modal-footer .yesBlock .btn-default:focus,#warningHiringPopup .modal-footer .noBlock .btn-default:focus{
+    border:none !important;
+    background:none !important;
+    outline:none !important;
+}
+
+.navCloseBtn:hover{
+    background: #4c4c4c !important; /* Old browsers */
+    background: -moz-linear-gradient(top,  #4c4c4c 0%, #111111 50%, #131313 100%) !important; /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(50%,#111111), color-stop(100%,#131313)) !important; /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #4c4c4c 0%,#111111 50%,#131313 100%) !important; /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #4c4c4c 0%,#111111 50%,#131313 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #4c4c4c 0%,#111111 50%,#131313 100%) !important; /* IE10+ */
+    background: linear-gradient(to bottom,  #4c4c4c 0%,#111111 50%,#131313 100%) !important; /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ) !important; /* IE6-9 */
+    border: 1px solid rgb(230,120,30) !important;
+    color: white !important;
+}
+
+html {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	width: 100%;
+	min-width: 1024px;
+	height: 100%;
+	min-height: 660px;
+}
+
+.navbar-header{
+    float: left;
+}
+
+.navbar-right{
+    float: right;
+}
+
+.scrollPopupBody{
+	overflow: scroll;
+}
+.textEllipsis{
+	text-overflow: ellipsis;
+}
+#hiringEventGrid .slick-header-column .slick-column-name div,#requisitionGrid .slick-header-column .slick-column-name div,#calendarGrid .slick-header-column .slick-column-name div{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.backdropscreen{
+	 backgroundColor : rgb(139,139,139);
+     opacity : 0.6;
+     cursor : "wait;
+}
+.slick-cell span {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+.slick-cell:hover a {
+    color: #000;
+} 
+.autoHeight{
+	height:  auto !important;
+	padding-left: 6%;
+	padding-right: 0%;
+}
+.metStoreContentWidth{
+	width: 52% !important;
+}
+.metStoreBodyWidth{
+	width: 95% !important;
+	margin-left: 4% !important;
+}
+.slotContentTop{
+	margin-top: 40% !important;
+}
+.viewHiringCancel{
+	margin-bottom: 1% !important;
+}
+.leftText{
+	text-align: left;
+	padding-left: 5% !important;
+}

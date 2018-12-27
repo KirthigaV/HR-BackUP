@@ -1,0 +1,12 @@
+---
+applications:
+- name: $appName
+  host: $hostName
+  memory: $memory
+  instances: $instances
+  command: node server.js
+  buildpack: nodejs_buildpack
+
+  env:
+    config:
+      '$configJson'

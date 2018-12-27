@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Calendar QUnit</title>
+
+<style type="text/css">
+   .hidden {
+        display: none;
+   }
+</style>
+
+<!--Load Qunit CSS  --> 
+<link rel="stylesheet" href="../css/qunit-1.17.1.css">
+
+<!--Load Common libraries -->
+<script src="../../assets/js/vendor/jquery-1.10.1.min.js"></script>
+<script src="../../assets/js/vendor/jquery-ui.min.js"></script>
+<script src="../../assets/js/vendor/bootstrap.min.js"></script>
+<script src="../../assets/js/vendor/jquery.jqGrid.js"></script> 
+<script src="../../assets/js/SlickGrid/lib/jquery.event.drag-2.2.js"></script>  
+<script src="../../assets/js/SlickGrid/lib/jquery.event.drop-2.2.js"></script> 
+<script src="../../assets/js/SlickGrid/lib/jquery-ui-1.8.16.custom.min.js"></script>  
+<script src="../../assets/js/SlickGrid/lib/jquery.jsonp-1.1.0.min.js"></script> 
+<script src="../../assets/js/SlickGrid/lib/jquery.simulate.js"></script>  
+<script src="../../assets/js/SlickGrid/slick.core.js"></script>  
+<script src="../../assets/js/SlickGrid/slick.grid.js"></script>  
+<script src="../../assets/js/SlickGrid/slick.groupitemmetadataprovider.js"></script>  
+<script src="../../assets/js/SlickGrid/slick.remotemodel.js"></script> 
+<script src="../../assets/js/SlickGrid/slick.editors.js"></script> 
+<script src="../../assets/js/SlickGrid/slick.dataview.js"></script>  
+<script src="../../assets/js/vendor/jquery.selectBoxIt.min.js"></script>  
+<script src="../../assets/js/jquery.blockUI.js"></script>
+
+<!--
+<script src="../../assets/js/SlickGrid/lib/jquery.sparkline.min.js"></script>
+<script src="../../assets/js/vendor/fullcalendar.js"></script>  
+--> 
+   
+<!--Load Project Specific scripts  -->
+<script type="text/javascript" src="../../app/common/js/constants.js"data-cover></script>
+<script type="text/javascript" src="../../app/common/js/Model.js"data-cover></script>
+<script type="text/javascript" src="../../app/common/js/Utility.js"
+	data-cover></script>
+<script type="text/javascript" src="../../app/common/js/rsaServices.js"data-cover></script>
+<script type="text/javascript" src="../../app/RSAInterviewAvailability/js/Calendar.js" data-cover></script>
+<script type="text/javascript" src="../../app/RSAInterviewAvailability/js/hiringEvent.js"></script>
+<script type="text/javascript" src="../../app/RSAInterviewAvailability/js/requisitions.js"></script>
+
+
+<Script>
+	function setLanguage(lang) {
+		jQuery.i18n.properties({
+			name : "Messages",
+			path : "app/common/js/bundle/",
+			mode : "both",
+			language : lang,
+			callback : function() {
+				StaticText.loadStaticText();
+			}
+		});
+	}
+</Script>
+</head>
+<body>
+
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+	<div id="calendarTest" class=hidden>
+	<div class="calendarText">
+
+	<br>
+	<div class="cols-xs-12 cols-xs-offset-1">Welcome to your store
+		calendars. The calendars page allows you to select a store calendar
+		and define availability that the Retail Staffing</div>
+	<div class="cols-xs-12 cols-xs-offset-1">Center will use to
+		schedule interviews for your active requisitions. To drill into a
+		calendar and view/edit availability, click the calendar name.</div>
+	<div class="cols-xs-12 cols-xs-offset-1">To rename/delete a
+		calendar, click on the row. If you have questions or need help, please
+		call 1-866-myTHDHR (1-866-698-4347).</div>
+</div>
+<div id="calendarTask">
+	<div class="row calrow">
+		<div class="col-xs-12 text-center calendartable">
+		<div class="calendarGridContainer">
+		<div id="calendarGrid" class ="custom-grid"></div></div></div>
+
+	</div>
+	<div class="row" id="CalendarsummaryPage">
+		<div class="row">
+			<div class="col-xs-12 text-left calendarformcontent">
+				<label> </label>
+			</div>
+		</div>
+
+		<div class="col-md-12 col-xs-12 text-center buttonsCalendar" style="">
+			<button class="col-xs-4 darkOrangeBtn calBtn" id="createNewCalendar"
+				onclick="calendarTab.calendarButtonClick()">Create New
+				Calendar</button>
+			<button class="col-xs-4 col-xs-2 disablegreybtn" disabled
+				id="renameBtn" onclick="calendarTab.renameButtonClick()"  title="Select a Calendar Row to Rename a Calendar.">Rename
+				Calendar</button>
+			<button class="col-xs-4 col-xs-2 disablegreybtn" disabled
+				id="deleteBtn" onclick="calendarTab.deleteButtonClick()" title="Select a Calendar Row to Delete a Calendar.">Delete
+				Calendar</button>
+		</div>
+
+	</div>
+</div>
+
+<div id="calendarDiv" style="display: none;">
+	<div class="row" id="mainDivRow">
+		<div class="col-xs-12 text-center showCalendar">
+			<div class="row">
+				<div
+					class="col-md-10 col-md-offset-1 text-center textBold calendarDue">
+				</div>
+			</div>
+			<div class="row" id="calendarMaindivRow">
+				<div class="col-xs-12 text-center calendarMaindiv">
+					<div class="row">
+						<div class="col-md-2">
+							<button class="fc-next-button" title="View Previous 14 Days"
+								onclick="showCalendarView.selectPrevious();">
+								<span class="glyphicon-left-arrow"></span>
+							</button>
+						</div>
+
+						<div class="col-md-8">
+							<label class="labelCalendar">Selected Calendar:&nbsp;</label> <select
+								class="selectCalendar" id="calendarSelect" onchange="showCalendarView.changeCalendarSummary()">
+							</select>
+
+						</div>
+						<div class="col-md-2">
+							<button class="fc-next-button" title="View Next 14 Days"
+								onclick="showCalendarView.selectNext();">
+								<span class="glyphicon-right-arrow"></span>
+							</button>
+						</div>
+					</div>
+					<div id='calendar'>
+						<div class="container">
+							<table class="table calendarDetailTable">
+								<thead>
+									<tr>
+										<th>Sunday</th>
+										<th>Monday</th>
+										<th>Tuesday</th>
+										<th>Wednesday</th>
+										<th>Thursday</th>
+										<th>Friday</th>
+										<th>Saturday</th>
+									</tr>
+								</thead>
+								<tbody id="calendarData">
+
+								</tbody>
+							</table>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="modal fade centeredBackdrop" id="storeModal" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog ">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" onclick="calendarTab.storeCancel()"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="storeModalLabel">Interview
+					Availability Form</h4>
+			</div>
+			<div class="modal-body storepopupbody">
+				<div class="row">
+					<div class="col-xs-12 storepopupform">
+						<div class="col-xs-9 storepopupformdiv">
+							<label class="storepopuplabel">Enter four digit
+								Store/Location :</label>
+						</div>
+						<div class="col-xs-3">
+							<input type="text" id="storeNo" maxlength="4" />
+
+						</div>
+
+
+					</div>
+				</div>
+				<div class="row"></div>
+				<div class="row text-center">
+					<button type="button" class="btn storepopupbtn"
+						onclick="calendarTab.validStore()">Ok</button>
+					<button type="button" class="btn btn-default storepopupbtnCancel" onclick="calendarTab.storeCancel()">Cancel</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade alertpopup centeredBackdrop" id="alert" tabindex="-1"
+	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header topBorder">
+
+				<h5 class="modal-title" id="alertModalLabel"></h5>
+			</div>
+			<div class="modal-body ">
+				<div class="alertModalBody text-left"></div>
+				<br>
+				<div class="text-center">
+					<button type="button" class="greybtn"
+						onClick="calendarTab.alertOkClicked()">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Day view Popup -->
+<div class="modal fade" id="dayViewModal" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+
+		<div class="modal-content bottomBorder">
+			<div class="modal-header popHeader topBorder">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close" onclick="showCalendarView.loadSummary();">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h3 class="modal-title bold-span" id="dayViewLabel">Day View</h3>
+			</div>
+			<div class="modal-body">
+				<h5 class="text-center dayviewColor">Select an edit mode below
+					in order to add delete availability.</h5>
+				<div class="col-md-12 col-xs-12">
+					<div class="col-md-1">
+					<button class="fc-next-button" title="View Previous Day"
+						onclick="showCalendarView.selectDayPrevious();">
+						<span class="dayViewPrevious"></span>
+					</button>
+				</div>
+					<div class="col-md-1">
+						<label class="dayviewColor bold-span dateLabel">Date:</label>
+					</div>
+					<div class="col-md-9">
+						<label class="bold-span text-center dayviewColor" id="dateSlotDetail"></label>
+					</div>
+					<div class="col-md-1">
+						<button class="fc-next-button" title="View Next Day"
+							onclick="showCalendarView.selectDayNext();">
+							<span class="dayViewNext"></span>
+						</button>
+					</div>
+				</div>
+				<div class="model-radio">
+					<span class="bold-span dayviewColor"> Edit Mode: &nbsp</span> <label
+						class="radio-inline"> <input type="radio"
+						name="inlineRadioOptions" id="inlineRadio1" value="View">
+						View
+					</label> <label class="radio-inline"> <input type="radio"
+						name="inlineRadioOptions" id="inlineRadio2" value="Delete">
+						Delete
+					</label> <label class="radio-inline"> <input type="radio"
+						name="inlineRadioOptions" id="inlineRadio3" value="Add">
+						Add
+					</label> <label class="radio-inline"> <input type="radio"
+						name="inlineRadioOptions" id="inlineRadio3" value="PrintPackets">
+						Print Packets
+					</label>
+				</div>
+				<div class="container daySlotContainer" style="display: none;">
+					<table class="table daySlotTable">
+						<thead></thead>
+						<tbody id="daySlotBody">
+						</tbody>
+					</table>
+					<div class="modal-footer">
+						<div class="row headerRow">
+							<div class="col-md-4 col-xs-4">
+								<button type="button" class="btn btn-default submit"
+									onclick="showCalendarView.confirmSlot()">Submit</button>
+							</div>
+							<div class="col-md-4 col-xs-4">
+								<button type="button" class="btn btn-default cancel"
+								 data-target="#alertModel" onclick="showCalendarView.loadSummary()">Cancel</button>
+							</div>
+							<div class="col-md-4 col-xs-4">
+								<button type="button" class="btn btn-default cancel"
+									id="printView"onclick="showCalendarView.printAction()" >Print</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container addDaySlotContainer" style="display: none;">
+					<div class="tableDiv">
+						<div class="row headerRow">
+							<div class="col-sm-2">
+								<button type="button"
+									class="btn btn-default blockimeButton" id="addBlockTimeButton"
+									onclick="showCalendarView.loadBlockTime()">Add a Block
+									of Time</button>
+							</div>
+							<div class="col-sm-3"></div>
+							<div class="col-sm-2">
+								<label class="addSelectLabel">Select&nbsp;All:&nbsp;</label>
+							</div>
+							<div class="col-sm-1" id="addCheckDiv">
+								<input id="selectAll" title="Select/Deselect All Time Slots" type="checkbox" name="addAllCheck" value="addCheck">
+							</div>
+							<div class="col-sm-2">Recuring Weeks</div>
+							<div class="col-sm-2">Concurrent Interviews</div>
+						</div>
+						<div class="tableContent">
+							<table class="tableBody addDaySlotTable">
+								<thead></thead>
+								<tbody id="addDaySlotBody">
+								</tbody>
+							</table>
+							<div class="modal-footer addTimeButton">
+							<button type="button" class="btn btn-default submit"
+								 id="submitAddAction" onclick="showCalendarView.confirmSlot()">Submit</button>
+							<button type="button" class="btn btn-default cancel" 
+								onclick="showCalendarView.loadSummary()">Cancel</button>
+						</div>
+						</div>						
+					</div>
+				</div>
+
+				<div class="container deleteDaySlotContainer" style="display: none;">
+					<div class="row headerRow">
+						<div class="col-sm-10">
+							<label style="float: right">Select&nbsp;All:&nbsp;</label>
+						</div>
+						<div class="col-sm-2">
+							<input id="deleteSelectAll" title="Select/Deselect All Time Slots" name="deleteAllSlot" type="checkbox" value="deleteCheck"/>
+						</div>
+					</div>
+					<table class="table deleteSlotTable">
+						<thead></thead>
+						<tbody id="deleteSlotBody">
+						</tbody>
+					</table>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default submit"  
+						onclick="showCalendarView.confirmSlot()">Submit</button>
+						<button type="button" class="btn btn-default cancel" data-toggle="modal"
+							data-target="#alertModel" >Cancel</button>
+					</div>
+				</div>
+				<div class="container printPacketSlotContainer" style="display: none;">
+					<div class="row headerRow">
+						<div class="col-sm-7">
+							<label style="float: right">Select&nbsp;All:&nbsp;</label>
+						</div>
+						<div class="col-sm-2">
+							<input id="printpacketCheckAll" title="Select/Deselect Candidates"  name="printPacketSlot" type="checkbox"/>
+						</div>
+						<div class="col-sm-2" id="recurWeekLabel" style="display: none;">
+							<label style="float: right"></label>
+						</div>
+						<div class="col-sm-1" id="printInterviewLoc" style="display: none;">
+							<label style="float: right" title="Store/Location of Interview for Time Slot.">Interview Location</label>
+						</div>
+					</div>
+					<form id="printPacketForm" class="form-inline"
+						method="post"
+						action="http://localhost:8081/StaffingForms/service/HiringEventPrintService/getMergedPDF"
+						target="_blank">
+						<table class="table printPacketSlotTable">
+							<thead></thead>
+							<tbody id="printPacketSlotBody">
+							</tbody>
+						</table>
+						<input type="hidden" name="hiringPacket" /> <input
+							type="hidden" name="Content-Type" />
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default submit"
+								onclick="showCalendarView.confirmSlot()">Submit</button>
+							<button type="button" class="btn btn-default cancel"
+								data-toggle="modal" data-target="#alertModel">Cancel</button>
+								<input type="submit" id="postPrintPacketForm"/>
+						</div>
+
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Add Blocks popup -->
+
+<div class="modal fade" id="addBlocksTime" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+
+		<div class="modal-content bottomBorder">
+			<div class="modal-header popHeader topBorder">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close" onclick="showCalendarView.closeBlockTimePopup();">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h3 class="modal-title bold-span" id="dayViewLabel">Add Blocks Of Time</h3>
+			</div>
+			<div class="modal-body">
+				<div class="dayviewColor"><label>Add a Block of Time to Calendar:
+				To Calendar: </label><span id="BlcokTimeDetail"></span></div>
+				<div class="col-md-12 col-xs-12 addBlockLabelDiv">
+				
+					<div class="col-sm-2">Begin Time</div>
+			
+					<div class="col-sm-2">End Time</div>
+					<div class="col-sm-4">Recurring Weeks</div>
+					<div class="col-sm-3 interviewLabel">Concurrent&nbsp;Interviews</div>
+					<div class="col-sm-1" style="display:none;">Interiew&nbsp;Location</div>
+				</div>
+				
+				<div class="col-md-12 col-xs-12 addBlockSelects">
+			
+					<div class="col-sm-2">
+						<select class="selectBeginTime" id="addBlockBeginTime"></select>
+					</div>
+				
+					<div class="col-sm-3">
+						<select class="selectBeginTime endTime" id="addBlockEndTime"></select>
+					</div>
+					<div class="col-sm-3">
+						<select class="weeksInterviews" id="addBlcokRecurring"></select>
+					</div>
+					<div class="col-sm-2">
+						<select class="weeksInterviews" id="addBlockInterview"></select>
+					</div>
+					<div class="col-sm-2" style="display:none;">
+						<input type="text" id="interviewLoc">
+					</div>
+					
+				</div>
+				
+				<div class="modal-footer  text-center">
+					<button type="button" class="btn btn-default submit"  
+					onclick="showCalendarView.submitAddConfirmBlock()">Submit</button>
+					<button type="button" class="btn btn-default cancel" 
+						onclick="showCalendarView.closeBlockTimePopup()" >Cancel</button>
+				</div>
+				
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<!-- Warning Popup -->
+
+<div class="modal fade" id="showSlotPopup" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header popHeader">
+				<h4 class="modal-title bold-span" id="myModalLabel">
+				<img src="../assets/images/warning.png">&nbsp;Warning</h4>
+			</div>
+			<div class="modal-body">
+				<div id="actionMessage" class="actionResponseMessage text-center"></div>
+
+			</div>
+			<div class="modal-footer text-center">
+			<div><span class="confirmIcon"></span></div>
+				<button type="button" class="btn btn-default" 
+					onclick="showCalendarView.actionBlocks()" data-dismiss="modal">YES</button>
+			<div><span class="NotConfirmIcon"></span></div>
+				<button type="button"
+					class="btn btn-default"
+					data-dismiss="modal" id="closeAlert">NO</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div class="modal fade centeredBackdrop" id="createCalendarModal" tabindex="-1"
+	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog ">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="createcalendarmodalLabel">Create
+					New Store Calendar</h4>
+			</div>
+			<div class="modal-body">
+				<div class="calendarpopupform">
+					<div class="calendarpopuptext">
+						<div class="cols-xs-12 cols-xs-offset-1">
+						<br>
+							Please enter a persons name,job title,etc., for this store Calendar.<br>
+						</div>
+						<div class="cols-xs-12 cols-xs-offset-1">
+							(example:"Cashier" or "Homer's Schedule")<br>
+						</div>
+						<div class="cols-xs-12 cols-xs-offset-1">Click Create to
+							create new Calendar or Cancel to close without saving.</div>
+
+					</div>
+					<div>
+						<div class="text-left">
+							<label class="CalendarNmaelabelmodal">Calendar Name:</label> <input
+								type="text" id="CalendarNameModalText" maxlength="75" />
+
+
+
+						</div>
+
+						<div class="calendarButton">
+							<button type="button" class="orangebtn"
+								onclick="calendarTab.createCalendar()">Create</button>
+							<button type="button" class="greybtn" data-dismiss="modal">Cancel</button>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade centeredBackdrop" id="renameCalendarModal" tabindex="-1"
+	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog ">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="createcalendarmodalLabel">Rename
+					Calendar</h4>
+			</div>
+			<div class="modal-body">
+				<div class="calendarpopupform">
+					<div class="renameCalendarText">
+						<div class="cols-xs-12 cols-xs-offset-1 text-center">
+							Please enter new Calendar name for <label id="oldCalName"></label><br>
+						</div>
+						<div class="cols-xs-12 cols-xs-offset-1 text-center">Click
+							Submit to save new Calendar name or Cancel to close without
+							saving.</div>
+
+					</div>
+					<div>
+						<div class="text-left">
+							<label class="CalendarNmaelabelmodal">Calendar Name:</label> <input
+								type="text" id="newCalendarNameModalText" />
+
+
+
+						</div>
+
+						<div class="renameCalendarButtons">
+							<button type="button" class="orangebtn"
+								onclick="calendarTab.renameCalendar()">Submit</button>
+							<button type="button" class="greybtn" data-dismiss="modal">Cancel</button>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade warningpopClass centeredBackdrop" id="warningpopup" tabindex="-1"
+	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header text-left">
+
+				<img src="assets/images/warning.png"> <label
+					id="WarningModalLabel"></label>
+			</div>
+			<div class="modal-body ">
+				<div class="warningModalBody text-center">
+					<div class="cols-xs-12 cols-xs-offset-1 text-center ">
+						<label class="cautionMsg"></label> <label id="oldRenameCalName"></label>
+					</div>
+					<div class="cols-xs-12 cols-xs-offset-1 text-center sureMsg">
+					</div>
+				</div>
+				<br>
+				<div class="text-center">
+
+					<button type="button" onClick="calendarTab.yesClicked()">
+						<img src="../assets/images/ok.png"> Yes
+					</button>
+
+					<button type="button" data-dismiss="modal">
+						<img src="../assets/images/cross.png">No
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	</div>
+
+
+	<script src="../js/qunit-1.17.1.js"></script>
+	<script src="../../test/app/RSAInterviewAvailability/js/CalendarTest.js" data-cover></script>
+	<script src="../js/blanket.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,519 @@
+
+<head>
+	<meta http-equiv="Cache-control" content="private">
+</head>
+<script type="text/javascript" src="app/RSApplicantProfile/js/applicantProfile.js"></script>
+<script type="text/javascript" src="app/RSApplicantProfile/js/getApplicantProfile.js"></script>
+<script type="text/javascript" src="app/RSApplicantProfile/js/loadRejectDetails.js"></script>
+<script type="text/javascript" src="app/RSApplicantProfile/js/attachApplToReq.js"></script>
+<script type="text/javascript" src="app/RSApplicantProfile/js/getPhoneScreenMinimumDetails.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#messageBar").text("APPLICANT PROFILE");
+    applProf.initializePage();
+  });
+</script>
+<div class="applProfMainContainer">
+  <div class="applProfContainer">
+    <div class="applProf-left-col col-xs-5">
+      <div class="form-bg personalInfo">
+        <span class="form-title">Personal Information</span>
+        <div class="white-bg">
+          <div class="row">
+            <div class="col-xs-6 personalDet">
+              <div class="fullname bold value-text"></div>
+              <div class="phoneNum value-text"></div>
+              <div class="address1 value-text"></div>
+              <div class="address2 value-text"></div>
+              <div class="cityStateZip value-text"></div>
+              <div class="candRefNbr value-text"></div>
+              <div class="email value-text"></div>
+            </div>
+            <div class="col-xs-6 eligDet personalInfoRt">
+              <div class="row"> <div class="bold">USA Eligibility</div> 
+                <div class="checkBoxCont block-control value-part value-part">
+                       <label class=""><span class="uncheckSpan usaEligCheck yck" value="Y"/>Yes</label>&nbsp;&nbsp;&nbsp;
+                       <label class=""><span class="uncheckSpan usaEligCheck nck" value="N"/>No</label>
+                     </div>
+                  </div>
+                  
+                  <div class="row"> <div class="bold">Age Eligibility Met</div> 
+                <div class="checkBoxCont block-control value-part">
+                       <label class=""><span class="uncheckSpan ageEligCheck yck" value="Y"/>Yes</label>&nbsp;&nbsp;&nbsp;
+                       <label class=""><span class="uncheckSpan ageEligCheck nck" value="N"/>No</label>
+                     </div>
+                  </div>
+                  
+                  <div class="row"> <div class="bold">On Leave or Laid Off</div> 
+                <div class="checkBoxCont block-control value-part">
+                       <label class=""><span class="uncheckSpan leaveorlaidCheck yck" value="Y">Yes</label>&nbsp;&nbsp;&nbsp;
+                       <label class=""><span class="uncheckSpan leaveorlaidCheck nck" value="N">No</label>
+                     </div>
+                  </div>
+                  
+                  <div class="row"> <div class="bold">Previous Employee</div> 
+                <div class="checkBoxCont block-control value-part">
+                       <label class=""><span class="uncheckSpan prevEmpCheck yck" value="Y">Yes</label>&nbsp;&nbsp;&nbsp;
+                       <label class=""><span class="uncheckSpan prevEmpCheck nck" value="N">No</label>
+                     </div>
+                  </div>
+                  
+                  <div class="row"> <div class="bold">Location</div> 
+                <div class="location block-control value-part value-text">
+                       
+                     </div>
+                  </div>
+                  <div class="row"> <div class="bold">Date From</div> 
+                <div class="dateFrom block-control value-part value-text">
+                       
+                     </div>
+                  </div>                  
+                  <div class="row"> <div class="bold">Date To</div> 
+                <div class="dateTo block-control value-part value-text">
+                       
+                     </div>
+                  </div>
+                  <div class="row"> <div class="bold">Relative Working For HD</div> 
+                <div class="checkBoxCont block-control value-part">
+                       <label class=""><span class="uncheckSpan relForHDCheck yck" value="Y">Yes</label>&nbsp;&nbsp;&nbsp;
+                       <label class=""><span class="uncheckSpan relForHDCheck nck" value="N">No</label>
+                     </div>
+                  </div>
+                  
+                  <div class="row"> <div class="bold">Name</div> 
+                <div class="relName block-control value-part value-text">
+                       
+                     </div>
+                  </div>
+                  
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-bg assocInfo">
+        <span class="form-title">Associate Information</span>
+        <div class="white-bg">
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="row">
+                <div class="col-xs-5 bold text-right">Current Store</div>
+                <div class="col-xs-7 currStoreText value-text"></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-5 bold text-right">Current Dept</div>
+                <div class="col-xs-7 currDeptText value-text"></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-5 bold text-right">Current Title</div>
+                <div class="col-xs-7 currTittleText value-text"></div>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="row">
+                <div class="col-xs-5 bold text-right">Current Status</div>
+                <div class="col-xs-7 currStatusText value-text"></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-5 bold text-right">Hire Date</div>
+                <div class="col-xs-7 hireDateText value-text"></div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="row bold">Review Results</div>
+          <div id="reviewResultsGrid" class="row custom-grid"></div>
+          <br>
+          <div class="row bold">Previous Positions</div>
+          <div id="prevPositionGrid" class="row custom-grid"></div>
+        </div>
+      </div>
+      <div class="form-bg eduInfo">
+        <span class="form-title">Education</span>
+        <div class="white-bg">
+          <div class="education education1 row">
+            <div class="col-xs-7">
+              <div class="row">
+                <div class="col-xs-4 bold text-right">School Name</div>
+                <div class="col-xs-8 _0SchoolName value-text"></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4 bold text-right">Education</div>
+                <div class="col-xs-8 _0Education value-text"></div>
+              </div>
+            </div>
+            <div class="col-xs-5">
+              <div class="row degreeRow">
+                <div class="bold">Degree Received</div> 
+                <div class="checkBoxCont block-control value-part">
+                       <label class=""><span class="uncheckSpan _0Graduate yck" value="Y">Yes</label>&nbsp;&nbsp;&nbsp;
+                       <label class=""><span class="uncheckSpan _0Graduate nck" value="N">No</label>
+                     </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="education education2 row">
+            <div class="col-xs-7">
+              <div class="row">
+                <div class="col-xs-4 bold text-right">School Name</div>
+                <div class="col-xs-8 _1SchoolName value-text"></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4 bold text-right">Education</div>
+                <div class="col-xs-8 _1Education value-text"></div>
+              </div>
+            </div>
+            <div class="col-xs-5">
+              <div class="row degreeRow">
+                <div class="bold">Graduate</div> 
+                <div class="checkBoxCont block-control value-part">
+                       <label class=""><span class="uncheckSpan _1Graduate yck" value="Y">Yes</label>&nbsp;&nbsp;&nbsp;
+                       <label class=""><span class="uncheckSpan _1Graduate nck" value="N">No</label>
+                     </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="education education3 row">
+            <div class="col-xs-7">
+              <div class="row">
+                <div class="col-xs-4 bold text-right">School Name</div>
+                <div class="col-xs-8 _2SchoolName value-text"></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4 bold text-right">Education</div>
+                <div class="col-xs-8 _2Education value-text"></div>
+              </div>
+            </div>
+            <div class="col-xs-5">
+              <div class="row degreeRow">
+                <div class="bold">Graduate</div> 
+                <div class="checkBoxCont block-control value-part">
+                       <label class=""><span class="uncheckSpan _2Graduate yck" value="Y">Yes</label>&nbsp;&nbsp;&nbsp;
+                       <label class=""><span class="uncheckSpan _2Graduate nck" value="N">No</label>
+                     </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="form-bg workHist">
+        <span class="form-title">Work History</span>
+        <div class="white-bg">
+          <div class="miliratySec row">
+            <div class="col-xs-6 military-left-col">
+              <div class="row">
+                <div class="col-xs-6 text-right bold">Military Experience</div>
+                <div class="col-xs-6 ">
+                  <div class="checkBoxCont block-control value-part">
+                          <label class=""><span class="uncheckSpan militaryExp yck" value="Y">Yes</label>
+                        </div>
+                    </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-6 text-right"> </div>
+                <div class="col-xs-6 ">
+                  <div class="checkBoxCont block-control value-part">
+                          <label class=""><span class="uncheckSpan militaryExp nck" value="N">No</label>
+                        </div>
+                    </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-6 text-right bold">Branch</div>
+                <div class="col-xs-6 milBranchNameText value-text"></div>
+              </div>
+            </div>
+            <div class="col-xs-6 military-right-col">
+              <div class="row">
+                <div class="col-xs-4 text-right bold">Date From</div>
+                <div class="col-xs-8 milDateFromText value-text"></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4 text-right bold">Date To</div>
+                <div class="col-xs-8 milDatToText value-text"></div>
+              </div>
+            </div>
+          </div>
+          <hr class="thickhr">
+          <hr class="shadowhr">
+          <div class="prevWork1 prevwork">
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="row">
+                  <div class="col-xs-4 text-right bold">Company</div>
+                  <div class="col-xs-8 _0Company value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4 text-right bold">Position</div>
+                  <div class="col-xs-8 _0Position value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4 text-right bold">Location</div>
+                  <div class="col-xs-8 _0Location value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4 text-right bold">Supervisor</div>
+                  <div class="col-xs-8 _0Supervisor value-text"></div>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <div class="row">
+                  <div class="col-xs-5 text-right bold">Date From</div>
+                  <div class="col-xs-7 _0DateFrom value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-5 text-right bold">Date To</div>
+                  <div class="col-xs-7 _0DateTo value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-5 text-right bold">Pay at Leaving</div>
+                  <div class="col-xs-7 _0PayAtLeaving value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-5 text-right bold supTitleLbl">Supervisor Title</div>
+                  <div class="col-xs-7 _0SupervisorTitle value-text"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row scroll-content">
+              <div class="col-xs-3 bold">Job Description</div>
+              <div class="col-xs-9 _0JobDescription content value-text"></div>
+            </div>
+            <div class="row scroll-content">
+              <div class="col-xs-4 bold">Reason For Leaving</div>
+              <div class="col-xs-8 _0ReasonLeaving content value-text"></div>
+            </div>
+          </div>
+          <hr class="thickhr">
+          <hr class="shadowhr">
+          <div class="prevWork2 prevwork">
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="row">
+                  <div class="col-xs-4 text-right bold">Company</div>
+                  <div class="col-xs-8 _1Company value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4 text-right bold">Position</div>
+                  <div class="col-xs-8 _1Position value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4 text-right bold">Location</div>
+                  <div class="col-xs-8 _1Location value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4 text-right bold">Supervisor</div>
+                  <div class="col-xs-8 _1Supervisor value-text"></div>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <div class="row">
+                  <div class="col-xs-5 text-right bold">Date From</div>
+                  <div class="col-xs-7 _1DateFrom value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-5 text-right bold">Date To</div>
+                  <div class="col-xs-7 _1DateTo value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-5 text-right bold">Pay at Leaving</div>
+                  <div class="col-xs-7 _1PayAtLeaving value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-5 text-right bold supTitleLbl">Supervisor Title</div>
+                  <div class="col-xs-7 _1SupervisorTitle value-text"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row scroll-content">
+              <div class="col-xs-3 bold">Job Description</div>
+              <div class="col-xs-9 _1JobDescription content value-text"></div>
+            </div>
+            <div class="row scroll-content">
+              <div class="col-xs-4 bold">Reason For Leaving</div>
+              <div class="col-xs-8 _1ReasonLeaving content value-text"></div>
+            </div>
+          </div>
+          <hr class="thickhr">
+          <hr class="shadowhr">
+          <div class="prevWork3 prevwork">
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="row">
+                  <div class="col-xs-4 text-right bold">Company</div>
+                  <div class="col-xs-8 _2Company value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4 text-right bold">Position</div>
+                  <div class="col-xs-8 _2Position value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4 text-right bold">Location</div>
+                  <div class="col-xs-8 _2Location value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4 text-right bold">Supervisor</div>
+                  <div class="col-xs-8 _2Supervisor value-text"></div>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <div class="row">
+                  <div class="col-xs-5 text-right bold">Date From</div>
+                  <div class="col-xs-7 _2DateFrom value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-5 text-right bold">Date To</div>
+                  <div class="col-xs-7 _2DateTo value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-5 text-right bold">Pay at Leaving</div>
+                  <div class="col-xs-7 _2PayAtLeaving value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-5 text-right bold supTitleLbl">Supervisor Title</div>
+                  <div class="col-xs-7 _2SupervisorTitle value-text"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row scroll-content">
+              <div class="col-xs-3 bold">Job Description</div>
+              <div class="col-xs-9 _2JobDescription content value-text"></div>
+            </div>
+            <div class="row scroll-content">
+              <div class="col-xs-4 bold">Reason For Leaving</div>
+              <div class="col-xs-8 _2ReasonLeaving content value-text"></div>
+            </div>
+          </div>
+          <hr class="thickhr">
+          <hr class="shadowhr">
+          <div class="prevWork4 prevwork">
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="row">
+                  <div class="col-xs-4 text-right bold">Company</div>
+                  <div class="col-xs-8 _3Company value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4 text-right bold">Position</div>
+                  <div class="col-xs-8 _3Position value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4 text-right bold">Location</div>
+                  <div class="col-xs-8 _3Location value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-4 text-right bold">Supervisor</div>
+                  <div class="col-xs-8 _3Supervisor value-text"></div>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <div class="row">
+                  <div class="col-xs-5 text-right bold">Date From</div>
+                  <div class="col-xs-7 _3DateFrom value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-5 text-right bold">Date To</div>
+                  <div class="col-xs-7 _3DateTo value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-5 text-right bold">Pay at Leaving</div>
+                  <div class="col-xs-7 _3PayAtLeaving value-text"></div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-5 text-right bold supTitleLbl">Supervisor Title</div>
+                  <div class="col-xs-7 _3SupervisorTitle value-text"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row scroll-content">
+              <div class="col-xs-3 bold">Job Description</div>
+              <div class="col-xs-9 _3JobDescription content value-text"></div>
+            </div>
+            <div class="row scroll-content">
+              <div class="col-xs-4 bold">Reason For Leaving</div>
+              <div class="col-xs-8 _3ReasonLeaving content value-text"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-bg jobPref">
+        <span class="form-title">Job Preference</span>
+        <div class="white-bg">
+          <div class="row jobPrefContainer"></div>
+          <div class="row jobtype outrow">
+                <div class="col-xs-2 bold">Job Type:</div> 
+                <div class="col-xs-10 checkBoxCont block-control value-part">
+                    <label class=""><span class="uncheckSpan jbtypft yck" value="Y">Full Time</label>&nbsp;&nbsp;&nbsp;
+                    <label class=""><span class="uncheckSpan jbtyppt nck" value="Y">Part Time</label>
+                </div>
+           </div>
+           <div class="row jobstatus outrow">
+                <div class="col-xs-2 bold nowrap">Job Status:</div> 
+                <div class="col-xs-10 checkBoxCont block-control value-part">
+                    <label class=""><span class="uncheckSpan jbstperm yck" value="Y">Permanent</label>&nbsp;&nbsp;&nbsp;
+                    <label class=""><span class="uncheckSpan jbsttemp nck" value="Y">Temporary</label>
+                </div>
+           </div>
+           <div class="row wagedsrd outrow">
+                <div class="col-xs-2 bold nowrap">Wage Desired:</div> 
+                <div class="col-xs-10 checkBoxCont block-control value-part">
+                    &nbsp;&nbsp;&nbsp;<label class=""><span class="wagedesired value-text"></span>&nbsp;&nbsp;&nbsp;<span class="uncheckSpan openneg" value="Y" >Open/Negotiable</label>
+                </div>
+           </div>
+        </div>
+      </div>
+    </div>
+    <div class="applProf-right-col col-xs-7">
+      <div class="form-bg attachCand">
+        <span class="form-title">Attach Candidate</span>
+        <div class="white-bg">
+          <div class="row">
+            <div class="col-xs-2 bold nowrap medwidth"><input type="radio" name="attachreq" class="attachreq" value="Y"/>&nbsp;Attach To Requisition</div>
+            <div class="col-xs-3 bold nowrap"><input type="radio" name="attachreq" class="attachreq" value="N"/>&nbsp;Do Not Attach to Requisition</div>
+            <div class="col-xs-2 bold nopad">Reason For Not &nbsp;&nbsp; Attaching Candidate:</div>
+            <div class="col-xs-3 nopad medwidth"><select class="rjctRsncb" data-size="5"></select></div>
+            <div class="col-xs-2"><button id="saveBtn" class="btn btn-default action-btn primary-green-btn" title="Save and return to Qualified Pool">Save</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="form-bg langAbl">
+        <span class="form-title">Language Abilities</span>
+        <div id="LangDisplay" class="white-bg"> </div>
+      </div>
+    <!--   <div class="form-bg skills">
+        <span class="form-title">Skills</span>
+        <div id="SkillDisplay"  class="white-bg"> </div>
+      </div> -->
+      <div class="form-bg phnScrHist">
+        <span class="form-title">Phone Screen History</span>
+        <div class="white-bg">
+          <div id="phnScrHistGrid" class="custom-grid row">
+
+          </div>
+        </div>
+      </div>
+      <div class="form-bg candStatHist">
+        <span class="form-title">Candidate Status / History</span>
+        <div class="white-bg">
+          <div id="candStatHistGrid" class="custom-grid row">
+
+          </div>
+        </div>
+      </div>
+      <div class="form-bg appHist">
+        <span class="form-title">Application History</span>
+        <div class="white-bg">
+          <div id="appHistGrid1" class="custom-grid row">
+
+          </div>
+          <br>
+          <div id="appHistGrid2" class="custom-grid row">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

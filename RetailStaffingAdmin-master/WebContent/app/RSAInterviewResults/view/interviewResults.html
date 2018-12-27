@@ -1,0 +1,1307 @@
+
+
+<script type="text/javascript">
+var interviewResults = new interviewResults();
+var cpdForm = new cpdForm();
+$(document).ready(function() {
+    interviewResults.initialize();
+    cpdForm.initialize();
+  });
+
+//MTS1876 Added to remove the Query Parms from the URL Address bar.  These would only be there if coming from another application.  
+var uri = window.location.toString();
+if (uri.indexOf("?") > 0) {
+    var clean_uri = uri.substring(0, uri.indexOf("?"));
+    window.history.replaceState({}, document.title, clean_uri);
+}
+//******************************************************************************************************  
+
+</script>
+
+<div class="row container marginTopAlign" id="interviewResults">
+  <label id="headerLabel"class="col-md-12 textSelectionTrue">To view or input interview results or offer information, select a requisition, then select a candidate. When you are finished, click on the submit button. If you have questions or need help, please call 1-866-myTHDHR (1-866-698-4347).</label>
+  <label id="impNote" class="textSelectionTrue">Important Note: All interview materials should be kept in accordance with document retention SOP.</label>
+
+  <div class="row jumbotron secondContentRow shadow-box userInfo">
+    <div class="col-xs-12">
+    <span class="form-title userInfoTitle"><strong>User Information</strong></span>
+    <div class="row shadow-box whiteBox">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12 form-left rowTextIndentIntResScrn userInfoForm">                    
+                    
+                      <div class="row">
+                          <div class="col-xs-4 ">
+                          <div class="row">
+                            <div class="col-xs-4 text-left"><label>Your Name:</label></div>
+                            <div class="col-xs-6 userName noPadding textSelectionTrue"></div></div>
+                          </div>
+                          <div class="col-xs-4 "><div class="row">
+                            <div class="col-xs-4 text-left"><label>Your User ID:</label></div>
+                            <div class="col-xs-6  userID noPadding textSelectionTrue"></div></div>
+                          </div>
+                          <div class="col-xs-4"><div class="row">
+                            <div class="col-xs-5 text-left"><label>Your Location:</label></div>
+                            <div class="col-xs-6  userLoc noPadding textSelectionTrue"></div></div>
+                          </div>
+                       </div>            
+                              
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="row jumbotron secondContentRow shadow-box selectReq">
+    <div class="col-xs-12">
+    <span class="form-title selectReqTitle"><strong>Select A Requisition</strong></span>
+    <div class="row shadow-box whiteBox">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12 form-left rowTextIndentIntResScrn selectReqForm">                                     
+                      <div class="row">
+                          <div class="col-xs-12 textSelectionTrue">
+                            Only active requisitions are displayed. If no requisitions are displayed, there are no active requisitions for your location.
+                          </div>                          
+                      </div> 
+
+                      <div class="row">
+                          <div class="col-md-12">
+                            <div class="gridContainer custom-grid" id="reqListGrid"></div>
+                          </div>                     
+                      </div> 
+                              
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="row jumbotron secondContentRow shadow-box selectCand">
+    <div class="col-xs-12">
+    <span class="form-title selectCandTitle"><strong>Select A Candidate</strong></span>
+    <div class="row shadow-box whiteBox">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12 form-left rowTextIndentIntResScrn selectReqForm">                                     
+                      <div class="row">
+                          <div class="col-xs-12 textSelectionTrue">
+                            Only candidates being actively considered for an active requisition will be displayed. If you have selected an active requisition and no candidates are displayed, there are no active candidates attached to the requisition.
+                          </div>                          
+                      </div> 
+
+                      <div class="row">
+                          <div class="col-md-12">
+                            <div class="candidateGridContainer custom-grid" id="candListGrid"></div>
+                          </div>                     
+                      </div> 
+                              
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="row jumbotron secondContentRow shadow-box intDet" id="interviewDetailDiv">
+    <div class="col-xs-12">
+    <span class="form-title intDetTitle"><strong>Interview Details</strong></span>
+    <div class="row shadow-box whiteBox">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12 form-left rowTextIndentIntResScrn userInfoForm">                    
+                <div class="row">
+                          <div class="col-xs-12 textSelectionTrue">
+                              <div><label>Part 1:</label></div>
+                            Once interview details have been entered and saved, they cannot be changed.
+                          </div>
+                      </div> 
+
+                      <div class="row marginTopAlign">
+                          <div class="col-xs-12">
+                          <div class="row">
+                            <div class="col-xs-4 text-right"><label>Candidate Name:</label></div>
+                            <div class="col-xs-8 showCandidateNameInterviewPnl text-left noPaddingLeft textSelectionTrue"></div></div>
+                          </div>                          
+                       </div>
+
+                      <div class="row marginTopAlign">
+                          <div class="col-xs-6">
+                          <div class="row intCompltdDiv">
+                            <div class="col-xs-8 text-right"><label>Was Interview Completed?<sub>*</sub></label></div>
+                            <div class="col-xs-4 intCmpltd text-left">
+                              <div class="col-xs-4">
+                                <div class="radio">
+                                  <label><input type="radio" name="isIntCmpltd" value="Y" onclick="interviewResults.hideShowIntvwCompleted()">Yes</label>
+                                </div>
+                                </div>
+                                <div class="col-xs-4">
+                                  <div class="radio">
+                                    <label><input type="radio" name="isIntCmpltd" value="N" onclick="interviewResults.hideShowIntvwCompleted()">No</label>
+                                  </div>
+                                </div>
+                            </div></div>
+                          </div>
+                          <div class="col-xs-6 ">
+                           <div class="row noReasonDiv">
+                            <div class="col-xs-6 text-right"><label>If No, Reason:<sub>*</sub></label></div>
+                            <div class="col-xs-6  noReason">
+                              <select  id="noInterviewReason" onchange="interviewResults.noIntReasonChange()" disabled="disabled"><option value="select">Select...</option></select>
+                            </div>
+                           </div>
+                          </div>
+
+                              <div class="col-xs-6" style="display: inline-block;margin-top: 8px;margin-bottom: 11px;margin-left: 1%;">
+                                  <div class="row" id="intAvailMatchDiv">
+                                      <div class="col-xs-8 text-right"><label style="width: 50%;text-align: left">Does the candidates availability match with the store scheduling need?<sub>*</sub></label></div>
+                                      <div class="col-xs-4 intCmpltd text-left" style="display: inline-block;margin-left: -2%;">
+                                          <div class="col-xs-4">
+                                              <div class="radio">
+                                                  <label ><input type="radio" name="doesAvailabilityMatch" value="Y" onclick="interviewResults.hideShowAvailabilityMatch()">Yes</label>
+                                              </div>
+                                          </div>
+                                          <div class="col-xs-4">
+                                              <div class="radio">
+                                                  <label ><input type="radio" name="doesAvailabilityMatch" value="N" onclick="interviewResults.hideShowAvailabilityMatch()" >No</label>
+                                              </div>
+                                          </div>
+                                      </div></div>
+                              </div>
+
+                          <div class="nameDateRow">
+                              <div class="col-xs-6" id="nameRowDiv">
+                                  <div class="row">
+                                      <div class="col-xs-8 text-right noPaddingLeft"><label>Name or myApron ID of Interviewer(8 Character limit):<sub>*</sub></label></div>
+                                      <div class="col-xs-4 interviewerName text-left">
+                                          <input type="text" class="" id="interviewerName"
+                                                 onkeyup="interviewResults.flag_NOI()" data-pattern="^[a-zA-Z0-9]+$" maxlength="8">
+                                      </div></div>
+                              </div>
+                              <div class="col-xs-6" id="dateRowDiv">
+                                  <div class="row">
+                                      <div class="col-xs-6 text-right"><label>Date of Interview:<sub>*</sub></label></div>
+                                      <div class="col-xs-6 text-left interviewDtDiv">
+                                          <input type="text" id="interviewDt" class="" name="dateOfNotice"
+                                                 placeholder="" data-toggle="tooltip" data-placement="right" onblur="interviewResults.flag_DOI()">
+                                      </div></div>
+                              </div>
+                          </div>
+                          <div class="col-xs-6"></div>
+
+                              <!-- Added for FMS 7894 January 2016 CR's -->
+                              <div class="col-xs-6 doNotConsiderDiv">
+                                  <div id="doNotConsider" class="row">
+                                      <div class="col-xs-6 text-right" style="display: inline-block;margin-top: 17px;margin-bottom: 11px;"><label>Do Not Consider Candidate For 60 Days:</label></div>
+                                      <div class="col-xs-6 text-left" style="display: inline-block;margin-top: 14px;margin-bottom:11px;">
+                                          <input type="checkbox" value="" id="doNotConsiderFor60Days" name="doNotConsiderFor60Days" onchange="interviewResults.setScreenIntvwDirty(), interviewResults.doNotConsiderWarning(), interviewResults.flag_DNC_uncheck()">
+                                      </div></div>
+                              </div>
+
+                          <div class="col-xs-8 text-left" id="interviewDetailsMessage" style="display:inline-block; margin-top:8px; margin-bottom:11px; margin-left:20%; border:solid red 0px; font-size:14px"><em>
+                          	*If the candidate is present, you may move forward to the Offer Details, Candidate Personal Data, and the Background Check sections before completing the SIG details and results.
+ 							The SIG Interview Details <b>must</b> be completed before submitting the Interview Summary Form.</em>
+                          </div>
+                          
+                      </div>
+
+					  <div class="interviewDetailsDiv" style="display:none">
+
+                          <div class="marginTopAlign"><label>Part 2:</label></div>
+
+                          <div class="row marginTopAlign strcutRow">
+                          <div class="col-xs-6 strcutDiv">
+                          <div class="row">
+                            <div class="col-xs-5 text-right noPadding"><label>Structured Interview Guide (SIG)#:<sub>*</sub></label></div>
+                            <div class="col-xs-7 text-left">
+                              <select  id="sigNum" onchange="interviewResults.flagSIG()"><option value="select">Select...</option></select>
+                            </div></div>
+                          </div>
+                       </div>
+
+                          <div class="row marginTopAlign">
+                              <div class="col-xs-12 textSelectionTrue">
+                                  <div>Select a value for each structured interview question using the answer scale below.</div>
+                              </div>
+                          </div>
+
+                       <div class="row marginTopAlign textSelectionTrue">
+                          <div class="col-xs-12 textSelectionTrue">
+                            If a question number was not asked, select 'N/A'.  A value is required for all 10 questions (this includes 'N/A').
+                          </div>                          
+                       </div>     
+                       <div class="row marginTopAlign">
+                          <div class="col-xs-12 textSelectionTrue">
+                            <label class="textSelectionTrue">Answer Scale: </label> 5 = Highly Favorable, 4 = Favorable, 3 = Acceptable, 2 = Unfavorable, 1 = Highly Unfavorable, N/A = Not Applicable                          
+                          </div>                          
+                       </div>  
+
+                       <div class="row marginTopAlign categoryNameRow">
+                          <div class="col-xs-12">
+                          <div class="row">
+                            <div class="col-xs-2 col-xs-offset-1 text-center"><label>Highly Favorable</label></div>
+                            <div class="col-xs-1 text-center"><label>Favorable</label></div>
+                            <div class="col-xs-1 text-center"><label>Acceptable</label></div>
+                            <div class="col-xs-1 text-center"><label>Unfavorable</label></div>
+                            <div class="col-xs-2 text-center"><label>Highly Unfavorable</label></div>
+                            <div class="col-xs-1 text-center"><label>N/A</label></div>
+                          </div>
+                          </div>                          
+                       </div>  
+
+                       <div id="qnsSections"></div>    
+
+                       <div class="row marginTopAlign overallStatRow">
+                          <div class="col-xs-12">
+                          <div class="row">
+                            <div class="col-xs-3 col-xs-offset-6 text-right"><label>Overall Interview Result:  </label>
+                            </div>
+                            <div  class="col-xs-2"><label id="ID_OverallResultsLbl"></label></div>
+                          </div>                        
+                          </div>                          
+                       </div>  
+
+                       <div class="row">
+                          <div class="col-xs-12 textSelectionTrue" id="ID_ShowUnfavorable">
+                                Based on the Interview Results entered, the overall interview result is unfavorable.  Candidates who receive an overall result of unfavorable cannot be made an offer.                      
+                          </div>                          
+                       </div>               
+       			</div>  
+                                 
+                  <div class="col-xs-12" style="text-align: center;">
+                  	<input type="button" class="lg-btn btn-gray" id="interviewDetailsToggle" title="Show Interview Details"
+                            value="Show Interview Details" onclick="interviewResults.showHideInterviewResults()"/>
+                  </div>                     
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="row jumbotron secondContentRow shadow-box offerDet" id="offerDet">
+    <div class="col-xs-12">
+    <span class="form-title offerDetTitle"><strong>Offer Details</strong></span>
+    <div class="row shadow-box whiteBox">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12 form-left rowTextIndentIntResScrn offerDetForm">                    
+                    
+                      <div class="row marginTopAlign">
+                          <div class="col-xs-12 textSelectionTrue">
+                            Offer information does not have to be entered at the same time as interview results.
+                          </div>                          
+                      </div>                       
+
+                      <div class="row marginTopAlign">
+                          <div class="col-xs-12 " id="rehireMessage">                           
+                          </div>                          
+                      </div> 
+     				  <div class="waitOnCpdInput">
+                      	<div class="row marginTopAlign">
+                        	  <div class="col-xs-5 ">
+	                          <div class="row">
+    	                        <div class="col-xs-4 text-right"><label>Candidate Name:</label></div>
+        	                    <div class="col-xs-6 showCandidateNameOfferPnl text-left noPaddingLeft textSelectionTrue"></div></div>
+            	              </div>                         
+                       	</div>   
+
+	                    <div class="row marginTopAlign">
+                          <div class="col-xs-5 ">
+                          <div class="row">
+                            <div class="col-xs-4 text-right"><label>Offer Made:</label></div>
+                            <div class="col-xs-8 offerMade text-left noPaddingLeft"><select id="offerMadeCbo" onchange="interviewResults.offerMadeChange()"></select></div></div>
+                          </div> 
+                          <div class="col-xs-5 ">
+                          <div class="row">
+                            <div class="col-xs-4 text-right offerDtLblDiv"><label>Offer Date:</label></div>
+                            <div class="col-xs-5 offerDate text-left offerDtDiv"><input type="text" id="offerDt" class="" name="dateOfNotice"
+                              placeholder="" data-pattern="^[0-9/-]+$" disabled="disabled" data-toggle="tooltip" data-placement="right" onblur="interviewResults.offerDateChange()" onchange="interviewResults.offerResultChange()"></div></div>
+                          </div>                         
+                       </div>     
+
+                       <div class="row marginTopAlign">
+                          <div class="col-xs-5 ">
+                          <div class="row">
+                            <div class="col-xs-4 text-right"><label>Offer Result:</label></div>
+                            <div class="col-xs-8 offerResult text-left noPaddingLeft"><select id="offerResultCbo" disabled="disabled" onchange="interviewResults.offerResultChange()"><option value="select">Select...</option></select></div></div>
+                          </div> 
+                          <div class="col-xs-5 ">
+                          <div class="row">
+                            <div class="col-xs-4 text-right"><label>Decline Reason:</label></div>
+                            <div class="col-xs-5 decReason text-left"><select id="declineReasonCbo" disabled="disabled" onchange="interviewResults.declineResultChange()"><option value="select">Select...</option></select></div></div>
+                          </div>                         
+                       </div>  
+
+                     <!--   <div class="row marginTopAlign backgrndRow">
+                          <div class="col-xs-10 ">
+                          <div class="row">
+                            <div class="col-xs-7 text-left"><label class="textSelectionTrue">Has Candidate signed a background consent form and completed the Candidate Personal Data Form? :</label></div>
+                            <div class="col-xs-3 text-left backgrndRadio noPaddingLeft">
+                            <div class="col-md-4">
+                                <div class="radio">
+                                  <label><input type="radio" name="isSignCmpltd"  id="OD_Yes_backgroundRadioBtn" value="Y" onclick="interviewResults.signCmpltdchkd()">Yes</label>
+                                </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="radio">
+                                    <label><input type="radio" id="OD_No_backgroundRadioBtn" name="isSignCmpltd" value="N" onclick="interviewResults.signCmpltdchkd()">No</label>
+                                  </div>
+                                </div></div>
+                              </div>
+                          </div>                         
+                       </div>    
+
+                       <div class="row marginTopAlign">
+                          <div class="col-xs-12" id="backgroundCheckText"></div>
+                      </div> --> 
+          		</div>                    
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+    
+    <div class="row jumbotron secondContentRow shadow-box candidatePersonalData">
+    <div class="col-xs-12">
+    <span class="form-title candidatePersonalDataTitle"><strong>Candidate Personal Data</strong></span>
+    <div class="row shadow-box whiteBox">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12 form-left rowTextIndentIntResScrn candidatePersonalDataForm">                    
+                  	<div class="row marginTopAlign backgrndRow">
+                          <div class="col-xs-10 ">
+                           <div class="row">
+                            <div class="col-xs-5 text-left"><label class="textSelectionTrue">Click the button to enter Personal Data: </label></div>
+                           <!--  <div class="col-xs-6 text-left noPaddingLeft"> -->
+                            <div class="col-md-7">
+                                <div class="radio" style="float:left">
+                                   <input type="button" class="lg-btn btn-orange" id="cpdParent" title="Candidate Personal"
+                                 value="Candidate Personal Data" onclick="cpdForm.cpdFormWindow()"/>
+                                </div>
+                           </div>
+        					<!-- </div> -->
+                              
+                              <div class="col-xs-5 text-left"><label class="textSelectionTrue">Candidate Personal Data Form Status: </label></div>
+                              <div class="col-xs-5 text-left"><label class="textSelectionTrue" id="cpdFormStatus"></label></div>
+                              
+                           </div>
+                          </div>                         
+                    </div>       
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+	<div class="row jumbotron secondContentRow shadow-box minorConsent">
+		<div class="col-xs-12">
+			<span class="form-title minorConsentTitle">
+				<strong>Parental Consent for Minor</strong>
+			</span>
+			<div class="row shadow-box whiteBox">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="row">
+							<div class="col-xs-12 form-left rowTextIndentIntResScrn minorConsentForm">
+								<div class="row marginTopAlign backgrndRow">
+									<div class="col-xs-10 ">
+										<div class="row">
+											<div class="col-xs-5 text-left">
+												<label class="textSelectionTrue">
+												Is a parent/guardian of the minor candidate present?<em>*</em>:
+												</label>
+											</div>
+											<div class="col-xs-5 text-left minorConsentRadio noPaddingLeft">
+												<div class="col-md-2">
+													<div class="radio">
+														<label>
+															<input
+															id="yes_minorConsentRadioBtn" name="isMinorConsentReady"
+															type="radio" 
+															value="Y"
+															onclick="interviewResults.minorConsentBtn()">
+															Yes
+														</label>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div class="radio">
+														<label>
+															<input 
+															id="no_minorConsentRadioBtn" name="isMinorConsentReady"
+															type="radio" 
+															value="N"
+															onclick="interviewResults.minorConsentBtn()">
+															No
+														</label>
+													</div>
+												</div>
+												<div class="col-xs-12 text-left">
+													<label class="textSelectionTrue" id="minorConsentMsgNR"></label>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12 text-left" id="minorConsentButton">
+												<input type="button" class="xlg-btn btn-orange text-center"
+													id="dcs_PCFLaunch"
+													title="Initiate Parental Consent Forms"
+													value="Initiate Parental Consent Forms"
+													onclick="interviewResults.launchDCS_PCFModalPortal()" /><br /><br />
+											</div>
+											<div class="col-xs-5 text-left"><br />
+												<label class="textSelectionTrue text-left" id="minorConsentFormsStatusLabel">Parental Consent Forms Status: </label>
+											</div>
+                              				<div class="col-xs-5 text-left"><br />
+                              					<label class="textSelectionTrue text-left" id="minorConsentFormsStatus"></label>
+                              				</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+
+	<div class="row jumbotron secondContentRow shadow-box drugTestProf">
+		<div class="col-xs-12">
+			<span class="form-title drugTestProfTitle">
+				<strong>Drug Test</strong>
+			</span>
+			<div class="row shadow-box whiteBox">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="row">
+							<div class="col-xs-12 form-left rowTextIndentIntResScrn drugTestProfForm">
+								<div class="row marginTopAlign backgrndRow">
+									<div class="col-xs-10 ">
+										<div class="row">
+											<div class="col-xs-5 text-left">
+												<label class="textSelectionTrue">
+												Is the candidate willing to take the drug test?<em>*</em>:
+												</label>
+											</div>
+											<div class="col-xs-5 text-left noPaddingLeft">
+												<div class="col-md-2">
+													<div class="radio">
+														<label>
+															<input
+															id="yes_drugTestRadioBtn" name="isDrugTestReady"
+															type="radio" 
+															value="Y"
+															onclick="interviewResults.drugtestBtn()">
+															Yes
+														</label>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div class="radio">
+														<label>
+															<input 
+															id="no_drugTestRadioBtn" name="isDrugTestReady"
+															type="radio" 
+															value="N"
+															onclick="interviewResults.drugtestBtn()">
+															No
+														</label>
+													</div>
+												</div>
+												<div class="col-xs-8 text-left">
+													<label class="textSelectionTrue" id="drugTestMsgNR"></label>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12 text-center" id="drugTestButtons">
+												<input type="button" class="xlg-btn btn-orange text-center"
+													id="drugTestInitDT"
+													title="Initiate a New Chain of Custody Order"
+													value="Initiate a New Chain of Custody Order"
+													onclick="interviewResults.initDTCC()" />&nbsp;&nbsp;&nbsp;
+												<div class="row">
+												<div class="col-md-12 text-left" id="drugTestAccessTProfile">
+													<div class="col-xs-5 text-left">	
+													<label class="textSelectionTrue text-left" >
+													Chain of custody completed on: 
+														<input
+														id="orderCompletedTsDT" name="orderCompletedTsDT"
+														tabindex="-1" type="text" readonly="readonly"
+														size="17"
+														style="border: none; background: none; color: orangered;">
+														<!-- <span id="orderCompletedTsDT" style="color: orangered;"></span> -->
+														&nbsp;
+													</label>
+													</div>
+													<div class="col-xs-5 text-left noPaddingLeft">
+													<input
+													id="VCCOC_Btn"
+													type="button" class="xlg-btn btn-orange text-center"
+													title="View Current Chain of Custody Order"
+													value="View Current Chain of Custody"
+													onclick="interviewResults.launchFAModalPortal()" />
+													</div>
+												</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row marginTopAlign" id="drugTestMsg">
+									<div class="col-xs-12" id="drugTestText">
+										<div class="col-xs-6 text-left">
+											<label class="textSelectionTrue text-left">Order initiated on:
+												<input
+												id="orderInitiatedTsDT" name="orderInitiatedTsDT"
+												tabindex="-1" type="text" readonly="readonly"
+												size="17"
+												style="border: none; background: none; color: orangered;">
+											
+										<span style="display: none">Order Number:&nbsp;
+												<input 
+												id="orderNbrDT" name="orderNbrDT"
+												tabindex="-1" type="text" readonly="readonly"
+												size="12"
+												style="border: none; background: none; color: orangered;">
+										</span></label>
+										</div>
+										<div class="col-xs-6 text-left">
+											<label class="textSelectionTrue" id="drugTestInitiatedDate"></label>
+										</div>
+										<br>
+									</div>
+								</div>
+								<div class="row marginTopAlign" id="drugTestConvMsg">
+									<div class="col-xs-12">
+										<div class="col-xs-12 text-left">
+											<label class="textSelectionTrue">
+												An email will be sent to the candidate with instructions to complete the lab based drug test at 
+												<input
+												id="ApplEmailDT" name="ApplEmailDT" 
+												tabindex="-1" type="text" readonly="readonly"
+												size="50"
+												style="border: none; background: none; color: orangered;">
+												<br> A copy was sent to 
+												<input
+												id="RequesterEmailDT" name="RequesterEmailDT" 
+												tabindex="-1" type="text" readonly="readonly"
+												size="50"
+												style="border: none; background: none; color: orangered;">
+												<br>If neither email is received, please call 1-877-257-6259 for technical support.
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row jumbotron secondContentRow shadow-box bgcFAPA">
+		<div class="col-xs-12">
+			<span class="form-title bgcFAPATitle">
+				<strong>Background Check Consent</strong>
+			</span>
+			<div class="row shadow-box whiteBox">
+				<div class="row">
+					<div class="col-xs-12">
+						    <div class="row">
+							<div class="col-xs-12 form-left rowTextIndentIntResScrn bgcFAPAForm">
+ 										<label class="textSelectionTrue">In the following background check consent process, to ensure a secure environment, the candidate will be asked to create a profile which includes a password, terms of service, and confirmation of personal information.</label>
+										<div class="row" id="bgcFAPAMsgSection">
+										<div class="col-xs-4 text-left">
+										</div>
+										<div class="col-xs-8 text-left">
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class="textSelectionTrue" id="bgcFAPAMsg"></label>
+										</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-5 text-left" id="bgcFAPAQuestion">
+												<label class="textSelectionTrue">
+												Is the candidate present?<em>*</em>:
+												</label>
+											</div>
+											<div class="col-xs-5 text-left noPaddingLeft" id="bgcFAPARadio">
+												<div class="col-md-2">
+													<div class="radio">
+														<label>
+															<input
+															id="yes_bgcFAPARadioBtn" name="isbgcFAPAReady"
+															type="radio" 
+															value="Y"
+															onclick="interviewResults.bgcFAPABtn()">
+															Yes
+														</label>
+													</div>
+												</div>
+												<div class="col-md-2">
+													<div class="radio">
+														<label>
+															<input 
+															id="no_bgcFAPARadioBtn" name="isbgcFAPAReady"
+															type="radio" 
+															value="N"
+															onclick="interviewResults.bgcFAPABtn()">
+															No
+														</label>
+													</div>
+												</div>
+												<div class="col-xs-12 text-left">
+													<label class="textSelectionTrue" id="bgcFAPAMsgNR">Candidate must be present to perform activities in Profile Advantage for conducting a Background Check.</label>
+												</div>
+											</div>
+										</div> <!-- End of unused Row -->
+ 										<div class="row">
+ 										<div class="col-xs-12 text-left marginTopAlign" id="bgcFAPAEmailEntry">
+ 										<form action="" id="emailDataForm">
+												<label for="emailEntry1" style="text-align: right;">Associate's Preferred Email:<em>*</em></label><br />
+												<label for="emailEntry1" class="error" generated="true" style="color: red; font-size: .85em"></label><br />
+												 <input id="emailEntry1" tabindex="1" name="emailEntry1" size="34" oninput="interviewResults.validBgcEmail()" onPaste="return false" placeholder="name@example.com"/><br />
+												<label for="emailEntry2" style="text-align: right; margin-top:10px">Confirm Associate's Email:<em>*</em></label><br />
+												<label for="emailEntry2" class="error" generated="true" style="color: red; font-size: .85em"></label><br />
+												 <input id="emailEntry2" tabindex="2" name="emailEntry2" size="34" oninput="interviewResults.validBgcEmail()" onPaste="return false" placeholder="name@example.com"/>
+										</form>
+										</div>
+										</div>
+										<div class="row">
+										<div class="col-md-12 text-left" id="bgcFAPAButton" style="margin-top:20px">
+												<input type="button" class="xlg-btn btn-orange text-center"
+													id="bgcFAPAInitBtn"
+													tabindex="3"
+													title="Initiate Background Check"
+													value="Initiate Background Check"
+													onclick="interviewResults.checkInitStatus()" />
+<!--												<input type="button" class="xlg-btn btn-orange text-center"
+													id="bgcFAPAViewBtn"
+													title="View Background Check"
+													value="View Background Check"
+													onclick="interviewResults.launchBgcFAPAPortal()" />
+-->										</div>
+										</div>
+
+										<div class="row" id="bgcFAPAStatusSection">
+										<div class="col-xs-4 text-left noPaddingRight" id="bgcFAPAStatusLabel"><br />
+												<label class="textSelectionTrue text-left">Background Check Consent completed on: <input
+														id="bgcFAPAStatus" name="bgcFAPAStatus"
+														tabindex="-1" type="text" readonly="readonly"
+														size="16.5"
+														style="border: none; background: none; color: orangered;">
+												</label>
+        								</div>
+        								<div class="col-xs-8 text-left" id="bgcFAPAButton" style="margin-top:12px">
+												<input type="button" class="xlg-btn btn-orange text-center"
+													id="bgcFAPAViewBtn"
+													title="View Background Check"
+													value="View Background Check"
+													onclick="interviewResults.launchBgcFAPAPortal()" />
+										</div>
+										</div>
+
+							</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row jumbotron secondContentRow shadow-box bgcOrderDet">
+    <div class="col-xs-12">
+    <span class="form-title driverLicDetTitle"><strong>Background Check</strong></span>
+    <div class="row shadow-box whiteBox">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12 form-left rowTextIndentIntResScrn userInfoForm">                    
+<!--                       <div class="row marginTopAlign">
+                          <div class="col-xs-12 textSelectionTrue" id="bgcMessage">
+                            To order the background check, have the candidate complete the Candidate Personal Data form and sign the Background Consent form. Then select 'Yes' below and click submit.
+                          </div>                          
+                      </div>  -->
+                  
+                  	<div class="row marginTopAlign backgrndRow">
+                          <div class="col-xs-12 ">
+                          <div class="row">
+                            <div class="col-xs-4 text-left"><label class="textSelectionTrue">Has Candidate signed a background consent form? :</label></div>
+                            <div class="col-xs-5 text-left backgrndRadio noPaddingLeft">
+                            <div class="col-md-2">
+                                <div class="radio">
+                                  <label><input type="radio" name="isSignCmpltd"  id="OD_Yes_backgroundRadioBtn" value="Y" onclick="interviewResults.signCmpltdchkd()">Yes</label>
+                                </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="radio">
+                                    <label><input type="radio" id="OD_No_backgroundRadioBtn" name="isSignCmpltd" value="N" onclick="interviewResults.signCmpltdchkd()">No</label>
+                                  </div>
+                                </div></div>
+                            </div>
+                          </div>                         
+                       </div>    
+
+                       <div class="row marginTopAlign">
+                          <div class="col-xs-12" id="backgroundCheckText"></div>
+                      </div>     
+                                               
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="row jumbotron secondContentRow shadow-box driverLicDet">
+    <div class="col-xs-12">
+    <span class="form-title driverLicDetTitle"><strong>Driver's License Details(Internal Candidates for Driving Positions)</strong></span>
+    <div class="row shadow-box whiteBox">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12 form-left rowTextIndentIntResScrn userInfoForm">                    
+                    
+                      <div class="row">
+                          <div class="col-xs-4 ">
+                          <div class="row">
+                            <div class="col-xs-6 text-right"><label>License Number:</label><sub>*</sub></div>
+                            <div class="col-xs-6 licNum text-left"><input type="password" class="" id="LI_licNumTxt" 
+                              onkeyup="interviewResults.setScreenLicenseDirty()" data-pattern="^[a-zA-Z0-9-#* ]+$" maxlength="30"></div></div>
+                          </div>
+                          <div class="col-xs-4 "><div class="row">
+                            <div class="col-xs-4 text-right"><label>State:</label><sub>*</sub></div>
+                            <div class="col-xs-8  driverState"><select id="LI_licStateCbo" onchange="interviewResults.setScreenLicenseDirty()"><option value="select">Select...</option></select></div></div>
+                          </div>
+                          <div class="col-xs-4"><div class="row">
+                            <div class="col-xs-6 text-right"><label>Expiration Date:</label><sub>*</sub></div>
+                            <div class="col-xs-6 licExpirydate"><input type="text" class="" id="LI_expDt"  data-toggle="tooltip" data-placement="right"  
+                              onchange="interviewResults.licExpDateChange()" data-pattern="^[0-9/-]+$"></div></div>
+                          </div>
+                       </div>            
+                      <div class="row">
+                          <div class="col-xs-4 ">
+                          <div class="row">
+                            <div class="col-xs-6 text-right"><label>Confirm License Number:</label><sub>*</sub></div>
+                            <div class="col-xs-6 licNum text-left"><input type="password" class="" id="LI_licNumTxt_2" 
+                              onkeyup="interviewResults.setScreenLicenseDirty()" data-pattern="^[a-zA-Z0-9-#* ]+$" maxlength="30"></div></div>
+                          </div>
+                       </div>                              
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    </div>
+  </div> 
+ 
+</div>
+
+<div id="messageBar" class="messageBar-orange-theme container-fluid" ></div>
+<div class="row btnsRow" style="height:auto; background-color: gray;">
+    <div class="col-xs-12" id="intResBtnGroup">
+      <div class="col-xs-6 col-xs-offset-5">
+      	<div class="row" style="padding:4px;">
+              <input type="button" class="btn btn-green"  id="submitRequestBtn" value="Submit" onclick="interviewResults.submitInterviewOfferResults()" />
+              <input type="button" class="btn btn-green" id="cancelBtn" value="Cancel" onclick="interviewResults.onCancelBtnClick()" />
+        </div>
+      </div>
+    </div> 
+</div>
+
+<!-- enter store no. pop up -->
+<div class="modal fade" id="enterStrNumModal" tabindex="-1"
+  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog ">
+    <div class="modal-content shadow-box">
+     <div class="modal-header">
+      <div class="modal-title" id="createcalendarmodalLabel">Interview Summary Form</div>
+        <button type="button" class="close" data-dismiss="modal" onclick="interviewResults.onCloseStrPopup()"
+          aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>        
+      </div> 
+      <div class="modal-body">
+        <div class="strnumpopupform">          
+          <div>
+            <div class="strNumTxt">
+              <div class="StrNumlabelmodal">Enter four digit StoreNo : <input
+                type="text" id="StrNumModalText" data-pattern="^(0|[1-9][0-9]*)$" maxlength="4" onkeypress="Javascript: if (event.keyCode==13) interviewResults.saveStoreNo();" /></div>
+            </div>            
+
+          </div>
+        </div>
+      </div>
+      <div class="row btnrow"><div class="strNumButton">
+              <label class="col-md-3"></label>
+              <button type="button" class="btn btn-trans"
+                onclick="interviewResults.saveStoreNo()">OK</button>
+              <button type="button" class="btn btn-trans" data-dismiss="modal" onclick="interviewResults.cancelStoreNo()">Cancel</button>
+
+      </div> </div>
+    </div>
+  </div>
+</div>
+
+<!-- Alert pop up -->
+<div class="modal fade" id="alertPopupModal" tabindex="-1"
+  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog ">
+    <div class="modal-content" style="background: rgb(145,165,175)">
+      <div class="modal-header">
+        
+      </div>
+      <div class="modal-body">
+        <div class="myModalBody text-center alertModalBody textSelectionTrue"></div>
+   <br>
+   <div class="text-center">
+    <button type="button" class="alertmodalbtn" onclick="interviewResults.alertOkClicked()">OK</button></div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unsaved Data Pop up -->
+  <div class="modal fade" id="unSaveWarnModal" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+        </div>
+        <div class="modal-body unSaveWarnpopupbody">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="unSaveWarnMsg textSelectionTrue">
+             </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row text-center unSaveWarnModalBtn">
+            <button type="button" class="btn btn-default" onclick="interviewResults.warningOkClicked()"><img src="assets/images/ok.png"> OK</button>
+            <button type="button" class="btn btn-default" onclick="interviewResults.warningCANCElClicked()"><img src="assets/images/cross.png"> Cancel</button>      
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- submit popup -->
+  <div class="modal fade" id="submitModal" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+        </div>
+        <div class="modal-body submitpopupbody">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="submitWarnMsg textSelectionTrue">
+             </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row text-center submitWarnModalBtn">
+            <button type="button" class="btn btn-default" onclick="interviewResults.submitResults()"><img src="assets/images/ok.png"> YES</button>
+            <button type="button" class="btn btn-default" onclick="interviewResults.warningNOClicked()"><img src="assets/images/cross.png"> NO</button>      
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <!-- Do Not Consider Warning Pop up -->
+  <div class="modal fade" id="doNotConsiderWarnModal" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+        </div>
+        <div class="modal-body doNotConsiderpopupbody">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="doNotConsiderMsg textSelectionTrue">
+             </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row text-center doNotConsiderWarnModalBtn">
+            <button type="button" class="btn btn-default" onclick="interviewResults.warningYESdoNotConsiderClicked()"><img src="assets/images/ok.png"> YES</button>  
+            <button type="button" class="btn btn-default" onclick="interviewResults.warningNOdoNotConsiderClicked()"><img src="assets/images/cross.png"> NO</button>               
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+      <!-- Drug Test Refusal Warning Pop Up -->
+  <div class="modal fade" id="DTRefusalWarnModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+        </div>
+        <div class="modal-body DTRefusalpopupbody">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="DTRefusalMsg textSelectionTrue">
+             </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row text-center DTRefusalWarnModalBtn">
+            <button type="button" class="btn btn-default" onclick="interviewResults.warningYESAcceptDTRefusal()"><img src="assets/images/ok.png"> YES</button>  
+            <button type="button" class="btn btn-default" onclick="interviewResults.warningNOCancelDTRefusal()"><img src="assets/images/cross.png"> NO</button>               
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+        <!-- Drug Test Re-initiate Warning Pop Up -->
+  <div class="modal fade" id="DTReInitWarnModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+        </div>
+        <div class="modal-body DTReInitpopupbody">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="DTReInitMsg textSelectionTrue">
+             </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row text-center DTReInitWarnModalBtn">
+            <button type="button" class="btn btn-default" onclick="interviewResults.warningYESAcceptDTReInit()"><img src="assets/images/ok.png"> YES</button>  
+            <button type="button" class="btn btn-default" onclick="interviewResults.warningNOCancelDTReInit()"><img src="assets/images/cross.png"> NO</button>               
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        <!-- BGC Re-initiate Warning Pop Up -->
+  <div class="modal fade" id="BGCReInitWarnModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+        </div>
+        <div class="modal-body BGCReInitpopupbody">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="BGCReInitMsg textSelectionTrue">
+             </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row text-center BGCReInitWarnModalBtn">
+            <button type="button" class="btn btn-default" onclick="interviewResults.warningYESAcceptBGCReInit()"><img src="assets/images/ok.png"> YES</button>  
+            <button type="button" class="btn btn-default" onclick="interviewResults.warningNOCancelBGCReInit()"><img src="assets/images/cross.png"> NO</button>               
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+<!-- FA Modal -->
+<div id="FAModal" class="modal fade" role="dialog" aria-hidden="true" tabindex="-1" data-backdrop="static" data-keyboard="false">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+      </div>
+	<div class="modal-content-fa">
+        <iframe id="showDTPortal" name="showDTPortal" class="iframe" src="" seamless height="99%" width="100%"></iframe>
+	</div>
+</div> <!-- /#FAModal -->
+
+<!-- DCS Modal -->
+<div id="DCSModal" class="modal fade" role="dialog" aria-hidden="true" tabindex="-1" data-backdrop="static" data-keyboard="false">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+      </div>
+	<div class="modal-content-dcs">
+        <iframe id="showDCSPortal" name="showDCSPortal" class="iframe" src="" seamless height="99%" width="100%"></iframe>
+	</div>
+</div> <!-- /#DSCModal -->
+
+<!-- bgcFAPA Modal -->
+<div id="bgcFAPAModal" class="modal fade" role="dialog" aria-hidden="true" tabindex="-1" data-backdrop="static" data-keyboard="false">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+      </div>
+	<div class="modal-content-bgcFAPA" >
+		<div id="bgcFAPAContent" style='width: 100%; height: 100%'>
+        	<iframe id="showBgcFAPAPortal" name="showBgcFAPAPortal" class="iframe" src="" seamless height="99%" width="100%"></iframe>
+		</div>
+	</div>
+</div> <!-- /#bgcFAPAModal -->
+  
+<!-- The CPD Modal -->                                                          
+<div id="cpdFormModal" class="modal fade" role="dialog" aria-hidden="true" tabindex="-1" data-backdrop="static" data-keyboard="false">
+
+  <!-- CPD Modal content -->
+  <div class="modal-content-cpd" id="cpdContent">
+						<form action="" id="candidateDataSearch">
+				 		<input type="hidden" id="applicantId" name="applicantId" value="">
+						</form>
+					<form action="" id="functionalData">
+					<input type="hidden" id="currentMgrLdap" name="currentMgrLdap">
+							<input type="hidden" id="maxDOBValue" name="maxDOBValue">
+					</form>
+					<form action="">
+						<div class="portlet">
+						<div class="portlet-header messageBar-orange-theme">&nbsp;&nbsp;Candidate Confirmation - To Be Completed by the Hiring Manager</div>
+						  <div class="portlet-content">
+							<table border="0" align="center"> 
+								<tr>
+									<td width="20%" align="right"><label for="candidateConfirm" style="text-align: right;">Is this the correct candidate?:&nbsp;<em>*</em></label></td>
+									<td width="12%"><label><input type="radio" tabindex="1" name="candidateConfirm" value="Y" onclick="cpdForm.HideCandidateConfirm()">Yes</label>
+									 <label><input type="radio" tabindex="2" name="candidateConfirm" value="N" onclick="cpdForm.HideCandidateConfirm()" >No</label>
+									</td>
+									<td width="15%" align="right"><label for="candidateConfirmName" id="candidateConfirmNameLabel" style="text-align: right;">Candidate Name:&nbsp;&nbsp;</label></td>
+									<td width="53%" align="left"><input id="candidateConfirmName" name="candidateConfirmName" tabindex="-1" type="text" readonly="readonly" style="border: none; background: none;" size="50"/></td> 
+								</tr>
+								<tr valign="top" id="candidateConfirmAddressTr">
+									<td width="20%" align="right">&nbsp;</td>
+									<td width="12%">&nbsp;</td>
+									<td width="15%" align="right"><label for="candidateConfirmAddress" id="candidateConfirmAddressLabel" style="text-align: right;">Candidate Address:&nbsp;&nbsp;</label></td>
+									<td width="53%" align="left"><input id="candidateConfirmAddress1" name="candidateConfirmAddress1" tabindex="-1" type="text" readonly="readonly" style="border: none; background: none;" size="50"/><br>
+																 <input id="candidateConfirmAddress2" name="candidateConfirmAddress2" tabindex="-1" type="text" readonly="readonly" style="border: none; background: none;" size="50"/></td>
+								</tr>
+							</table>
+							<table border="0" align="center" width="85%" id="candidateConfirmInstructions">
+								<tr>
+									<td colspan="2"><br><!-- &nbsp;&nbsp;&nbsp;Using the name and address provided, confirm this is the correct candidate before asking them, to complete their personal information.<br> --> 
+										If this is <b>not</b> the correct candidate, click <b>Cancel</b> at the bottom to return to the Interview Summary Form and choose the correct candidate from the candidate list.
+									</td>
+								</tr>
+							</table>
+						  </div>
+						 </div>
+					</form>						
+							
+						<form action="" id="candidateDataForm" >
+						<div class="portlet" id="candidateDataPortlet">
+						<div class="portlet-header messageBar-orange-theme">&nbsp;&nbsp;Candidate Personal Information - To Be Completed by the Candidate</div>
+						  <div class="portlet-content" id="candidateDataContentPortlet">
+							<table border="0" align="center"> 
+								<tr>
+									<td width="20%" align="right"><label for="hasMiddleName" style="text-align: right;">Do you have a Legal Middle Name?:<em>*</em></label></td>
+									<td width="31%"><label><input type="radio" tabindex="3" name="hasMiddleName" value="Y" onclick="cpdForm.updateMiddleNameField()">Yes</label>
+									<label><input type="radio" tabindex="4" name="hasMiddleName" value="N" onclick="cpdForm.updateMiddleNameField()" >No</label>
+									<label for="hasMiddleName" class="error" generated="true" style="color: red; font-size: .85em"></td>
+									
+									<td width="20%" align="right"><label for="ssnEntry1" style="text-align: right;">Social Security Number:<em>*</em></label></td>
+									<td width="29%" align="left"><input id="ssnEntry1" tabindex="15" name="ssnEntry1" type="password" size="9" maxlength="9" onCopy="return false" onPaste="return false" onfocus="this.type='text'" onblur="this.type='password'"/>&nbsp;(no dashes)
+									<label for="ssnEntry1" class="error" generated="true" style="color: red; font-size: .85em"></td>
+								</tr>
+								 								
+								<tr id="middleNameRow">
+									<td width="20%" align="right"><label for="middleName" id="middleNameLabel" style="text-align: right;">Legal Middle Name:<em>*</em></label></td>
+									<td width="31%" align="left"><input id="middleName" tabindex="5" name="middleName"  size="24" maxlength="24"/>
+									<label for="middleName" class="error" generated="true" style="color: red; font-size: .85em"></td>
+								
+									<td width="20%" align="right"><label for="ssnEntry2" style="text-align: right;">Confirm Social Security Number:<em>*</em></label></td>
+									<td width="29%" align="left"><input id="ssnEntry2" tabindex="16" name="ssnEntry2"  type="password" size="9" maxlength="9" onCopy="return false" onPaste="return false" onfocus="this.type='text'" onblur="this.type='password'"/>&nbsp;(no dashes)
+									<label for="ssnEntry2" class="error" generated="true" style="color: red; font-size: .85em"></td>
+								</tr>
+								<tr valign="bottom">
+									<td width="20%" align="right"><label for="livedAtCurrentAddressRequiredTime" style="text-align: right;">Have you lived at current address for at least 10 years?:<em>*</em></label></td>
+									<td width="31%" >
+									<label><input type="radio" tabindex="6" name="livedAtCurrentAddressRequiredTime" value="Y" onclick="cpdForm.updatePreviousAddressField()">Yes</label>
+									<label><input type="radio" tabindex="7" name="livedAtCurrentAddressRequiredTime" value="N" onclick="cpdForm.updatePreviousAddressField()" >No</label>
+									<label for="livedAtCurrentAddressRequiredTime" class="error" generated="true" style="color: red; font-size: .85em"></td>
+
+									<td width="20%" align="right"><label for="dobEntry1" style="text-align: right;">Date Of Birth:<em>*</em></label></td>
+									<td width="29%" align="left"><input id="dobEntry1" tabindex="17" name="dobEntry1"  type="password" size="10" maxlength="10" onCopy="return false" onPaste="return false" onfocus="this.type='text'" onblur="this.type='password'"/>&nbsp;(MM/DD/YYYY)
+									<label for="dobEntry1" class="error" generated="true" style="color: red; font-size: .85em"></td>
+								</tr>
+								<tr valign="top">
+									<td width="20%" align="right"><label for="prevAddressOutsideUS" id="prevAddOutsideUSLabel" style="text-align: right;">Is your previous address outside the U.S.?:<em>*</em></label></td>
+									<td width="31%" valign="bottom"><label id="prevAddOutsideUSY"><input type="radio" tabindex="8" name="prevAddressOutsideUS" value="Y" onclick="cpdForm.updatePreviousAddressField()">Yes</label>
+									<label id="prevAddOutsideUSN" ><input type="radio" tabindex="9" name="prevAddressOutsideUS" value="N" onclick="cpdForm.updatePreviousAddressField()" >No</label>
+									<label for="prevAddressOutsideUS" class="error" generated="true" style="color: red; font-size: .85em"></td>
+
+									<td width="20%" align="right"><label for="dobEntry2" style="text-align: right;">Confirm Date Of Birth:<em>*</em></label></td>
+									<td width="29%" align="left"><input id="dobEntry2" tabindex="18" name="dobEntry2"  type="password" size="10" maxlength="10" onCopy="return false" onPaste="return false" onfocus="this.type='text'" onblur="this.type='password'"/>&nbsp;(MM/DD/YYYY)
+									<label for="dobEntry2" class="error" generated="true" style="color: red; font-size: .85em"></td>
+								</tr>
+								 <tr id="address1Row">
+									<td width="20%" align="right"><label for="address1" id="address1Label" style="text-align: right;">Previous Street Address:<em>*</em></label></td>
+									<td width="31%" align="left"><input id="address1" tabindex="10" name="address1"  size="24" maxlength="60"/>
+									<label for="address1" class="error" generated="true" style="color: red; font-size: .85em"></td>
+
+									<td width="20%" align="right"><label for="dlNumber1" id="dlNumber1Label" style="text-align: right;">Driver's License Number:<em>*</em></label></td>
+									<td width="29%" align="left"><input id="dlNumber1" tabindex="19" name="dlNumber1" type="password" size="25" maxlength="30" onCopy="return false" onPaste="return false" onfocus="this.type='text'" onblur="this.type='password'"/>
+									<label for="dlNumber1" class="error" generated="true" style="color: red; font-size: .85em"></td>
+								</tr>
+
+								<tr id="address2Row">
+									<td width="20%" align="right"><label for="address2" id="address2Label" style="text-align: right;">Additional Previous Address Info:</label></td>
+									<td width="31%" align="left"><input id="address2" tabindex=11" name="address2" size="24" maxlength="60"/>
+									<label for="address2" class="error" generated="true" style="color: red; font-size: .85em"></td>
+
+									<td width="20%" align="right"><label for="dlNumber2" id="dlNumber2Label" style="text-align: right;">Confirm Driver's License Number:<em>*</em></label></td>
+									<td width="29%" align="left"><input id="dlNumber2" tabindex="20" name="dlNumber2" type="password" size="25" maxlength="30" onCopy="return false" onPaste="return false" onfocus="this.type='text'" onblur="this.type='password'"/>
+									<label for="dlNumber2" class="error" generated="true" style="color: red; font-size: .85em"></td>								
+								</tr>
+								
+								<tr id="cityRow">
+									<td width="20%" align="right"><label for="city" id="cityLabel" style="text-align: right;">Previous City:<em>*</em></label></td>
+									<td width="31%" align="left"><input id="city" tabindex="12" name="city"  size="24" maxlength="60"/>
+									<label for="city" class="error" generated="true" style="color: red; font-size: .85em"></td>
+
+									<td width="20%" align="right"><label for="driversLicenseState" id="driversLicenseStateLabel"style="text-align: right;">Driver's License Issuing State:<em>*</em></label></td>
+									<td width="29%" align="left" id="driversLicenseStateTd"><select id="driversLicenseState" tabindex="21" name="driversLicenseState" style="width:185px" size="1">
+               					 	  	 	 	 	 	<option value="">Select...</option>
+      												 </select>
+      								<label for="driversLicenseState" class="error" generated="true" style="color: red; font-size: .85em">      								
+								</tr>
+
+								<tr id="addressStateRow">
+									<td width="20%" align="right"><label for="addressState" id="addressStateLabel" style="text-align: right;">Previous State:<em>*</em></label></td>
+									<td width="31%" align="left" id="addressStateTd"><select id="addressState" tabindex="13" name="addressState"  style="width:185px" size="1">
+               					 	  	 	 	 	 	<option value="">Select...</option>
+      												 </select>
+      								<label for="addressState" class="error" generated="true" style="color: red; font-size: .85em">				 
+      								</td>      								
+								</tr>
+								
+								<tr id="zipCodeRow">
+									<td width="20%" align="right"><label for="zipCode" id="zipCodeLabel" style="text-align: right;">Previous Zip Code:<em>*</em></label></td>
+									<td width="31%" align="left"><input id="zipCode" tabindex="14" name="zipCode"  size="4" maxlength="5"/>
+									<label for="zipCode" class="error" generated="true" style="color: red; font-size: .85em"></td>
+								</tr>
+							</table><p></p>
+							<table border="0" align="center" width="84%">
+								<tr>
+									<td colspan="2">
+										&nbsp;&nbsp;&nbsp;The Home Depot is an equal opportunity employer. Information from a consumer report or investigative consumer report will not be used in violation of any equal employment 
+										opportunity law or regulation. Date of birth information (including driver's license information which includes date of birth information) is for identification verification 
+										purposes only and is not considered in making employment decisions.&nbsp;&nbsp;Home Depot personnel who will be involved in hiring decisions will not have access to date of birth information 
+										before a conditional offer of employment is made.&nbsp;&nbsp;Unless otherwise prohibited by applicable law, I release Home Depot and/or its agents and any person or entity that provides 
+										information pursuant to this authorization from any and all liabilities, claims, or lawsuits in regard to the information obtained from any and all of the above referenced sources.  
+										I agree that the giving of any false, misleading, or incomplete information on my employment application, this form, or otherwise will be grounds for denial or termination of employment.
+										&nbsp;&nbsp;By selecting "I Accept" below, you are signing this Authorization electronically.&nbsp;&nbsp;You agree your electronic signature is the legal equivalent of your manual signature on this Background 
+										Check Authorization agreement.
+									</td>
+								</tr>
+							</table>	
+							
+							<table border="0" align="center">				
+								<tr>
+									<td align="right"><label for="acceptChecked" style="text-align: right;">I Accept the above Statement:<em>*</em></label></td>
+									<td><label><input type="checkbox" tabindex="22" id="acceptChecked"  name="acceptChecked" value="Y"/>Accept</label>
+									<label for="acceptChecked" class="error" generated="true" style="color: red; font-size: .85em"></td>
+								</tr>
+								<tr>
+									<td align="right"><label for="candidateInitials" style="text-align: right;">Candidate Initials confirming acceptance:<em>*</em></label></td>
+									<td align="left"><input id="candidateInitials" tabindex="23" name="candidateInitials"  type="text" size="10" maxlength="8"/>
+									<label for="candidateInitials" class="error" generated="true" style="color: red; font-size: .85em"></td>
+								</tr>																																				
+								<tr>
+									<td align="right"><label for="dateSigned" style="text-align: right;">Date Signed:<em>&nbsp;</em></label></td>
+									<td align="left"><input type="text" tabindex="24" size="10" name="dateSigned" id="dateSigned" disabled="disabled"/></td>
+								</tr>
+							</table>
+							</div> <!-- class="portlet-content" id="candidateDataContentPortlet" -->
+							</div> <!-- class="portlet" id="candidateDataPortlet" -->
+							</form>
+							
+					<!-- ****** Hiring Mgr LDAP Section Begin ******* -->
+					<form action="" id="mgrEntryAreaForm" >
+					<div class="portlet" id="hiringMgrInfoPortlet">
+						<div class="portlet-header messageBar-orange-theme">&nbsp;&nbsp; Hiring Manager - To Be Completed by the Hiring Manager</div>
+						<div class="portlet-content" id="hiringMgrContentPortlet">
+							<table border="0" align="center" width="84%">
+								<tr id="lessThan18Messagetr" height="35px" align="center" valign="middle">
+									<td colspan="2">
+										<div>
+											<label style="color: red;" id="lessThan18Message">
+											<!-- ALERT! If candidate is under 18, and you are in an approved minor hiring state, hiring for Lot, Cashier, 
+											or D28 sales positions only, you will receive a link within the Interview Summary Form to complete the parental consent forms, 
+											after submitting this Candidate Personal Data form.	Note: Parent/Guardian MUST be present to complete parental consent forms. 
+											(Additional documentation may be required. Refer to Minor Associate SOP for your state&#39;s specific requirements. myTHDHR > HR SOPs.)</label>
+
+										<label style="color: red;">ALERT! The date of birth entered indicates the candidate is under 18 years of age. 
+											Please confirm the candidate&#39;s age. If candidate is under 18 and you are in an approved minor hiring state, 
+											obtain parent/guardian consent for the drug test <u>and</u> background check before processing. 
+											(Additional documentation may be required. Refer to the Minor Associates SOP for your state&#39;s specific requirements. myTHDHR> HR SOPs.)
+-->											</label>
+										</div>
+									</td>
+								</tr>
+																			
+								<tr>
+									<td width="50%" align="right"><label for="mgrLdap" style="text-align: right;">Hiring Manager LDAP:<em>*</em></label></td>
+									<td width="50%" align="left"><input id="mgrLdap" name="mgrLdap" tabindex="25"  type="password" size="15" maxlength="8"/>
+											&nbsp;&nbsp;<label for="mgrLdap" class="error" generated="true" style="color: red; font-size: .85em"></td>
+								</tr>
+							</table>
+							<table border="0" align="center" width="900px">
+								<tr align="center" style="height: 60px">
+									<td width="50%" align="right"><button name="submit" tabindex="26" id="submit" class="btn btn-gray" >Save</button>&nbsp;&nbsp;</td>
+									<td width="50%" align="left">&nbsp;&nbsp;<button type="button" tabindex="27" class="btn btn-gray" onclick="cpdForm.closeCpdFormWindow()">Cancel</button></td>
+
+								</tr>
+							</table>
+						</div>	<!-- class="portlet-content" id="hiringMgrContentPortlet" -->
+					</div>	<!-- class="portlet" id="hiringMgrInfoPortlet" -->
+					</form>
+	</div></div> <!-- /#CPD Modal -->
+  
+  		<!-- Updating Div Section -->
+		<div id="updating" class="hideme" style="display: none;">
+			<center>
+				<h3>Updating...Please Wait...</h3>
+				<br /> <img src="assets/images/loadingAnimation.gif" alt="" /><br /> <br />
+			</center>
+		</div> <!-- id="updating" -->
+		<div id="loading" class="hideme" style="display: none;">
+			<center>
+				<h3>Loading...Please Wait...</h3>
+				<br /> <img src="assets/images/loadingAnimation.gif" alt="" /><br /> <br />
+			</center>
+		</div>
+		<div id="initiating" class="hideme" style="display: none;">
+			<center>
+				<h3>Initiating...Please Wait...</h3>
+				<br /> <img src="assets/images/loadingAnimation.gif" alt="" /><br /> <br />
+			</center>
+		</div>

@@ -1,0 +1,823 @@
+<link href="app/RSAPhoneScreenDetails/css/phoneScreenDetails.css" rel="stylesheet" />
+<script type="text/javascript" src="app/common/js/rsaServices.js"></script>
+<script type="text/javascript" src="app/common/js/reusableComponents.js"></script>
+<script type="text/javascript" src="app/RSAPhoneScreenDetails/js/phoneScreenDetails.js"></script>
+<script type="text/javascript" src="app/RSAPhoneScreenDetails/js/getPhnScrDtlsCmd.js"></script>
+<script type="text/javascript" src="app/RSAPhoneScreenDetails/js/savePhnScrDtlsCmd.js"></script>
+
+<script type="text/javascript">
+var phnScrnDet = new phoneScreenDetails();
+$(document).ready(function() {
+    phnScrnDet.getPhoneScreenDetails();
+    $(document.body).tooltip({
+      track: true
+    });
+  });
+</script>
+
+<div class="row container" id="phoneScreen">
+<div class="row jumbotron secondContentRow shadow-box phnDet">
+<div class="col-xs-12">
+<span class="form-title phoneTitle"><strong>PHONE SCREEN DETAILS</strong></span>
+<div class="row shadow-box whiteBox">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row">
+				<div class="col-xs-12 form-left rowTextIndentPhnScrn phnDetForm">											
+	        			
+	        				<div class="row">
+					            <div class="col-xs-3 ">
+					            <div class="row">
+					              <div class="col-xs-5 text-right"><label>Screen #:</label></div>
+					              <div class="col-xs-5  screenNbr text-left textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-2 "><div class="row">
+					              <div class="col-xs-6 text-right"><label>Requisition #:</label></div>
+					              <a href="#" class="col-xs-6  reqNbr"></a></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-6 text-right"><label>Name:</label></div>
+					              <div class="col-xs-6  candName textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-6 text-right"><label>Candidate ID:</label></div>
+					              <a href="#" class="col-xs-6  candId"></a></div>
+					            </div>
+					         </div>
+					         <div class="row">
+					            <div class="col-xs-3 "> <div class="row">
+					              <div class="col-xs-5 text-right"><label>Int/Ext:</label></div>
+					              <div class="col-xs-5  extNbr textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-2 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Associate ID:</label></div>
+					              <div class="col-xs-6  associateId textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Store:</label></div>
+					              <div class="col-xs-6  strNbr textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Department:</label></div>
+					              <div class="col-xs-6  dept textSelectionTrue"></div></div>
+					            </div>
+					         </div>
+					         <div class="row">
+					           
+					            <div class="col-xs-3 col-xs-offset-5">
+					            <div class="row">
+					              <div class="col-xs-6 text-right"><label>Phone:</label></div>
+					              <div class="col-xs-6 phnNbr textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-6 text-right"><label>Title:</label></div>
+					              <div class="col-xs-6 title textSelectionTrue"></div></div>
+					            </div>
+					         </div>			        
+	        								
+				</div>
+			</div>
+			<div class="row"><form id="mailForm">
+	         	<div class="col-xs-12 text-left">
+	              <label class="hide" id="emailHbox" for="emailId">Email Address: <input type="text" id="emailId" class="email" title="" data-toggle="tooltip" data-placement="right" name="mailId" onchange="phnScrnDet.valEmailId()" maxlength="129"></label>	            
+	             </div></form>
+	        </div>  
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+
+<div class="row jumbotron secondContentRow shadow-box callHistory">
+<div class="col-xs-12 callHist">
+<span class="form-title responseTitle"><strong>IVR/POM CALL HISTORY</strong></span>	
+       	<div id="callHistory-grid" class="custom-grid row shadow-box whiteBox">
+                    
+            </div>
+</div>
+</div>
+
+<div class="row jumbotron secondContentRow shadow-box reqDetails">
+<div class="col-xs-12">
+<span class="form-title phoneTitle"><strong>REQUISITION DETAILS</strong></span>
+<div class="row shadow-box whiteBox">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row">
+				<div class="col-xs-12 form-left rowTextIndentPhnScrn reqDetForm">											
+	        			
+	        				<div class="row">
+					            <div class="col-xs-2 "><div class="row ">
+					              <div class="col-xs-8 text-right"><label>Store Number:</label></div>
+					              <div class="col-xs-4  strNbr textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-2 "><div class="row ">
+					              <div class="col-xs-6 text-right"><label>Department:</label></div>
+					              <div class="col-xs-6  dept textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row ">
+					              <div class="col-xs-4 text-right"><label>Job Title:</label></div>
+					              <div class="col-xs-8  jobTitle textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-8 text-right"><label>Job Code:</label></div>
+					              <div class="col-xs-4  jobCd textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-2 "><div class="row">
+					              <div class="col-xs-8 text-right"><label>Target Pay:</label></div>
+					              <div class="col-xs-4 textSelectionTrue" id="targetPay"></div></div>
+					            </div>
+					         </div>
+					         <div class="row">
+					            <div class="col-xs-2 "><div class="row ">
+					              <div class="col-xs-8 text-right"><label>Active:</label></div>
+					              <div class="col-xs-4  activeFld textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-2 "><div class="row ">
+					              <div class="col-xs-6 text-right"><label>FT:</label></div>
+					              <div class="col-xs-6  ftFld textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row ">
+					              <div class="col-xs-4 text-right"><label>PT:</label></div>
+					              <div class="col-xs-8  ptFld textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row ">
+					              <div class="col-xs-8 text-right  "><label>Screen Type:</label></div>
+					              <div class="col-xs-4  screenType textSelectionTrue"></div></div>
+					            </div>
+					         </div>	 
+					         <div class="row">
+					            <div class="col-xs-3 col-xs-offset-4"><div class="row ">
+					              <div class="col-xs-10 text-left noPaddingLeft"><label>Seasonal/Temporary:</label></div>
+					              <div class="col-xs-1  seaTemp textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row ">
+					              <div class="col-xs-8 text-right "><label>TAC To Manage:</label></div>
+					              <div class="col-xs-4  manage textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-2 "><div class="row ">
+					              <div class="col-xs-8 text-right "><label>TAC To Schedule:</label></div>
+					              <div class="col-xs-4  schedule textSelectionTrue"></div></div>
+					            </div>
+					         </div>  
+					         <div class="row qualifiedRow">
+					         	<div class="col-xs-6 ">
+	              				<div class="col-xs-4 text-right"><label>Qualified Pool Notes: </label></div>
+	              				<div class="col-xs-8"><textarea class="qualPoolNts" id="txtAreaPhn"></textarea></div>
+	              				</div>
+	              				<div class="col-xs-6 ">
+	              				<div class="col-xs-4 text-right"><label>Referrals: </label></div>
+	              				<div class="col-xs-8"><textarea class="referals" id="txtAreaPhn"></textarea></div>
+	              				</div>	              				
+					         </div>  
+					         <div class="row langSchedRow">
+					         	<div class="col-xs-6 ">
+					         	<label class="col-xs-4 text-right control-label">Language Skills Ability:</label>
+								<div class="col-xs-8 phnScrnLangGrid"><div class="langCheckboxGrid" id="langSklsDesc"></div></div>
+								</div>
+	              				<div class="col-xs-6 ">
+	              				<div class="row schedulePrefRow"></div> 
+	              				</div>	              				
+					         </div>       
+	        								
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+<div class="row jumbotron secondContentRow shadow-box reqStrLoc">
+<div class="col-xs-12">
+<span class="form-title storeTitle"><strong>REQUISITION STORE LOCATION</strong></span>
+<div class="row shadow-box whiteBox">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row">
+				<div class="col-xs-12 form-left rowTextIndentPhnScrn strDetForm ">											
+	        			
+	        				<div class="row">
+					            <div class="col-xs-2 ">
+					            <div class="row">
+					              <div class="col-xs-6 text-right"><label>Address:</label></div>
+					              <div class="col-xs-6  address textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-6 text-right"><label>State:</label></div>
+					              <div class="col-xs-6  state textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-6 text-right"><label>Store Manager:</label></div>
+					              <div class="col-xs-6 textSelectionTrue" id="strMgr"></div></div>
+					            </div>
+					         </div>
+					         <div class="row">
+					            <div class="col-xs-2 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>City:</label></div>
+					              <div class="col-xs-6  city textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>ZIP:</label></div>
+					              <div class="col-xs-6  zip textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Phone:</label></div>
+					              <div class="col-xs-6  phnNbrReq textSelectionTrue"></div></div>
+					            </div>
+					         </div>        
+	        								
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+<div class="row jumbotron secondContentRow shadow-box phnScnRes">
+<div class="col-xs-12">
+<span class="form-title responseTitle"><strong>PHONE SCREEN RESPONSES</strong></span>
+<div class="row shadow-box whiteBox">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="col-xs-12 form-center">
+				<label class="form-title orangeTitle text-center reminderText"></label>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 form-left rowTextIndentPhnScrn responseDetForm ">	
+						</label>
+												
+	        				<div class="row">
+	        					<label class="col-xs-2 minQues">Minimum Qualification Questions</label>
+	        				</div>
+
+	        				<div class="row">
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-6 text-right"><label>Phone Screen Date:</label></div>
+					              <div class="col-xs-6  scrnDate"></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-8 text-right"><label>Phone Screen Time:</label></div>
+					              <div class="col-xs-4  scrnTime"></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-6 text-right"><label>Phone Screener:</label></div>
+					              <div class="col-xs-6  screener"></div></div>
+					            </div>
+					         </div>  
+					         <div class="row responseDetFormSecRow">
+					            <div class="col-xs-2 ">
+					            	<div class="col-xs-10" id="positionLabel">Position Specific</div>
+					              	<div class="col-xs-12" id="minReqRow"></div>				              
+					            </div>
+					            <div class="col-xs-4 ">
+					            	<div class="col-xs-12" id="requisitionLabel">Requisition Specific</div>
+					              	<div class="col-xs-12" id="reqSpecRow1"><label class='col-xs-8 text-right minreqRows'>Position/Location:</label><div class='col-xs-4'><select class='selectMinReq' id="minReq11" onclick="phnScrnDet.unSavedVal()" onchange="phnScrnDet.changeStatus()"></select></div></div>		
+					              	<div class="col-xs-12" id="reqSpecRow2"><label class='col-xs-8 text-right minreqRows noPaddingLeft'>Employment Category (FT/PT/Seasonal):</label><div class='col-xs-4'><select class='selectMinReq' id="minReq12" onclick="phnScrnDet.unSavedVal()" onchange="phnScrnDet.changeStatus()"></select></div></div>	
+					              	<div class="col-xs-12" id="reqSpecRow3"><label class='col-xs-8 text-right minreqRows'>Pay Rate:</label><div class='col-xs-4'><select class='selectMinReq' id="minReq13" onclick="phnScrnDet.unSavedVal()" onchange="phnScrnDet.changeStatus()"></select></div></div>	
+					              	<div class="col-xs-12" id="reqSpecRow4"><label class='col-xs-8 text-right minreqRows'>Weekday Schedule:</label><div class='col-xs-4'><select  class='selectMinReq' id="minReq14" onclick="phnScrnDet.unSavedVal()" onchange="phnScrnDet.changeStatus()"></select></div></div>	
+					              	<div class="col-xs-12" id="reqSpecRow5"><label class='col-xs-8 text-right minreqRows'>Saturday Schedule:</label><div class='col-xs-4'><select class='selectMinReq' id="minReq15" onclick="phnScrnDet.unSavedVal()" onchange="phnScrnDet.changeStatus()"></select></div></div>	
+					              	<div class="col-xs-12" id="reqSpecRow6"><label class='col-xs-8 text-right minreqRows'>Sunday Schedule:</label><div class='col-xs-4'><select class='selectMinReq' id="minReq16" onclick="phnScrnDet.unSavedVal()" onchange="phnScrnDet.changeStatus()"></select></div></div>	
+					              	<div class="col-xs-12" id="reqSpecRow7"><label class='col-xs-8 text-right minreqRows'>Early AM (4am-6am) Schedule:</label><div class='col-xs-4'><select class='selectMinReq' id="minReq17" onclick="phnScrnDet.unSavedVal()" onchange="phnScrnDet.changeStatus()"></select></div></div>	
+					              	<div class="col-xs-12" id="reqSpecRow8"><label class='col-xs-8 text-right minreqRows'>Morning (6am-noon) Schedule:</label><div class='col-xs-4'><select class='selectMinReq' id="minReq18" onclick="phnScrnDet.unSavedVal()" onchange="phnScrnDet.changeStatus()"></select></div></div>	
+					              	<div class="col-xs-12" id="reqSpecRow9"><label class='col-xs-8 text-right minreqRows'>Afternoon (noon-5pm) Schedule:</label><div class='col-xs-4'><select class='selectMinReq' id="minReq19" onclick="phnScrnDet.unSavedVal()" onchange="phnScrnDet.changeStatus()"></select></div></div>	
+					              	<div class="col-xs-12" id="reqSpecRow10"><label class='col-xs-8 text-right minreqRows'>Night (5pm-8pm) Schedule:</label><div class='col-xs-4'><select class='selectMinReq' id="minReq20" onclick="phnScrnDet.unSavedVal()" onchange="phnScrnDet.changeStatus()"></select></div></div>		
+					              	<div class="col-xs-12" id="reqSpecRow11"><label class='col-xs-8 text-right minreqRows'>Late Night (8pm-midnight) Schedule:</label><div class='col-xs-4'><select class='selectMinReq' id="minReq21" onclick="phnScrnDet.unSavedVal()" onchange="phnScrnDet.changeStatus()"></select></div></div>	
+					              	<div class="col-xs-12" id="reqSpecRow12"><label class='col-xs-8 text-right minreqRows'>Overnight (midnight-5am) Schedule:</label><div class='col-xs-4'><select class='selectMinReq' id="minReq22" onclick="phnScrnDet.unSavedVal()" onchange="phnScrnDet.changeStatus()"></select></div></div>	
+					              	<div class="col-xs-12" id="reqSpecRow13"><label class='col-xs-8 text-right minreqRows'>Need Schedule Accommodation:</label><div class='col-xs-4'><select class='selectMinReq' id="minReq23" onclick="phnScrnDet.unSavedVal()" onchange="phnScrnDet.changeStatus()"></select></div></div>	
+					              	<div class="col-xs-12" id="reqSpecRow14"><label class='col-xs-8 text-right minreqRows'>Driver's License:</label><div class='col-xs-4'><select class='selectMinReq' id="minReq24" onclick="phnScrnDet.unSavedVal()" onchange="phnScrnDet.changeStatus()"></select></div></div>	
+					              	<div class="col-xs-12" id="reqSpecRow15"><label class='col-xs-8 text-right minreqRows'>Reliable Transportation:</label><div class='col-xs-4'><select class='selectMinReq' id="minReq25" onclick="phnScrnDet.unSavedVal()" onchange="phnScrnDet.changeStatus()"></select></div></div>		              
+					            </div>
+					            <div class="col-xs-5 noRowIndent"><div class="row" noPadding>
+					              	<div class="col-xs-12"><label>Contact History </label></div>
+	              				  	<div class="col-xs-12"><textarea id="txtAreaCntHist" onclick="phnScrnDet.valPhnScreen()" maxlength="200"></textarea></div></div>
+	              				  	<div class="row detResRow">
+	              				  	<div class="col-xs-12"><label>Phone Screen Detailed Response </label></div>
+	              				  	<div class="col-xs-12"><textarea id="txtAreaPhnDetRes" onclick="phnScrnDet.valPhnScreen()" maxlength="2000"></textarea></div></div>
+	              				  	<div class="row detDispRow">
+	              				  	<div class="col-xs-6"><label id="dispLbl">Phone Screen Disposition: </label></div>
+	              				  	<div class="col-xs-6"><select id="selectDisposition" disabled="disabled"><option value='N/A'>N/A</option></select></div></div>
+					            </div>
+					         </div>  
+					        <div class="row minStatusRow">
+					            <div class="col-xs-2 text-right noPadding"><label>Min. Requirement Status:</label></div>
+					            <div class="col-xs-8 col-xs-offset-1 minStatus noPaddingLeft" id="ynMinReqStat"></div>
+					         </div>   
+					         <div class="row phnStatus noRowIndent">
+					            <div class="col-xs-5 "><div class="row">
+					              <div class="col-xs-5 text-right"><label>Phone Screen Status:</label></div>
+					              <div class="col-xs-7  scrnStatus"><select id="scrnstatusSelect" onchange="phnScrnDet.checkPhoneScreenStatusCode()"></select></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-8 text-right"><label>Phone Screen Status Date:</label></div>
+					              <div class="col-xs-4  statusDate"></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-8 text-right"><label>Phone Screen Status Time:</label></div>
+					              <div class="col-xs-4  statusTime"></div></div>
+					            </div>
+					         </div>   
+					         <div class="row intrStatus noRowIndent">
+					            <div class="col-xs-5 "><div class="row">
+					              <div class="col-xs-5 text-right"><label>Interview Status:</label></div>
+					              <div class="col-xs-7  scrnStatus"><select id="intrstatusSelect" onchange="phnScrnDet.checkOverallStatus()"></select></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-8 text-right"><label>Interview Status Date:</label></div>
+					              <div class="col-xs-4  intrStatusDate"></div></div>
+					            </div>
+					            <div class="col-xs-2 "><div class="row">
+					              <div class="col-xs-8 text-right noPaddingLeft"><label>Interview Status Time:</label></div>
+					              <div class="col-xs-4  intrStatusTime"></div></div>
+					            </div>
+					            <div class="col-xs-1 "><div class="row">
+					              <div class="col-xs-12 "><input type="button" class="btn btn-green" id="intrwDet" value="Interview Details"/></div>
+					            </div>
+					         </div> 
+	        								
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="row jumbotron secondContentRow shadow-box intDet">
+<div class="col-xs-12">
+<span class="form-title intDetTitle"><strong>INTERVIEW DETAILS</strong></span>
+<div class="row shadow-box whiteBox">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row">
+				<div class="col-xs-12 form-left intDetForm ">											
+	        			
+	        				<div class="row rowTop">
+					            <div class="col-xs-4 ">
+					            <div class="row">
+					              <div class="col-xs-9 text-right"><label>First Attempt Unable To Schedule TimeStamp:</label></div>
+					              <div class="col-xs-3  firstAttmpt textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-4 "><div class="row">
+					              <div class="col-xs-6 text-right"><label>Interview Time:</label></div>
+					              <div class="col-xs-6 "><input type="text" id="intrwTimeHr"  data-pattern="^(0|[1-9][0-9]*)$" maxlength="2" onclick="phnScrnDet.valPhnScreen()"/> : <input type="text" id="intrwTimeMin"  data-pattern="^(0|[1-9][0-9]*)$" maxlength="2" onclick="phnScrnDet.valPhnScreen()"/><select id="amPMIntrw" onclick="phnScrnDet.valPhnScreen()" onchange="phnScrnDet.valPhnScreen()"><option value="select">-Select-</option><option value="am">AM</option><option value="pm">PM</option></select></div></div>
+					            </div>
+					            <div class="col-xs-3 col-xs-offset-1"><div class="row">
+					              <div class="col-xs-3 text-left"><label>Interviewer:</label></div>
+					              <div class="col-xs-6 ">
+					              <input type="text" id="intrvr" maxlength="200" onclick="phnScrnDet.valPhnScreen()" />	
+					              </div></div>
+					            </div>
+					         </div>
+					         <div class="row rowTop">
+					            <div class="col-xs-4 "> <div class="row">
+					              <div class="col-xs-9 text-right"><label>Interview Date:</label></div>
+					              <div class="col-xs-3"><input type="text" class="textSelectionTrue" id="intDate" readonly="readonly"></div></div>
+					            </div>
+					            <div class="col-xs-6 "> <div class="row">
+					              <div class="col-xs-4 text-right"><label>Days/Times Available:</label></div>
+					              <div class="col-xs-8 "><textarea class="daysAvail" id="txtAreaAvail" readonly="readonly"></textarea></div></div>
+					            </div>
+					         </div>     
+					         <div class="row rowTop">
+					            <div class="col-xs-4 wkAvlRow"> <div class="row">
+					              <div class="col-xs-9 text-right"><label>Week Available:</label></div>
+					              <div class="col-xs-3 textSelectionTrue" id="WkAvl"></div></div>
+					            </div>
+					         </div>  
+					          <div class="row rowTop">
+					            <div class="col-xs-4 intDurRow"> <div class="row">
+					              <div class="col-xs-9 text-right"><label>Interview Duration (minutes):</label></div>
+					              <div class="col-xs-3 textSelectionTrue" id="IntDurMin"></div></div>
+					            </div>
+					         </div>
+					        <div class="row rowTop">
+					            <div class="col-xs-4 timeSlotRow"> <div class="row">
+					              <div class="col-xs-9 text-right"><label>Interviews per Time Slot:</label></div>
+					              <div class="col-xs-3 textSelectionTrue" id="IntPerTmSlot"></div></div>
+					            </div>
+					        </div>   
+					        <div class="row rowTop">
+					            <div class="col-xs-4 "> <div class="row">
+					              <div class="col-xs-6 text-left intTypeLbl"><label>Interview Type:</label></div>
+					            </div>
+					        </div> </div>
+					        <div class="row rowTop">
+					            <div class="col-xs-12 "> <div class="row">
+
+					              <div class="col-xs-2 firstradioType">
+					              <input class="col-xs-1" type="radio" name="intrType" id="hrStr" value="0" onclick="phnScrnDet.setStrFieldsNotEditable()"><label class="col-xs-1">Hiring Store Interview</label></div>
+
+					              <div class="col-xs-2">
+					              <input class="col-xs-1" type="radio" name="intrType" id="nonHrStr" value="1" onclick="phnScrnDet.getStrDetails()"><label class="col-xs-1">Non-Hiring Store Interview</label></div>
+
+					              <div class="col-xs-2">
+					              <input class="col-xs-1" type="radio" name="intrType" id="hrEvnt" value="2" onclick="phnScrnDet.setStrFieldsNotEditable()"><label class="col-xs-1">Hiring Event Interview</label></div>
+
+					              <div class="col-xs-2">
+					              <input class="col-xs-1" type="radio" name="intrType" id="others" value="3" onclick="phnScrnDet.setStrFieldsEditable()"><label class="col-xs-1">Other Interview Location</label></div>
+
+					            </div>
+					        </div></div>
+					        <div class="row rowTop">
+					            <div class="col-xs-4 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Interview Location Name:</label></div>
+					              <div class="col-xs-6 hide" id="intrLocNameLbl"></div>
+					              <input type="text" class="col-xs-6 hide" id="intrLocName" maxlength="255" onclick="phnScrnDet.valPhnScreen()" />	
+					              </div>
+					            </div>
+					            <div class="col-xs-8 "> <div class="row">
+					              <div class="col-xs-3 text-right"><label>Interview Location Phone:</label></div>
+					              <div class="col-xs-9 hide" id="intrLocPhnLbl"></div>
+					              <div class="col-xs-2 hide noPadding" id="intrLocPhn1"><input type="text" id="phnFirst" class="col-xs-9 noPadding" data-pattern="^(0|[1-9][0-9]*)$" maxlength="3" onclick="phnScrnDet.valPhnScreen()" /><label class="col-xs-1">-</label></div>
+					              <div class="col-xs-2 hide noPadding" id="intrLocPhn2"><input type="text" id="phnSecond" class="col-xs-9 noPadding" data-pattern="^(0|[1-9][0-9]*)$" maxlength="3" onclick="phnScrnDet.valPhnScreen()" /><label class="col-xs-1">-</label></div>
+					              <div class="col-xs-2 hide noPadding" id="intrLocPhn3"><input type="text" id="phnThird" class="col-xs-9 noPadding" data-pattern="^(0|[1-9][0-9]*)$" maxlength="4" onclick="phnScrnDet.valPhnScreen()" /></div></div>
+					            </div>
+					        </div> 
+					        <div class="row rowTop">
+					            <div class="col-xs-4 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Interview Location Address:</label></div>
+					              <div class="col-xs-6 hide" id="intrLocAddrLbl"></div>
+					              <input type="text" class="col-xs-6 hide" id="intrLocAddr" maxlength="60" onclick="phnScrnDet.valPhnScreen()" /></div>
+					            </div>
+					            <div class="col-xs-4 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Interview Location State:</label></div>
+					              <div class="col-xs-6 hide" id="intrLocStateLbl"></div>
+					              <input type="text" class="col-xs-6 hide" id="intrLocState" maxlength="2" onclick="phnScrnDet.valPhnScreen()" /></div>
+					            </div>
+					        </div> 
+					        <div class="row rowTop">
+					            <div class="col-xs-4 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Interview Location City:</label></div>
+					              <div class="col-xs-6 hide" id="intrLocCityLbl"></div>
+					              <input type="text" class="col-xs-6 hide" id="intrLocCity" maxlength="60" onclick="phnScrnDet.valPhnScreen()"/></div>
+					            </div>
+					            <div class="col-xs-4 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Interview Location Zip:</label></div>
+					              <div class="col-xs-6 hide" id="intrLocZipLbl"></div>
+					              <input type="text" class="col-xs-6 hide" id="intrLocZip" maxlength="5" data-pattern="^(0|[1-9][0-9]*)$" onclick="phnScrnDet.valPhnScreen()"/></div>
+					            </div>
+					        </div> 
+	        								
+				
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 
+<div class="row jumbotron secondContentRow shadow-box callHistory">
+<div class="col-xs-12 callHist">
+<span class="form-title responseTitle"><strong>OUTBOUND CALL HISTORY</strong></span>	
+       	<div id="callHistory-grid" class="custom-grid row shadow-box whiteBox">
+                    
+            </div>
+</div>
+</div>
+-->
+
+
+
+<div class="row btnsRow">
+	<div class="col-xs-12">
+		<div class="col-xs-6 col-xs-offset-5"><div class="row">
+            <div class="col-xs-12 "><input type="button" class="btn btn-green" id="savePhnDet" onclick="phnScrnDet.showRequisitionSpecificPopUp(CONSTANTS.evntTypPhnScrnSave)" value="Save"/>
+            <input type="button" class="btn btn-green"  id="submitPhnDet" onclick="phnScrnDet.showRequisitionSpecificPopUp(CONSTANTS.evntTypSubmitPhnScrn)" value="Submit"/>
+            <input type="button" class="btn btn-green" id="cancelPhnDet" value="Cancel"/></div>
+            </div>
+        </div> 
+	</div>
+</div>
+</div>
+
+
+
+<!-- modal poup  -->
+
+
+<div class="modal fade warningpopClass" id="warningpopup" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog ">
+		<div class="modal-content">
+			<div class="modal-header text-left" >
+
+				<img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label>
+			</div>
+			<div class="modal-body ">
+				<div class="warningModalBody text-center">
+				<div class="cols-xs-12 cols-xs-offset-1 text-center "> 
+				<label class="cautionMsg"></label>
+				<label id="oldRenameCalName"></label>  </div>
+          <div class="cols-xs-12 cols-xs-offset-1 text-center sureMsg textSelectionTrue"> </div>
+				</div>
+				<br>
+				<div class="text-center">
+
+					<button type="button" id="warningOkbutton" data-dismiss="modal">
+					<img src="assets/images/ok.png">
+					Ok</button>
+
+					<button type="button" id="warningCancelbutton" data-dismiss="modal">
+					<img src="assets/images/cross.png">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- modal poup  -->
+
+<!-- Alert pop up -->
+<div class="modal fade" id="alertPopupModal" tabindex="-1"
+  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog ">
+    <div class="modal-content" style="background: rgb(145,165,175)">
+      <div class="modal-header">
+        
+      </div>
+      <div class="modal-body">
+        <div class="myModalBody text-center alertModalBody textSelectionTrue"></div>
+   <br>
+   <div class="text-center">
+    <button type="button" class="alertmodalbtn" data-dismiss="modal">OK</button></div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- enter store no. pop up -->
+<div class="modal fade" id="enterStrNumModal" tabindex="-1"
+  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog ">
+    <div class="modal-content shadow-box">
+     <div class="modal-header">
+      <div class="modal-title" id="createcalendarmodalLabel">Store Number</div>
+        <button type="button" class="close" data-dismiss="modal"
+          aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>        
+      </div> 
+      <div class="modal-body">
+        <div class="strnumpopupform">          
+          <div>
+            <div class="strNumTxt">
+              <div class="StrNumlabelmodal">Enter the Store Number <input
+                type="text" id="StrNumModalText" data-pattern="^(0|[1-9][0-9]*)$" maxlength="4" /></div>
+            </div>            
+
+          </div>
+        </div>
+      </div>
+      <div calss="row btnrow"><div class="strNumButton">
+              <label class="col-md-3"></label>
+              <button type="button" class="btn btn-green"
+                onclick="phnScrnDet.getStrValues()">Submit</button>
+              <button type="button" class="btn btn-trans" data-dismiss="modal">Cancel</button>
+
+      </div> </div>
+    </div>
+  </div>
+</div>
+
+<!-- Unsaved Data Pop up -->
+  <div class="modal fade" id="unSaveWarnModal" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+        </div>
+        <div class="modal-body unSaveWarnpopupbody">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="unSaveWarnMsg textSelectionTrue">
+             </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row text-center unSaveWarnModalBtn">
+            <button type="button" class="btn btn-default" data-dismiss="modal"><img src="assets/images/ok.png"> OK</button>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unsaved Data Pop up -->
+  <div class="modal fade" id="unSaveWarnModalEnterStr" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+        </div>
+        <div class="modal-body unSaveWarnpopupbody">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="unSaveWarnMsg textSelectionTrue">
+             </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row text-center unSaveWarnModalBtn">
+            <button type="button" class="btn btn-default" data-dismiss="modal"><img src="assets/images/ok.png"> OK</button>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unsaved Data Pop up -->
+  <div class="modal fade" id="unSaveWarnModalReq" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+        </div>
+        <div class="modal-body unSaveWarnpopupbody">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="unSaveWarnMsg textSelectionTrue">
+             </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row text-center unSaveWarnModalBtn">
+            <button type="button" class="btn btn-default" onclick="phnScrnDet.handleUnsavedReqOk()"><img src="assets/images/ok.png"> OK</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><img src="assets/images/cross.png"> Cancel</button>      
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unsaved Data Pop up -->
+  <div class="modal fade" id="unSaveWarnModalCand" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+        </div>
+        <div class="modal-body unSaveWarnpopupbody">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="unSaveWarnMsg textSelectionTrue">
+             </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row text-center unSaveWarnModalBtn">
+            <button type="button" class="btn btn-default" onclick="phnScrnDet.handleUnsavedCandOk()"><img src="assets/images/ok.png"> OK</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><img src="assets/images/cross.png"> Cancel</button>      
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unsaved Data Pop up -->
+  <div class="modal fade" id="unSaveWarnModalInt" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+        </div>
+        <div class="modal-body unSaveWarnpopupbody">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="unSaveWarnMsg textSelectionTrue">
+             </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row text-center unSaveWarnModalBtn">
+            <button type="button" class="btn btn-default" onclick="phnScrnDet.handleUnsavedInterviewOk()"><img src="assets/images/ok.png"> OK</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><img src="assets/images/cross.png"> Cancel</button>      
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unsaved Data Pop up -->
+  <div class="modal fade" id="unSaveWarnModalHome" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+        </div>
+        <div class="modal-body unSaveWarnpopupbody">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="unSaveWarnMsg textSelectionTrue">
+             </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row text-center unSaveWarnModalBtn">
+            <button type="button" class="btn btn-default" onclick="phnScrnDet.handleUnsavedHomeOk()"><img src="assets/images/ok.png"> OK</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><img src="assets/images/cross.png"> Cancel</button>      
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Unsaved Data Pop up -->
+  <div class="modal fade" id="unSaveWarnModalSave" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+        </div>
+        <div class="modal-body unSaveWarnpopupbody">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="unSaveWarnMsg textSelectionTrue">
+             </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row text-center unSaveWarnModalBtn">
+            <button type="button" class="btn btn-default" onclick="phnScrnDet.showPhoneScreenDispositionPopUp()"><img src="assets/images/ok.png"> OK</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><img src="assets/images/cross.png"> Cancel</button>      
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- Unsaved Data Pop up -->
+  <div class="modal fade" id="unSaveWarnModalSubmit" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+        </div>
+        <div class="modal-body unSaveWarnpopupbody">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="unSaveWarnMsg textSelectionTrue">
+             </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row text-center unSaveWarnModalBtn">
+            <button type="button" class="btn btn-default" onclick="phnScrnDet.submitPhnScrnDtls()"><img src="assets/images/ok.png"> OK</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><img src="assets/images/cross.png"> Cancel</button>      
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Validation Pop up -->
+  <div class="modal fade" id="unSaveWarnModalValidate" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+        </div>
+        <div class="modal-body unSaveWarnpopupbody">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="unSaveWarnMsg textSelectionTrue">
+             </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row text-center unSaveWarnModalBtn">
+            <button type="button" class="btn btn-default" data-dismiss="modal"><img src="assets/images/ok.png"> OK</button>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

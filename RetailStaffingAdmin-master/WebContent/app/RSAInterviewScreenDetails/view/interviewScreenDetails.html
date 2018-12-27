@@ -1,0 +1,467 @@
+<link href="app/RSAInterviewScreenDetails/css/interviewScreenDetails.css" rel="stylesheet" />
+<script type="text/javascript" src="app/common/js/rsaServices.js"></script>
+<script type="text/javascript" src="app/common/js/reusableComponents.js"></script>
+<script type="text/javascript" src="app/common/js/errorHandling.js"></script>
+<script type="text/javascript" src="app/RSAInterviewScreenDetails/js/interviewScreenDetails.js"></script>
+<script type="text/javascript">
+
+var intrScrnDet = new interviewScreenDetails();
+$(document).ready(function() {
+    intrScrnDet.intialize();
+    $(document.body).tooltip({
+      track: true
+    });
+  });
+</script>
+
+<div class="row container" id="intrvwScreen">
+
+<div class="row jumbotron secondContentRow shadow-box phnDet">
+<div class="col-xs-12">
+<span class="form-title intrvwTitle"><strong>REQUISITION DETAILS</strong></span>
+<div class="row shadow-box whiteBox">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row">
+				<div class="col-xs-12 form-left rowTextIndentPhnScrn reqDetForm">											
+	        			
+	        				<div class="row">
+					            <div class="col-xs-3 ">
+					            <div class="row">
+					              <div class="col-xs-6 text-right"><label>Store Number:</label></div>
+					              <div class="col-xs-6  strNbr text-left textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-2 "><div class="row">
+					              <div class="col-xs-6 text-right"><label>Screen Type:</label></div>
+					              <div class="col-xs-6  scrntype textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-6 text-right"><label>Job Code:</label></div>
+					              <div class="col-xs-6  jobCd textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-6 text-right"><label>Seasonal/Temporary:</label></div>
+					              <div class="col-xs-6  seaTemp textSelectionTrue"></div></div>
+					            </div>
+					         </div>
+					         <div class="row">
+					            <div class="col-xs-3 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Created:</label></div>
+					              <div class="col-xs-6  created textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-2 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Openings:</label></div>
+					              <div class="col-xs-6  openings textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Job Title:</label></div>
+					              <div class="col-xs-6  jobTitle textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>FT:</label></div>
+					              <div class="col-xs-6  ftFld textSelectionTrue"></div></div>
+					            </div>
+					         </div>
+					         <div class="row">
+					            <div class="col-xs-3 ">
+					            <div class="row">
+					              <div class="col-xs-6 text-right"><label>Creator:</label></div>
+					              <div class="col-xs-6  creator text-left textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-2 "><div class="row">
+					              <div class="col-xs-6 text-right"><label>To Fill:</label></div>
+					              <div class="col-xs-6  toFill textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-6 text-right"><label>Department:</label></div>
+					              <div class="col-xs-6  dept textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-6 text-right"><label>PT:</label></div>
+					              <div class="col-xs-6  ptFld textSelectionTrue"></div></div>
+					            </div>
+					         </div>
+					         <div class="row">
+					            <div class="col-xs-3 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Date Needed:</label></div>
+					              <div class="col-xs-6  dateNeeded textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-2 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Reqd Intw:</label></div>
+					              <div class="col-xs-6  reqdIntw textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Store Manager:</label></div>
+					              <div class="col-xs-6  strMgr textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Target Pay:</label></div>
+					              <div class="col-xs-6  targetPay textSelectionTrue"></div></div>
+					            </div>
+					         </div>	
+					         <div class="row">
+					            <div class="col-xs-3 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Active:</label></div>
+					              <div class="col-xs-6  activeFld textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-2 "> <div class="row">
+					              <div class="col-xs-6 text-left"><label>TAC To Schedule:</label></div>
+					              <div class="col-xs-6  rscToSch textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Phone:</label></div>
+					              <div class="col-xs-6  phoneNbr textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-3 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Calendar/Hiring Event:</label></div>
+					              <div class="col-xs-6  calHirEnt textSelectionTrue"></div></div>
+					            </div>
+					         </div>	
+					         <div class="row">
+					            <div class="col-xs-3 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>TAC To Manage:</label></div>
+					              <div class="col-xs-6  rscToMng textSelectionTrue"></div></div>
+					            </div>
+					         </div>        
+	        								
+				</div>
+			</div> 
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+<div class="row jumbotron secondContentRow shadow-box candDet">
+<div class="col-xs-12">
+<span class="form-title candTitle"><strong>CANDIDATE DETAILS</strong></span>
+<div class="row shadow-box whiteBox">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row">
+				<div class="col-xs-12 form-left rowTextIndentPhnScrn candDetForm">											
+	        			
+	        				<div class="row">
+					            <div class="col-xs-2 ">
+					            <div class="row">
+					              <div class="col-xs-6 text-right"><label>Screen #:</label></div>
+					              <div class="col-xs-6  screenNbr text-left textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-2 "><div class="row">
+					              <div class="col-xs-7 text-right"><label>Requisition #:</label></div>
+					              <a href="#" class="col-xs-5  reqNbr"></a></div>
+					            </div>
+					            <div class="col-xs-2 "><div class="row">
+					              <div class="col-xs-6 text-right"><label>Name:</label></div>
+					              <div class="col-xs-6  candName textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-2 "><div class="row">
+					              <div class="col-xs-6 text-right"><label>Candidate ID:</label></div>
+					              <a href="#" class="col-xs-6  candId"></a></div>
+					            </div>
+					         </div>
+					         <div class="row">
+					         	<div class="col-xs-2 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Email:</label></div>
+					              <div class="col-xs-6  emailId textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-2 col-xs-offset-2"> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Phone:</label></div>
+					              <div class="col-xs-6  phnNbr textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-2 "> <div class="row">
+					              <div class="col-xs-6 text-right"><label>Int/Ext:</label></div>
+					              <div class="col-xs-6  extNbr textSelectionTrue"></div></div>
+					            </div>
+					         </div>	        
+	        								
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+<div class="row jumbotron secondContentRow shadow-box intDet">
+<div class="col-xs-12">
+<span class="form-title intrTitle"><strong>INTERVIEW DETAILS</strong></span>
+<div class="row shadow-box whiteBox">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row">
+				<div class="col-xs-12 form-left intrDetForm">									        			
+	        				<div class="row">
+					            <div class="col-xs-12 "><div class="row">
+					              <div class="col-xs-12 text-left refreshLabel textSelectionTrue"><label>Refresh this page to view the most up to date interview times available. Click the Save button before confirming date and time with candidate.</label></div>
+					            </div>
+					            </div>
+					         </div>		
+					         <div class="row refreshrow">
+					            <div class="col-xs-4 col-xs-offset-2"> <div class="row">
+					              <div class="col-xs-12 "><input type="button" class="btn btn-green" id="refreshAvail" value="Refresh Availability" onclick = "intrScrnDet.refreshAvailableTime()"/></div>
+					            </div>
+					         </div>	 
+					         </div>
+					         <div class="row intrStatus">
+					            <div class="col-xs-4 "><div class="row">
+					              <div class="col-xs-5 text-right"><label>Interview Status:</label></div>
+					              <div class="col-xs-7  scrnStatus"><select id="intrstatusSelect" onchange="intrScrnDet.changeInterviewStatus()"></select></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-8 text-right"><label>Interview Status Date:</label></div>
+					              <div class="col-xs-4  intrStatusDate"></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-8 text-right"><label>Interview Status Time:</label></div>
+					              <div class="col-xs-4  intrStatusTime"></div></div>
+					            </div>
+					         </div> 
+					         <div class="row mtrlStatus">
+					            <div class="col-xs-4 "><div class="row">
+					              <div class="col-xs-5 text-right"><label>Intvw Mtrl Status:</label></div>
+					              <div class="col-xs-7  mtrlStatus"><select id="mtrlstatusSelect" disabled="disabled" onclick="intrScrnDet.valPhnScreen()"></select></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-8 text-right"><label>Material Status Date:</label></div>
+					              <div class="col-xs-4  mtrlStatusDate"></div></div>
+					            </div>
+					            <div class="col-xs-3 "><div class="row">
+					              <div class="col-xs-8 text-right"><label>Material Status Time:</label></div>
+					              <div class="col-xs-4  mtrlStatusTime"></div></div>
+					            </div>
+					         </div> 
+					         <div class="row intrDurationDate">
+					            <div class="col-xs-5  noPaddingLeft"><div class="row">
+					              <div class="col-xs-5 text-right"><label>Interview Duration (minutes):</label></div>
+					              <div class="col-xs-7  intrDuration noPaddingLeft textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-7 "><div class="col-xs-8"><div class="row">
+					              <div class="col-xs-5 text-right"><label>Interview Date:</label></div>
+					              <div class="col-xs-6  intrDate textSelectionTrue"></div></div>
+					            </div></div>
+					         </div> 	        								
+					         <div class="row rscSchedTime">
+					            <div class="col-xs-5 noPaddingLeft"><div class="row">
+					              <div class="col-xs-5 text-right"><label>TAC Schedule:</label></div>
+					              <div class="col-xs-7  rscSchedule noPaddingLeft textSelectionTrue"></div></div>
+					            </div>
+					            <div class="col-xs-7 "><div class="col-xs-8"><div class="row">
+					              <div class="col-xs-5 text-right"><label>Interview Time:</label></div>
+					              <div class="col-xs-6  intrTime textSelectionTrue"></div></div>
+					            </div></div>
+					         </div> 
+					         <div class="row intrDataGrid">
+					            <div class="col-xs-5 "><div class="row">
+					              <div class="col-xs-12 text-left noPaddingLeft">
+					              	<div class="gridAccContainer">
+													<div class="panel-group" id="accordion">
+														<div class="panel panel-default accordianmargin">
+															<div class="panel-heading accordianFirst">
+																<div class="panel-title ">
+																	<img id="firstGridImg" data-toggle="collapse"
+																		data-parent="#accordion" data-target="#collapse1"
+																		src="assets/images/selectedIcon.gif"></img> <label>First
+																		Week schedule</label>
+																</div>
+															</div>
+															<div id="collapse1" class="panel-collapse collapse in">
+																<div class="panel-body weekgrid">
+																	<div class="custom-grid" id="firstWeekGrid"></div>
+																</div>
+															</div>
+														</div>
+														<div class="panel panel-default accordianmargin">
+															<div class="panel-heading accordianFirst">
+																<div class="panel-title ">
+																	<img id="secondGridImg" data-toggle="collapse"
+																		data-parent="#accordion" data-target="#collapse2"
+																		src="assets/images/upIcon.gif"></img> <label>Second
+																		Week schedule</label>
+																</div>
+															</div>
+															<div id="collapse2" class="panel-collapse collapse ">
+																<div class="panel-body weekgrid">
+																	<div class="custom-grid" id="secondWeekGrid"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div></div>
+					              </div></div>
+					            <div class="col-xs-7 locDetails"><div class="col-xs-10"><div class="row">
+					              <div class="col-xs-4 text-right"><label>Send Packet Date:</label></div>
+					              <div class="col-xs-8  packDate textSelectionTrue"></div></div>
+					              <div class="row">
+					              <div class="col-xs-4 text-right"><label>Send Packet Time:</label></div>
+					              <div class="col-xs-8  packTime textSelectionTrue"></div></div>
+					              <div class="row">
+					              <div class="col-xs-4 text-right"><label>Interviewer:</label></div>
+					              <div class="col-xs-8  intrvewr"><input type="text" class="iterviewer" onclick="intrScrnDet.valPhnScreen()" maxlength="200"/></div></div>
+					              <div class="row">
+					              <div class="col-xs-4 text-right noPaddingLeft"><label>Interview Location Name:</label></div>
+					              <div class="col-xs-8  intrLocName textSelectionTrue"></div></div>
+					              <div class="row">
+					              <div class="col-xs-4 intLocAddLbl text-right"><label>Interview Location Address:</label></div>
+					              <div class="col-xs-8  intrLocAddr textSelectionTrue"></div></div>
+					              <div class="row">
+					              <div class="col-xs-4 text-right"><label>Interview Location City:</label></div>
+					              <div class="col-xs-8  intrLocCity textSelectionTrue"></div></div>
+					              <div class="row">
+					              <div class="col-xs-4 text-right noPaddingLeft"><label>Interview Location Phone:</label></div>
+					              <div class="col-xs-8  intrLocPhn textSelectionTrue"></div></div>
+					              <div class="row">
+					              <div class="col-xs-4 text-right noPaddingLeft"><label>Interview Location State:</label></div>
+					              <div class="col-xs-8  intrLocState textSelectionTrue"></div></div>
+					              <div class="row">
+					              <div class="col-xs-4 text-right"><label>Interview Location Zip:</label></div>
+					              <div class="col-xs-8  intrLocZip textSelectionTrue"></div></div>
+					            </div> </div>
+					         </div> 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+<div class="row btnsRow">
+	<div class="col-xs-12">
+		<div class="col-xs-6 col-xs-offset-5"><div class="row">
+            <div class="col-xs-12 "><input type="button" class="btn btn-green" id="saveIntDet" value="Save" />
+            <input type="button" class="btn btn-green"  id="submitIntDet" value="Submit" />
+            <input type="button" class="btn btn-green" id="cancelIntDet" value="Cancel" /></div>
+            </div>
+        </div> 
+	</div>
+</div>
+
+</div>
+<!-- Alert pop up -->
+<div class="modal fade" id="alertPopupModal" tabindex="-1"
+  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog ">
+    <div class="modal-content" style="background: rgb(145,165,175)">
+      <div class="modal-header">
+        
+      </div>
+      <div class="modal-body">
+        <div class="myModalBody text-center alertModalBody textSelectionTrue"></div>
+   <br>
+   <div class="text-center">
+    <button type="button" class="alertmodalbtn" onclick="intrScrnDet.alertOkClicked('#alertPopupModal')">OK</button></div>
+      </div>
+      </div>
+    </div>
+  </div>
+  
+    <!-- Warning Data Pop up -->
+  <div class="modal fade" id="intrWarnModal" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+        </div>
+        <div class="modal-body intrWarnpopupbody">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="intrWarnMsg textSelectionTrue">
+             </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row text-center intrWarnModalBtn">
+            <button type="button" class="btn btn-default" onclick="intrScrnDet.alertOkClicked('#intrWarnModal')"><img src="assets/images/ok.png"> OK</button>    
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Unsaved Data Pop up -->
+  <div class="modal fade" id="unSaveWarnModalHome" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+        </div>
+        <div class="modal-body unSaveWarnpopupbody">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="unSaveWarnMsg textSelectionTrue">
+             </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row text-center unSaveWarnModalBtn">
+            <button type="button" class="btn btn-default" onclick="intrScrnDet.handleUnsavedHomeOk()"><img src="assets/images/ok.png"> OK</button>
+            <button type="button" class="btn btn-default" onclick="intrScrnDet.alertOkClicked('#unSaveWarnModalHome')"><img src="assets/images/cross.png"> Cancel</button>      
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Unsaved Data Pop up -->
+  <div class="modal fade" id="unSaveWarnModalReq" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+        </div>
+        <div class="modal-body unSaveWarnpopupbody">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="unSaveWarnMsg textSelectionTrue">
+             </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row text-center unSaveWarnModalBtn">
+            <button type="button" class="btn btn-default" onclick="intrScrnDet.handleUnsavedReqOk()"><img src="assets/images/ok.png"> OK</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><img src="assets/images/cross.png"> Cancel</button>      
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unsaved Data Pop up -->
+  <div class="modal fade" id="unSaveWarnModalCand" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div><img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label></div> 
+        </div>
+        <div class="modal-body unSaveWarnpopupbody">
+          <div class="row">
+            <div class="col-xs-12">
+             <div class="unSaveWarnMsg textSelectionTrue">
+             </div>
+            </div>
+          </div>
+          <div class="row"></div>
+          <div class="row text-center unSaveWarnModalBtn">
+            <button type="button" class="btn btn-default" onclick="intrScrnDet.handleUnsavedCandOk()"><img src="assets/images/ok.png"> OK</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><img src="assets/images/cross.png"> Cancel</button>      
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+

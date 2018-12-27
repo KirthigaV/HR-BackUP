@@ -1,0 +1,151 @@
+<head>
+	<meta http-equiv="Cache-control" content="private">
+</head>
+
+<script type="text/javascript" src="app/RetailStaffing/js/retailStaffing.js"></script>
+   <script>
+	var retailStaffing = new retailStaffing();
+	$(document).ready(function() {
+		retailStaffing.initialize();
+	});
+</script>
+<div class="row retailStaffingAdminPage" id="retailStaffing">
+<div class="row"><div class="col-xs-10 col-xs-offset-1 radioButtonContent"><div class="row">
+<div class="col-xs-4 rowTextIndent labelFull">
+<br/>
+<label for="requisitionNumber"><input type="radio" id="requisitionNumber" name="searchType" value="requisitionNumber"> Requisition Number</label><br/>
+<label for="candidate"><input type="radio" id="candidate" name="searchType" value="candidate"> Candidate</label><br/>
+<label for="phoneScreenNumber"><input type="radio" id="phoneScreenNumber" name="searchType" value="phoneScreenNumber"> Phone Screen Number</label><br/>
+<label for="interviewScreenNumber"><input type="radio" id="interviewScreenNumber" name="searchType" value="interviewScreenNumber"> Interview Screen Number</label><br/>
+<label for="workQueuesResquistions"><input type="radio" id="workQueuesResquistions" name="searchType" value="workQueuesResquistions"> Work Queues &amp; Requisitions</label>
+<br/>
+</div>
+<div class="col-xs-8">
+<br/>
+<!-- requisitionNumber  -->
+	<div class="row requisitionNumber searchType">
+	<div class="col-xs-12 text-left"> 
+	<label>Please Enter Requisition Number</label></div>
+	<div class="col-xs-12 text-left"> 
+	<input type="text" maxlength= "9" class="allowOnlyNumbers" id="requisitionValue">
+	<button class='btn btn-green'>Search</button></div>
+	</div>
+<!-- candidate  -->
+	<div class="row candidate searchType">
+	<div class="col-xs-12 text-left"> 
+	<label>Select Candidate Search Type</label></div>
+	<div class="col-xs-12 text-left">
+	<label><input type="radio" id="candidateRefNumber" name="CandidateSearchType" value="candidateRefNumber"> Candidate Ref Number </label>
+	<label><input type="radio" id= "ssnLastName" name="CandidateSearchType" value="ssnLastName"> Last 4 SSN / Last Name </label>
+	</div>
+	<div class="col-xs-12 text-left candidateRefNumber CandidateSearchType"> 
+	<input type="text" maxlength= "10" id="candidateNumberValue" class="allowOnlyNumbers">
+	<button class='btn btn-green' >Search</button></div>
+	<div class="col-xs-12 text-left ssnLastName CandidateSearchType"> 
+	<label>Last 4 SSN: <input type="text" maxlength= "4" id="candidateSSNValue" class="allowOnlyNumbers"></label><br/>
+	<label>Last Name: <input type="text" id="candidateLastNameValue" maxlength= "30" class="allowOnlyAlphabets"></label>
+	<button class='btn btn-green candidateSubmitButton' >Search</button></div>
+	</div>
+<!-- phoneScreenNumber  -->
+	<div class="row phoneScreenNumber searchType">
+	<div class="col-xs-12 text-left"> 
+	<label>Please Enter Phone Screen Number</label></div>
+	<div class="col-xs-12 text-left"> 
+	<input type="text" class="allowOnlyNumbers" maxlength= "9" id="phoneScreenValue">
+	<button class='btn btn-green' >Search</button></div>
+	</div>	
+<!-- interviewScreenNumber  -->
+	<div class="row interviewScreenNumber searchType">
+	<div class="col-xs-12 text-left"> 
+	<label>Please Enter Interview Screen Number</label></div>
+	<div class="col-xs-12 text-left"> 
+	<input type="text" class="allowOnlyNumbers" maxlength= "9" id="interviewScreenValue">
+	<button class='btn btn-green' >Search</button></div>
+	</div>	
+<!-- candidate  -->
+	<div class="row workQueuesResquistions searchType">
+	<div class="col-xs-12 text-left"> 
+	<label class="WorkQueuesTitleLable">Select Location Type</label></div>
+	<div class="col-xs-12 text-left">
+	<label><input type="radio" id="WorkQueuesStore" name="WorkQueuesSearchType" value="candidateRefNumber"> Store </label>
+	<label><input type="radio" id= "WorkQueuesDistrict" class="locationType" name="WorkQueuesSearchType" value="ssnLastName"> District </label>
+	<label><input type="radio" id="WorkQueuesRegion" class="locationType" name="WorkQueuesSearchType" value="candidateRefNumber"> Region </label>
+	<label><input type="radio" id= "WorkQueuesDivision" class="locationType" name="WorkQueuesSearchType" value="ssnLastName"> Division </label>
+	</div>
+	<div class="col-xs-12 text-left WorkQueuesStore WorkQueuesSearchType"> 
+	<input type="text" class="allowOnlyNumbers" maxlength= "4" id="WorkQueuesStoreValue"></div>	
+	<div class="col-xs-12 text-left WorkQueuesDistrict WorkQueuesSearchType"> 
+	<select id="WorkQueuesDistrictValue" class="locationValue">
+	
+	</select>
+	</div>
+	<div class="col-xs-12 text-left WorkQueuesRegion WorkQueuesSearchType"> 
+	<select id="WorkQueuesRegionValue" class="locationValue">
+	
+	</select>
+	</div>
+	<div class="col-xs-12 text-left WorkQueuesDivision WorkQueuesSearchType"> 
+	<select id="WorkQueuesDivisionValue" class="locationValue">
+	
+	</select>
+	</div>
+	<div class="col-xs-12" >
+	<select id="WorkQueuesProcess">
+	</select>
+	<button class='btn btn-green WorkQueuesProcessSubmit' disabled="disabled">Search</button>
+	</div>
+	
+	
+	</div>
+	<br/>
+</div>
+</div></div></div>
+<div class="row jumbotron secondContentRow shadow-box gridContainerRowClass">
+<div class="col-xs-12">
+<label id="currentGridTitle"></label>
+<div class="row gridContainer shadow-box">
+
+</div></div>
+</div>
+
+<!-- modal poup  -->
+
+
+<div class="modal fade warningpopClass" id="warningpopup" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog" style="width: 100%;height:100%;margin:0px;position: absolute;">
+		<div class="modal-content" style="width: 415px;margin:auto;">
+			<div class="modal-header text-left" >
+
+				<img src="assets/images/warning.png">
+				<label id="WarningModalLabel">Warning</label>
+			</div>
+			<div class="modal-body ">
+				<div class="warningModalBody text-center">
+				<!-- <div class="cols-xs-12 cols-xs-offset-1 text-center "> 
+				<label class="cautionMsg"></label>
+				<label id="oldRenameCalName"></label>  </div> -->
+          <div class="cols-xs-12 cols-xs-offset-1 text-center sureMsg"> </div>
+				</div>
+				<br>
+				<div class="text-center">
+
+					<button type="button" id="warningOkbutton" data-dismiss="modal">
+					<img src="assets/images/ok.png">
+					Ok</button>
+
+					<button type="button" id="warningCancelbutton" data-dismiss="modal">
+					<img src="assets/images/cross.png">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- modal poup  -->
+
+
+
+</div>

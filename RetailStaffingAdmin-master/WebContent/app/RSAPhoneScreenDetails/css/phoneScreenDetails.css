@@ -1,0 +1,632 @@
+/* changing template */
+/*#appBody {
+width: 100%;
+height: 100%;
+background-color: #fff;
+min-height: 500px;
+border: 1px solid #979797;
+margin: auto;
+border-radius: 10px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+padding:0px;
+}
+body {
+padding: 0;
+height: 100%;
+width: 100%;
+border: 22px solid black;
+border-radius: 30px;
+}
+html {
+height: 100%;
+width: 100%;
+background: #000;
+}
+#divLandingView {
+width: 100%;
+padding: 1%;
+padding-top: 2%;
+height: 84%;
+font-size: 12px;
+}
+#messageBar {
+color: #fff !important;
+padding-top: .2em;
+padding-bottom: .2em;
+font-weight: bold;
+font-size: 16px;
+}
+.navbar.navbar-default.navbar-fixed-top{
+position: relative;
+width: 100%;
+height: 16%;
+}
+.fullHeight
+{
+	height:100%;
+}
+.brand-orange-theme {
+color: #333;
+line-height: 1.5;
+}
+#header.header-orange-theme {
+background: #fff;
+}
+boby {
+	font-size: 13px;
+}
+#headerShortDesc {
+font-size: 11px;
+font-style: normal;
+text-shadow: none;
+color: #000;
+line-height: initial;
+display: block;
+}
+.navbar-brand img {
+float: left;
+margin-right: 16px;
+}
+.container-fluid {
+padding-bottom: 10px;
+}
+#messageBar
+{
+	color:#fff !important;
+}
+/*  nav bar
+.navHeaderButtons{
+	width: 78px;
+	color: #000;
+	font-weight: bold;
+	font-family: arial;
+	font-size:12px;
+	margin-top: 12px;
+	background: #eeeeee; 
+background: -moz-linear-gradient(top,  #eeeeee 0%, #cccccc 100%); 
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#cccccc)); 
+background: -webkit-linear-gradient(top,  #eeeeee 0%,#cccccc 100%);
+background: -o-linear-gradient(top,  #eeeeee 0%,#cccccc 100%); 
+background: -ms-linear-gradient(top,  #eeeeee 0%,#cccccc 100%); 
+background: linear-gradient(to bottom,  #eeeeee 0%,#cccccc 100%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); 
+
+	margin-left:7px;
+} 
+.navHeaderButtons:hover
+{
+color:#fff;
+background: #4c4c4c; 
+background: -moz-linear-gradient(top,  #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); 
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(12%,#595959), color-stop(25%,#666666), color-stop(39%,#474747), color-stop(50%,#2c2c2c), color-stop(51%,#000000), color-stop(60%,#111111), color-stop(76%,#2b2b2b), color-stop(91%,#1c1c1c), color-stop(100%,#131313)); 
+background: -webkit-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); 
+background: -o-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
+background: -ms-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); 
+background: linear-gradient(to bottom,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 );
+}
+.navbar-right li
+{
+	list-style: none;
+}*/
+html {
+	height: 100%;
+	width: 100%;
+	background: #000;
+	-webkit-user-select: none;  
+	-moz-user-select: none;    
+	-ms-user-select: none;      
+	user-select: none;
+}
+.jumbotron{
+	padding: 10px !important;
+	box-shadow: 0px 4px 3px rgb(166,166,166);
+}
+.shadow-box{
+	box-shadow: 3px 3px 5px grey;
+	padding:1% !important;
+}
+.secondContentRow
+{
+margin: 22px;
+margin-top: 5px;
+}
+.modal-header {
+padding: 0px;
+border-bottom: none;
+}
+.whiteBox {
+	background: #fff;
+}
+
+#phoneScreen {
+	width: 100%;
+	padding-left: 25px;
+	white-space: nowrap;
+}
+
+.secondContentRow {
+	margin: 0;
+}
+
+#divLandingView {
+	font-size: 12px;
+	overflow-y: scroll;
+	height: 80%;
+}
+
+.phoneTitle, .storeTitle, .responseTitle, .intDetTitle {
+	font-size: 14px !important;
+}
+
+.reqStrLoc, .reqDetails, .qualifiedRow, .phnScnRes, .langSchedRow, .minStatusRow, .intrStatus, .phnStatus, .intDet, .rowTop, .callHistory {
+	margin-top: 1%;
+}
+
+.responseDetFormSecRow, .btnsRow, .minreqRows {
+	margin-top: 3%;
+}
+
+.detResRow {
+	margin-top: 22%;
+}
+.detDispRow {
+	margin-top: 10%;
+}
+#txtAreaPhn, #txtAreaAvail {
+	resize: none;
+	height: 80px;
+	width: 75%;
+	background-color: #eee;
+	margin-left: 5%;
+}
+
+.orangeTitle {
+	font-size: 20px !important;
+	color: rgba(230, 120, 30, 1);
+	margin-left: 40%;
+}
+
+.phnScrnLangGrid {
+	margin-top: -3%;
+	margin-left: -3%;
+	padding: 0px;
+}
+a:hover {
+	color: #666666 !important;
+	text-decoration: underline !important;
+}
+
+a {
+	text-decoration: underline !important;
+	color: rgb(64, 119, 232) !important;
+}
+
+#txtAreaCntHist {
+	resize: none;
+	height: 96px;
+	width: 85%;
+}
+
+#txtAreaPhnDetRes {
+	resize: none;
+	height: 183px;
+	width: 112%;
+	background-color: #eee;
+}
+
+#intrwDet {
+	width: auto;
+}
+
+select {
+	padding: 4px;
+	width: 100%;
+	background: rgb(250,250,250) !important;
+	background: -webkit-linear-gradient(rgb(240,240,240), rgb(250,250,250)) !important;
+	background: -o-linear-gradient(rgb(240,240,240), rgb(250,250,250));
+	background: -moz-linear-gradient(rgb(240,240,240), rgb(250,250,250));
+	background: linear-gradient(rgb(240,240,240), rgb(250,250,250));
+	border-radius: 7px;
+	border:1px solid lightgrey; 
+}
+
+input[type=text]:disabled{
+	opacity: 0.7;	
+}
+
+select:disabled {
+	opacity: 0.35;	
+}
+
+#selectDisposition, #selectDispositionSelectBoxItContainer {
+	margin-left: -46%;
+}
+
+#dispLbl {
+	margin-left: -8%;
+}
+
+.field-align{
+	text-align: right;
+	font-weight: bold;
+}
+
+.rowTextIndentPhnScrn {
+	text-indent: -6%;
+}
+.noRowIndent {
+	text-indent: 0%;
+}
+
+.email {
+	font-weight: normal;
+	width: 196px;
+}
+.redBorder {
+	border: 1px solid red;
+}
+#minReqDiv {
+	margin-top: 7%;
+}
+#positionLabel, #requisitionLabel {
+	text-align: center;
+	font-weight: bold;
+}
+div[id*='reqSpecRow'] select{
+	width: 75%;
+	padding-left: 3px;
+	padding-right: 6px;
+	margin-top: 10px;
+}
+
+.minQues {
+	margin-left: 2%;
+	text-align: right;
+}
+.selectMinReq {
+	padding-left: 3px;
+	padding-right: 6px;
+}
+#requisitionLabel {
+	margin-left: 11%;
+}
+select[id*='minReq'], #scrnstatusSelect {
+	background-color: #F3F3F3 !important;
+	width: 38%;
+    padding-left: 2px;
+    padding-right: 6px;
+    margin-left: 6px;
+}
+#scrnstatusSelect, #intrstatusSelect {
+	width: 115%;
+}
+#minReqRow label, #targetPay{
+	padding: 0px;
+}
+#intrwTimeHr, #intrwTimeMin {
+	width: 25%;
+}
+.wkAvlRow {
+	margin-top: -5%;
+}
+.intDurRow {
+	margin-top: -3%;
+}
+.timeSlotRow {
+	margin-top: -1%;
+}
+#amPMIntrw {
+	margin-left: 2%;
+	width: 38%;
+}
+.intrvr {
+	margin-left: -60%;
+}
+.intTypeLbl {
+	margin-left: 9%;
+}
+#intDate, #intrvr {
+	width: 100%;
+}
+#hrStr {
+	margin-left: 22%;
+}
+.schedulePrefRow .row {
+	padding-left: 7% !important;
+}
+.opacityDiv {
+	opacity: 0.5;
+	pointer-events: none;
+}
+.noPaddingLeft {
+	padding-left: 0px;
+}
+.noPadding {
+	padding: 0px;
+}
+.seaTemp {
+	margin-left: -50%;
+}
+.modal-backdrop {
+	opacity: 0.6 !important;
+	background-color: #E4E4E4 !important;
+}    
+#alertPopupModal .modal-content {
+	height: 134px;
+	width: 45%;
+}
+#alertPopupModal .modal-header{
+	border-bottom:none;
+	margin-top: 2%;
+	margin-left: 2%;
+	font-weight: bold;
+}
+#alertPopupModal .modal-dialog{
+	color: white;
+	font-size: 12px;
+	/*margin-top: 20%;
+	margin-left: 35%;*/
+}
+#alertPopupModal button {
+	width: 19%;
+	font-weight: bold;
+	border: 1px solid orangered;
+	padding: 0px;
+	color:black;
+	background-color:rgb(185,195,200);
+}
+#alertPopupModal button:hover
+{
+	background-color:rgb(211,218,221);
+}
+.glyphicon-ok {
+	color: green;
+}
+.glyphicon-remove {
+	color: orangered;
+}
+.glyphicon-warning-sign {
+	color: orange;
+}
+.unSaveWarnMsg p {
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+}
+.modal[id*='unSaveWarnModal'] div{
+	font-size: 12px;
+
+}
+.modal[id*='unSaveWarnModal'] button{
+	background: transparent;
+	border: none;
+	font-size: 14px;
+	font-weight: 700;
+}
+.modal[id*='unSaveWarnModal'] button:hover{
+	background-color: rgb(247, 214, 187);
+}
+.modal[id*='unSaveWarnModal'] .modal-header {
+	border: none;
+}
+.modal[id*='unSaveWarnModal'] .modal-body {
+	background-color: #fff;
+	border: none;
+}
+/*.modal[id*='unSaveWarnModal'] .modal-content {
+	margin-top: 40%;
+}*/
+.btn-green {
+	color: white;
+	padding-top: 0.3%;
+	padding-bottom: 0.3%;
+	border-radius:4px;
+	background: rgb(111,128,43) !important;
+	background: -webkit-linear-gradient(rgb(155,170,97), rgb(111,128,43)) !important;
+	background: -o-linear-gradient(rgb(155,170,97), rgb(111,128,43));
+	background: -moz-linear-gradient(rgb(155,170,97), rgb(111,128,43));
+	background: linear-gradient(rgb(155,170,97), rgb(111,128,43));
+	font-weight: bold; 
+}
+.btn-green:hover{
+	color: yellow;
+	border:1px solid orangered;
+}
+.btn {
+	height: 30px;
+	width: 80px;
+}
+.btn-trans {
+	color: black;
+	background: transparent;
+}
+
+.btn-trans {
+	color: black;
+	background: transparent;
+}
+#enterStrNumModal .modal-content {
+	background: transparent;
+	font-weight: bold;
+	font-size: 12px;
+	/*margin-top: 37%;*/
+	width: 260px;
+	margin-left: 27%;
+	height: 180px;
+}
+#enterStrNumModal .modal-body {
+	background: #fff;
+	font-weight: bold;
+	font-size: 12px;
+	box-shadow: 3px 3px 5px grey;
+	margin-top: 2%;
+	height: 106px;
+}
+#enterStrNumModal button {
+	font-weight: bold;
+	font-size: 12px;
+	border: 1px solid gray;
+}
+#enterStrNumModal button:hover{
+	color: black;
+	border:1px solid orangered;
+}
+#enterStrNumModal .modal-header button {
+	border: none;
+	color: black;
+	margin-top: -6%;
+}
+#enterStrNumModal .modal-header {
+	/*margin-top: -6%;*/
+}
+.strNumButton {
+	margin-top: 3%;
+	margin-left: -7%;
+}
+#enterStrNumModal #StrNumModalText {
+	width: 27%;
+	margin-left: 5%;
+}
+#enterStrNumModal .strNumTxt {
+	margin-top: 10%;
+}
+
+/*tooltip*/
+.tooltip-arrow{
+	position: relative;
+	background: #C62F33;
+}
+.tooltip *{
+	position: relative;
+	background: #C62F33;
+	margin-left:7px;
+	width:360px;
+}
+.tooltip-arrow:after {
+	right: 100%;
+	display:block !important;
+	top: 50%;	
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-right-color: #C62F33;
+	border-width: 6px;
+	margin-top: 5px;
+	z-index:1000;
+}
+.tooltip-arrow:before {
+	display:none !important;	
+	content:"";
+	outline:none;
+	border:0px solid #fff !important;
+	border-right-color:#fff !important;
+	border-left-color:#fff !important;
+	border-top-color:#fff !important;
+	border-bottom-color:#fff !important;
+}
+.tooltip.right .tooltip-arrow {
+ 	border-style:none !important;
+}
+.tooltip {
+	margin-left:-5px !important;
+	overflow: visible;
+}
+.tooltip-inner {
+	max-width: 500px !important;
+	width: 360px !important;
+}
+.modal {
+	z-index: 2000;
+}
+input[type=text]:focus,textarea:focus{
+	background: white;
+	box-shadow: 0px 0px 0px 1.5px #ffa853;
+	outline: 0px inset #ffa853;
+}
+
+/* SelectBox It */
+select + span ul
+{
+	min-width: 232px;
+	max-height: 125px !important;
+	overflow-y: auto;
+	top: auto;
+	display: none;
+}
+select + span ul li a, select + span ul li a:hover{
+	text-decoration: none !important;
+	color: #333 !important;
+	font-weight: 100 !important;
+	font-size:12px !important;
+	font-family:arial !important;
+}
+select[id*='scrnstatusSelect'] + span > span, 
+select[id*='intrstatusSelect'] + span > span, select[id*='intrstatusSelect'] + span ul li, select[id*='intrstatusSelect'] + span ul
+{
+	width: 250px !important;
+}
+select[id*='selectDisposition'] + span > span {
+	width: 167px !important;
+}
+select[class*='selectMinReq'] + span > span, select[class*='selectMinReq'] + span ul li, select[class*='selectMinReq'] + span ul, 
+select[id*='amPMIntrw'] + span > span, select[id*='amPMIntrw'] + span ul li, select[id*='amPMIntrw'] + span ul {
+	width: 75px !important;
+}
+.selectboxit-selected{
+	background:rgba(230, 120, 30,0.5) !important;
+}
+select + span .selectboxit-arrow-container {
+	border-left:1px solid #c3c3c3;
+}
+select + span{
+	border-color:#c3c3c3;
+	margin-bottom:2px;
+	border-radius:7px;
+	text-indent: 0px !important;
+}
+select + span:hover {
+	border:1px solid #ffa853;
+	border-top-color:#ffa853;
+	margin-bottom:2px;
+	border-radius:7px;
+}
+select + span:hover > span > span.selectboxit-arrow-container {
+	border-left:1px solid #ffa853;
+}
+.selectboxit-btn.selectboxit-enabled:hover,.selectboxit-btn.selectboxit-enabled:focus {
+	background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+	background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+	background-repeat: repeat-x;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	border-bottom-color: #b3b3b3;
+	border:1px solid #ffa853;
+	border-radius:7px;
+	background-position: 0px 0px; 
+}
+select+span
+{
+	height: 25px;
+}
+.selectboxit-container span, .selectboxit-container .selectboxit-options a
+{
+	height: 25px;
+	line-height: 25px;
+	font-size: 12px;
+}
+#amPMIntrwSelectBoxItContainer {
+	margin-left: 10px;
+}
+.modal-dialog-center{
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+} 

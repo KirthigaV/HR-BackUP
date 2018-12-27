@@ -1,0 +1,79 @@
+ 	<script type="text/javascript" src="app/RSAStaffingForms/js/staffingForm.js"></script>
+   <script>
+	var staffingForm = new staffingForm();
+	$(document).ready(function() {
+		staffingForm.initialize();
+	});
+</script> 
+<!-- <div class="jumbotron shadow-box">
+		<form class="control-case shadow-box"> -->
+<div class="staffingformChild">
+	<div class="row staffingformText">
+	<div class="cols-xs-12 ">Staffing Forms:</div>
+	</div>
+	<div class="row staffingLinks">
+	<div class="link1">
+	<button id="staffingReqLink"><a href="#">Staffing Request Form</a></button>
+	<span>-</span>
+	<label class="selectable">Create a new Job Requisition</label>
+	</div>
+	<div class="link1">
+	<button id="interviewAvailabilityLink"><a href="#">Interview Availability Form</a></button><span>-</span>
+	<label class="selectable">Add/Edit/Delete Interview Availability for interviews scheduled by the RSC</label>
+	</div>
+	<div class="link1">
+	<button id="interviewSummaryLink"><a href="#">Interview Summary Form</a></button><span>-</span>
+	<label class="selectable">Submit Interview Results upon completion of an interview or fax the Interview Summary page to (770) 384-5613</label>
+	</div>
+	</div>
+		
+</div>
+<div class="cpyright" align="center" style="margin-top:4px;">Copyright @ 2008-2015 Homer TLC, Inc.All Rights Reserved.</div>
+<div class="realease" align="center">Release v1.0</div>
+<!-- modal poup  -->
+
+
+<div class="modal fade warningpopClass" id="warningpopup" tabindex="-1"
+	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content" style="width: 390px;margin: auto;margin-top: 20%;">
+			<div class="modal-header text-left">
+
+				<!-- <img src="../assets/images/warning.png"> -->
+				<label id="WarningModalLabel">Error</label>
+			</div>
+			<div class="modal-body ">
+				<div class="warningModalBody text-center">
+					<div class="cols-xs-12 cols-xs-offset-1 text-center ">
+						<label class="cautionMsg"></label> <label id="oldRenameCalName"></label>
+					</div>
+					<div class="cols-xs-12 cols-xs-offset-1 text-left mainPopUpContents">
+						<div class="col-xs-2">
+							<img src="assets/images/warning.png"
+								class="errorImage warningPopUpImage" width="60" height="60">
+						</div>
+						<div class="col-xs-10 popUpMsgParent">
+							<label><span class="sureMsg" style="font-size: 12px;font-weight: 700;color: #333;"></span></label>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="">
+
+					<button type="button" class="btn-grey" id="warningOkbutton" data-dismiss="modal" >
+						<!-- <img src="../assets/images/ok.png"> -->
+						OK
+					</button>
+
+					<button type="button"  class="btn-grey" id="warningCancelbutton" data-dismiss="modal">
+						<!-- <img src="../assets/images/cross.png"> -->
+						Cancel
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+		
+		
+		

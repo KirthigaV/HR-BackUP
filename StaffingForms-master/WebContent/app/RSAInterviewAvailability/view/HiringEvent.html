@@ -1,0 +1,458 @@
+<script type="text/javascript"
+	src="app/RSAInterviewAvailability/js/hiringEvent.js"></script>
+<script type="text/javascript" src="app/RSAInterviewAvailability/js/createHiringEventPopUp.js"></script>
+<script type="text/javascript"
+	src="app/RSAInterviewAvailability/js/hiringCalendar.js"></script>
+<script>	
+		var hiringEvent = new hiringEventTab();
+
+		var hiringCalendar = new showHiringCalendar();
+		$(document).ready(function() {
+
+		});
+	</script>
+
+
+<div class="row hiringEventcontainer">
+	<div class="hiringCalendarText">
+<br>
+
+	</div>
+	<div id="hiringEventTask">
+			<div class="col-xs-12 text-center HiringEventTable">
+				<div class="hiringEventGridContainer">
+				<div id="hiringEventGrid" class="custom-grid"></div>
+			</div>
+</div>
+<br>
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1 text-center"></div>
+			
+		<div class="col-xs-12 text-center buttonsCalendar" style="">
+					   	<!--  <button class="col-xs-4 darkOrangeBtn calBtn"> -->
+					   	 <a class="col-xs-4 darkOrangeBtn calBtn" id="addCalendarBtn" href="" onclick="hiringEvent.createNewStoreCalendar()" data-toggle="modal">Create New Hiring Event</a><!-- </button> -->
+					   	 <a class="col-xs-4 col-xs-2 disablegreybtn" id="edithiringEvent" title="Select a Hiring Event Row to Edit a Hiring Event." href="" onclick="hiringEvent.editHiringEvent()" data-toggle="modal">Edit Hiring Event</a>
+<!-- 					   		 <button class="col-xs-4 col-xs-2 disablegreybtn" id="edithiringEvent" title="Select a Hiring Event Row to Edit a Hiring Event." disabled >Rename Hiring Event</button> -->
+					   <a class="col-xs-4 col-xs-2 disablegreybtn" id="deleteHiringEventBtn" title="Select a Hiring Event Row to Delete a Hiring Event." onclick="hiringEvent.deleteButtonClick()" disabled >Delete Hiring Event</a>
+					   	 </div>
+
+		</div>
+	</div>
+	
+
+<div id="hiringCalendarDiv" style="display: none;">
+	<div class="row" id="hiringMainDivRow">
+		<div class="col-xs-12 text-center hiringShowCalendar">
+			<div class="row">
+				<div
+					class="col-xs-10 col-xs-offset-1 text-center textBold calendarDue">
+				</div>
+			</div>
+			<div class="row" id="hiringDivRow">
+				<div class="col-xs-12 text-center hiringCalendarMaindiv">
+					<div class="row">
+						<div class="col-xs-2">
+							<button class="fc-next-button"
+								onclick="hiringCalendar.selectPrevious();" title="View Previous 14 Days">
+								<span class="glyphicon-left-arrow"></span>
+							</button>
+						</div>
+
+						<div class="col-xs-8">
+							<label class="labelCalendar">Selected Hiring Event:&nbsp;</label>
+								 <select id="hiringSelect" onchange="hiringCalendar.changeCalendarSummary()">
+							</select>
+
+						</div>
+						<div class="col-xs-2">
+							<button class="fc-next-button" title="View Next 14 Days"
+								onclick="hiringCalendar.selectNext();">
+								<span class="glyphicon-right-arrow"></span>
+							</button>
+						</div>
+					</div>
+					<div id="hiringCalendar">
+						<div class="container">
+							<table class="table hiringcalendarTable">
+								<thead>
+									<tr>
+										<th>Sunday</th>
+										<th>Monday</th>
+										<th>Tuesday</th>
+										<th>Wednesday</th>
+										<th>Thursday</th>
+										<th>Friday</th>
+										<th>Saturday</th>
+									</tr>
+								</thead>
+								<tbody id="calendarData">
+
+								</tbody>
+							</table>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="modal alertpopup centeredBackdrop" id="hiringAlert" tabindex="-1"
+	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog">
+		<div class="modal-content bottomBorder">
+			<div class="modal-header topBorder">
+
+				<h5 class="modal-title" id="hiringAlertLabel"></h5>
+			</div>
+			<div class="modal-body ">
+				<div class="alertModalBody text-center"></div>
+				<br>
+				<div class="text-center">
+					<button type="button" class="greybtn"
+						data-dismiss="modal" id="hiringAlertOk">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Day view Popup -->
+<div class="modal" id="hiringDayViewModal" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true" class="modal" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog">
+		<div class="modal-content bottomBorder">
+			<div class="modal-header popHeader topBorder">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close" onclick="hiringCalendar.loadSummary();">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h3 class="modal-title bold-span" id="hiringDayViewLabel">Day View</h3>
+			</div>
+			<div class="modal-body">
+				<h5 class="text-center dayviewColor selectable">Select an edit mode below in order 
+				to add/delete availability or Print Interview Packets.</h5>
+				<div class="col-xs-12 bottomSpace">
+					<div class="col-xs-2">
+					<button class="fc-next-button" title="View Previous day"
+						onclick="hiringCalendar.selectDayPrevious();">
+						<span class="dayViewPrevious"></span>
+					</button>
+				</div>
+					<div class="col-xs-8">
+						<label class="bold-span text-center dayviewColor" id="hiringDateSlotDetail"></label>
+					</div>
+					<div class="col-xs-2">
+						<button class="fc-next-button" title="View Next day"
+							onclick="hiringCalendar.selectDayNext();">
+							<span class="dayViewNext"></span>
+						</button>
+					</div>
+				</div>
+				<div class="model-radio">
+					<span class="bold-span dayviewColor"> Edit Mode: &nbsp</span> <label
+						class="radio-inline"> <input type="radio"
+						name=hiringDayViewOption id="hiringView" value="hiringView">
+						View
+					</label> <label class="radio-inline"> <input type="radio"
+						name="hiringDayViewOption" id="hiringDel" value="hiringDelete">
+						<span id="deleteHiringRadioBtn">Delete</span>
+					</label> <label class="radio-inline"> <input type="radio"
+						name="hiringDayViewOption" id="hiringAdd" value="hiringAdd">
+						<span id="addHiringRadioBtn">Add</span>
+					</label> <label class="radio-inline"> <input type="radio"
+						name="hiringDayViewOption" id="hiringPrint" value="hiringPrintPackets">
+						Print Packets
+					</label>
+				</div>
+				<div class="container hiringViewContainer" style="display: none;">
+					<div class="row headerRow">
+						<div class="col-xs-5"></div>
+						<div class="col-xs-4"></div>
+						<div class="col-xs-3 dayviewColor selectable SelectIE" title="Requisition Store/Location for Time Slot." id="hiringReqLoc">Requisition Location</div>
+					</div>
+					<div class="tableContainer">
+					<table class="table hiringViewSlotTable">
+						<thead></thead>
+						<tbody id="hiringViewBody">
+						</tbody>
+					</table>
+					</div>
+					<div class="modal-footer">
+						<div class="row headerRow">
+							
+								<button type="button" class="btn btn-default submit" 
+								id="submitHiringView" onclick="hiringCalendar.confirmSlot()">Submit</button>
+							
+							
+								<button type="button" class="btn btn-default cancel viewHiringCancel"
+								 data-target="#alertModel" onclick="hiringCalendar.loadSummary()">Cancel</button>
+							
+							
+								<label id="printRosterLabel"><button type="button" class="btn btn-default roaster" disabled 
+									id="printRoster" title="There is not any Roster Data Available" 
+									onclick="hiringCalendar.confirmSlot()">View/Print Roster</button></label>
+							
+							
+								<label id="exportRosterLabel"><button type="button" class="btn btn-default roaster" disabled 
+									id="exportRoster" title="There is not any Roster Data Available" 
+									onclick="hiringCalendar.confirmSlot()">Export Roster</button></label>
+							
+						</div>
+					</div>
+				</div>
+
+				<div class="container hiringAddContainer" style="display: none;">
+					<div class="tableDiv">
+						<div class="row headerRow">
+							<div class="col-xs-3">
+								<button type="button" class="btn btn-default blockimeButton"
+									onclick="hiringCalendar.loadBlockTime()" id="hiringAddBlockTimeButton">Add a Block of
+									Time</button>
+							</div>
+							<div class="col-xs-3"></div>
+							<div class="col-xs-2" style="margin-left:-5%">
+								<label class="addSelectLabel" title="Select/Deselect All Time Slots">Select&nbsp;All:&nbsp;</label>
+							</div>
+							<div class="col-xs-2" id="addCheckDiv">
+								<input id="selectAll" title="Select/Deselect All Time Slots" type="checkbox"
+								 name="hiringAddAllCheck" value="hiringAddCheck">
+							</div>
+							<div style="margin-left: -3%;"
+								class="col-xs-2 dayviewColor selectable SelectIE"
+								title="When you have more than one Interviewer available, you can increase the number in this field to show the number of interviews you want to hold during each thirty minute time slot."
+								id="hiringInterview">Concurrent Interviews</div>
+						</div>
+						</div>
+						
+						<div class="tableContainer">
+							<table class="tableBody hiringAddDayTable">
+								<thead></thead>
+								<tbody id="hiringAddSlotBody">
+								</tbody>
+							</table>
+							</div>
+						
+						<div class="modal-footer addTimeButton text-center">
+						<div class="row headerRow">
+							<div class="col-xs-2"></div>
+							<div class="col-xs-3">
+							<button type="button" class="btn btn-default submit"
+								 id="hiringAddAction" onclick="hiringCalendar.confirmSlot()">Submit</button>
+							</div>
+							<div class="col-xs-3">
+							<button type="button" class="btn btn-default cancel" 
+								onclick="hiringCalendar.loadSummary()">Cancel</button>
+							</div>
+							<div class="col-xs-3"></div>
+							</div>
+						</div>					
+				</div>
+
+				<div class="container hiringDeleteContainer" style="display: none;">
+					<div class="row headerRow">
+						<div class="col-xs-9">
+							<label title="Select/Deselect All Time Slots" class="hiringdeleteLabel">Select&nbsp;All:&nbsp;</label>
+						</div>
+						<div class="col-xs-3">
+							<input id="hiringDeleteSelectAll" name="hiringDeleteAllSlot" type="checkbox"
+							 title="Select/Deselect All Time Slots" value="hiringDeleteCheck"/>
+						</div>
+					</div>
+					<div class="tableContainer">
+					<table class="table hiringDeleteSlotTable">
+						<thead></thead>
+						<tbody id="hiringDeleteSlotBody">
+						</tbody>
+					</table>
+					</div>
+					<div class="modal-footer">
+					<div class="row headerRow">
+							<div class="col-xs-2"></div>
+							<div class="col-xs-3">
+						<button type="button" class="btn btn-default submit"  
+						onclick="hiringCalendar.confirmSlot()">Submit</button>
+						</div>
+						<div class="col-xs-3">
+						<button type="button" class="btn btn-default cancel" data-toggle="modal"
+							data-target="#alertModel" onclick="hiringCalendar.loadSummary()">Cancel</button>
+							</div>
+							<div class="col-xs-3"></div>
+						</div>
+					</div>
+				</div>
+				<div class="container hiringPrintPacketContainer" style="display: none;">
+					<div class="row headerRow">
+						<div class="col-xs-9">
+							<label class="hiringdeleteLabel" title="Select/Deselect Candidates">Select&nbsp;All:&nbsp;</label>
+						</div>
+						<div class="col-xs-3">
+							<input style="margin-right:15px;" id="hiringCheckPacket" name="hiringPacketCheckAll" type="checkbox" value="deleteCheck"
+							title="Select/Deselect Candidates"/>
+						</div>
+					</div>
+					<form id="hiringPacketForm" class="form-inline" method="post"
+						target="_blank">
+						<div class="tableContainer">
+							<table class="table hiringPrintPacketTable">
+								<thead></thead>
+								<tbody id="hiringPrintPacketSlotBody">
+								</tbody>
+							</table>
+							</div>
+							<input type="hidden" name="hiringPacket" />
+							 <input type="hidden" name="Content-Type" />
+							<div class="modal-footer">
+							<div class="row headerRow">
+							<div class="col-xs-2"></div>
+							<div class="col-xs-3">
+								<button type="button" class="btn btn-default submit"  
+								onclick="hiringCalendar.confirmSlot()">Submit</button>
+								</div>
+							<div class="col-xs-3">
+								<button type="button" class="btn btn-default cancel" data-toggle="modal"
+									data-target="#alertModel" onclick="hiringCalendar.loadSummary()">Cancel</button>
+									<input type="submit" id="postHiringPrintForm" style="display:none;"/>
+							 </div>
+							 <div class="col-xs-3"></div>
+							 </div>
+							</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Add Hiring Blocks popup -->
+
+<div class="modal warningBackdrop" id="hiringAddBlocksTime" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true" class="modal" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog">
+
+		<div class="modal-content bottomBorder">
+			<div class="modal-header popHeader topBorder">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close" onclick="hiringCalendar.closeBlockTimePopup();">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h3 class="modal-title bold-span" id="hiringDayViewLabel">
+				Add a Block of Time
+				 </h3>
+			</div>
+			<div class="modal-body">
+				<div class="dayviewColor" id="hiringAddBlockNote"><label>Add a Block of Time to Hiring Event:
+				</label><span id="hiringAddTimeDetail"></span></div>
+				<div class="col-xs-12 addBlockLabelDiv">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-3 dayviewColor" title="Begin Availability Time">Begin Time</div>
+					<div class="col-xs-3 dayviewColor" title="End Availability Time">End Time</div>					
+					<div class="col-xs-4 dayviewColor interviewLabel" id="interviewHiringLabel">Concurrent&nbsp;Interviews</div>					
+				</div>
+				
+				<div class="col-xs-12 addBlockSelects unselectable">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-3">
+						<select class="selectBeginTime" id="hiringBlockBeginTime" ></select>
+					</div>
+				
+					<div class="col-xs-3">
+						<select class="selectBeginTime endTime" id="hiringBlockEndTime"></select>
+					</div>
+					
+					<div class="col-xs-3">
+						<select class="weeksInterviews" id="hiringBlockInterview"></select>
+					</div>					
+				</div>
+				
+				<div class="modal-footer  text-center">
+					<button type="button" class="btn btn-default submit"  
+					onclick="hiringCalendar.submitAddConfirmBlock()">Submit</button>
+					<button type="button" class="btn btn-default cancel" 
+						onclick="hiringCalendar.closeBlockTimePopup()" >Cancel</button>
+				</div>
+				
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<!--Hiring Warning Popup -->
+
+<div class="modal warningBackdrop" id="warningHiringPopup" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true" class="modal" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header popHeader">
+				<h4 class="modal-title bold-span" id="myModalLabel">
+				<img src="assets/images/warning.png">Warning</h4>
+			</div>
+			<div class="modal-body">
+				<div id="hiringActionMessage" class="actionResponseMessage text-center"></div>
+
+			</div>
+			<div class="modal-footer text-center">
+			<button type="button" onClick="hiringCalendar.actionBlocks()">
+						<img src="assets/images/ok.png" style="padding: 5px;"/>YES</button>
+					<button type="button" data-dismiss="modal">
+						<img src="assets/images/cross.png" style="padding: 5px;"/>NO</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal" id="alertPopupModal" tabindex="-1"
+  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal" data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        	<h5 class="modal-title" id="alertPopupModalLabel"></h5>
+      </div>
+      <div class="modal-body">
+        <div class="myModalBody text-center alertModalBody selectable SelectIE"></div>
+   <br>
+   <div class="text-center">
+    <button type="button" class="alertmodalbtn" onclick="hiringEvent.okAlertClicked()">OK</button></div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal warningpopClass centeredBackdrop" id="deletewarningpopup" tabindex="-1"
+	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal" data-keyboard="false" data-backdrop="static">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header text-left">
+
+				<img src="assets/images/warning.png"> <label
+					id="WarningModalLabel"></label>
+			</div>
+			<div class="modal-body ">
+				<div class="warningModalBody text-center">
+					<div class="cols-xs-12 cols-xs-offset-1 text-center ">
+						<label class="cautionMsg"></label> <label id="oldRenameCalName"></label>
+					</div>
+					<div class="cols-xs-12 cols-xs-offset-1 text-center sureMsg">
+					</div>
+				</div>
+				<br>
+				<div class="text-center">
+
+					<button type="button" onClick="hiringEvent.yesClicked()">
+						<img src="assets/images/ok.png" style="padding: 5px;"/>YES</button>
+					<button type="button" data-dismiss="modal">
+						<img src="assets/images/cross.png" style="padding: 5px;"/>NO</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+

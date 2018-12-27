@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+/* APP STYLES */
+@import "app";
+@import "showcase";
+@import "react-tabs";
+@import "time-picker";
+
+/* UX DEFAULTS */
+@import url("https://pages.github.homedepot.com/ux/ux-styleguide/dist/ux-styleguide.min.css");
+@import "~ux-core-styles/src/colors";
+@import "~ux-react-styleguide/dist/styles.min.css";
+
+/* COMPONENTS */
+//@import "../components/menu/menu";
+
+/* CONTAINERS */
+@import "../containers/home/home";
+@import "../containers/requisitionList/requisitionList";
+@import "../containers/requisitionDetails/requisitionDetails";
+@import "../containers/IntCalendarDtls/IntCalendarDtls";
+@import "../containers/login/login";
+@import "../components/orientation/orientationModal";
+@import "../components/candidates/candidates";
+
+

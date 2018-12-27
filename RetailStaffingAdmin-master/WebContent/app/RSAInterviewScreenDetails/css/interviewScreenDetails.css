@@ -1,0 +1,630 @@
+/* changing template */
+/*#appBody {
+width: 100%;
+height: 100%;
+background-color: #fff;
+min-height: 500px;
+border: 1px solid #979797;
+margin: auto;
+border-radius: 10px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+padding:0px;
+}
+body {
+padding: 0;
+height: 100%;
+width: 100%;
+border: 22px solid black;
+border-radius: 30px;
+}
+html {
+height: 100%;
+width: 100%;
+background: #000;
+}
+#divLandingView {
+width: 100%;
+padding: 1%;
+padding-top: 2%;
+height: 84%;
+font-size: 12px;
+}
+#messageBar {
+color: #fff !important;
+padding-top: .2em;
+padding-bottom: .2em;
+font-weight: bold;
+font-size: 16px;
+}
+.navbar.navbar-default.navbar-fixed-top{
+position: relative;
+width: 100%;
+height: 16%;
+}
+.fullHeight
+{
+	height:100%;
+}
+.brand-orange-theme {
+color: #333;
+line-height: 1.5;
+}
+#header.header-orange-theme {
+background: #fff;
+}
+boby {
+	font-size: 13px;
+}
+#headerShortDesc {
+font-size: 11px;
+font-style: normal;
+text-shadow: none;
+color: #000;
+line-height: initial;
+display: block;
+}
+.navbar-brand img {
+float: left;
+margin-right: 16px;
+}
+.container-fluid {
+padding-bottom: 10px;
+}
+#messageBar
+{
+	color:#fff !important;
+}
+/*  nav bar
+.navHeaderButtons{
+	width: 78px;
+	color: #000;
+	font-weight: bold;
+	font-family: arial;
+	font-size:12px;
+	margin-top: 12px;
+	background: #eeeeee; 
+background: -moz-linear-gradient(top,  #eeeeee 0%, #cccccc 100%); 
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#cccccc)); 
+background: -webkit-linear-gradient(top,  #eeeeee 0%,#cccccc 100%);
+background: -o-linear-gradient(top,  #eeeeee 0%,#cccccc 100%); 
+background: -ms-linear-gradient(top,  #eeeeee 0%,#cccccc 100%); 
+background: linear-gradient(to bottom,  #eeeeee 0%,#cccccc 100%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); 
+
+	margin-left:7px;
+} 
+.navHeaderButtons:hover
+{
+color:#fff;
+background: #4c4c4c; 
+background: -moz-linear-gradient(top,  #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); 
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(12%,#595959), color-stop(25%,#666666), color-stop(39%,#474747), color-stop(50%,#2c2c2c), color-stop(51%,#000000), color-stop(60%,#111111), color-stop(76%,#2b2b2b), color-stop(91%,#1c1c1c), color-stop(100%,#131313)); 
+background: -webkit-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); 
+background: -o-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
+background: -ms-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); 
+background: linear-gradient(to bottom,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 );
+}
+.navbar-right li
+{
+	list-style: none;
+}*/
+html {
+	height: 100%;
+	width: 100%;
+	background: #000;
+	-webkit-user-select: none;  
+	-moz-user-select: none;    
+	-ms-user-select: none;      
+	user-select: none;
+}
+.jumbotron{
+	padding: 10px !important;
+	box-shadow: 0px 4px 3px rgb(166,166,166);
+}
+.shadow-box{
+	box-shadow: 3px 3px 5px grey;
+	padding:1% !important;
+}
+.secondContentRow
+{
+margin: 22px;
+margin-top: 5px;
+}
+.modal-header {
+padding: 0px;
+border-bottom: none;
+}
+.intrvwTitle, .candTitle, .intrTitle {
+	font-size: 14px !important;
+}
+
+.whiteBox {
+	background: #fff;
+}
+
+#intrvwScreen {
+	width: 100%;
+	padding-left: 25px;
+}
+
+.phnDet, .intDet {
+	white-space: nowrap;
+}
+
+.noPaddingLeft {
+	padding-left: 0px;
+}
+
+.secondContentRow {
+	margin: 0;
+}
+
+#divLandingView {
+	font-size: 12px;
+	overflow-y: scroll;
+	height: 80%;
+}
+
+.candDet, .intDet, .refreshrow, .intrStatus, .mtrlStatus, .intrDurationDate, .rscSchedTime {
+	margin-top: 1%;
+}
+
+.rowTextIndentPhnScrn {
+	text-indent: -6%;
+}
+
+.intrDurationDate {
+	margin-top: 2%;
+}
+
+select {
+	padding: 4px;
+	width: 100%;
+	background: rgb(250,250,250) !important;
+	background: -webkit-linear-gradient(rgb(240,240,240), rgb(250,250,250)) !important;
+	background: -o-linear-gradient(rgb(240,240,240), rgb(250,250,250));
+	background: -moz-linear-gradient(rgb(240,240,240), rgb(250,250,250));
+	background: linear-gradient(rgb(240,240,240), rgb(250,250,250));
+	border-radius: 7px;
+	border:1px solid lightgrey; 
+}
+
+#refreshAvail {
+	width: 50%;
+}
+
+.iterview {
+	height: 30px;
+}
+
+.iterviewer {
+	width: 100%;
+	height: 25px;
+}
+
+.locDetails {
+	line-height: 25px;
+	margin-top: 1%;
+}
+
+a:hover {
+	color: #666666 !important;
+	text-decoration: underline !important;
+}
+
+a {
+	text-decoration: underline !important;
+	color: rgb(64, 119, 232) !important;
+}
+
+.panel-title label {
+	font-size: 12px !important; 
+}
+
+.btnsRow {
+	margin-top: 3%;
+}
+
+#firstWeekGrid, #secondWeekGrid {  
+  font-style: black !important;
+  font-size: 12px;
+  
+}
+
+.panel-title  {
+	border: 1px solid #cccccc;
+	background: #f6f6f6 url(/RetailStaffing/assets/images/ui-bg_glass_100_f6f6f6_1x400.png) 50% 50% repeat-x;
+}
+
+.accordianFirst {    
+    font-size: 12px; 
+    padding:0px 0px !important;   
+   }
+
+.accordiantext{
+	 color: black !important;
+}
+ .weekgrid{    
+    padding:0px !important; 
+    border: 1px solid #E1E1E8;
+    margin-bottom: 0px !important;
+       
+}
+.accordianmargin {    
+         margin-bottom: -6px !important;
+   }
+ .accordianImage{
+	width: 200% !important;
+ }
+ .scrnStatus, .mtrlStatus {
+ 	padding: 0px;
+ }
+.modal-backdrop {
+	opacity: 0.6 !important;
+	background-color: #E4E4E4 !important;
+}    
+#alertPopupModal .modal-content {
+	height: 134px;
+	width: 45%;
+}
+#alertPopupModal .modal-header{
+	border-bottom:none;
+}
+#alertPopupModal .modal-dialog{
+	color: white;
+	font-size: 12px;
+	/*margin-top: 20%;
+	margin-left: 35%;*/
+}
+#alertPopupModal button {
+	width: 19%;
+	font-weight: bold;
+	border: 1px solid orangered;
+	padding: 0px;
+	color:black;
+	background-color:rgb(185,195,200);
+}
+#alertPopupModal button:hover
+{
+	background-color:rgb(211,218,221);
+}
+.intrWarnMsg p {
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+}
+#intrWarnModal div{
+	font-size: 12px;
+	
+}
+#intrWarnModal button{
+	background: transparent;
+	border: none;
+	font-size: 14px;
+	font-weight: 700;
+}
+#intrWarnModal .modal-header {
+	border: none;
+}
+#intrWarnModal .modal-body {
+	background-color: #fff;
+	border: none;
+}
+#intrWarnModal .modal-content {
+	/*margin-top: 40%;*/
+}
+input:disabled, select:disabled {
+	opacity: 0.5;
+	pointer-events: none;
+}
+.glyphicon-ok {
+	color: green;
+}
+.glyphicon-remove {
+	color: orangered;
+}
+.glyphicon-warning-sign {
+	color: orange;
+}
+
+#myfirstWeekGrid, #mySecondWeekGrid {
+	border: 1px solid #cccccc;
+}
+#myfirstWeekGrid .grid-canvas, #mySecondWeekGrid .grid-canvas {
+	height: 180px !important;
+	width: 100% !important;
+}
+.grid-canvas .active {
+	background-color: #F0BD90 !important;
+	border: none;
+}
+
+/* slick grid */
+
+.slick-header-column:hover, .slick-header-column-active
+{
+	color: #000;
+	opacity: 0.7;
+}
+.slick-header-column, .slick-header-column-active
+{
+	color: #000;
+	opacity: 0.7;
+}
+.slick-cell, .slick-headerrow-column {
+
+border-bottom-color: transparent;
+
+}
+#myfirstWeekGrid, #mySecondWeekGrid {
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+[class^="slickgrid_"],[class^="slickgrid_"] div {
+	-webkit-box-sizing: content-box !important;
+	-moz-box-sizing: content-box !important;
+	box-sizing: content-box !important;
+}
+.ui-widget-content.slick-row:hover {
+background: bisque;
+}
+[class^="slickgrid_"] a:hover,[class^="slickgrid_"] a:focus,[class^="slickgrid_"] a {
+color: blue;
+text-decoration: underline;
+}
+
+
+#myfirstWeekGrid .slick-viewport, #mySecondWeekGrid .slick-viewport{
+	background-size: 50px 60px;
+	background-color: white;
+	background-image: -webkit-linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent);
+	background-image: -moz-linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent);
+	background-image: linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent);
+	-pie-background: linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent) 0 0 / 50px white;
+	behavior: url(/pie/PIE.htc);
+}
+#myfirstWeekGrid .slick-header-column{
+  height: 15px;
+  text-align: center;
+  color: black;
+}
+#myfirstWeekGrid .slick-header-column-sorted{
+  font-style: normal;
+}
+#myfirstWeekGrid .slick-sort-indicator{
+	float: right;
+}
+#myfirstWeekGrid .slick-header{
+	color: black;
+  	font-size: 12px;
+}
+#myfirstWeekGrid .slick-row:hover{
+	background-color: rgb(247,214,187) !important;
+}
+/* #myReqDtlsGrid .slick-cell:hover{
+	background-color: rgb(247,214,187);
+} */
+#myfirstWeekGrid .slick-row.even{
+	background: rgb(247,247,247);
+}
+#myfirstWeekGrid .slick-row.odd{
+	background: white;
+}
+#myfirstWeekGrid.slick-cell{
+	border-bottom: none;
+	border-right: 1px solid silver;
+	font-size: 12px;
+  	text-overflow: clip;
+} 
+#mySecondWeekGrid .slick-header-column{
+  height: 15px;
+  text-align: center;
+  color: black;
+}
+#mySecondWeekGrid .slick-header-column-sorted{
+  font-style: normal;
+}
+#mySecondWeekGrid .slick-sort-indicator{
+	float: right;
+}
+#mySecondWeekGrid .slick-header{
+	color: black;
+  	font-size: 12px;
+}
+#mySecondWeekGrid .slick-row:hover{
+	background-color: rgb(247,214,187) !important;
+}
+/* #myReqDtlsGrid .slick-cell:hover{
+	background-color: rgb(247,214,187);
+} */
+#mySecondWeekGrid .slick-row.even{
+	background: rgb(247,247,247);
+}
+#mySecondWeekGrid .slick-row.odd{
+	background: white;
+}
+#mySecondWeekGrid.slick-cell{
+	border-bottom: none;
+	border-right: 1px solid silver;
+	font-size: 12px;
+  	text-overflow: clip;
+} 
+/*for scroll*/
+.custom-grid{
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	border: 1px solid #B7BABC;
+}
+.custom-grid .slick-viewport{
+	background-size: 50px 60px;
+	background-color: white;
+	background-image: -webkit-linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent);
+	background-image: -moz-linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent);
+	background-image: linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent);
+	-pie-background: linear-gradient(rgb(247, 247, 247) 50%, transparent 50%, transparent) 0 0 / 50px white;
+	behavior: url(/pie/PIE.htc);
+}
+.custom-grid .slick-header-column {
+  /*height: 25px;*/
+  box-sizing: content-box;
+  text-align: center;
+  color: black;
+}
+.custom-grid .slick-header-column-sorted {
+  font-style: normal;
+}
+.custom-grid .slick-sort-indicator{
+	float: right;
+}
+.custom-grid .slick-header{
+	color: black;
+  	font-size: 12px;
+}
+.custom-grid .slick-row:hover{
+	background-color: rgb(247,214,187);
+}
+.custom-grid .slick-cell:hover{
+	background-color: rgb(247,214,187);
+}
+.custom-grid .slick-row.even{
+	background: rgb(247,247,247);
+}
+.custom-grid .slick-row.odd{
+	background: white;
+}
+.custom-grid .slick-cell{
+	border-bottom: none;
+	border-right: 1px solid silver;
+	font-size: 12px;
+  	text-overflow: clip;
+}
+.unSaveWarnMsg p {
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+}
+.modal[id*='unSaveWarnModal'] div{
+	font-size: 12px;
+	
+}
+.modal[id*='unSaveWarnModal'] button{
+	background: transparent;
+	border: none;
+	font-size: 14px;
+	font-weight: 700;
+}
+.modal[id*='unSaveWarnModal'] button:hover{
+	background-color: rgb(247, 214, 187);
+}
+.modal[id*='unSaveWarnModal'] .modal-header {
+	border: none;
+}
+.modal[id*='unSaveWarnModal'] .modal-body {
+	background-color: #fff;
+	border: none;
+}
+.blurBody {
+	-webkit-filter: blur(1px); /* Chrome, Opera, etc. */
+	filter: blur(1px); /* Firefox 35+, eventually all */
+}
+.modal[id*='unSaveWarnModal'] .modal-content {
+	/*margin-top: 40%;*/
+}
+div.row.intrDataGrid .locDetails .col-xs-5 {
+	margin-left: 0px;
+	margin-right: 0px;
+	padding: 0px;
+}
+.intLocAddLbl {
+	padding-left: 7px;
+}
+.modal {
+	z-index: 2000;
+}
+input[type=text]:focus,textarea:focus{
+	background: white;
+	box-shadow: 0px 0px 0px 1.5px #ffa853;
+	outline: 0px inset #ffa853;
+}
+
+/* SelectBox It */
+select + span ul
+{
+	min-width: 232px;
+	max-height: 125px !important;
+	overflow-y: auto;
+	top: auto;
+	display: none;
+}
+select + span ul li a, select + span ul li a:hover{
+	text-decoration: none !important;
+	color: #333 !important;
+	font-weight: 100 !important;
+	font-size:12px !important;
+	font-family:arial !important;
+}
+select[id*='intrstatusSelect'] + span > span, select[id*='mtrlstatusSelect'] + span > span
+{
+	width: 219px !important;
+}
+.selectboxit-selected{
+	background:rgba(230, 120, 30,0.5) !important;
+}
+select + span .selectboxit-arrow-container {
+	border-left:1px solid #c3c3c3;
+}
+select + span{
+	border-color:#c3c3c3;
+	margin-bottom:2px;
+	border-radius:7px;
+	text-indent: 0px !important;
+}
+select + span:hover {
+	border:1px solid #ffa853;
+	border-top-color:#ffa853;
+	margin-bottom:2px;
+	border-radius:7px;
+}
+select + span:hover > span > span.selectboxit-arrow-container {
+	border-left:1px solid #ffa853;
+}
+.selectboxit-btn.selectboxit-enabled:hover,.selectboxit-btn.selectboxit-enabled:focus {
+	background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+	background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+	background-repeat: repeat-x;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	border-bottom-color: #b3b3b3;
+	border:1px solid #ffa853;
+	border-radius:7px;
+	background-position: 0px 0px; 
+}
+select+span
+{
+	height: 25px;
+}
+.selectboxit-container span, .selectboxit-container .selectboxit-options a
+{
+	height: 25px;
+	line-height: 25px;
+	font-size: 12px;
+}
+.modal-dialog-center{
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+} 
+.gridAccContainer {
+	width: 440px;
+	margin: auto;
+}
+#myfirstWeekGrid .slick-row.loading:hover,#myfirstWeekGrid .slick-row.loading .slick-cell:hover,#mySecondWeekGrid .slick-row.loading:hover,#mySecondWeekGrid .slick-row.loading .slick-cell:hover, .grid-canvas .loading.active, .slick-row.loading .slick-cell.active {
+	background-color: transparent !important;
+}
+#myfirstWeekGrid .slick-row.loading,#myfirstWeekGrid .slick-row.loading .slick-cell,#mySecondWeekGrid .slick-row.loading,#mySecondWeekGrid .slick-row.loading .slick-cell
+{
+	opacity: 1;
+}

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+   	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta charset="utf-8">
+  <title>Interview Summary Form</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width" />
+  <!--[if IE]>
+        <link rel="stylesheet" href="../assets/css/IEFontSupport.css" />          
+      <![endif]--> 
+      
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css" />
+  <link rel="stylesheet" href="assets/css/jquery-ui.css" />
+  <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+  <link rel="stylesheet" href="assets/css/jquery-ui.structure.css" />
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/prettify.css" />
+  <link rel="stylesheet" href="assets/css/navbar-fixed-top.css" />
+  <link rel="stylesheet" href="assets/css/prettify.css" />
+  <link rel="stylesheet" href="assets/css/dataTables.responsive.css" />
+  <link rel="stylesheet" href="assets/css/jquery.dataTables.css" />
+  <link rel="stylesheet" href="assets/css/THDstyle.css" />
+
+<link type="text/css" href="assets/css/jq/THDstyle.css" rel="stylesheet" />
+<link type="text/css" href="assets/css/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+<link type="text/css" href="assets/css/jquery.alerts.css" rel="stylesheet" />
+<!-- <link type="text/css" href="css/customStyle.css" rel="stylesheet" />-->
+
+<script type="text/javascript" src="assets/js/vendor/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="assets/js/vendor/jquery-ui.min.js"></script>
+<!-- <script type="text/javascript" src="assets/js/jquery.ui.core.js"></script>
+<script type="text/javascript" src="assets/js/jquery.ui.widget.js"></script> -->
+<script type="text/javascript" src="assets/js/jquery.blockUI.js"></script>
+<!-- <script type="text/javascript" src="assets/js/ui/jquery.ui.mouse.js"></script>
+<script type="text/javascript" src="assets/js/ui/jquery.ui.sortable.js"></script> -->
+<script type="text/javascript" src="assets/js/jquery.colorbox.js"></script>
+<script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="assets/js/jqalert/jquery.alerts.js"></script>
+  
+  
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/jquery-ui-1.7.3.custom.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/ui.jqgrid.css">
+  <link href="assets/css/orangeTheme.css" rel="stylesheet" id="orangeTheme" />
+  <link href="assets/js/SlickGrid/slick.grid.css" rel="stylesheet" />
+  <link href="assets/js/SlickGrid/controls/slick.columnpicker.css" rel="stylesheet" />
+  <link href="assets/js/SlickGrid/controls/slick.pager.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/slick-default-theme.css" />
+  <link rel="stylesheet" href="assets/css/slickGridManual.css" />
+  <link rel="stylesheet" href="assets/css/jquery.selectBoxIt.css" />
+  <link rel="stylesheet" href="assets/css/retailStaffing.css" />	
+  <link href="app/RSAInterviewResults/css/interviewResults.css" rel="stylesheet" />
+
+  <script src="assets/js/vendor/jquery-1.10.1.min.js"></script>
+  <script type="text/javascript" src="assets/js/vendor/jquery-migrate-1.2.1.min.js"></script>
+  <script src="assets/js/vendor/jquery-ui.js"></script>
+  <script src="assets/js/vendor/jquery-ui.min.js"></script>
+  <script src="assets/js/vendor/jquery.cookie.js"></script>
+  <script src="assets/js/jquery.blockUI.js"></script>
+  <script src="assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  <script src="assets/js/vendor/bootstrap.min.js"></script>
+  <script src="assets/js/vendor/jquery.validate.min.js"></script>
+  <script src="assets/js/SlickGrid/lib/jquery.event.drag-2.2.js" type="text/javascript" ></script>
+  <script src="assets/js/SlickGrid/slick.core.js" type="text/javascript" ></script>
+  <script src="assets/js/SlickGrid/slick.grid.js" type="text/javascript" ></script>
+  <script src="assets/js/SlickGrid/plugins/slick.rowselectionmodel.js" type="text/javascript" ></script>
+  <script src="assets/js/vendor/underscore-min.js"></script>
+  <script src="assets/js/vendor/jquery.selectBoxIt.js"></script>
+	
+	<script type="text/javascript" src="app/common/js/constants.js"></script>
+	<script type="text/javascript" src="app/common/js/Utility.js"></script>
+	<script type="text/javascript" src="app/common/js/rsaServices.js"></script>
+  <script type="text/javascript" src="app/common/js/reusableComponents.js"></script>
+  
+  <script type="text/javascript" src="app/RSAInterviewResults/js/interviewResults.js"></script>	
+<script type="text/javascript" src="app/RSAInterviewResults/js/cpdForm.js"></script>	
+  <script type="text/javascript" src="app/common/js/rsaPopup.js"></script>
+  
+
+	<script type="text/javascript">
+$(document).ready(function(){
+  
+});
+  function setOrangeTheme() {
+
+    $('head')
+        .append(
+            '<link href="assets/css/orangeTheme.css" rel="stylesheet" id="orangeTheme" />');
+    /*$("#header").addClass('header-orange-theme');
+    $("#messageBar").addClass('messageBar-orange-theme');
+    $("#appBody").addClass('container-orange-theme');
+    $("#brand").addClass('brand-orange-theme');
+    $("#body").addClass('body-orange-theme');*/
+  }
+  function setBlackTheme() {
+
+    $('#orangeTheme').remove();
+  }
+
+  $(function() {
+    //Tells the web app to fit the entire browser viewport
+    $(window).resize(function() {
+      fit();
+    });
+    setLandingPage();
+    document.addEventListener('mousedown', mousedown, false);
+    document.addEventListener('mouseup', mouseup, false);
+  });
+  var selectionTextSelectors = ".textSelectionTrue,.textSelectionTrue *";
+	// While selecting disallow selection of other text.
+  function mousedown (event) {
+      var current = findParentTextBox(event.target);
+      var list = document.querySelectorAll(selectionTextSelectors);
+      for (var i = 0, textbox; textbox = list[i]; i++) {
+          if (textbox != current) {
+              textbox.style.webkitUserSelect = 'none';
+          }
+      }
+      if(current === null){
+      	if (window.getSelection) {
+      		  if (window.getSelection().empty) {  // Chrome
+      		    window.getSelection().empty();
+      		  } else if (window.getSelection().removeAllRanges) {  // Firefox
+      		    window.getSelection().removeAllRanges();
+      		  }
+      		} else if (document.selection) {  // IE?
+      		  document.selection.empty();
+      		}
+      }
+  }
+
+  // Once finished selecting allow all text to be selected again.
+  function mouseup (event) {
+      var list = document.querySelectorAll(selectionTextSelectors);
+      for (var i = 0, textbox; textbox = list[i]; i++) {
+          textbox.style.webkitUserSelect = 'text';
+      }
+  }
+  function findParentTextBox (node) {
+      while (node != null) {
+          if ($(node).is($(this.selectionTextSelectors)))
+              return node;
+          node = node.parent;
+      }
+      return null;
+  }
+  function setLandingPage() {
+    $.get('app/RSAInterviewResults/view/interviewResults.html', setContent);
+  }
+  window.alert = (function() {
+     var nativeAlert = window.alert;
+      return function(message) {
+         //window.alert = nativeAlert;
+          message.indexOf("DataTables warning") === 0 ?
+              console.warn(message) :
+              nativeAlert(message);
+      }
+  })();
+  function setContent(data) {
+    $("#divLandingView").html(data);
+  }
+  
+  function fit() {
+    var w = window, d = document, e = d.documentElement, g = d
+        .getElementsByTagName('body')[0], y = w.innerHeight
+        || e.clientHeight || g.clientHeight;
+    var height = y - $("#header").height() - $("#messageBar").height()
+        - $("#release").height() - $("#copyright").height() - 60;
+    //$("#appBody").css("min-height", height);
+
+  }
+</script>
+
+<style>
+    p.indexGrid {
+      padding: 50px;
+      font-size: 2.0em;
+      font-weight: 900;
+      background: #eee;
+    }
+    
+    p.indexGrid a {
+      font-weight: 300;
+      width: 100%;
+      height: 100%;
+    }
+    
+    p.indexGrid a:hover {
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body id="body" class="body-orange-theme interviewResults" style="width: 98%">
+  <div id="appBody" class="container container-orange-theme" style="width: 100%; height: 100%;">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse header-class header-orange-theme" id="header">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        <!--    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>-->
+          <div class="navbar-brand">
+              <img src="assets/images/com-hd-logo.png" height="58" width="58">
+              <label class="brand brand-orange-theme" id="brand">Interview Summary Form</label>
+              <br/>
+              <span id="headerShortDesc">Release v94.0</span>
+              <span id="headerShortDesc">Developed by The Home Depot</span>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+         <!--   <ul class="nav navbar-nav">
+       
+         <button type="button" id="alertButton" data-toggle="modal" data-target="#myModal" style="display:none">Launch modal</button>
+               <li class="dropdown">
+              <a href="#" class="dropdown-toggle brand-orange-theme" data-toggle="dropdown" role="button" aria-expanded="false">Select Theme <span class="caret"></span></a>
+           <ul class="dropdown-menu" role="menu">
+                <li onclick="setOrangeTheme()" class="brand-orange-theme"><a>Orange Theme</a></li>
+                <li onclick="setBlackTheme()"><a>Black Theme</a></li>
+               
+              </ul>
+            </li>
+          </ul> -->
+          <ul class="navbar-right">            
+            <li class="text-right"><button type="button" class="btn btn-default navHeaderButtons reqnavHeaderButtons navCloseBtn closeBtnInt">Close</button>
+          </li>
+          <li><label id="userWelcome"></label></li>
+
+          </ul> 
+         <!--  <ul class="nav navbar-nav navbar-right">
+          <li>Welcome IM Tester QAT2719</li>
+              <li ><a data-target="" id="alertButton" data-toggle=""><i class="fa fa-cog fa-2x"></i></a></li>
+          </ul> -->
+        </div><!--/.nav-collapse -->
+      </div>        
+      <section class="container-fluid">
+        <div class="row text-center">
+          <div id="messageBar" class="alert alert-info messageBar-orange-theme" >       
+                    Interview and Offer Details                  
+            </div>
+        </div>
+    </section>
+    </nav>
+
+  
+
+    <!-- Here you can render your Template -->
+    <div id="divLandingView" style="width: 100%;"></div>
+
+    <!-- template  ends -->
+  </div>
+  <!-- /container -->
+
+
+  <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content popup-border">
+                <div id="messageBar" class="modal-header popupmessageBar-orange-theme">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close"></i></button>
+                     <h5 class="modal-title"></h5>
+                </div>
+                <div class="modal-body " id="modelContent">
+                  <!--    <p>Do you want to save changes you made to document before closing?</p>
+                    <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>-->
+                </div>
+               <!--  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade alertmodal"  id="alertModalId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-center">
+	    <div class="modal-content alertmodalContent" style="background: rgb(145,165,175)">
+	      <div class="modal-header">
+	        
+	        <h5 class="modal-title" id="alertModalLabel"></h5>
+	      </div>
+	   <div class="modal-body ">
+	   <div class="myModalBody text-center alertModalBody"></div>
+	   <br>
+	   <div class="text-center">
+	    <button type="button" class="alertmodalbtn" data-dismiss="modal">OK</button></div>
+	      </div> 
+	    </div>
+	  </div>
+	</div>
+	<div class="modal fade genericPopupClass" id="genericPopup" tabindex="-1" role="dialog" aria-labelledby="genericModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-center">
+			<div class="modal-content">
+				<div class="modal-header text-left row" >
+					<div class="col-xs-1"><div id="icon" class=""></div></div>
+					<div id="modalLabel" class="col-xs-10"></div>
+					<div class="col-xs-1">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</div>
+					
+				</div>
+				<div class="modal-body ">
+					<div class="modalBody text-center">
+						<div class="row"> 
+							<div class="col-xs-12 txtMessageOne message"></div>
+						</div>
+						<div class="row"> 
+							<div class="col-xs-12 txtMessageTwo message"></div>
+						</div>
+						<div class="row"> 
+							<div class="col-xs-12 txtMessageThree message"></div>
+						</div>
+						<div class="row"> 
+							<div class="col-xs-12 txtMessageFour message"></div>
+						</div>
+					</div>
+					<br>
+					<div class="text-center">
+
+						<button type="button" id="okbutton" data-dismiss="modal">
+						<img src="assets/images/ok.png">
+						OK</button> &nbsp; &nbsp;
+
+						<button type="button" id="cancelbutton" data-dismiss="modal">
+						<img src="assets/images/cross.png">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  
+
+</body></html>

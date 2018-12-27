@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!-- 
+	Licensed to the Apache Software Foundation (ASF) under one
+	or more contributor license agreements. See the NOTICE file 
+	distributed with this work for additional information 
+	regarding copyright ownership. The ASF licenses this file 
+	to you under the Apache License, Version 2.0 (the 
+	"License"); you may not use this file except in compliance 
+	with the License. You may obtain a copy of the License at 
+	
+		http://www.apache.org/licenses/LICENSE-2.0
+		 
+	Unless required by applicable law or agreed to in writing, 
+	software distributed under the License is distributed on an 
+	"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY 
+	KIND, either express or implied. See the License for the 
+	specific language governing permissions and limitations 
+	under the License. 
+--><ivy-module xmlns:e="http://ant.apache.org/ivy/extra" xmlns:m="http://ant.apache.org/ivy/maven" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+	<info module="${project.name}" organisation="com.homedepot.${project.system}.${project.subsystem}" status="${project.status}"/>
+
+	<configurations>
+		<!-- Configurations affect the classpath used for various build tasks and limit the transitivity of a dependency. -->
+		<conf name="compile"/>
+		<conf name="provided"/>
+		<conf name="runtime"/>
+		<conf name="test"/>
+		<conf name="master"/>
+		<conf name="sources"/>
+	</configurations>
+	
+	<dependencies defaultconf="compile" defaultconfmapping="*-&gt;default">
+		<!--COMPILE-->
+		<!-- Compile dependencies are available in all classpaths of a project. -->
+		<!-- These dependencies are included in the war's WEB-INF/lib and are propagated to dependent projects. -->
+		<!-- This is the default config and is used if no config is specified. -->
+		<!--END COMPILE-DO NOT DELETE COMMENT-->
+		<dependency conf="compile" name="xml-apis" org="xml-apis" rev="2.0.2"/>
+		<dependency conf="compile" name="displaytag" org="displaytag" rev="1.2"/>
+		<dependency conf="compile" name="commons-logging" org="commons-logging" rev="1.0.4"/>
+		<dependency conf="compile" name="commons-lang" org="commons-lang" rev="2.3"/>
+		<dependency conf="compile" name="commons-digester" org="commons-digester" rev="1.6"/>
+		<dependency conf="compile" name="commons-collections" org="commons-collections" rev="3.1"/>
+		<dependency conf="compile" name="commons-beanutils" org="commons-beanutils" rev="1.7.0"/>
+		<dependency conf="compile" name="antlr" org="antlr" rev="2.7.2"/>
+		<dependency org="xerces" name="xercesImpl" rev="2.6.2">
+    		<artifact name="xercesImpl" ext="jar"/>
+		</dependency>
+	
+		
+		<!--PROVIDED-->
+		<!-- This is much like compile, but indicates you expect the JDK or the tomcat container to provide the dependency at runtime. -->
+		<!-- This scope is only available on the compilation and test classpaths, and is not transitive. -->
+		<!-- NOTE: You must add conf="provided" to the dependency -->
+		<!--END PROVIDED-DO NOT DELETE COMMENT--><dependency conf="provided" name="tomcatX-grid" org="com.homedepot.ta.aa.arch" rev="7.+"/>
+
+		
+		<!--RUNTIME-->
+		<!-- This scope indicates that the dependency is not required for compilation, but is for execution. -->
+		<!-- It is in the runtime and test classpaths, but not the compile classpaths and is not transitive. -->
+		<!-- NOTE: You must add conf="runtime" to the dependency -->
+		<!--END RUNTIME-DO NOT DELETE COMMENT-->
+		
+
+		<!--TEST-->
+		<!-- Include individual libraries needed from the repository for test -->
+		<!-- This scope is only available on the test compile and test classpath, and is not transitive. -->
+		<!-- NOTE: You must add conf="test" to the dependency -->
+		<!--END TEST-DO NOT DELETE COMMENT-->
+		<dependency conf="test" name="junit" org="junit" rev="4.0">
+			<artifact ext="jar" name="junit"/>
+		</dependency>
+		<dependency conf="test" name="cobertura" org="net.sourceforge.cobertura" rev="1.9.4.1">
+			<artifact ext="jar" name="cobertura"/>
+			<exclude org="org.apache.ant"/>
+			<exclude org="log4j"/>
+		</dependency>
+		
+	</dependencies>
+</ivy-module>

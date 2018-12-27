@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+                               
+<struts-config>
+
+	<!-- Data Sources -->
+	<data-sources>
+	</data-sources>
+
+
+	<!-- Form Beans -->
+	<form-beans>
+		<!-- Added for TravelAgentInfo -->
+		<form-bean name="jobPostingForm" type="com.homedepot.hr.et.ess.form.jobposting.JobPostingForm" />
+	</form-beans>
+	
+				
+
+
+	<!-- Global Exceptions -->
+	<global-exceptions>
+		<exception handler="com.homedepot.hr.et.ess.action.handler.JPExceptionHandler" key="error.naming" path="/globalErrorhandler.do" scope="request" type="java.lang.Exception" />
+	</global-exceptions>    
+
+
+	
+	
+	<!-- Action Mappings -->
+	<action-mappings>
+	
+			
+	
+			<!-- **************** Beginning of Action Mappings JS ************ -->
+		
+		<action  path="/jp_init" name="jobPostingForm" 
+			type="com.homedepot.hr.et.ess.action.jobposting.JobPostingAction" 
+			scope="session" parameter="pageAction" validate="false">
+			<forward name="home" path="tile.jp_init"/>
+		</action>
+		
+		<action  path="/hourposts_init" name="jobPostingForm" 
+			type="com.homedepot.hr.et.ess.action.jobposting.JobPostingAction" scope="session" parameter="pageAction" validate="true" input="tile.hourPostsInit">
+			<forward name="success" path="tile.hourPostsInit"/>
+			<forward name="failure" path="tile.hourPostsInit"/>
+		</action>
+			
+		<!-- **************** Beginning of Action Mappings JS ************ -->
+			
+		<!--   *************************** Added for global error handling ************ -->
+          <action path="/globalErrorhandler" type="com.homedepot.hr.et.ess.action.handler.JPForwardExceptionHandler">
+		 	<forward name="yes" path="tile.error"/>
+		 	<forward name="no" path="tile.error.common"/>
+		 	<forward name="noleftnav" path="tile.error.noleftnav"/>
+		 </action>
+		 <!--   *************************** Added for global error handling ************ -->
+		</action-mappings>		
+		
+	
+
+ 	
+
+	<!-- Message Resources -->
+  	<!-- ========== Plug Ins Configuration ================================== -->
+  	<message-resources parameter="com.homedepot.hr.et.ess.jobposting.properties.ApplicationResources" null="true"/>
+    <message-resources key="jpcommonresources" parameter="com.homedepot.hr.et.ess.jobposting.properties.JPCommonResources" />
+    
+    
+  	<!-- 
+     Add multiple validator resource files by setting the pathnames property 
+     with a comma delimitted list of resource files to load. 
+  	-->
+  	
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+  		<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml"/> 
+  		<set-property property="definitions-parser-validate" value="true" />
+	  	<set-property property="moduleAware" value="true" />		
+  	</plug-in>
+  	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    	<set-property property="pathnames" value="/WEB-INF/validator-rules.xml,
+                                              	  /WEB-INF/validation.xml" />
+  	</plug-in>
+
+</struts-config>
